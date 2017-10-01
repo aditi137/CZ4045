@@ -12,7 +12,7 @@ Natural Language Processing - To Do List
 - Number of questions
 - Number of answers
 - Distribution of the answers (e.g percentage of questions having one, two, or more answers) 
-- Length of the posts in number of words (using an offthe-shelf tokenizer).
+- Length of the posts in number of words (using an off-the-shelf tokenizer).
           
 
 <b> Dataset Analysis and Annotation (30 marks) </b>
