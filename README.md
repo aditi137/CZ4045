@@ -1,7 +1,7 @@
 # CZ4045
-Natural Language Processing - To Do List
+## Natural Language Processing - To Do List
 
-<b>Dataset Collection (10 marks)</b> 
+### <b>Dataset Collection (10 marks)</b> 
 - Dataset needs to contain 500 threads of discussion
 - All threads need to pertain to one particular Programming Language
 - Each selected thread should have at least two posts. A post can be either a question or an answer.
@@ -15,7 +15,7 @@ Natural Language Processing - To Do List
 - Length of the posts in number of words (using an off-the-shelf tokenizer).
           
 
-<b> Dataset Analysis and Annotation (30 marks) </b>
+### <b> Dataset Analysis and Annotation (30 marks) </b>
 - Stemming of the dataset using an off-the-shelf toolkit
 - Identify the top-20 most frequent words(excluding stop words) before and after performing stemming.
 - List the original words of the top-20 most frequent stems
@@ -30,7 +30,7 @@ The annotated dataset will be used as ground truth in the next section. You may 
 - Show and discuss results
 
 
-<b>Tokenizer (30 marks)</b> 
+### <b>Tokenizer (30 marks)</b> 
 - Tokenize all sentences in your dataset
 - Either use regular expression or CRF(do not create your own, use a library)
 - If regular expressions are not used, use a cross validation to evaluate the effectiveness of the tokenzier used (K-fold cross validation is mentioned in the assignment document)
@@ -41,7 +41,7 @@ The annotated dataset will be used as ground truth in the next section. You may 
 - Analysis of the errors (e.g., case studies on false positives and false negatives).
 
 
-<b>Further Analysis (20 marks)</b>
+### <b>Further Analysis (20 marks)</b>
 Irregular Tokens:
 - Tokenize the dataset using your own tokenizer. 
 - Identify the top-20 most frequent tokens which are NOT standard English words (including their morphological forms). 
@@ -53,7 +53,7 @@ POS Tagging:
 - Show and discuss the tagging results.
 
 
-<b>Application (10 marks)</b>
+### <b>Application (10 marks)</b>
 - Deﬁne and develop a simple NLP application based on the dataset. 
 - E.g detecting sentences containing Negation Expression using regular expressions. 
 (Negation is often expressed through negative words such as no, not, never, none, nobody) 
