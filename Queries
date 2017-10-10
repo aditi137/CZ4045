@@ -1,0 +1,7 @@
+Queries for Stack Exchange Data Explorer:
+select * from Posts where Tags like '%python%' and AnswerCount >= 1
+
+select Id from Posts where PostTypeId = 1 and AnswerCount > 0 and Tags like '%python%'
+
+select * from Posts where PostTypeId = 2 and
+ParentId in( select Id from Posts where PostTypeId = 1 and AnswerCount > 0 and Tags like '%python%')
