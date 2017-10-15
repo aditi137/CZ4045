@@ -1,10 +1,16 @@
 import pandas as pd
 from bs4 import BeautifulSoup
+from nltk.tokenize import word_tokenize
+import matplotlib.pyplot as plt
 
+plt.style.use('ggplot')
 
 def convert_html_to_text(row):
     bs_obj = BeautifulSoup(row['Body'], "lxml")
     return bs_obj.text
+
+def text_word_count(row):
+    return len(word_tokenize(row['Text']))
 
 questions = pd.read_csv('questions.csv')
 answers = pd.read_csv('answers.csv')
@@ -40,6 +46,15 @@ print answers_count
 questions = questions.reset_index()
 posts = pd.concat([questions, answers]).sort_values('ParentId')[['ParentId', 'Id', 'PostTypeId', 'Body']].reset_index(drop=True)
 posts['Text'] = posts.apply(convert_html_to_text, axis=1)
+posts['Post length'] = posts.apply(text_word_count, axis=1)
+
+plt.figure()
+posts.hist('Post length', range=(0, 1500))
+plt.xlabel('post length')
+plt.ylabel('number of posts')
+plt.savefig('word_count_hist.png')
+plt.show()
+
 posts.drop('Body', axis=1, inplace=True)
 posts.to_csv('posts.csv', index=False, encoding='utf-8')
 
