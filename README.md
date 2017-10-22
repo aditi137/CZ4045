@@ -60,7 +60,12 @@ POS Tagging:
 - You may deﬁne your own application with similar (estimated) difﬁculty level.
 
 
-
-
+## Requirements:
+- Python 3.4+
+- nltk 3.2.5
+- pandas
+- matplotlib
+- beautifulsoup4
+- lxml
 
 
