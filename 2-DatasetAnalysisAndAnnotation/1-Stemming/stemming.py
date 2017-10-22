@@ -19,8 +19,8 @@ def countSortAndSave(list, fileName):
     countDataFrame.to_csv(fileName, index=False, encoding='utf-8')
 
 def main():
-    inputSubdir = 'Input data'
-    outputSubdir = 'Output data'
+    inputSubdir = 'InputData'
+    outputSubdir = 'OutputData'
     if not os.path.exists(outputSubdir):
         os.makedirs(outputSubdir)
 

@@ -15,8 +15,8 @@ def convert_html_to_text(row):
 def text_word_count(row):
     return len(word_tokenize(row['Text']))
 
-inputSubdir = 'Input data'
-outputSubdir = 'Output data'
+inputSubdir = 'InputData'
+outputSubdir = 'OutputData'
 if not os.path.exists(outputSubdir):
 	os.makedirs(outputSubdir)
 
