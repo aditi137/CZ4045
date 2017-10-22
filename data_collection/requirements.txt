@@ -1,0 +1,8 @@
+# Command to install dependencies on a Mac with pip2 installed from Homebrew: 
+# pip2 install -U -r requirements.txt
+# If you use other OS or installation configuration you will need to tweak that command a bit
+pandas
+beautifulsoup4
+nltk
+matplotlib
+lxml
