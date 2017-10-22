@@ -1,3 +1,4 @@
+import os
 import pandas
 import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
@@ -14,8 +15,13 @@ def convert_html_to_text(row):
 def text_word_count(row):
     return len(word_tokenize(row['Text']))
 
-questions = pandas.read_csv('questions.csv')
-answers = pandas.read_csv('answers.csv')
+inputSubdir = 'InputData'
+outputSubdir = 'OutputData'
+if not os.path.exists(outputSubdir):
+	os.makedirs(outputSubdir)
+
+questions = pandas.read_csv(os.path.join(inputSubdir, 'questions.csv'))
+answers = pandas.read_csv(os.path.join(inputSubdir, 'answers.csv'))
 questions['ParentId'] = questions['Id']
 
 questions = questions.set_index('ParentId')
@@ -53,9 +59,9 @@ posts['Post length'] = posts.apply(text_word_count, axis=1)
 posts.hist('Post length', range=(0, 1500))
 plt.xlabel('post length')
 plt.ylabel('number of posts')
-plt.savefig('word_count_hist.png')
+plt.savefig(os.path.join(outputSubdir, 'word_count_hist.png'))
 plt.show()
 
 posts.drop('Body', axis=1, inplace=True)
-posts.to_csv('posts.csv', index=False, encoding='utf-8')
+posts.to_csv(os.path.join(outputSubdir, 'posts.csv'), index=False, encoding='utf-8')
 
