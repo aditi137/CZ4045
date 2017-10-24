@@ -1,0 +1,17 @@
+If a worker name can't include a space, you can check that and change the behavior accordingly.
+This will even work if the user combine the 2 options (e.g. entering 'a' and then 'b c'), although it is not perfect (it is possible to get more than n names, for example if n == 3 and inputting 'a b' and 'c d')
+n = int(input("enter the no of workers \n"))
+print("enter the names of workers")
+NameList = []
+while len(NameList) < n:
+    worker_name = input()
+    if ' ' in worker_name:
+        if NameList:
+            NameList.extend(worker_name.split())
+        else:
+            NameList = worker_name.split()
+    else:
+        NameList.append(worker_name)
+print(NameList)
+
+

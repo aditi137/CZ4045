@@ -1,0 +1,36 @@
+I hope you find this solution satisfactory:
+import re
+
+data = """
+Views 2.x-dev
+Viewfield 6.x-2.x, xxxx-xx-xx
+Version 6.x-2.3
+ctools 7.x-1.x-dev
+XML sitemap 6.x-1, 2009-08-24
+6.x-1.6
+"""
+## Solution 1: 
+## 1) Finds all results that matches with the pattern 
+## '<number>.x-<other_chars>' in a not greedy way 
+## (that is why the '?')
+## 2) Treat the found match and remove any ','
+
+results = []
+for result in re.findall( r"[0-9]\.x{1}\-.*x?", data ):
+    results.append(result.split(",")[0])
+
+print (results)
+
+## Solution 2: (and my favourite)
+## Create a list with those words that matches the pattern 
+## <number>.x at their beginning
+## The words are the result of splitting the 'data' with the
+## split function from the regex module with a
+## non-capturing version of regular parentheses.
+
+result = [ x  for x in re.split(r'(?:,|\s)\s*', data) \ 
+           if re.match(r'^[0-9].x',x) ]
+
+print (result)
+
+

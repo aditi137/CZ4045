@@ -1,0 +1,2 @@
+I have a table which already contains some data in it. Now i want to upload new data from a csv file and want to update some of the previous values of that table. I am using django 1.3 and sqlite3 as database. But i am not able to update the table.
+

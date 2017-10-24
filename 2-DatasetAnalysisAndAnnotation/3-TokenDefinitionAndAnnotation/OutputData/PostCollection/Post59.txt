@@ -1,0 +1,14 @@
+Here's another example that was tested, and will match search & replace patterns:
+import fileinput
+import sys
+
+def replaceAll(file,searchExp,replaceExp):
+    for line in fileinput.input(file, inplace=1):
+        if searchExp in line:
+            line = line.replace(searchExp,replaceExp)
+        sys.stdout.write(line)
+
+Example use:
+replaceAll("/fooBar.txt","Hello\sWorld!$","Goodbye\sWorld.")
+
+

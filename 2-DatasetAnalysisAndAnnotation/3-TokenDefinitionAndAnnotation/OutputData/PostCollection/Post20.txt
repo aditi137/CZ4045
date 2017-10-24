@@ -1,0 +1,35 @@
+In python 3 I have a line asking for input that will then look in an imported dictionary and then list all their inputs that appear in the dictionary. My problem is when I run the code and put in the input it will only return the last word I input.
+For example
+the dictionary contains (AIR, AMA)
+and if I input (AIR, AMA) it will only return AMA.
+Any information to resolve this would be very helpful!
+The dictionary: 
+EXCHANGE_DATA = [('AIA', 'Auckair', 1.50),
+                 ('AIR', 'Airnz', 5.60),
+                 ('AMP', 'Amp',3.22), 
+
+The Code:
+import shares
+a=input("Please input")
+s1 = a.replace(' ' , "")
+print ('Please list portfolio: ' + a)
+print (" ")
+n=["Code", "Name", "Price"]
+print ('{0: <6}'.format(n[0]) + '{0:<20}'.format(n[1]) + '{0:>8}'.format(n[2]))
+z = shares.EXCHANGE_DATA[0:][0]
+b=s1.upper()
+c=b.split()
+f=shares.EXCHANGE_DATA
+def find(f, a):
+    return [s for s in f if a.upper() in s]
+x= (find(f, str(a)))
+toDisplay = []
+a = a.split()
+for i in a:
+    temp = find(f, i)
+    if(temp):
+        toDisplay.append(temp)
+for i in toDisplay:
+    print ('{0: <6}'.format(i[0][0]) + '{0:<20}'.format(i[0][1]) + ("{0:>8.2f}".format(i[0][2])))
+
+

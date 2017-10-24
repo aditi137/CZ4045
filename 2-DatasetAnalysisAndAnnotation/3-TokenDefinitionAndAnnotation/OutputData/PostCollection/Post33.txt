@@ -1,0 +1,4 @@
+Currently i filter by some option in django's admin interface. For instance lets say i filter by 'By status'. Is it possible to select multiple statuses to filter results from? Here is the screenshot of the filter:
+
+Can i select multiple items from this list? 
+

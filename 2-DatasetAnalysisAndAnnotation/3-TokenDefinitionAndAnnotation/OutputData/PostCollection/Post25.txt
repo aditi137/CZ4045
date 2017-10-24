@@ -1,0 +1,18 @@
+I have this list and number:
+list = ['B','C']
+
+The outcome that I need for my table is:
+B    C    Prob
+0    0    x
+0    1    x
+1    0    x
+1    1    x
+
+How can I build this truth table (there can be more vairables, not only 3) and assign a number to that row's probability?
+I need to build it with a dictionary, I tried with some list comprehension but I don't know how to generate dynamically the truth table, considering that there can be more/less than 3 variables.
+EDIT: to be more clear my goal is to have a dictionary like this:
+dict = {"B":0/1,"C":0/1,"Prob":arbitraryNumber}
+
+and I need to insert all these dictionaries into a list to represent the structure of a table, is it clearer now?
+Thank you very much
+

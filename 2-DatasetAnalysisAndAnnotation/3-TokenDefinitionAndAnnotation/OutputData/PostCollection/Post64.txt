@@ -1,0 +1,27 @@
+This works. I used a few short cuts to save on typing.
+import csv
+import sqlite3
+import itertools
+
+params = ['No', 'Source', 'Host', 'Link', 'Date', 'Time', 'time2', 'Category', 'AuthorId', 'AuthorName', 'AuthorUrl', 'Auth', 'Followers', 'Following', 'Age', 'Gender', 'Language', 'Country', 'Province', 'City', 'Location', 'Sentiment', 'Title', 'Snippet', 'Description', 'Tags', 'Contents', 'View', 'Comments', 'Rating', 'Favourites', 'Duration', 'Bio', 'UniqueId']
+
+create_str = "CREATE TABLE t (%s);" % ', '.join('"%s"' % p for p in params)
+insert_str = "INSERT INTO t VALUES (%s)" % ', '.join(itertools.repeat('?', len(params)))
+
+with open('database.csv') as fin:
+    dr = csv.DictReader(fin, fieldnames=params, skipinitialspace=True)
+    lst = [tuple(d[p] for p in params) for d in dr]
+
+con = sqlite3.connect(":memory:")
+cur = con.cursor()
+cur.execute(create_str)
+
+cur.executemany(insert_str, lst)
+con.commit()
+
+for row in cur.execute("select * from t;"):
+    print(row)
+
+Note its bad practice to use string format operations to build up sql query strings. It can lead to sql injection attacks, if used with unknown input data. I am doing so here because the strings are only being built from known values and unknown input (that from the file) is built properly using the standard '?' placeholder with tuple passed to execute method.
+Note also you have far too many parameters in one table. It should be more normalised across multiple tables, but I guess you will learn that at some point.
+

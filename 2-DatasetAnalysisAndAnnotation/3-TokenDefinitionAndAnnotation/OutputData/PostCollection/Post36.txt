@@ -1,0 +1,5 @@
+Some experimentation and I figured this one out:
+def methodA(arg, **kwargs):
+    methodB("argvalue", **kwargs)
+Seems obvious now...
+

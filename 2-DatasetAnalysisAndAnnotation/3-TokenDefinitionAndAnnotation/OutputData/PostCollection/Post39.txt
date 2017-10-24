@@ -1,0 +1,40 @@
+Easy solution would be to apply : idxmax() function to get indices of rows with max values. 
+This would filter out all the rows with max value in the group.
+In [365]: import pandas as pd
+
+In [366]: df = pd.DataFrame({
+'sp' : ['MM1', 'MM1', 'MM1', 'MM2', 'MM2', 'MM2', 'MM4', 'MM4','MM4'],
+'mt' : ['S1', 'S1', 'S3', 'S3', 'S4', 'S4', 'S2', 'S2', 'S2'],
+'val' : ['a', 'n', 'cb', 'mk', 'bg', 'dgb', 'rd', 'cb', 'uyi'],
+'count' : [3,2,5,8,10,1,2,2,7]
+})
+
+In [367]: df                                                                                                       
+Out[367]: 
+   count  mt   sp  val
+0      3  S1  MM1    a
+1      2  S1  MM1    n
+2      5  S3  MM1   cb
+3      8  S3  MM2   mk
+4     10  S4  MM2   bg
+5      1  S4  MM2  dgb
+6      2  S2  MM4   rd
+7      2  S2  MM4   cb
+8      7  S2  MM4  uyi
+
+
+### Apply idxmax() and use .loc() on dataframe to filter the rows with max values:
+In [368]: df.loc[df.groupby(["sp", "mt"])["count"].idxmax()]                                                       
+Out[368]: 
+   count  mt   sp  val
+0      3  S1  MM1    a
+2      5  S3  MM1   cb
+3      8  S3  MM2   mk
+4     10  S4  MM2   bg
+8      7  S2  MM4  uyi
+
+### Just to show what values are returned by .idxmax() above:
+In [369]: df.groupby(["sp", "mt"])["count"].idxmax().values                                                        
+Out[369]: array([0, 2, 3, 4, 8])
+
+

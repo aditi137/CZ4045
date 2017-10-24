@@ -1,0 +1,7 @@
+Be pythonic. Use a comprehension:
+z={i:d[i] for d in [x,y] for i in d}
+
+>>> print z
+{'a': 1, 'c': 11, 'b': 10}
+
+

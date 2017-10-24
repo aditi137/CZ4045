@@ -1,0 +1,32 @@
+I found, the foreign key constraint in the column must be removed
+from sqlalchemy import (Column, Integer, create_engine, 
+                        ForeignKeyConstraint)
+from sqlalchemy.ext.declarative import declarative_base
+
+
+#engine = create_engine('sqlite:///memory')
+engine = create_engine('postgres:///memory')
+Base = declarative_base()
+
+
+class Test(Base):
+    __tablename__ = 'test'
+    id = Column(Integer, primary_key=True)
+    id2 = Column(Integer, primary_key=True)
+
+
+class Test2(Test):
+    __tablename__ = 'test2'
+    # No foreign key here
+    id = Column(Integer, primary_key=True)
+    id2 = Column(Integer, primary_key=True)
+
+    __table_args__ = (
+        # this constraints must be the alone to Test model
+        ForeignKeyConstraint([id, id2], [Test.id, Test.id2]),
+    )
+
+
+Base.metadata.create_all(engine)
+
+

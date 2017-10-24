@@ -1,0 +1,17 @@
+I have a file that I am currently reading from using
+fo = open("file.txt", "r")
+
+Then by doing
+file = open("newfile.txt", "w")
+file.write(fo.read())
+file.write("Hello at the end of the file")
+fo.close()
+file.close()
+
+I basically copy the file to a new one, but also add some text at the end of the newly created file. How would I be able to insert that line say, in between two lines separated by an empty line? I.e:
+line 1 is right here
+                        <---- I want to insert here
+line 3 is right here
+
+Can I tokenize different sentences by a delimiter like \n for new line?
+

@@ -1,0 +1,16 @@
+As an aside: When using functions instead of methods, you could also use functools.partial:
+import functools
+
+def foo(arg, **kwargs):
+    ...
+
+bar = functools.partial(foo, "argvalue")
+
+The last line will define a function "bar" that, when called, will call foo with the first argument set to "argvalue" and all other functions just passed on:
+bar(5, myarg="value")
+
+will call
+foo("argvalue", 5, myarg="value")
+
+Unfortunately that will not work with methods.
+

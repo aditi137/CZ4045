@@ -1,0 +1,6 @@
+I'm not sure what you mean by "installing it as a framework".  If you are using an OS X server hosting environment, then maybe you're talking about Framework with a Capital F.  However, OS X server hosting isn't a very common environment so I'm guessing that's not it.
+If you just want to know how to install a Python library in your home directory, then the general answer is:
+$ python setup.py install --user
+
+This Just Works™ on Python 2.7 (assuming the package uses distutils, which Twisted does, and you unpack the source .tar.gz and change your working directory to the directory that is the root of the contents of that .tar.gz), so you should be done after that.
+

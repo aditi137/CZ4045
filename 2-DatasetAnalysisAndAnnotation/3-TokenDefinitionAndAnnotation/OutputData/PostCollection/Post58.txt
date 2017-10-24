@@ -1,0 +1,6 @@
+This might do the trick:
+(?=[\w:])(\w*)(?::(\w*))?
+
+(\w*)(?::(\w*))? describes the structure you want, but it has a problem that it also matches empty string; thus we have to assure that there is at least one non-space character at the start (which will get matched by the greedy operators), and the lookahead at the start does it.
+Edit: wrong paste :)
+

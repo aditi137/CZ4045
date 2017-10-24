@@ -1,0 +1,6 @@
+Given a Python list whose elements are either integers or lists of integers (only we don't know how deep the nesting goes), how can we find the sum of each individual integer within the list?
+It's fairly straightforward to find the sum of a list whose nesting only goes one level deep, 
+but what if the nesting goes two, three, or more levels deep?
+I know the best approach is recursion, but this is a challenge wherein I have to do it without recursion.
+Please help!!
+

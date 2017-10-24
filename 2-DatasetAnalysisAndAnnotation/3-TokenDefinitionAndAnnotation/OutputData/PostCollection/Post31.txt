@@ -1,0 +1,16 @@
+Assignment itself does nothing. rc here is your client. Doing rc[0], or any sort of indexing, generates and returns a DirectView object that's a view with whatever engines you specify in []. This is a shorthand for generating the views: it's not actually just getting a specific object.
+Thus, those views aren't unique. The best way to explain it, I think, is with an example. Say you have 2 engines. You want to run some tasks on only engine one, and want the tasks to block. You want to run others on only engine one, but don't want them to block. You want to run yet more on engines 1 and 2, and don't want them to block. Then you could do:
+view_1_block = rc[0]
+view_1_block.block = True
+view_2_noblock = rc[0]
+view_2_noblock.block = False
+view_3_noblock = rc[[0,1]]
+view_3_noblock.block = False
+
+Then, you can use these to run tasks in whatever way you'd like, eg
+view_1_block.map(lambda x:x**10, range(32)) # blocks, returns results, runs only on 1
+view_3_noblock.map(lambda x:x**10, range(32)) # does not block, returns AsyncResult, runs on 1 and 2
+
+There's no actual magic being used here. When you run rc[0] twice, it generates two views. The second view is not the same as the first. When you assign rc[0] to a variable, and then use that variable, you're working with one view, and not creating a new one. 
+iPython, like Numpy and Scipy, has quite a few shorthand notations that don't necessarily fit Python's idioms perfectly. This is especially the case with [] and getitem. A purer Python way of writing this could would be to use the much more unwieldy rc.direct_view(1), and so on, which would make clear that this wasn't just getting an item, and was actually creating a view.
+

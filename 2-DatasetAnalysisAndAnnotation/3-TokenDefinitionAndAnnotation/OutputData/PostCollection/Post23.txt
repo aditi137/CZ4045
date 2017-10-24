@@ -1,0 +1,6 @@
+Here's the culprit:
+profile = models.ForeignKey(Profile, default=Profile)
+#                                    ^^^^^^^^^^^^^^^
+
+You can't set a Model class as a Foreignkey default. If you're thinking of setting an hardcoded default then you should use an int and be sure the selected value exists as a key in your Profile model.
+

@@ -1,0 +1,5 @@
+My solution to this, that I hope can be bettered, is to use Oracle to explicitly convert the TIMESTAMP into a string:
+cursor.execute("SELECT TO_CHAR(WhenAdded, 'YYYY-MM-DD HH:MI:SSAM') FROM Log")
+
+This works, but isn't portable. I'd like to use the same Python script against a SQL Server database, so an Oracle-specific solution (such as TO_CHAR) won't work.
+

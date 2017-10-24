@@ -1,0 +1,20 @@
+This answer is specific to Windows NT-based OS.
+Idle thread functioality
+Tasks may vary between architectures, but generally these are the tasks performed by idle threads:
+
+Enable interrupts to allow pending interrupts be delivered
+Disable interrupts (using STI or CLI instructions, more on wiki)
+On the DEBUG (or checked) builds, query if a kernel debugger is attached and allow breakpoints if been requested
+Handle deferred procedure calls
+Check if there are any runnable threads ready for execution. If there is one, update the idle processor control block with a pointer to the thread
+Check the queues of other processors, if possible schedule thread awaiting execution on the idle processor
+Call a power management routine, which may halt a processor or downgrade CPU tick rate and do other similar power saving activities
+
+Additional info
+When there are no runnable threads for a logical processor, Windows executes a kernel-mode idle thread. There is only 1 Idle process that has as many idle threads as there are logical processors. So on a Quad core machine with 4 logical/physical processors, there will be 1 Idle process and 4 idle threads.
+In Windows, Idle process has ID = 0, so do all the Idle threads. These objects are represented by standard EPROCESS/KPROCESS and ETHREAD/KTHREAD data structures. But they are not executive manager processes and threads objects. There are no user-land address space and no user-land code is executed..
+Idle process is statically allocated at system boot time before the process manager and object manager are set up. Idle thread structures are allocated dynamically as logical processors are brought live.
+Idle thread priority is set to 0. However, this value doesn't actually matter as this thread only gets executed when there are no other threads available to run. Idle thread priority is never compared with priority of any other threads.
+Idle threads are also special cases for preemption. The idle thread main routine KiIdleLoop (implementation from reactos) performs several tasks that are not interrupted by other threads. When there are no runnable threads available to run on a processor, that processor is marked as idle in a processor control block. Then if a runnable threads arrives to the queue scheduled for execution, that thread's address pointer is stored in the NextThread pointer of the idle processor control block. During the run of an idle thread, this pointer address gets checked on every iteration inside a while loop.
+Source: Windows Internals. M. Russinovich. 6-th edition. Part 1, p.453 - 456.
+

@@ -1,0 +1,9 @@
+Try this:
+import os
+path = 'path\\to\\your\\directory\\'
+files = os.listdir (path)
+for i in files:
+    if i.endswith('.py'):
+        os.system("python "+path+i)
+
+

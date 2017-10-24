@@ -1,0 +1,19 @@
+Im trying to call a python file containing a sentence/word tokenizer from my php file like this:
+$output = shell_exec('python tokenizer.py $sentence')
+
+I've tried single exec, full paths to python and tokenizer.py, wrapping $sentence in double quotes. But logically, It should not be the problem because calling print(1) at the beginning of python the python code before actually using any nltk packages makes $output equal to '1'. So I came to conclusion that the problem here is the nltk itself, like the path to the modules is not correct or something...
+But, calling python from the shell using the same command as above gives me fully tokenized output! To conclude: looks like when calling python from php magically 'turns off' nltk, while it fully works when executed from the shell.
+Here's the part of the python code I am using:
+import sys
+import nltk
+from nltk.tokenize import sent_tokenize
+
+sample_text2 = sys.argv[1]
+gust = sent_tokenize(sample_text2)
+#print(1) here doesn't work, but everywhere above (before calling sent_tokenize) it does.
+
+The server's running on CentOS (Linux), I am accessing it via SSH.
+Obvious question: What am I doing wrong here with PHP? Or generally? Any alternatives?
+EDIT
+As visible in dvhh's answer and its comments, the situation happened because there were two versions installed on the server (2.6 and 2.7), while the www user had access to 2.6 and through console, the default version was 2.7. The solution was to change the default python to 2.7 for both cases and to put the nltk modules to one of the dependency folders. (Or append the dependency directory using sys.path.append)
+

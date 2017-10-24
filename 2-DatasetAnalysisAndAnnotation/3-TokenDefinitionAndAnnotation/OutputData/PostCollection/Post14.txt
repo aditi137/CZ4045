@@ -1,0 +1,10 @@
+Here's how I'd write it:
+search = re.compile(r'^The.*said').search
+match = search(input)
+if match:
+    match = match.group(0)
+
+If input is "The cat said my name", match will be "The cat said".
+If input is "The cat never mentioned my name", match will be None.
+I really like the fact that Python makes it possible to compile a regular expression and assign the particular method of interest to a variable in one line.
+

@@ -1,0 +1,12 @@
+My data looks like:
+{12,} {13,} {10,}
+{16,} {17, 15,} {22,}
+{27,} {28,24,29,} {28,} {28,}
+
+Each line is a sequence. For each line, if multiple numbers occur in {  }, I want to sort them in each bracket(ascending sort ), while keeping the order of the rest. At last, I want to remove the brackets. So I want my output to be like this:
+12, 13, 10
+16, 15, 17, 22
+27, 24, 28, 29, 28, 28
+
+My thought was converting each line into a list, but then I was totally stuck.
+

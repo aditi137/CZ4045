@@ -1,0 +1,5 @@
+since col is list . u can just copy list items to angles and append it
+angles=col[:]
+angles.append(angle)
+
+

@@ -1,0 +1,14 @@
+This is not atomic but it works.
+os.path.islink(filename) and not os.path.exists(filename)
+Indeed by RTFM
+ (reading the fantastic manual) we see
+
+os.path.exists(path)
+Return True if path refers to an existing path. Returns False for  broken symbolic links.
+
+It also says:
+
+On some platforms, this function may return False if permission is not granted to execute os.stat() on the requested file, even if the path physically exists.
+
+So if you are worried about permissions, you should add other clauses.
+

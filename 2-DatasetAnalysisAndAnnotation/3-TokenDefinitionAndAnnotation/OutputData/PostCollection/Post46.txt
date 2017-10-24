@@ -1,0 +1,2 @@
+core.exceptions is part of django; what version of django do you have installed? The AppEngine comes with the appropriate version for whatever release you've downloaded (in the lib/django directory). It can be installed by going to that directory and running python setup.py install
+

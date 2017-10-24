@@ -1,0 +1,7 @@
+A more conventional way to store "meta" data along with a dict would be either:
+
+to maintain two dicts with same set of keys, one for the actual data, one for "meta"
+to have a dict with ("raw") keys, and values are 2-tuples: ( value, item-meta-data )
+
+Both are simple and require no special magic.  You would also avoid problems like the one you describe in your question (and others to come).
+

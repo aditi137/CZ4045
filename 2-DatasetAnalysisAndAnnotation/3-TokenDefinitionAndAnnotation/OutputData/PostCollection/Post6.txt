@@ -1,0 +1,9 @@
+If you want to use Django's ORM without using the full Django suite, then you need to configure it before you run.
+You can create a django settings file and point the DJANGO_SETTINGS_MODULE environment variable to it, or you can call settings.configure.
+The documentation explains this here. It's pretty straightforward:
+from django.conf import settings
+
+settings.configure(DEBUG=True, ONE_SETTING=1, ANOTHER_SETTING=2, SOME_SETTING=3)
+
+Note that if you're only interested in default settings, you probably don't actually need to pass any settings in there.
+

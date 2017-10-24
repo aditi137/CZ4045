@@ -1,0 +1,8 @@
+You could just enumerate the files like so
+files = [self.model_file, self.model_file2, self.model_file3]
+values = [1 ,5 ,7]
+for n in range(len(value)):  
+    pickle_model(self.model, files[n]) 
+
+Does this answer the question?
+

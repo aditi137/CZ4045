@@ -1,0 +1,14 @@
+If you just want to copy the file then just do that using shutil. There are still several things that openpyxl doesn't support such as images and charts that will be lost. And, as you're seeing, memory is an issue. Each cell uses about 45 kB of memory.
+The openpyxl documentation is pretty clear about the different options used when opening workbooks: data_only only read the results of any formulae and ignore the formulae.
+See https://bitbucket.org/openpyxl/openpyxl/issue/171/copy-worksheet-function if you want to copy worksheets.
+Otherwise you can use two workbooks, one in read-only mode and the other in write-only mode. But if you want to copy, this is best done in the file system.
+If you only want to copy the values from one workbook to another then you can combine read-only and write-only modes to reduce the memory footprint. The following pseudo-code should give you a basis.
+wb1 = load_workbook("file.xlsx", read_only=True, data_only=True)
+wb2 = Workbook(write_only=True)
+for ws1 in wb1:
+    ws2 = wb2.create_sheet(ws1.title)
+    for r1 in ws1:
+        ws2.append(r1) # this might need unpacking to use values
+wb2.save("copy.xlsx")
+
+

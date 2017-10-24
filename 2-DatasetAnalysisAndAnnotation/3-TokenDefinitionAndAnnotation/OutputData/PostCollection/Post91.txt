@@ -1,0 +1,2 @@
+You could use a supervisor. A well known one that's written in Python would be supervisord, a more recent one also in Python would be Circus, and then there are Monit or daemontools and probably many more.
+

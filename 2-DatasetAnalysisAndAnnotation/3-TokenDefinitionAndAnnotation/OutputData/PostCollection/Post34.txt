@@ -1,0 +1,2 @@
+What you're looking for is spelled: if isinstance(handler, StreamHandler): - but I'd really like to know why you want to do such a thing instead of using the sensible solution (ie not configuring a StreamHandler for your logger at all...). 
+

@@ -1,0 +1,28 @@
+np.argsort(A) is sorting each row of A separately. For example,
+In [21]: np.argsort([[6,5,4],[3,2,1]])
+Out[21]: 
+array([[2, 1, 0],
+       [2, 1, 0]])
+
+Instead, you want to flatten your array into a 1-dimensional array of values, then argsort that. That can be done by setting the axis parameter to None (thanks to @Akavall for pointing this out):
+In [23]: np.argsort(A, axis=None)
+Out[23]: array([3, 0, 1, 2])
+
+Then use np.unravel_index to recover the associated index in A.
+
+In [14]: import numpy as np
+
+In [15]: A = np.array([[7, 8], [9, 5]])   
+
+In [4]: np.column_stack(np.unravel_index(np.argsort(A, axis=None)[::-1], A.shape))
+Out[4]: 
+array([[1, 0],
+       [0, 1],
+       [0, 0],
+       [1, 1]])
+
+Note, for NumPy version 1.5.1 or older, np.unravel_index raises a ValueError if passed an array-like object for its first argument. In that case, you could use a list comprehension:
+In [17]: [np.unravel_index(p, A.shape) for p in np.argsort(A, axis=None)[::-1]]
+Out[17]: [(1, 0), (0, 1), (0, 0), (1, 1)]
+
+

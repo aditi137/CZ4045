@@ -1,0 +1,26 @@
+Updated solution and workaround for SplitDateTime with required=False:
+forms.py
+from django import forms
+
+class SplitDateTimeJSField(forms.SplitDateTimeField):
+    def __init__(self, *args, **kwargs):
+        super(SplitDateTimeJSField, self).__init__(*args, **kwargs)
+        self.widget.widgets[0].attrs = {'class': 'vDateField'}
+        self.widget.widgets[1].attrs = {'class': 'vTimeField'}  
+
+
+class AnyFormOrModelForm(forms.Form):
+    date = forms.DateField(widget=forms.TextInput(attrs={'class':'vDateField'}))
+    time = forms.TimeField(widget=forms.TextInput(attrs={'class':'vTimeField'}))
+    timestamp = SplitDateTimeJSField(required=False,)
+
+form.html
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="/admin_media/js/core.js"></script>
+<script type="text/javascript" src="/admin_media/js/calendar.js"></script>
+<script type="text/javascript" src="/admin_media/js/admin/DateTimeShortcuts.js"></script>
+
+urls.py
+(r'^admin/jsi18n/', 'django.views.i18n.javascript_catalog'),
+
+

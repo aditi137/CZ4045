@@ -1,0 +1,8 @@
+you don't want the future flag if you're working from the deformable object:
+targetMesh = "pSphere1"    
+blendshapes = cmds.ls(*cmds.listHistory(targetMesh) or [], type= 'blendShape')
+
+To get the actual shapes, you'd add
+source_shapes =  cmds.ls(*cmds.listHistory(*blendshapes) or [], type= 'mesh', ni=True)
+
+

@@ -1,0 +1,2 @@
+You may also want to have a look at httplib2, with examples. I find using httplib2 is more concise than using the built-in HTTP modules.
+

@@ -1,0 +1,11 @@
+An other very good documentation tool is sphinx. It will be used for the upcoming python 2.6 documentation and is used by django and a lot of other python projects.
+From the sphinx website:
+
+Output formats: HTML (including Windows HTML Help) and LaTeX, for printable PDF versions
+Extensive cross-references: semantic markup and automatic links for functions, classes, glossary terms and similar pieces of information
+Hierarchical structure: easy definition of a document tree, with automatic links to siblings, parents and children
+Automatic indices: general index as well as a module index
+Code handling: automatic highlighting using the Pygments highlighter
+Extensions: automatic testing of code snippets, inclusion of docstrings from Python modules, and more
+
+

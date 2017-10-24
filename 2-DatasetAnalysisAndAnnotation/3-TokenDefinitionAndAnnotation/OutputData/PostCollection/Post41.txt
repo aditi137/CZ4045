@@ -1,0 +1,14 @@
+I'm trying to implement some sort of API on tornado and I have such question:
+is it possible to route two urls to one handler separating by method.
+class Handler():
+   def get(self):
+       #only for the first url
+   def post(self):
+       #only for the secornd url
+handlers = [
+   (r"/url1",Handler), #only GET are allowed
+   (r"/url2",Handler), #only POST are allowed
+]
+
+So if someone trying to send POST to the first url he should see error message
+

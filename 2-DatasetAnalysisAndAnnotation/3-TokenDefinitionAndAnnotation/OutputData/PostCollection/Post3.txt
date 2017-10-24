@@ -1,0 +1,40 @@
+I'm trying to find a blendshape deformer from a target mesh in the python maya api. I'm pretty sure I have to iterate through the dependency graph to get the blendshape.
+This is what i'm trying:
+import maya.OpenMaya as OpenMaya
+import maya.OpenMayaAnim as OpenMayaAnim
+
+#Name of our targetmesh.
+targetMesh = "pSphere1"
+
+#Add selection.
+mSel = OpenMaya.MSelectionList()
+mSel.add(targetMesh, True)
+
+#Get MObj
+mObj = OpenMaya.MObject()
+mSel.getDependNode(0, mObj)
+
+#Make iterator.
+itDG = OpenMaya.MItDependencyGraph(mObj,
+                                   OpenMaya.MFn.kBlendShape, 
+                                   OpenMaya.MItDependencyGraph.kUpstream)
+
+while not itDG.isDone():
+    oCurrentItem = itDG.currentItem()
+    blndSkin = OpenMayaAnim.MFnBlendShapeDeformer(oCurrentItem)
+    print blndSkin
+    break
+
+Unfortunately I get no blendshape deformer.
+The same example with maya.cmds:
+import maya.cmds as cmds
+
+targetMesh = "pSphere1"    
+
+history = cmds.listHistory(targetMesh, future=True)
+blndshape = cmds.ls(history, type="blendShape")
+
+print blndshape
+
+Any help would be greatly appreciated!
+

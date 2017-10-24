@@ -1,0 +1,35 @@
+I have a list of lists m which I need to modify
+I need that the sum of each row to be greater than A and the sum of each column to be lesser than B 
+I have something like this
+x = 5     #or other number, not relevant
+rows = len(m)
+cols = len(m[0])
+
+for r in range(rows): 
+    while sum(m[r]) < A:  
+        c = randint(0, cols-1)
+        m[r][c] += x 
+
+for c in range(cols): 
+    cant = sum([m[r][c] for r in range(rows)])
+    while cant > B:
+        r = randint(0, rows-1)
+        if m[r][c] >= x:  #I don't want negatives
+            m[r][c] -= x
+
+My problem is: I need to satisfy both conditions and, this way, after the second for I won't be sure if the first condition is still met.
+Any suggestions on how to satisfy both conditions and, of course, with the best execution? I could definitely consider the use of numpy
+Edit (an example)
+#input
+m = [[0,0,0],
+    [0,0,0]]
+A = 20
+B = 25
+
+# one desired output (since it chooses random positions)
+m = [[10,0,15],
+    [15,0,5]]
+
+I may need to add 
+This is for the generation of the random initial population of a genetic algorithm, the restrictions are to make them a possible solution, and I would need to run this like 80 times to get different possible solutions
+

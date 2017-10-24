@@ -1,0 +1,30 @@
+How can I generate all the paths to text strings in a HTML document, preferably using BeautifulSoup? 
+I have f.e. this code:
+<DIV class="art-info"><SPAN class="time"><SPAN class="time-date" content="2012-02-28T14:46CET" itemprop="datePublished">
+             28. february 2012
+            </SPAN>
+            14:46
+           </SPAN></DIV><DIV>
+           Something,<P>something else</P>continuing.
+          </DIV>
+
+I'd like to divide HTML code into paths to text strings, like
+str1 >>>  <DIV class="art-info"><SPAN class="time"><SPAN class="time-date" content="2012-02-28T14:46CET" itemprop="datePublished">28. february 2012</SPAN></SPAN></DIV>
+str2 >>>  <DIV class="art-info"><SPAN class="time">14:46</SPAN></DIV>
+str3 >>>  <DIV>Something,continuing.</DIV>
+str4 >>>  <DIV><P>something else</P></DIV>
+
+or
+str1 >>>  <DIV><SPAN><SPAN>28. february 2012</SPAN></SPAN></DIV>
+str2 >>>  <DIV><SPAN>14:46</SPAN></DIV>
+str3 >>>  <DIV>Something,continuing.</DIV>
+str4 >>>  <DIV><P>something else</P></DIV>
+
+or  
+str1 >>>  //div/span/span/28. february
+str2 >>>  //div/span/14:46
+str3 >>>  //div/Something,continuing.
+str4 >>>  //div/p/something else
+
+I've studied BeautifulSoup documentation, but I can't figure out how to do it. Do you have any ideas?
+

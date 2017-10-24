@@ -1,0 +1,5 @@
+Try using a string for fk_name:
+fk_name = 'linea'
+
+As an aside, I recommend that you use the Django convention, and name your models SensorAsignado and Linea instead of sensor_asignado and linea. It will make your code easier to understand for other Django users.
+

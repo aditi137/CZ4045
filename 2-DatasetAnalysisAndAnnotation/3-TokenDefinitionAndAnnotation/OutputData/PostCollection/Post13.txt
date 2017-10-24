@@ -1,0 +1,7 @@
+Here's a regular expression that will find which (if any) of your title keywords appear in c_raw:
+regex = re.compile("(?:Dresses)|(?:Wallets)|(?:Pumps)")
+print regex.findall(c_raw)
+
+The format of (?:Dresses) etc., just means match the letters inside the parenthesis in the order they appear together but don't save them as a regex group.
+As to what c_raw[0] is doing, basically c_raw is a string. In python, you can treat strings as if they are arrays of characters. So, c_raw[0] is saying, give me the 0th index of the array c_raw -- i.e. get the first character of c_raw
+

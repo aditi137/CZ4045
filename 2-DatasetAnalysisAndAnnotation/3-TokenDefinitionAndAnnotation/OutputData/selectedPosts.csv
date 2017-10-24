@@ -1,1325 +1,18 @@
-,0
-0,"Create a new file, copy lines from the old to the new, and do the replacing before you write the lines to the new file.
-"
-1,"Here is one solution:
-from copy import deepcopy
-
-def recursive_sum(int_list):
-    #int_list = deepcopy(int_list)    use this line if don't want to modify original list
-    ret = 0
-    while len(int_list) > 0:
-        elem = int_list.pop(0)
-        if type(elem) == int:
-            ret += elem
-        elif type(elem) == list:
-            int_list.extend(elem)
-        else:
-            raise ValueError
-    return ret
-
-testcase = [1,2,3,[4,5,[6,7,8,[9,10]]]]
-print recursive_sum(testcase)    # print 55
-
-Basically, it pops first element of input list. If it's Int, add into sum; if it's List, extend to the end of input list
-"
-2,"Thanks for your support and i have finally written my code and its working great here it is   
-import lxml import etree    
-for event, element in etree.iterparse(the_xml_file):
-    if 'TV' in element.tag:
-        print element.text
-
-"
-3,"Assuming both Latitude and Longitude are Integers:
-'<a href=""http://maps.google.com/maps?z=12&t=m&q=loc:'+str(p['latitude'])+'+'+str(p['longitude'])+'"">Click Here</a>'
-
-Try This.
-Your mistake is that you are not concatenating the strings properly.
-"
-4,"I installed lxml on a mac and trying to use it in my code and I get errors importing tostring and tounicode. Python cannot see it at all. Any ideas what I am doing wrong?
-Here is the code that is causing problems - 
-from lxml.etree import tostring
-from lxml.etree import tounicode
-
-I get an unresolved import error 
-Also my IDE (eclipse) is able to see the init.py file for lxml.etree module. Here is what it sees ---
-# this is a package
-
-def get_include():
-    """"""
-    Returns a list of header include paths (for lxml itself, libxml2
-    and libxslt) needed to compile C code against lxml if it was built
-    with statically linked libraries.
-    """"""
-    import os
-    lxml_path = __path__[0]
-    include_path = os.path.join(lxml_path, 'includes')
-    includes = [include_path, lxml_path]
-
-    for name in os.listdir(include_path):
-        path = os.path.join(include_path, name)
-        if os.path.isdir(path):
-            includes.append(path)
-
-    return includes
-
-Thanks for any help.
-EDIT:
-The only log I see is 
-    Unresolved import: tostring
-    Unresolved import: tounicode
-And when I add the following line before the import of tostring it works no errors --
-    import etree from lxml
-Also to give you some more background on what I am trying to do. I got the readability code from here (https://github.com/buriy/python-readability) and trying to use it in my project. 
-EDIT2: I fixed the problem but still do not understand why. I wanted to use the code from the readability project directly without installing the package using easy_install. The idea was step into the code so that I understand what its doing. But when I copy the code into my project I get the above mentioned error in the readability code. If I install the package using easy_install then all I can simply import the class exported by readability and use it.
-So can some one tell me what the difference is between using the code directly and the package installed? What is a .egg file? How to create one?
-"
-5,"The size of the file is sent as the Content-Length header. Here is how to get it with urllib:
->>> site = urllib.urlopen(""http://python.org"")
->>> meta = site.info()
->>> print meta.getheaders(""Content-Length"")
-['16535']
->>>
-
-"
-6,"http://www.b-list.org/weblog/2007/nov/02/handle-choices-right-way/
-
-class Entry(models.Model):
-    LIVE_STATUS = 1
-    DRAFT_STATUS = 2
-    HIDDEN_STATUS = 3
-    STATUS_CHOICES = (
-        (LIVE_STATUS, 'Live'),
-        (DRAFT_STATUS, 'Draft'),
-        (HIDDEN_STATUS, 'Hidden'),
-    )
-    # ...some other fields here...
-    status = models.IntegerField(choices=STATUS_CHOICES, default=LIVE_STATUS)
-
-live_entries = Entry.objects.filter(status=Entry.LIVE_STATUS)
-draft_entries = Entry.objects.filter(status=Entry.DRAFT_STATUS)
-
-if entry_object.status == Entry.LIVE_STATUS:
-
-
-This is another nice and easy way of implementing enums although it doesn't really save enums in the database.
-However it does allow you to reference the 'label' whenever querying or specifying defaults as opposed to the top-rated answer where you have to use the 'value' (which may be a number).
-"
-7,"I am not sure about input format that user will enter. There are two possibities:
-code:
-n=int(input(""enter the no of workers \n""))
-print(""enter the names of workers"")
-NameList=[]
-for i in range(n):
-    NameList.append(input())
-print(NameList)
-
-possibility 1:
-enter the no of workers 
-4
-enter the names of workers
-name1
-name2
-name3
-name4
-['name1', 'name2', 'name3', 'name4']
-working great...!!
-possibility 2:
-input will be : 
-enter the no of workers 
-4
-enter the names of workers
-name1 name2 name3 name4
-in this case my code will fail. I'll need to write different code( i know how to write that ;) ) to accept this format of input.
-So is there anyway that one code will work for both input formats. By treating spaces as Enter. Thanks
-"
-8,"Read this document:
-http://docs.celeryproject.org/en/latest/internals/app-overview.html
-The App is an instance of the Celery library, you can subclass app to override almost any part and corner of how Celery behaves.
-"
-9,"In case anyone needs it, I created Whooshstore, which is essentially a Whoosh-based, pure Python clone of GNU id utils that provides incremental updates, pagination and a Python API.
-The command line client works like this:
-ws-update -b --index my.idx datadir  # build the index
-ws-update -b --append --index my.idx datadir  # incremental update
-ws --index my.idx hello world     # query the index
-
-(-b is for batch updating, which is faster but requires more memory. For the full CLI syntax use --help.)
-It does not come close to the speed of GNU id utils, but by updating the index using several incremental batch (in-memory) updates it's fast enough for us.
-"
-10,"
-What does the list consist of that we only want elements 0-5?
-
-To be precise, request.endpoint is not a list, it's a string. And it doesn't matter what the rest of it contains, the code is only concerned with it beginning with 'auth.':
-('auth.somethingsomething'[:5] == 'auth.') is True
-
-I don't have much experience with Flask so I can't specify what possible auth.* values exist, but it's probably values like auth.username and auth.password.
-If you're curious about what value it contains, you can add a debugging breakpoint to the code and inspect it:
-# ... previous app code ...
-import pdb; pdb.set_trace()
-request.endpoint[:5] != 'auth.'
-
-Then run and test the code. When it hits that point, it'll pause execution and give you a pdb shell, which will let you look at the request object and its endpoint attribute.
-"
-11,"You should call it using the class instead of object. So change your call to
-QuizWizard.as_view(question_forms)(request)
-
-Update:
-The wizard view takes form class list as parameters not the form instance. You are creating form instances in question_forms and passing it to view.
-If you want to pass instance for the form in each step, you can pass instance_dict.
-Something like ...
-inst_dict = { '0': question_forms[0], #step 0 instance
-              '1': question_forms[1], #step 1 instance
-            }
-QuestFormList = [QuestionForm, QuestionForm ...]
-QuizWizard.as_view([QuestFormList, instance_dict=inst_dict)(request)
-
-"
-12,"The following is the a simple BeautifulSoup code which has the two internal JavaScript( dont blame about the JavaScript it is just for testing purpose).
-from bs4 import BeautifulSoup
-html = """"""
-<html><head><title>The Dormouse's story</title>
-<script>
-
-var x = 5;
-var y = 6;
-document.getElementById(""demo"").innerHTML = x + y;
-//document.getElementById(""demo"").innerHTML = x;
-//document.getElementById(""demo"").innerHTML = y;
-
-</script>
-<script>
-
-var x = 5;
-var y = 6;
-document.getElementById(""demo"").innerHTML = x + y;
-//document.getElementById(""demo"").innerHTML = x;
-//document.getElementById(""demo"").innerHTML = y;
-
-</script>
-
-</head>
-<body>
-<p class=""title""><b>The Dormouse's story</b></p>
-
-<p class=""story"">Once upon a time there were three little sisters; and their names were
-<a href=""http://example.com/elsie"" class=""sister"" id=""link1"">Elsie</a>,
-<a href=""http://example.com/lacie"" class=""sister"" id=""link2"">Lacie</a> and
-<a href=""http://example.com/tillie"" class=""sister"" id=""link3"">Tillie</a>;
-and they lived at the bottom of a well.</p>
-
-<p class=""story"">...</p>
-""""""
-soup = BeautifulSoup(html)
-soup.script.decompose()
-print soup.prettify()
-
-when I ran this code it remove only one <script>...</script> from the document(Dom tree) but it don't remove all other script tags. How can we remove all the <script>, <style>(internal and inline) tags which are existing in the document 
-"
-13,"For anyone who happens upon this question: I used anaconda installer, and now everything works perfectly. I would avoid the path I took and go directly to anaconda.
-"
-14,"@property defined as int
-The following code is taken from Python Docs:
-class Parrot(object):
-    def __init__(self):
-        self._voltage = 100000
-
-    @property
-    def voltage(self):
-        """"""Get the current voltage.""""""
-        return self._voltage
-
-When I run:
-parrot = Parrot()
-print(parrot.voltage)
-parrot.voltage = 100
-print(parrot.voltage)
-
-I get the following output (as expected, as no setter is defined)
-{0: 100000}
-Traceback (most recent call last):
-   File ""prop.py"", line 13, in <module>
-     parrot.voltage = 100
- AttributeError: can't set attribute
-
-@property defined as dict
-However, if I define self._voltage = {} the property becomes writeable:
-class Parrot(object):
-    def __init__(self):
-        self._voltage = {}
-        self._voltage[0] = 100000
-
-    @property
-    def voltage(self):
-        """"""Get the current voltage.""""""
-        return self._voltage
-
-parrot = Parrot()
-print(parrot.voltage)
-parrot.voltage[0] = 100
-print(parrot.voltage)
-
-The output is then:
-{0: 100000}
-{0: 100}
-
-Same behavior in Python 2.7.9 and Python 3.4.3. Why is the property writeable, even if no setter is explicitly defined in the code? Here it was proposed to subclass dict to get this behavior. However, it seems that this not required.
-"
-15,"Pythonic way (Python 2)
-dict1 = {
-    'a': 'Apple',
-    'b': 'Boy'
-}
-
-dict2 = {
-    'c': 'Cow',
-    'd': 'Dog'
-}
-
-merged_dict = dict1.copy()
-merged_dict.update(dict2)
-
-"
-16,"import os
-f=os.popen('df -h')
-drive_usage=f.read()
-drive_usage.split()
-email('test','Critical! Drive usage is very high!')
-for x in range(4,len(drive_usage)-1,6):
-    s2 = drive_usage[x][0:len(drive_usage[x])]
-    drive_usage[x] = s2
-    if drive_usage[x]>90:
-        #email admin
-
-This code should read the output of df -h on an ubuntu 12.04 server, split the output of the command into a list, and then trim the '%' character off, so that the drive usage can be used as a comparator in an if statement. Then, if it's above 90%, it should email the server admins. 
-However, drive_usage[x] = s2 triggers the 'str' object does not support item assignment. To my knowledge, this should not be triggering, as that line should be accessing a string in a list, not a character in a string. Any help or advice would be appreciated!
-"
-17,"So, I have this forum I am building. I'm having trouble writing an elegant select query to get all the posts for a certain topic from the db. Here's the schema:
-Table posts have the following structure:
-   id int(5) not null auto_increment,
-   user_id int(5) not null,
-   topic_id int(5) not null,
-   post_date datetime not null,
-
-Now, there's also a table called attachments, where post attachments are referenced. I want to be able to select the attachments of a particular post with just one query. Here's the attachments table structure:
-   id int(5) not null auto_increment,
-   post_id int(5) not null,
-   post_name varchar(255) not null default '',
-   path varchar(255) not null,
-
-This is not what my tables look like really. I just want a basic idea how to do it. I can't even think of the least of solutions. Now the attachment table has a foreign key that references the post table. But, a post could possibly have many attachments. So how do I select a post and all its attachment in just one query? Maybe subqueries could work?
-"
-18,"I'm fairly new to python and have found that I need to query a list about whether it contains a certain item.
-The majority of the postings I have seen on various websites (including this similar stackoverflow question) have all suggested something along the lines of
-for i in list
-    if i == thingIAmLookingFor
-        return True
-
-However, I have also found from one lone forum that 
-if thingIAmLookingFor in list
-    # do work
-
-works.  
-I am wondering if the if thing in list method is shorthand for the for i in list method, or if it is implemented differently.
-I would also like to which, if either, is more preferred.
-"
-19,"QColor supports the HSL representation. You want to limit the range of lightness:
-QColor limitLightness(const QColor & color) {
-  auto hsl = src.toHsl();
-  auto h = hsl.hslHueF();
-  auto s = hsl.hslSaturationF();
-  auto l = hsl.lightnessF();
-  qreal const lMin = 0.25;
-  qreal const lMax = 0.75;
-  return QColor::fromHslF(h, s, qBound(lMin, lMax, l));
-}
-
-"
-20,"In Python3:
->>> import urllib.request
->>> site = urllib.request.urlopen(""http://python.org"")
->>> print(""FileSize: "", site.length)
-
-"
-21,"The shortest way would probably be to use the fileinput module. For example, the following adds line numbers to a file, in-place:
-import fileinput
-
-for line in fileinput.input(""test.txt"", inplace=True):
-    print ""%d: %s"" % (fileinput.filelineno(), line),
-
-What happens here is:
-
-The original file is moved to a backup file
-The standard output is redirected to the original file within the loop
-Thus any print statements write back into the original file
-
-fileinput has more bells and whistles. For example, it can be used to automatically operate on all files in sys.args[1:], without your having to iterate over them explicitly. Starting with Python 3.2 it also provides a convenient context manager for use in a with statement.
-
-While fileinput is great for throwaway scripts, I would be wary of using it in real code because admittedly it's not very readable or familiar. In real (production) code it's worthwhile to spend just a few more lines of code to make the process explicit and thus make the code readable.
-There are two options:
-
-The file is not overly large, and you can just read it wholly to memory. Then close the file, reopen it in writing mode and write the modified contents back.
-The file is too large to be stored in memory; you can move it over to a temporary file and open that, reading it line by line, writing back into the original file. Note that this requires twice the storage.
-
-"
-22,"For Python 2 :
-x = {'a':1, 'b': 2}
-y = {'b':10, 'c': 11}
-z = dict(x.items()+y.items())
-print(z)
-
-For Python 3:
-x = {'a':1, 'b': 2}
-y = {'b':10, 'c': 11}
-z = dict(x.items()|y.items())
-print(z)
-
-It gives output:{'a': 1, 'c': 11, 'b': 10}
-"
-23,"It seems you're talking of a Numpy array.
-shape returns a tuple with the same size as the number of dimensions of the array. Each value of the tuple is the size of the array along the corresponding dimensions, or, as the tutorial says: 
-
-An array has a shape given by the number of elements along each axis.
-
-Here you have a 1D-array (as indicated with a 1-element tuple notation, with the coma (as @Amadan) said), and the size of the 1st (and only dimension) is 38845.
-For example (3,4) would be a 2D-array of size 3 for the 1st dimension and 4 for the second.
-You can check the documentation for shape here: http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.shape.html
-"
-24,"I have a solution which is not specified here(Man I LOVE python) :-)
-z = {}
-z.update(x) or z.update(y)
-
-This will not update x as well as y. Performance? I don't think it will be terribly slow :-)
-NOTE: It is supposed to be 'or' operation and not 'and' operation. Edited to correct the code.
-"
-25,"I apologize if this is a silly question. But I tried to google this and I couldn't find anything to point me in the right direction. I'd just like to understand what I need to do to 'set-up' cdt to 'understand' my python.h include.
-the erroneous statement is this:
-#include <Python.h>
-
-but I also tried
-#include ""Python.h""
-
-And CDT responds with an error sign on the side stating:
-Multiple markers at this line
-- fatal error: Python.h: No such file or 
- directory
-- Unresolved inclusion: <Python.h>
-
-I am using Eclipse CDT Juno on Ubuntu 12.04. Any pointers would be great!
-"
-26,"I ended up just manually looking at each cell. I have to read them all into my data structures before I can process anything anyways so it actually made sense to check then.
-"
-27,"
-I'll try to be brief. Well.. I always try to be brief, but my level of success is pretty much random.randint(0, never). So yeah.
-
-Lol. You even failed to be brief about announcing that you will try to be brief.
-First, we need to be clear about what ""called into being"" means. Presumably you want a new hammer every time self.tool = object happens. You don't want a new instance every time, for example, you access the tool attribute, or you'd always a get a new, presumably unbroken, hammer every time you check self.tool.broken.
-A couple approaches.
-One, give Tool a copy method that produces a new object that should equal the original object, but be a different instance. For example:
-class Tool:
-
-    def __init__(self, kind):
-        self.kind = kind
-        self.broken = False
-
-    def copy(self):
-        result = Tool(self.kind)
-        result.broken = self.broken
-        return result
-
-Then in Student's init you say
-    self.tool = tool.copy()
-
-Option two, use a factory function.
-def makehammer():
-    return Tool(hammer)
-
-class Student:
-    def __init__(self, factory):
-        self.tool = factory()
-
-Billy = Student(makehammer)
-
-I can't think any way in Python that you can write the line self.tool = object and have object automagically make a copy, and I don't think you want to. One thing I like about Python is WYSIWYG. If you want magic use C++. I think it makes code hard to understand when you not only can't tell what a line of code is doing, you can't even tell it's doing anything special.
-Note you can get even fancier with a factory object. For example:
-class RealisticFactory:
-    def __init__(self, kind, failurerate):
-        self.kind = kind
-        self.failurerate = failurerate
-
-    def make(self):
-        result = Tool(self.kind)
-        if random.random() < self.failurerate:
-            result.broken = True
-        if (self.failurerate < 0.01):
-            self.failurerate += 0.0001
-        return result
-
-factory = RealisticFactory(hammer, 0.0007)
-Billy = Student(factory.make)
-Tommy = Student(factory.make) # Tommy's tool is slightly more likely to be broken
-
-"
-28,"In Python, what are the running time and space complexities if a list is converted to a set?
-Example:
-data = [1,2,3,4,5,5,5,5,6]
-
-# this turns list to set and overwrites the list
-data = set(data)
-
-print data 
-# output will be (1,2,3,4,5,6)
-
-"
-29,"I'm following this tutorial:
-http://zetcode.com/tutorials/pyqt4/firstprograms/
-and on the very first example I don't understand why does the application show only after the command:
-sys.exit(app.exec_())
-
-Also, I modified the code slightly to test things
-import sys
-from PyQt4 import QtGui
-
-
-if __name__ == ""__main__"":
-    app = QtGui.QApplication(sys.argv)
-    w = QtGui.QWidget()
-    w.resize(250,150)
-    w.move(300,300)
-    w.setWindowTitle(""Title"")
-    w.show()
-    sys.exit(app.exec_())
-
-If I run this in the terminal and comment out the last line it will only show the window after running the last line.
-I don't quite understand what the last line does.
-EDIT:
-I'm also confused as to why there isn't a reference of app and w i'd expect some kind of indication that w is a child or something of app.
-I'm running it in Spyder and an IPython interpreter.
-"
-30,"Resetting the listbox width worked for me. I used the Oblivion's answer and noticed that only width is always zero.
-listbox = tk.Listbox(master, selectmode=tk.SINGLE)
-listbox.config(width=0)
-
-I also recommend to reset root window geometry after reloading content of the list. If user manually extends the window the window would stop accommodate size of its content.
-root.winfo_toplevel().wm_geometry("""")
-
-"
-31,"Hi hope you're still looking for an answer. Here is how I solved it:
-add a file called hook-psutil.py
-from PyInstaller.hooks.hookutils import (collect_data_files, collect_submodules)
-
-datas = [('./venv/lib/python2.7/site-packages/psutil/_psutil_linux.so', 'psutil'),
-         ('./venv/lib/python2.7/site-packages/psutil/_psutil_posix.so', 'psutil')]
-hiddenimports = collect_submodules('psutil')
-
-And then call pyinstaller --additional-hooks-dir=(the dir contain the above script) script.py
-"
-32,"x = [1,1,2,3,54,3,1]
-y = [1,1,0,0,0,0,1]
-any([i[0]==i[1] for i in zip(x,y)])
-
-"
-33,"I'm getting this error on creating a string with arguments like ""abcd%s""%(e) but I'm getting e by scraping a web page. Can anyone please tell me what is the best way to avoid this error. 
-I found other similar questions but they were using %20 in the url for which they need to replace %20 with %%20 which solved their problem. But my case is different. I tried encoding e but still getting same error.
-ValueError: unsupported format character 'W' (0x57)
-
-"
-34,"I understand that in order to find a nested document that I am to use the dot notation, but I need what follows the dot be in variable form. I am doing the following:
-collection.update_one(
-                    {'_id': md5_hash}, 
-                    {'$addToSet' : {
-                     'src_id': src_id,
-                     'offset.src_id' : offset}}
-                                  )
-
-and getting 
-{
-        ""_id"" : ""de03fe65a6765caa8c91343acc62cffc"",
-        ""total_count"" : 1,
-        ""src_id"" : [
-                ""a3c1b98d5606be7c5f0c5d14ffb0b741""
-        ],
-        ""offset"" : {
-                ""a3c1b98d5606be7c5f0c5d14ffb0b741"" : [
-                        512
-                ],
-                ""src_id"" : [
-                        512,
-                        1024,
-                        1536,
-                        2048,
-                        2560,
-                        3072,
-                        3584,
-                        4096,
-                        4608
-                ]
-        },
-        ""per_source_count"" : {
-                ""a3c1b98d5606be7c5f0c5d14ffb0b741"" : 1
-        }
-}
-
-I don't want ""src_id"" in the offset document I want to add to the a3c1b98d5606be7c5f0c5d14ffb0b741 key. I am using python3.5 and pymongo version 3.2.2. Thanks!
-"
-35,"This type of problem is well suited to Numpy masked arrays:
-import numpy.ma as ma
-
-x = ma.array([1,1,2,3,54,3,1])
-y = ma.array([1,1,1,1,1,1,1], mask=[0,0,1,1,1,1,0])
-
-print x==y           # [True True -- -- -- -- True]
-print ma.all(x==y)   # True
-
-Of course, the use here may not merit installing and importing numpy, but it has advantages in some situations.
-"
-36,"This is the best I could come up with for now.
-df.set_index('Time').groupby(pd.TimeGrouper('5T')) \
-    .apply(lambda df: df.reset_index()).unstack() \
-    .resample('5T').last().stack(dropna=False)
-
-"
-37,"The line json=data should have been data=data. The json attribute accepts a dictionary, which that data string is not. Here is what working code looks like:
-import json
-import requests
-url = 'https://inputtools.google.com/request?itc=ja-t-i0-handwrit&app=demopage'
-
-data = '{""app_version"":0.4,""api_level"":""537.36"",""device"":""Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"",""input_type"":0,""options"":""enable_pre_space"",""requests"":[{""writing_guide"":{""writing_area_width"":200,""writing_area_height"":200},""pre_context"":"""",""max_num_results"":1,""max_completions"":0,""ink"":[[[100,100],[20,180],[0,1]],[[20,180],[100,100],[2,3]]]}]}'
-
-headers = {'content-type': 'application/json'}
-
-r = requests.post(url, json=data, headers=headers)
-print r.json() 
-
-"
-38,"Is there a more pythonic way than doing:
- parsedStr=origStr[compiledRegex.match(origStr).start():compiledRegex.match(origStr).end())
-
-For exampile assume my original string is ""The cat said hi"" and my compiled regex is ""The.*said"" I would pull the text ""The cat said""
-The above code looks ugly but that's how i've been doing it
-"
-39,"I know this may sounds like a duplicate question, but that's because I don't know how to describe this question properly. 
-For some reason I got a bunch of unicode string like this:
-a = u'\xcb\xea'
-
-As you can see, it's actually bytes representation of a Chinese character, encoding in gbk
->>> print(b'\xcb\xea'.decode('gbk'))
-岁
-
-u'岁' is what I need, but I don't know how to convert u'\xcb\xea' to b'\xcb\xea'.
-Any suggestions?
-"
-40,"I have three lists (L1, L2, L3), something like :
-L1 = [1,2]
-L2 = ['a','b']
-L3 = ['A','B']
-
-I want to compute the product of L1*L2*L3, id est,
-itertools.product(L1,L2,L3) = [ [1,'a','A'], [1,'a','B'], ... ]
-
-but I want to take or not in account some lists; hence,[1,], [ 1, 'a' ] would be a part of the result, like ['a',], ['a', 'B'] and so on.
-Any idea to help me ? Thanks !
-"
-41,"The error message in the question does not come from the subprocess. It was generated before the subprocess execution. You cannot capture that error using stderr option.
-Make sure there's ding program in the path.
-"
-42,"I'm working on a simple text-based trivia game as my first python project, and my program won't terminate once the score limit is reached.
-def game(quest_list):
-    points = 0
-    score_limit = 20
-
-    x, y = info()
-    time.sleep(2)
-
-    if y >= 18 and y < 100:
-        time.sleep(1)
-        while points < score_limit:
-            random.choice(quest_list)(points)
-            time.sleep(2)
-            print(""Current score:"", points, ""points"")
-        print(""You beat the game!"")
-        quit()
-    ...
-
-"
-43,"use the s parameter.
-from pandas.tools.plotting import scatter_matrix
-
-df = pd.DataFrame(np.random.rand(10, 2))
-scatter_matrix(df, alpha=0.5, figsize=(8, 8), diagonal='kde', s=1000)
+,post
+0,"I am writing a simple Python for loop to prnt the current character in a string. However, I could not get the index of the character. Here is what I have, does anyone know a good way to get the current index of the character in the loop?
+ loopme = 'THIS IS A VERY LONG STRING WITH MANY MANY WORDS!'
 
+ for w  in loopme:
+    print ""CURRENT WORD IS "" + w + "" AT CHARACTER "" 
 
 "
-44,"I'm aware of numpy.argsort(), but what it does is return indices of elements in an array that would be sorted along a certain axis.
-What I need is to sort all the values in an N-dimensional array and have a linear list of tuples as as result.
-Like this:
->>> import numpy
->>> A = numpy.array([[7, 8], [9, 5]])
->>> numpy.magic(A)
-[(1, 0), (0, 1), (0, 0), (1, 1)]
+1,"How would I replace the the hard coded 'python' with snippet['language'] from a for loop in my view?
+{% highlight 'python', lineno='inline' -%}
+    {{snippet['code']}}
+{% endhighlight %}
 
-P.S. I don't even understand what the output of argsort is trying to tell me for this array.
-"
-45,"Personally, I would try to implement JQuery like API in a GUI framework.
-class MyWindow(Window):
-    contents = (
-        para('Hello World!'),
-        button('Click Me', id='ok'),
-        para('Epilog'),
-    )
-
-    def __init__(self):
-        self['#ok'].click(self.message)
-        self['para'].hover(self.blend_in, self.blend_out)
-
-    def message(self):
-        print 'You clicked!'
-
-    def blend_in(self, object):
-        object.background = '#333333'
-
-    def blend_out(self, object):
-        object.background = 'WindowBackground'
-
-"
-46,"Keep a look out for ASP.NET MVC
-The IronRuby guys have got some internal builds of MVC to work with IronRuby, and IronPython 2 and IronRuby have a lot of code in common with the DLR.
-I'm not sure if they'll support IronPython/IronRuby when MVC is released, but it's definitely worth keeping your eye on anyway - The old ASP.NET forms-based development model is old, busted, and the sooner it goes away the better.
-"
-47,"It seems that this will do
-product = np.dot(A,A.T)
-np.fill_diagonal(product,0)
-if (product.any() == 0):
-
-"
-48,"Can I run a Python folder or directory as a whole to execute all the .py files in it?
-Edit: I'm using Windows Powershell.
-"
-49,"What about just assigning a class to your widget and then binding that class to the JQuery datepicker?
-Django forms.py:
-class MyForm(forms.ModelForm):
-
-  class Meta:
-    model = MyModel
-
-  def __init__(self, *args, **kwargs):
-    super(MyForm, self).__init__(*args, **kwargs)
-    self.fields['my_date_field'].widget.attrs['class'] = 'datepicker'
-
-And some JavaScript for the template:
-  $("".datepicker"").datepicker();
-
-"
-50,"I am trying to archive a remote git repo using Python code. I did it successfully using Git command line with following command.
-> git archive --format=zip --remote=ssh://path/to/my/repo -o archived_file.zip     
-HEAD:path/to/directory filename
-
-This command fetches the required file from the repo and stores the zip in my current working directory. Note that there is no cloning of remote repo happening.
-Now I have to do it using Python code. I am using GitPython 1.0.1. I guess if it is doable using command line then it should be doable using GitPython library. According to the docs, 
-repo.archive(open(join(rw_dir, 'archived_file.zip'), 'wb'))
-
-Above line of code will archive the repo. Here repo is the instance of Repo class. It can be initialized using
-repo = Repo('path to the directory which has .git folder')
-
-If I give path to my remote repo(Ex. ssh://path/to/my/repo) in above line it goes to find it in directory where the .py file containing this code is residing(Like, Path\to\python\file\ssh:\path\to\my\repo), which is not what I want. So to sum up I can archive a local repo but not a remote one using GitPython. I may be able to archive remote repo if I am able to create a repo instance pointing to the remote repo. I am very new to Git and Python.
-Is there any way to archive a remote repo using Python code without cloning it in local?
-"
-51,"You can generate the truth table using a powerset,
-def power_set(items):
-    n = len(items)
-    for i in xrange(2**n):
-        combo = []
-        for j in xrange(n):
-            if (i >> j) % 2 == 1:
-                combo.append(1)
-            else:
-                combo.append(0)
-        yield combo    # if you want tuples, change to yield tuple(combo)
-
-
-In [13]: list(power_set(l))
-Out[13]: [[0, 0], [1, 0], [0, 1], [1, 1]]
-
-In [14]: l=['B','C','E']
-
-In [15]: list(power_set(l))
-Out[15]: 
-[[0, 0, 0],
-[1, 0, 0],
- [0, 1, 0],
- [1, 1, 0],
- [0, 0, 1],
- [1, 0, 1],
- [0, 1, 1],
- [1, 1, 1]]
-
-If you want to  make a dict of the data, change yield combo to yield tuple(combo)
-Then you can store key value pairings  like:
-d={}
-for data in power_set(l):
-    d[data]=""your_calc_prob""
-print d
-{(0, 1): 'your_calc_prob', (1, 0): 'your_calc_prob', (0, 0): 'your_calc_prob', (1, 1): 'your_calc_prob'}
-
-If you want the output sorted you can use sorted() which makes a copy of the list and returns a list:
- sorted(list(power_set(l)))
- Out[21]: 
- [[0, 0, 0],
- [0, 0, 1],
- [0, 1, 0],
- [0, 1, 1],
- [1, 0, 0],
- [1, 0, 1],
- [1, 1, 0],
- [1, 1, 1]]
-
-Or you can use the list method sort() which sorts the list  in place:
-In [22]: data = list(power_set(l))  
-In [23]: data.sort()
-In [24]: data
-Out[24]: 
-[[0, 0, 0],
-[0, 0, 1],
-[0, 1, 0],
-[0, 1, 1],
-[1, 0, 0],
-[1, 0, 1],
-[1, 1, 0],
-[1, 1, 1]]
-
-"
-52,"I have just picked up Python to develop a tool and I am so far really enjoying the language, however have one issue I am not entirely sure how to solve.
-I am looking to use a few external libraries in my project, at the moment cherryPy and Cheetah however I am not sure how to package up my application so that these libraries are included. Coming from a .NET world the compiler used to do pretty much everything for me.
-Have done a bit of googling but have not been able to find any solution, so I must be missing something fundamental. Is this something I need to configure distutils for? Do I need to copy the libs in to my application folder structure anywhere? Both?
-Appreciate any advice please. :)
-"
-53,"The best way to achieve this seems to be to create a new generator class expanding the one provided by Keras that parses the data augmenting only the images and yielding all the outputs.
-"
-54,"if position <= 18:
-    ...
-elif position == 18:
-    ...
-
-Both the if and elif branches are catching position if position == 18 (note the <= in the if statement), so the elif branch will never be executed.
-"
-55,"Actually i used both beautiful soup and element tree(for xml parsing)
-fetch all elements in <span> 
-# -*- coding: UTF-8 -*-
-
-from bs4 import *
-import xml.etree.ElementTree as ET
-
-html='''<html>
-<head>
-    <title></title>
-</head>
-
-<body>
-    <table class=""dayinner"">
-        <tr class=""lun"">
-            <td class=""mealname"" colspan=""3"">LUNCH</td>
-        </tr>
-
-        <tr class=""lun"">
-            <td class=""station"">&nbsp;Deli</td>
-
-            <td class=""menuitem"">
-                <div class=""menuitem"">
-                    <input class=""chk"" id=""S1L0000010000047598_35356"" onclick=
-                    ""rptlist(this);"" onmouseout=""wschk(0);"" onmouseover=
-                    ""wschk(1);"" type=""checkbox""> <span class=""ul"" onclick=
-                    ""nf('0000047598_35356');"" onmouseout=""pcls(this);""
-                    onmouseover=""ws(this);"">Made to Order Deli Core</span>
-                </div>
-            </td>
-
-            <td class=""price""></td>
-        </tr>
-
-        <tr class=""lun"">
-            <td class=""station"">&nbsp;</td>
-
-            <td class=""menuitem"">
-                <div class=""menuitem"">
-                    <input class=""chk"" id=""S1L0000020000047933_06835"" onclick=
-                    ""rptlist(this);"" onmouseout=""wschk(0);"" onmouseover=
-                    ""wschk(1);"" type=""checkbox""> <span class=""ul"" onclick=
-                    ""nf('0000047933_06835');"" onmouseout=""pcls(this);""
-                    onmouseover=""ws(this);"">Turkey Chipotle Petite Wrap</span>
-                </div>
-            </td>
-
-            <td class=""price""></td>
-        </tr>
-
-        <tr class=""lun"">
-            <td colspan=""3"" style=""height:3px;""></td>
-        </tr>
-
-        <tr class=""lun"">
-            <td colspan=""3"" style=""background-color:#c0c0c0; height:1px;""></td>
-        </tr>
-
-        <tr class=""lun"">
-            <td class=""station"">&nbsp;Entrée</td>
-
-            <td class=""menuitem"">
-                <div class=""menuitem""><input class=""chk"" id=
-                ""S1L0000030000044794_08943"" onclick=""rptlist(this);""
-                onmouseout=""wschk(0);"" onmouseover=""wschk(1);"" type=""checkbox"">
-                <span class=""ul"" onclick=""nf('0000044794_08943');"" onmouseout=
-                ""pcls(this);"" onmouseover=""ws(this);"">Steamed
-                Corn</span><img alt=""Vegan"" class=""icon"" src=
-                ""images/g_062.gif""><img alt=""Mindful Item"" class=""icon"" src=
-                ""images/m_051.gif""></div>
-            </td>
-
-            <td class=""price""></td>
-        </tr>
-
-        <tr class=""lun"">
-            <td class=""station"">&nbsp;</td>
-
-            <td class=""menuitem"">
-                <div class=""menuitem"">
-                    <input class=""chk"" id=""S1L0000040000033087_22244"" onclick=
-                    ""rptlist(this);"" onmouseout=""wschk(0);"" onmouseover=
-                    ""wschk(1);"" type=""checkbox""> <span class=""ul"" onclick=
-                    ""nf('0000033087_22244');"" onmouseout=""pcls(this);""
-                    onmouseover=""ws(this);"">Cuban Mojo Roasted Pork Loin</span>
-                </div>
-            </td>
-
-            <td class=""price""></td>
-        </tr>
-    </table>
-</body>
-</html> '''
-
-soup = BeautifulSoup(html)
-
-counter = ET.Element('counter')
-counter.set(""name"", ""#Deli"")
-
-
-
-
-
-for i in soup.findAll('span'):
-    dish = ET.SubElement(counter, 'dish')
-    name = ET.SubElement(dish, 'name')
-    name.text= i.text.replace('\n',' ')
-
-print ET.dump(counter)
-
-"
-56,"Adapting Wayne Werner's solution you can do this to add the digit uniqueness constraint (assuming Python 3):
-[(9*num, num) 
- for num in range(10000, 100000 // 9) 
- if len(set(str(num) + str(num * 9))) == 10]
-
-This runs in 1.5 ms on my machine.
-Note, that you can only check numbers between 10000 and 100000 / 9 = 11111. 
-And if you want to allow preceding zeros, you can do it like this:
-[(9*num, num) 
- for num in range(0, 100000 // 9) 
- if len(set((""%05d"" % num) + (""%05d"" % (num * 9)))) == 10]
-
-And this one takes 15 ms.
-"
-57,"Yep, I ended up overriding the /admin/jsi18n/ url.
-Here's what I added in my urls.py.  Make sure it's above the /admin/ url
-    (r'^admin/jsi18n', i18n_javascript),
-
-And here is the i18n_javascript function I created.
-from django.contrib import admin
-def i18n_javascript(request):
-  return admin.site.i18n_javascript(request)
-
-"
-58,"The if thing in somelist is the preferred and fastest way.
-Under-the-hood that use of the in-operator translates to somelist.__contains__(thing) whose implementation is equivalent to:  any((x is thing or x == thing) for x in somelist).
-Note the condition tests identity and then equality.
-"
-59,"I'm trying to connect to website with python requests, but not with my real IP. So, I found some proxy on the internet and wrote this code:
-import requests
-
-proksi = {
-    'http': 'http://5.45.64.97:3128'
-}
-
-x = requests.get('http://www.whatsmybrowser.org/', proxies = proksi)
-print(x.text)
-
-When I get output, proxy simple don't work. Site returns my real IP Address. What I did wrong? Thanks.
-"
-60,"I had a similar problem: how to catch broken symlinks, even when they occur in some parent dir?  I also wanted to log all of them (in an application dealing with a fairly large number of files), but without too many repeats.
-Here is what I came up with, including unit tests.
-fileutil.py:
-import os
-from functools import lru_cache
-import logging
-
-logger = logging.getLogger(__name__)
-
-@lru_cache(maxsize=2000)
-def check_broken_link(filename):
-    """"""
-    Check for broken symlinks, either at the file level, or in the
-    hierarchy of parent dirs.
-    If it finds a broken link, an ERROR message is logged.
-    The function is cached, so that the same error messages are not repeated.
-
-    Args:
-        filename: file to check
-
-    Returns:
-        True if the file (or one of its parents) is a broken symlink.
-        False otherwise (i.e. either it exists or not, but no element
-        on its path is a broken link).
-
-    """"""
-    if os.path.isfile(filename) or os.path.isdir(filename):
-        return False
-    if os.path.islink(filename):
-        # there is a symlink, but it is dead (pointing nowhere)
-        link = os.readlink(filename)
-        logger.error('broken symlink: {} -> {}'.format(filename, link))
-        return True
-    # ok, we have either:
-    #   1. a filename that simply doesn't exist (but the containing dir
-           does exist), or
-    #   2. a broken link in some parent dir
-    parent = os.path.dirname(filename)
-    if parent == filename:
-        # reached root
-        return False
-    return check_broken_link(parent)
-
-Unit tests:
-import logging
-import shutil
-import tempfile
-import os
-
-import unittest
-from ..util import fileutil
-
-
-class TestFile(unittest.TestCase):
-
-    def _mkdir(self, path, create=True):
-        d = os.path.join(self.test_dir, path)
-        if create:
-            os.makedirs(d, exist_ok=True)
-        return d
-
-    def _mkfile(self, path, create=True):
-        f = os.path.join(self.test_dir, path)
-        if create:
-            d = os.path.dirname(f)
-            os.makedirs(d, exist_ok=True)
-            with open(f, mode='w') as fp:
-                fp.write('hello')
-        return f
-
-    def _mklink(self, target, path):
-        f = os.path.join(self.test_dir, path)
-        d = os.path.dirname(f)
-        os.makedirs(d, exist_ok=True)
-        os.symlink(target, f)
-        return f
-
-    def setUp(self):
-        # reset the lru_cache of check_broken_link
-        fileutil.check_broken_link.cache_clear()
-
-        # create a temporary directory for our tests
-        self.test_dir = tempfile.mkdtemp()
-
-        # create a small tree of dirs, files, and symlinks
-        self._mkfile('a/b/c/foo.txt')
-        self._mklink('b', 'a/x')
-        self._mklink('b/c/foo.txt', 'a/f')
-        self._mklink('../..', 'a/b/c/y')
-        self._mklink('not_exist.txt', 'a/b/c/bad_link.txt')
-        bad_path = self._mkfile('a/XXX/c/foo.txt', create=False)
-        self._mklink(bad_path, 'a/b/c/bad_path.txt')
-        self._mklink('not_a_dir', 'a/bad_dir')
-
-    def tearDown(self):
-        # Remove the directory after the test
-        shutil.rmtree(self.test_dir)
-
-    def catch_check_broken_link(self, expected_errors, expected_result, path):
-        filename = self._mkfile(path, create=False)
-        with self.assertLogs(level='ERROR') as cm:
-            result = fileutil.check_broken_link(filename)
-            logging.critical('nothing')  # trick: emit one extra message, so the with assertLogs block doesn't fail
-        error_logs = [r for r in cm.records if r.levelname is 'ERROR']
-        actual_errors = len(error_logs)
-        self.assertEqual(expected_result, result, msg=path)
-        self.assertEqual(expected_errors, actual_errors, msg=path)
-
-    def test_check_broken_link_exists(self):
-        self.catch_check_broken_link(0, False, 'a/b/c/foo.txt')
-        self.catch_check_broken_link(0, False, 'a/x/c/foo.txt')
-        self.catch_check_broken_link(0, False, 'a/f')
-        self.catch_check_broken_link(0, False, 'a/b/c/y/b/c/y/b/c/foo.txt')
-
-    def test_check_broken_link_notfound(self):
-        self.catch_check_broken_link(0, False, 'a/b/c/not_found.txt')
-
-    def test_check_broken_link_badlink(self):
-        self.catch_check_broken_link(1, True, 'a/b/c/bad_link.txt')
-        self.catch_check_broken_link(0, True, 'a/b/c/bad_link.txt')
-
-    def test_check_broken_link_badpath(self):
-        self.catch_check_broken_link(1, True, 'a/b/c/bad_path.txt')
-        self.catch_check_broken_link(0, True, 'a/b/c/bad_path.txt')
-
-    def test_check_broken_link_badparent(self):
-        self.catch_check_broken_link(1, True, 'a/bad_dir/c/foo.txt')
-        self.catch_check_broken_link(0, True, 'a/bad_dir/c/foo.txt')
-        # bad link, but shouldn't log a new error:
-        self.catch_check_broken_link(0, True, 'a/bad_dir/c')
-        # bad link, but shouldn't log a new error:
-        self.catch_check_broken_link(0, True, 'a/bad_dir')
-
-if __name__ == '__main__':
-    unittest.main()
-
-"
-61,"I'm trying to work out a function to find specific patterns in a list.  For example if we take the list 
-x = [1,1,2,3,54,3,1]
-
-I want to then check if the pattern y shows up in the list x:
-y = [1,1,n,n,n,n,1]
-
-where n represents any number.  So in my example it would return True.
-I've looked into the any() function and I haven't been able to work much out. 
-"
-62,"In Python 3.5 you can use unpack ** in order to create new dictionary. 
-This method has no been showed in past answers. Also, it's better to use {} instead of dict(). Because {} is a python literal and dict() involves a function call.
-dict1 = {'a':1}
-dict2 = {'b':2}
-new_dict = {**dict1, **dict2}
->>>new_dict
-{'a':1, 'a':2}
-
-"
-63,"If your session.execute writes were not successful (they did not meet the required consistency level), then the driver will raise one of the following exceptions:
-
-Unavailable - There were not enough live replicas to satisfy the requested consistency level, so the coordinator node immediately failed the request without forwarding it to any replicas.
-Timeout - Replicas did not respond to the coordinator before cassandra timeout.
-Write timeout - Replicas did not respond to the coordinator before the write timeout. Configured in cassandra.yaml. There is a similar timeout for reads, read and write timeouts are configured separately in the yaml.
-Operation timeout - Operation took longer than the specified client side timeout. Configure in your application code.
-
-You can try tracing your queries and find out what exactly happened for each write. This will show you the coordinators and the replica nodes involved in the operation and how much time the request spent in each.
-"
-64,"I have a xml file ""sample.xml"" as:
-<?xml version=""1.0"" encoding=""UTF8"" ?>
-< !DOCTYPE nodedescription SYSTEM ""sample.dtd"" >
-<node_description>
-    <target id=""windows 32bit"">
-        <graphics>nvidia_970</graphics>
-        <power_plug_type>energenie_eu</power_plug_type>
-        <test>unit test</test>
-   </target>
-   <target id=""windows 64bit"">
-       <graphics>nvidia_870</graphics>
-       <power_plug_type>energenie_eu</power_plug_type>
-       <test>performance test</test>
-   </target>
-</node_description>
-
-and respective dtd as ""sample.dtd"":
-<?xml version=""1.0"" encoding=""UTF-8""?>
-<!ELEMENT node_description (target)*>
-<!ATTLIST target id CDATA #REQUIRED>
-<!ELEMENT target (graphics, power_plug_type, test)>
-<!ELEMENT graphics (#PCDATA)*>
-<!ELEMENT power_plug_type (#PCDATA)*>
-<!ELEMENT test (#PCDATA)*>
-
-I want ""sample.xml"" to get validated against ""sample.dtd"" by making use of python script. How will i achieve this? kindly help.
-"
-65,"What I'm trying to do is apply a dynamic background color to black text.
-The color is calculated as a result of a hash of the text.
-The problem is, all too often the color comes out too dark to be able to read the text.
-How can I lighten the color to keep it in a decent visual range (not too dark, not too light)?
-The color can't be brighter than beige or darker than teal.
-(Keep in mind that Blue at 255 is darker than Green at 255, because the human eye is most sensitive to Green and the least sensitive to Blue)
-"
-66,"Embeding the Python interpreter inside your C++ app will let you run Python programs using your application run Python scripts. It will also make it easier possible for those scripts to call C++ functions in your application. If this is what you want then the Boost library mentioned previously may be what you want to make it easier to create the link. In the past I have used SWIG to generate Python interfaces to C++ code. It was not clear from your question whether you wanted the Python scripts to call your C++ program or whether you just wanted the C++ to call Python.
-Many of the Python functions use modules which are not built into the Python interpreter. If your Python scripts call these functions then you will either need to have your users install Python or include the python runtime files with your application. It will depend on what modules you import in you Python scripts.
-"
-67,"The following snippet should do what you want:
-import re
-from xml.etree import ElementTree                                               
-
-with open('films.xml') as f:                                                    
-    xml = ElementTree.parse(f)                                                  
-
-for t in xml.findall('.//{http://www.mediawiki.org/xml/export-0.5/}text'):
-    print '===================='
-    m = re.search(r'(?s).*?{{(Infobox film.*?)}}', t.text)
-    if m:
-        print m.group(1)
-
-The regular expression there begins with (?s), which turns on the DOTALL option, meaning that . matches newlines as well as any other character.  The two instances of .*? are non-greedy matches of any charcter - i.e. they will find the shortest stretch of zero or more characters until the rest of the expression can be matched.
-"
-68,"I am trying to read all the elements in a dictionary one by one. my dictionary is as given below ""test"".
-test ={'line4': (4, 2), 'line3': (3, 2), 'line2': (2, 2), 'line1': (1, 2), 'line10': (10, 2)}
-
-i want to do as given in below sample code.
-for i in range(1,len(test)+1):
-    print test(1) # should print all the values one by one
-
-thank you 
-"
-69,"Installing a module from a git repository in the usual ways does require a setup.py, but it can be a bare minimum one rather than a fuller one like you'd use for a PyPI module. For example:
-#!/usr/bin/env python
-
-from distutils.core import setup
-
-setup(
-    name=""foo"",
-)
-
-If you drop something like that into each of your lib repositories then you can make your requirements file point to the git repo using -e git://git.example.com/foo.git#egg=foo. If you install this into a virtualenv then it will appear at src/foo inside the virtualenv directory, and it'll be added to sys.path automatically when running Python from that virtualenv.
-The -e option also accepts a local directory as a parameter, so if you guarantee that the current working directory will always be the root of your project when you install from requirements.txt (so that the relative path resolves correctly) it should work just fine to write things like -e lib1 in there, and then you can still reference the libraries as git submodules if you want.
-If you are determined not to create a setup.py then your task is to emulate what would happen when running python setup.py develop. This command does two things (as of Python 2.7, at least):
-
-It creates an egg link in the site-packages lib directory in your virtualenv (or system-wide if you don't have a virtualenv) that points to your target source directory.
-It adds a line to easy-install.pth, which is also in the site-packages directory, which also points to your target source directory.
-
-You could choose to do both of the above actions by a means other than running setup.py editable and get the same effect for current versions of Python, but of course the implementation of editable distributions may change in newer versions of Python.
-"
-70,"Here is a solution, it's not the best. Depending of what you want to do with this, I can provide a more specific solution
-word = 'hello'
-temp_word = ''
-temp_word2 = ''
-
-for k in word:
-    temp_word += k
-    print temp_word
-while temp_word:
-    temp_word = temp_word[:-1]
-    print temp_word 
-
-EDIT
-I prefer this version more
-word = 'hello'
-for k in list(range(1,len(word)+1)) + list(range(len(word)-1,1,-1)):
-    print word[:k]
-
-"
-71,"If you're wanting a generic function that replaces any text with some other text, this is likely the best way to go, particularly if you're a fan of regex's:
-import re
-def replace( filePath, text, subs, flags=0 ):
-    with open( filePath, ""r+"" ) as file:
-        fileContents = file.read()
-        textPattern = re.compile( re.escape( text ), flags )
-        fileContents = textPattern.sub( subs, fileContents )
-        file.seek( 0 )
-        file.truncate()
-        file.write( fileContents )
-
-"
-72,"Here's a compact vectorized approach without those error checks -
-def unique_map_pixels_vectorized(imgs):
-    N,H,W = len(imgs), imgs.shape[2], imgs.shape[3]
-    img2D = imgs.transpose(0, 2, 3, 1).reshape(-1,3)
-    ID = np.ravel_multi_index(img2D.T,img2D.max(0)+1)
-    _, firstidx, tags = np.unique(ID,return_index=True,return_inverse=True)
-    return tags.reshape(N,H,W), img2D[firstidx]
-
-Runtime test and verification -
-In [24]: # Setup inputs (3x smaller than original ones)
-    ...: N,H,W = 200,24,32
-    ...: imgs = np.random.randint(0,10,(N,3,H,W))
-    ...: 
-
-In [25]: %timeit unique_map_pixels(imgs)
-1 loop, best of 3: 2.21 s per loop
-
-In [26]: %timeit unique_map_pixels_vectorized(imgs)
-10 loops, best of 3: 37 ms per loop ## 60x speedup!
-
-In [27]: map1,unq1 = unique_map_pixels(imgs)
-    ...: map2,unq2 = unique_map_pixels_vectorized(imgs)
-    ...: 
-
-In [28]: np.allclose(map1,map2)
-Out[28]: True
-
-In [29]: np.allclose(np.array(map(list,unq1)),unq2)
-Out[29]: True
-
-"
-73,"Say I have a list x = ['a','b','c'] to conditionally add a term to this you could do:
-if conditional:
-    x.append('d')
-
-But I can't do this for a tuple (x = ('a','b','c'))
-For both cases is there a 'clean' way of conditional-alising items in a definition. Pseudo code:
-X = (
-    'a',
-    'b',
-    'c',
-    'd' if Y,
-    'e' if Z,
-)
-
-The use case for this is a Django INSTALLED_APPS tuple and urlpatterns list.
-"
-74,"With a row of QListWidgets I wonder if there is a simple way to label each so the user would be able to say which List is which.
-Here is a dialog's screenshot a code posted below results.
-I avoid using any widgets outside of QListWidgets(). Ideal solution would be solved utilizing QListWidgets itself. It would be great if there is a way to place a text line-label similar to those available for QGroupBox with .setTitle('myString'). At very least an ability to place a label as a first list item would be sufficient too... 
-
-
-from PyQt4 import QtGui, QtCore
-
-class MyApp(object):
-    def __init__(self):
-        super(MyApp, self).__init__()
-        app = QtGui.QApplication(sys.argv)
-        self.mainWidget = QtGui.QWidget()
-        self.mainLayout = QtGui.QVBoxLayout()
-        self.mainWidget.setLayout(self.mainLayout)
-
-        self.groupbox = QtGui.QGroupBox()
-        self.groupbox.setTitle('My Groupbox')
-        self.layout = QtGui.QVBoxLayout()
-        self.groupbox.setLayout(self.layout)
-
-        self.listGroupbox = QtGui.QGroupBox()
-        self.listLayout = QtGui.QHBoxLayout()
-        self.listGroupbox.setLayout(self.listLayout)
-        self.listA=QtGui.QListWidget()
-        self.listB=QtGui.QListWidget()
-
-        self.listLayout.addWidget(self.listA)
-        self.listLayout.addWidget(self.listB)
-        self.layout.addWidget(self.listGroupbox) 
-
-        self.okButton = QtGui.QPushButton('OK')
-        self.okButton.clicked.connect(self.OK) 
-        self.layout.addWidget(self.okButton)                      
-        self.mainLayout.addWidget(self.groupbox)
-        self.mainWidget.show()
-        sys.exit(app.exec_())
-
-    def OK(self):
-        print 'Ok'    
-if __name__ == '__main__':
-    MyApp()
-
-
-
-"
-75,"Use threads in python if the individual workers are doing I/O bound operations. If you are trying to scale across multiple cores on a machine either find a good IPC framework for python or pick a different language.
 "
-76,"I'm trying to find a blendshape deformer from a target mesh in the python maya api. I'm pretty sure I have to iterate through the dependency graph to get the blendshape.
+2,"I'm trying to find a blendshape deformer from a target mesh in the python maya api. I'm pretty sure I have to iterate through the dependency graph to get the blendshape.
 This is what i'm trying:
 import maya.OpenMaya as OpenMaya
 import maya.OpenMayaAnim as OpenMayaAnim
@@ -1359,507 +52,1452 @@ print blndshape
 
 Any help would be greatly appreciated!
 "
-77,"I ended up restructuring my project so that the docs directory is at the same level as my project directory that contains all the files. This works when I use sys.path.insert(0, os.path.abspath(""../"")), and it's probably a bit nicer to look at.
-project
-    | docs/
-    | project/
-        | project files, etc.
-    | tests/
+3,"Updated solution and workaround for SplitDateTime with required=False:
+forms.py
+from django import forms
+
+class SplitDateTimeJSField(forms.SplitDateTimeField):
+    def __init__(self, *args, **kwargs):
+        super(SplitDateTimeJSField, self).__init__(*args, **kwargs)
+        self.widget.widgets[0].attrs = {'class': 'vDateField'}
+        self.widget.widgets[1].attrs = {'class': 'vTimeField'}  
+
+
+class AnyFormOrModelForm(forms.Form):
+    date = forms.DateField(widget=forms.TextInput(attrs={'class':'vDateField'}))
+    time = forms.TimeField(widget=forms.TextInput(attrs={'class':'vTimeField'}))
+    timestamp = SplitDateTimeJSField(required=False,)
+
+form.html
+<script type=""text/javascript"" src=""/admin/jsi18n/""></script>
+<script type=""text/javascript"" src=""/admin_media/js/core.js""></script>
+<script type=""text/javascript"" src=""/admin_media/js/calendar.js""></script>
+<script type=""text/javascript"" src=""/admin_media/js/admin/DateTimeShortcuts.js""></script>
+
+urls.py
+(r'^admin/jsi18n/', 'django.views.i18n.javascript_catalog'),
 
 "
-78,"It sounds like you're using Numpy. If so, the shape (38845,) means you have a 1-dimensional array, of size 38845.
-"
-79,"I'm testing a web application using Django-nose to monitor the code coverage. At first it worked perfectly well, but when trying to generate HTML it fails with the error:
-Imput error: No module named copy_reg
-It happened after a few times (until then in worked). I tried it on a computer with newly installed django, django-nose and coverage and the very same code works fine. Re-installing django and django-nose didn't help.
-Any suggestions? Should I re-install any library or something?
-Thank you in advance!
-"
-80,"Right now I'm having trouble with the code restarting. It restarts but it doesn't go back to the beginning. It just keeps asking me if I want to restart.
-For example it says 
-The player has cards [number, number, number, number, number] with a total value of (whatever the numbers add up too.)
-
---> Player is busted!
-
-Start over? Y/N
-
-I type in Y and it keeps saying
-The player has cards [number, number, number, number, number] with a total value of (whatever the numbers add up too.)
-
---> Player is busted!
-
-Start over? Y/N
-
-Can anyone please fix it so that it will restart. - or tell me how to my code is below.
-from random import choice as rc
-def playAgain():
-# This function returns True if the player wants to play again, otherwise it returns False.
-print('Do you want to play again? (yes or no)')
-return input().lower().startswith('y')
-def total(hand):
-# how many aces in the hand
-aces = hand.count(11)
-t = sum(hand)
-# you have gone over 21 but there is an ace
-if t > 21 and aces > 0:
-    while aces > 0 and t > 21:
-        # this will switch the ace from 11 to 1
-        t -= 10
-        aces -= 1
-return t
-cards = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11]
-c2win = 0 # computer2 win
-cwin = 0  # computer win 
-pwin = 0  # player win 
-while True:
-player = []
-player.append(rc(cards))
-player.append(rc(cards))
-pbust = False  # player busted 
-cbust = False  # computer busted
-c2bust = False # computer2 busted
-while True:
-    tp = total(player)
-    print (""The player has cards %s with a total value of %d"" % (player, tp))
-    if tp > 21:
-        print (""--> Player is busted!"")
-        pbust = True
-        print('Start over? Y/N')
-        answer = input()
-        if answer == 'n':
-            done = True
-            break
-    elif tp == 21:
-        print (""\a BLACKJACK!!!"")
-        print(""do you want to play again?"")
-        answer = input()
-        if answer == 'y':
-            done = False
+4,"If a worker name can't include a space, you can check that and change the behavior accordingly.
+This will even work if the user combine the 2 options (e.g. entering 'a' and then 'b c'), although it is not perfect (it is possible to get more than n names, for example if n == 3 and inputting 'a b' and 'c d')
+n = int(input(""enter the no of workers \n""))
+print(""enter the names of workers"")
+NameList = []
+while len(NameList) < n:
+    worker_name = input()
+    if ' ' in worker_name:
+        if NameList:
+            NameList.extend(worker_name.split())
         else:
-            break
+            NameList = worker_name.split()
     else:
-        hs = input(""Hit or Stand/Done (h or s): "").lower()
-        if 'h' in hs:
-            player.append(rc(cards))
-        if 's' in hs:
-            player.append(rc(cards))
-while True:
-    comp = []
-    comp.append(rc(cards))
-    comp.append(rc(cards))
-while True:
-    comp2 = []
-    comp.append(rc(cards))
-    comp.append(rc(cards))
-    while True:
-        tc = total(comp)                
-        if tc < 18:
-            comp.append(rc(cards))
-        else:
-            break
-    print (""the computer has %s for a total of %d"" % (comp, tc))
-    if tc > 21:
-        print (""--> Computer is busted!"")
-        cbust = True
-        if pbust == False:
-            print (""Player wins!"")
-            pwin += 1
-            print('Start over? Y/N')
-        answer = input()
-        if answer == 'y':
-            playAgain()  
-        if answer == 'n':
-            done = True
-    elif tc > tp:
-        print (""Computer wins!"")
-        cwin += 1
-    elif tc == tp:
-        print (""It's a draw!"")
-    elif tp > tc:
-        if pbust == False:
-            print (""Player wins!"")
-            pwin += 1
-        elif cbust == False:
-            print (""Computer wins!"")
-            cwin += 1
-    break
-print
-print (""Wins, player = %d  computer = %d"" % (pwin, cwin))
-exit = input(""Press Enter (q to quit): "").lower()
-if 'q' in exit:
-    break
-print
-print
-print (""Thanks for playing blackjack with the computer!"")
+        NameList.append(worker_name)
+print(NameList)
 
 "
-81,"The closest you can get to rubyish blocks is the with statement from pep343: 
-http://www.python.org/dev/peps/pep-0343/
+5,"If you want to use Django's ORM without using the full Django suite, then you need to configure it before you run.
+You can create a django settings file and point the DJANGO_SETTINGS_MODULE environment variable to it, or you can call settings.configure.
+The documentation explains this here. It's pretty straightforward:
+from django.conf import settings
+
+settings.configure(DEBUG=True, ONE_SETTING=1, ANOTHER_SETTING=2, SOME_SETTING=3)
+
+Note that if you're only interested in default settings, you probably don't actually need to pass any settings in there.
 "
-82,"To answer this specific question:
-
-How do I take object-based inputs and turn them into passable
-  variables?
-
-You access the controls and call the appropriate methods:
-self.resize_txt.GetValue()
-self.file_input.GetPath()
-self.outfile_input.GetPath()
-
-To pass them to your resize, function, just pass those values to your resize_file function.
-resize_file(self.file_input.GetPath(),
-            self.outfile_input.GetPath())
-
-You're asking too many questions here TBH.  You should start with one, and create others as you progress.
-What the heck, I have time to kill before lunch!  I'll give you a few pointers.
-Let's look at this function:
-def resize_file(filename, filename2 = None)
-
-Looking at this function, I really have no idea what the inputs are to the function.  It says filename and an optional filename2.  Which of these is being resized?  How do I know what each parameter does?  You did not document this function, which made me dig off into your code to try to determine what it does.
-So, I dug off into your code...  And it appears that this particular function resizes and possibly appends pdfs.  Notice how in your code, you execute the same code twice?
-fIn1 = file(os.path.join(inputDir,filename), 'rb')
-
-inp1 = PdfFileReader(fIn1)
-p1 = inp1.getPage(0)
-p1.scale(.5,.5)
-output.addPage(p1)
-
-if filename2 is not None:
-    fIn2 = file(os.path.join(inputDir,filename2), 'rb')
-    inp2 = PdfFileReader(fIn2)
-    p2 = inp2.getPage(0)
-    p2.scale(.50,.50)
-    output.addPage(p2)
-
-Don't do this.  Use the DRY principle.  You should have a loop, as the algorithm is basically the same.  (Can't illustrate the loop atm, running out of time before lunch, maybe when I get back :P)
-You could even get fancy and have your function take an indefinite amount of PDF files.  Check this snippet out:
-def resize_file(*args):
-    output = PdfFileWriter()
-
-    for filename in args:
-        fIn1 = file(os.path.join(inputDir, filename), 'rb')
-        inp1 = PdfFileReader(fIn1)
-        p1 = inp1.getPage(0)
-        p1.scale(.5,.5)
-        output.addPage(p1)
-
-    outputStream = file(os.path.join(validateDir,str(fileout) + '.pdf'),""wb"")
-    output.write(outputStream)
-    outputStream.close()
-
-Ok, I lied, I tried to squeeze this in before lunch.  The code above may not work out of the box, but it should point you in the general direction.  You should add error catching to check for when no arguments are passed (among other things).
-Hope it helps!
+6,"GObjects don't have to be widgets. For example, your application class can be a GObject which defines signals that other widgets connect to.
+Also, I don't think you understood the Shotwell design document correctly. It looks to me like their signalling system is 100% GObject signalling system, just with particular guarantees about the order in which signals are handled. As they say in their design document, such things are possible in plain GObject, but Vala makes it easier to code it their way.
 "
-83,"I'm using python version 2.7.3.
-test.txt:
-<?xml version=""1.0"" encoding=""UTF-8""?>
-<root>
-    <test>The tag &lt;StackOverflow&gt; is good to bring up at parties.</test>
-</root>
+7,"My solution to this, that I hope can be bettered, is to use Oracle to explicitly convert the TIMESTAMP into a string:
+cursor.execute(""SELECT TO_CHAR(WhenAdded, 'YYYY-MM-DD HH:MI:SSAM') FROM Log"")
 
-Result:
->>> import xml.etree.ElementTree as ET
->>> e = ET.parse('test.txt')
->>> root = e.getroot()
->>> print root.find('test').text
-The tag <StackOverflow> is good to bring up at parties.
-
-As you can see, the parser must have changed the &lt;'s to <'s etc.
-What I'd like to see:
-The tag &lt;StackOverflow&gt; is good to bring up at parties.
-Untouched, raw text. Sometimes I really like it raw. Uncooked.
-I'd like to use this text as-is for display within HTML, therefore I don't want an XML parser to mess with it.
-Do I have to re-escape each string or can there be another way?
+This works, but isn't portable. I'd like to use the same Python script against a SQL Server database, so an Oracle-specific solution (such as TO_CHAR) won't work.
 "
-84,"Bartosz/To clarify ""This worked okay, but there was no easy way of checking if x[3][24] was supposed to exist or not""
-x['some show'][3][24] would return season 3, episode 24 of ""some show"". If there was no season 3, I want the pseudo-dict to raise tvdb_seasonnotfound, if ""some show"" doesn't exist, then raise tvdb_shownotfound
-The current system of a series of classes, each with a __getitem__ - Show checks if self.seasons.has_key(requested_season_number), the Season class checks if self.episodes.has_key(requested_episode_number) and so on.
-It works, but it there seems to be a lot of repeated code (each class is basically the same, but raises a different error)
-"
-85,"I don't have pexpect handy to test my answer to your question, but I have a suggestion that should work and, if not, may at least get you closer.  
-Consider this command:
-$ ssh oak 'ftp << EOF
-lpwd
-quit
-EOF'
-Local directory: /home/jklowden
-$ 
+8,"For one, you could create a custom subclass of GObject, which provides some custom signals. The following example is a slightly adapted version of the one given in the linked article:
+import pygtk
+pygtk.require('2.0')
+import gobject
 
-What is happening?  The entire quoted string is passed as a single argument to ssh, where it is ""executed"" on the remote.  While ssh isn't explicit about what that means, exactly, we know what execv(2) does: if execve(2) fails to execute its passed arguments, the execv function will invoke /bin/sh with the same arguments (in this case, our quoted string).  The shell then evaluates the quoted string as separate arguments, detects the HereDoc redirection, and executes per usual.  
-Using that information, and taking a quick look at the pexpect.pxssh documentation, it looks like you want:
-s = pxssh.pxssh()
-...
-s.sendline('ftp << EOF\nlpwd\nquit\nEOF')
+class Car(gobject.GObject):
 
-If that doesn't work, something is munging your data.  Five minutes with strace(1) will tell you what happened to it, and you can start pointing fingers.  ;-)
-HTH.  
-"
-86,"What makes you think your only have one connection to redis? Actually my little test shows that your server is indeed opening lots of connections to redis.
-To make the test more clear, I modified your print statement a bit:
-print '%s' % parameters['index'], 'in_use_conn:', len(p._in_use_connections), 'created_connections:', p._created_connections, 'available_conn:', len(p._available_connections)
+    __gsignals__ = {
+        'engine-started': (gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, ()),
+        'engine-stopped': (gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, ()),
+    }
 
-Then run this script to make some requests:
-for i in {1..20}
-do
-    wget http://127.0.0.1:7332/top?index=$i > /dev/null 2>&1 &
-done
+    def __init__(self):
+        gobject.GObject.__init__(self)
+        self._state = 0
 
-And here's what I got:
-['1'] in_use_conn: 1 created_connections: 2 available_conn: 1
-['2'] in_use_conn: 4 created_connections: 5 available_conn: 1
-['3'] in_use_conn: 3 created_connections: 5 available_conn: 2
-['4'] in_use_conn: 5 created_connections: 6 available_conn: 1
-['6'] in_use_conn: 4 created_connections: 6 available_conn: 2
-['5'] in_use_conn: 3 created_connections: 6 available_conn: 3
-['7'] in_use_conn: 2 created_connections: 6 available_conn: 4
-['10'] in_use_conn: 1 created_connections: 6 available_conn: 5
-['8'] in_use_conn: 0 created_connections: 6 available_conn: 6
-['14'] in_use_conn: 10 created_connections: 11 available_conn: 1
-['11'] in_use_conn: 9 created_connections: 11 available_conn: 2
-['12'] in_use_conn: 8 created_connections: 11 available_conn: 3
-['16'] in_use_conn: 7 created_connections: 11 available_conn: 4
-['15'] in_use_conn: 6 created_connections: 11 available_conn: 5
-['13'] in_use_conn: 5 created_connections: 11 available_conn: 6
-['20'] in_use_conn: 4 created_connections: 11 available_conn: 7
-['19'] in_use_conn: 3 created_connections: 11 available_conn: 8
-['9'] in_use_conn: 2 created_connections: 11 available_conn: 9
-['17'] in_use_conn: 1 created_connections: 11 available_conn: 10
-['18'] in_use_conn: 0 created_connections: 11 available_conn: 11
+    def start(self):
+        if not self._state:
+            self._state = 1
+            self.emit('engine-started')
 
-It can be seen that at peek time you have 10 greenlets running simultaneously, waiting for sockets. Your code looks perfectly fine to me. Why 'the performance is bad' is another story. It could be your sorted set of 'online' is tooo large. Or more likely you are using a blocking client to test the server, in which case you'll see only one connection to redis.
-"
-87,"Setting choices on the field will allow some validation on the Django end, but it won't define any form of an enumerated type on the database end.
-As others have mentioned, the solution is to specify db_type on a custom field.
-If you're using a SQL backend (e.g. MySQL), you can do this like so:
-from django.db import models
+    def stop(self):
+        if self._state:
+            self._state = 0
+            self.emit('engine-stopped')
 
 
-class EnumField(models.Field):
-    def __init__(self, *args, **kwargs):
-        super(EnumField, self).__init__(*args, **kwargs)
-        assert self.choices, ""Need choices for enumeration""
+gobject.type_register(Car)
 
-    def db_type(self, connection):
-        if not all(isinstance(col, basestring) for col, _ in self.choices):
-            raise ValueError(""MySQL ENUM values should be strings"")
-        return ""ENUM({})"".format(','.join(""'{}'"".format(col) 
-                                          for col, _ in self.choices))
+def kill_switch(c):
+    def callback(*unused, **ignored):
+        c.stop()
+    return callback
 
+def on_start(*unused, **ignored):
+    print ""Started...""
 
-class IceCreamFlavor(EnumField, models.CharField):
-    def __init__(self, *args, **kwargs):
-        flavors = [('chocolate', 'Chocolate'),
-                   ('vanilla', 'Vanilla'),
-                  ]
-        super(IceCreamFlavor, self).__init__(*args, choices=flavors, **kwargs)
+def on_stop(*unused, **ignored):
+    print ""Stopped...""
 
+some_car = Car()
+some_car.connect('engine-started', on_start)
+some_car.connect('engine-started', kill_switch(some_car))
+some_car.connect('engine-stopped', on_stop)
+some_car.start()
 
-class IceCream(models.Model):
-    price = models.DecimalField(max_digits=4, decimal_places=2)
-    flavor = IceCreamFlavor(max_length=20)
+Another approach would be to take advantage of one of the many event/signalling packages already on PyPI, for example:
 
-Run syncdb, and inspect your table to see that the ENUM was created properly.
-mysql> SHOW COLUMNS IN icecream;
-+--------+-----------------------------+------+-----+---------+----------------+
-| Field  | Type                        | Null | Key | Default | Extra          |
-+--------+-----------------------------+------+-----+---------+----------------+
-| id     | int(11)                     | NO   | PRI | NULL    | auto_increment |
-| price  | decimal(4,2)                | NO   |     | NULL    |                |
-| flavor | enum('chocolate','vanilla') | NO   |     | NULL    |                |
-+--------+-----------------------------+------+-----+---------+----------------+
+Zope Event
+Louie
+PyDispatcher
+Darts Events
+Trellis
 
 "
-88,"Since version 4.3.0 dated 2017-01-31, Anaconda comes with seaborn installed by default. Try upgrading your Anaconda installation.
+9,"I need to classify some values between two classes.
+I have about 30 values that I can use as a training set and each value has 10 different dimensions.
+I am using libSVM (in Python) and it seems that it works quite well.
+I am trying also to give an interpretation to the model computed by libSVM, because I think that some dimensions are more ""important"" than others in the classification process.
+For instance, consider the following example:
+y, x = [1,1,1,-1,-1,-1],[[1,-1],[1,0],[1,1],[-1,-1],[-1,0],[-1,1]]
+prob  = svm_problem(y, x)
+param = svm_parameter()
+param.kernel_type = LINEAR
+param.C = 10
+m = svm_train(prob, param)
+svm_save_model('model_file', m)
+
+It is clear that the second dimension of x list's elements is useless to classify this data set.
+My question is:
+is there any systematic way to detect these kind of situations analyzing the model generated by libSVM?
 "
-89,"Looks like you have a header of 24 binary bytes before your utf16-encoded string starts. So you can read the file as binary and decode afterwards:
-with open(filename, ""rb"") as data:
-    header = data.read(24)
-    text = data.read().decode('utf-16-le')
+10,"I have a file that I am currently reading from using
+fo = open(""file.txt"", ""r"")
 
-But probably there are other binary parts. Without knowing the exact file format, there cannot be given more help.
+Then by doing
+file = open(""newfile.txt"", ""w"")
+file.write(fo.read())
+file.write(""Hello at the end of the file"")
+fo.close()
+file.close()
+
+I basically copy the file to a new one, but also add some text at the end of the newly created file. How would I be able to insert that line say, in between two lines separated by an empty line? I.e:
+line 1 is right here
+                        <---- I want to insert here
+line 3 is right here
+
+Can I tokenize different sentences by a delimiter like \n for new line?
 "
-90,"The quickstart.py example sets the scope to:
-https://www.googleapis.com/auth/spreadsheets.readonly
-
-To update the spreadsheet you need to set the scope to:
-https://www.googleapis.com/auth/spreadsheets
-
-You can do this by first deleting the existing authentication file in ~/.credentials (that is the location on a raspberry.). It will likely be called ""sheets.googleapis.com-python-quickstart.json.
-After you removed it you will need to re-authenticate, which should happen automatically when you re-run the script.
+11,"This could be an oversimplification, i don't think it would be a good idea to try to make a general purpose ui library this way. On the other hand you could use this approach (metaclasses and friends) to simplify the definition of certain classes of user interfaces for an existing ui library and depending of the application that could actually save you a significant amount of time and code lines.
 "
-91,"I hope I can find help for my question. I am searching for a solution for the following problem:
-I have a dataFrame like:
- Sp  Mt Value  count
-0  MM1  S1   a      **3**
-1  MM1  S1   n      2
-2  MM1  S3   cb     5
-3  MM2  S3   mk      **8**
-4  MM2  S4   bg     **10**
-5  MM2  S4   dgd      1
-6  MM4  S2  rd     2
-7  MM4  S2   cb      2
-8  MM4  S2   uyi      **7**
+12,"Here's a regular expression that will find which (if any) of your title keywords appear in c_raw:
+regex = re.compile(""(?:Dresses)|(?:Wallets)|(?:Pumps)"")
+print regex.findall(c_raw)
 
-My objective is to get the result rows whose count is max between the groups, like :
-0  MM1  S1   a      **3**
-1 3  MM2  S3   mk      **8**
-4  MM2  S4   bg     **10** 
-8  MM4  S2   uyi      **7**
-
-Somebody knows how can I do it in pandas or in python?
-UPDATE
-I didn't give more details for my question. For my problem, I want to group by ['Sp','Mt'].  Let take a second example like this :
-   Sp   Mt   Value  count
-4  MM2  S4   bg     10
-5  MM2  S4   dgd    1
-6  MM4  S2   rd     2
-7  MM4  S2   cb     8
-8  MM4  S2   uyi    8
-
-For the above example, I want to get ALL the rows where count equals max in each group e.g :
-MM2  S4   bg     10
-MM4  S2   cb     8
-MM4  S2   uyi    8
-
+The format of (?:Dresses) etc., just means match the letters inside the parenthesis in the order they appear together but don't save them as a regex group.
+As to what c_raw[0] is doing, basically c_raw is a string. In python, you can treat strings as if they are arrays of characters. So, c_raw[0] is saying, give me the 0th index of the array c_raw -- i.e. get the first character of c_raw
 "
-92,"The recursion is happening fine, but temp_dir is not a directory so it passes control to your stub else block. You can see this if you put print(file_path) outside your if block.
-temp_dir is the name of the next directory, not its absolute path. ""C:/users/adsmith/tmp/folder"" becomes just ""folder"". Use os.path.abspath to get that
-self.convert(os.path.abspath(temp_dir))
+13,"Here's how I'd write it:
+search = re.compile(r'^The.*said').search
+match = search(input)
+if match:
+    match = match.group(0)
 
-Although the canonical way to do this (as mentioned in my comment on the question) is to use os.walk.
-class FileProcessor(object):
-    def convert(self, file_path):
-        for root, dirs, files in os.walk(file_path):
-            # if file_path is C:/users/adsmith, then:
-            #   root == C:/users/adsmith
-            #   dirs is an iterator of each directory in C:/users/adsmith
-            #   files is an iterator of each file in C:/users/adsmith
-            # this walks on its own, so your next iteration will be
-            # the next deeper directory in `dirs`
+If input is ""The cat said my name"", match will be ""The cat said"".
+If input is ""The cat never mentioned my name"", match will be None.
+I really like the fact that Python makes it possible to compile a regular expression and assign the particular method of interest to a variable in one line.
+"
+14,"np.argsort(A) is sorting each row of A separately. For example,
+In [21]: np.argsort([[6,5,4],[3,2,1]])
+Out[21]: 
+array([[2, 1, 0],
+       [2, 1, 0]])
 
-            for i, d in enumerate(dirs):
-                # this is also preferred to setting a counter var and incrementing
-                print(i, "":"", d)
-                # no need to recurse here since os.walk does that itself
-            for fname in files:
-                # do something with the files? I guess?
+Instead, you want to flatten your array into a 1-dimensional array of values, then argsort that. That can be done by setting the axis parameter to None (thanks to @Akavall for pointing this out):
+In [23]: np.argsort(A, axis=None)
+Out[23]: array([3, 0, 1, 2])
+
+Then use np.unravel_index to recover the associated index in A.
+
+In [14]: import numpy as np
+
+In [15]: A = np.array([[7, 8], [9, 5]])   
+
+In [4]: np.column_stack(np.unravel_index(np.argsort(A, axis=None)[::-1], A.shape))
+Out[4]: 
+array([[1, 0],
+       [0, 1],
+       [0, 0],
+       [1, 1]])
+
+Note, for NumPy version 1.5.1 or older, np.unravel_index raises a ValueError if passed an array-like object for its first argument. In that case, you could use a list comprehension:
+In [17]: [np.unravel_index(p, A.shape) for p in np.argsort(A, axis=None)[::-1]]
+Out[17]: [(1, 0), (0, 1), (0, 0), (1, 1)]
 
 "
-93,"I have to apologise in advance 'cause this question is quite general and may be not clear enough. The question is: how would you run in parallel a Python function that itself uses a pool of processes for some subtasks and does lots of heavy I/O operations? Is it even a valid task?
-I will try to provide some more information. I've got a procedure, say test_reduce(), that I need to run in parallel. I tried several ways to do that (see below), and I seem to lack some knowledge to understand why all of them fail.
-This test_reduce() procedure does lots of things. Some of those are more relevant to the question than others (and I list them below):
+15,"Okay, i've used the API docs and found the problem.
+The parameter you need to use to order the data is: ""order=asc|desc"", and not ""sort_order"" as previously thought.
+Please use this function:
+def download_contract_from_quandl(contract, dl_dir):
+""""""
+Download an individual futures contract from Quandl and then
+store it to disk in the 'dl_dir' directory. An auth_token is
+required, which is obtained from the Quandl upon sign-up.
+""""""
+# Construct the API call from the contract and auth_token
+api_call = ""https://www.quandl.com/api/v3/datasets/""
+api_call += ""CME/%s.csv"" % contract
+# If you wish to add an auth token for more downloads, simply
+# comment the following line and replace MY_AUTH_TOKEN with
+# your auth token in the line below
+params = ""?auth_token=YOUR_TOKEN""
+params += ""&order=asc""
+full_url = ""%s%s"" % (api_call, params)
 
-It uses the multiprocessing module (sic!), namely a pool.Pool instance,
-It uses a MongoDB connection,
-It relies heavily on numpy and scikit-learn libs,
-It uses callbacks and lambdas,
-It uses the dill lib to pickle some stuff.
+# Download the data from Quandl
+data = requests.get(full_url).text
+# Store the data to disk
+fc = open('%s/%s.csv' % (dl_dir, contract), 'w')
+fc.write(data)
 
-First I tried to use a multiprocessing.dummy.Pool (which seems to be a thread pool). I don't know what is specific about this pool and why it is, eh, ""dummy""; the whole thing worked, and I got my results. The problem is CPU load. For parallelized sections of test_reduce() it was 100% for all cores; for synchronous sections it was around 40-50% most of the time. I can't say there was any increase in overall speed for this type of ""parallel"" execution. 
-Then I tried to use a multiprocessing.pool.Pool instance to map this procedure to my data. It failed with the following:
-File ""/usr/lib/python2.7/multiprocessing/pool.py"", line 251, in map
-    return self.map_async(func, iterable, chunksize).get()
-  File ""/usr/lib/python2.7/multiprocessing/pool.py"", line 558, in get
-    raise self._value
-cPickle.PicklingError: Can't pickle <type 'thread.lock'>: attribute lookup thread.lock failed
+Note:
+The way you are using the api, by simple http request, altough works, is the not the ideal way to use their API.
+There is a python package called Quandl, you can install like so:
+pip3 install quandl
 
-I made a guess that cPickle is to blame, and found the pathos lib that uses a far more advanced pickler dill. However it also fails:
-File ""/local/lib/python2.7/site-packages/dill/dill.py"", line 199, in load
-    obj = pik.load()
-  File ""/usr/lib/python2.7/pickle.py"", line 858, in load
-    dispatch[key](self)
-  File ""/usr/lib/python2.7/pickle.py"", line 1083, in load_newobj
-    obj = cls.__new__(cls, *args)
-TypeError: object.__new__(generator) is not safe, use generator.__new__()
+On your system.
+Also then you would have a single (and not multiple using auth_token=YOUR_TOKEN in each request) auth call like so:
+quandl.ApiConfig.api_key = 'YOUR_TOEKN'
 
-Now, this error is something I don't understand at all. I've got no output to stdout from my procedure when it works in a pool, so it's hard to guess what's going on. The only thing I know is that test_reduce() runs successfully when no multiprocessing is used.
-So, how would you run in parallel something that heavy and complicated?
+And then each api call will be simple and elegent using their package instead or creating an http request manually, like so:
+data = quandl.get(""CME/ESH2010.csv"", order=""asc"")
+
+I will advise using the second method of using the API, but both will work perfectly.
+Cheers, Or.
 "
-94,"In a html5 page using image map, I would like to use python (or Perl, Ruby, C) to crawl it to find a particular image (those are separated by a transparency area) in another one and click it when this image is found. The image are the same all the times. What is the best way to achieve this ? 
-Edit: for french readers, the trick is implemented, see http://www.sputnick-area.net/?p=572
+16,"I'm not sure what you mean by ""installing it as a framework"".  If you are using an OS X server hosting environment, then maybe you're talking about Framework with a Capital F.  However, OS X server hosting isn't a very common environment so I'm guessing that's not it.
+If you just want to know how to install a Python library in your home directory, then the general answer is:
+$ python setup.py install --user
+
+This Just Works™ on Python 2.7 (assuming the package uses distutils, which Twisted does, and you unpack the source .tar.gz and change your working directory to the directory that is the root of the contents of that .tar.gz), so you should be done after that.
 "
-95,"You could actually pull this off, but it would require using metaclasses, which are deep magic (there be dragons). If you want an intro to metaclasses, there's a series of articles from IBM which manage to introduce the ideas without melting your brain.
+17,"You could actually pull this off, but it would require using metaclasses, which are deep magic (there be dragons). If you want an intro to metaclasses, there's a series of articles from IBM which manage to introduce the ideas without melting your brain.
 The source code from an ORM like SQLObject might help, too, since it uses this same kind of declarative syntax.
 "
-96,"The element.get() method is used to retrieve option attribute values in a tag:
->>> page_id = tree.find('page').get('id')
->>> if page_id:
-        print page_id
+18,"As an aside: When using functions instead of methods, you could also use functools.partial:
+import functools
 
-31239628
+def foo(arg, **kwargs):
+    ...
+
+bar = functools.partial(foo, ""argvalue"")
+
+The last line will define a function ""bar"" that, when called, will call foo with the first argument set to ""argvalue"" and all other functions just passed on:
+bar(5, myarg=""value"")
+
+will call
+foo(""argvalue"", 5, myarg=""value"")
+
+Unfortunately that will not work with methods.
+"
+19,"In python 3 I have a line asking for input that will then look in an imported dictionary and then list all their inputs that appear in the dictionary. My problem is when I run the code and put in the input it will only return the last word I input.
+For example
+the dictionary contains (AIR, AMA)
+and if I input (AIR, AMA) it will only return AMA.
+Any information to resolve this would be very helpful!
+The dictionary: 
+EXCHANGE_DATA = [('AIA', 'Auckair', 1.50),
+                 ('AIR', 'Airnz', 5.60),
+                 ('AMP', 'Amp',3.22), 
+
+The Code:
+import shares
+a=input(""Please input"")
+s1 = a.replace(' ' , """")
+print ('Please list portfolio: ' + a)
+print ("" "")
+n=[""Code"", ""Name"", ""Price""]
+print ('{0: <6}'.format(n[0]) + '{0:<20}'.format(n[1]) + '{0:>8}'.format(n[2]))
+z = shares.EXCHANGE_DATA[0:][0]
+b=s1.upper()
+c=b.split()
+f=shares.EXCHANGE_DATA
+def find(f, a):
+    return [s for s in f if a.upper() in s]
+x= (find(f, str(a)))
+toDisplay = []
+a = a.split()
+for i in a:
+    temp = find(f, i)
+    if(temp):
+        toDisplay.append(temp)
+for i in toDisplay:
+    print ('{0: <6}'.format(i[0][0]) + '{0:<20}'.format(i[0][1]) + (""{0:>8.2f}"".format(i[0][2])))
 
 "
-97,"In Powershell you can use:
-Get-Childitem -Path c:\to\folder\ -Filter *.py | % {& $_.FullName}
+20,"I hope you find this solution satisfactory:
+import re
+
+data = """"""
+Views 2.x-dev
+Viewfield 6.x-2.x, xxxx-xx-xx
+Version 6.x-2.3
+ctools 7.x-1.x-dev
+XML sitemap 6.x-1, 2009-08-24
+6.x-1.6
+""""""
+## Solution 1: 
+## 1) Finds all results that matches with the pattern 
+## '<number>.x-<other_chars>' in a not greedy way 
+## (that is why the '?')
+## 2) Treat the found match and remove any ','
+
+results = []
+for result in re.findall( r""[0-9]\.x{1}\-.*x?"", data ):
+    results.append(result.split("","")[0])
+
+print (results)
+
+## Solution 2: (and my favourite)
+## Create a list with those words that matches the pattern 
+## <number>.x at their beginning
+## The words are the result of splitting the 'data' with the
+## split function from the regex module with a
+## non-capturing version of regular parentheses.
+
+result = [ x  for x in re.split(r'(?:,|\s)\s*', data) \ 
+           if re.match(r'^[0-9].x',x) ]
+
+print (result)
 
 "
-98,"I'm working with 3-dimensional arrays (for the purpose of this example you can imagine they represent the RGB values at X, Y coordinates of the screen).
->>> import numpy as np
->>> a = np.floor(10 * np.random.random((2, 2, 3)))
->>> a
-array([[[ 7.,  3.,  1.],
-        [ 9.,  6.,  9.]],
+21,"As pointed out by 0MQ founder Pieter Hintjens in this answer, the PUSH-PULL mechanism is not a load balancer, but rather a simple round robin distributor. That's a typo in the docs that is still there.
+That said, for the load balancing pattern you need to add a broker in the middle of your architecture. As pointed out by Jason in the comments, this is well explained in the official guide. There are also examples in Python.
 
-       [[ 4.,  6.,  8.],
-        [ 8.,  1.,  1.]]])
+The main idea is to have the workers sending a small ""READY"" message to the broker whenever they are free to receive more jobs. The broker in turns, keep ""pointers"" to free workers in a queue. When he receives a new job request from a client he also propagates the request to the first free worker in the queue, which gets popped out from the queue. As you can see in the picture above, the broker exploits ROUTER sockets in order to avoid a blocking behavior and to get proper load balancing. A small additional detail is that the broker does not poll the clients if there are not free workers in the queue.
+This is the simplest way I am aware of for implementing a load balancing pattern with ZeroMQ. It is not exactly like ""polling"" for new jobs in the queue, but I think this is what you need. Also please beware that this is really the simplest way, that is, it is not reliable at all and it does not scale well as is. If you also need reliability, I suggest you to thoroughly read Chapter 4 of the official guide.
+As a side note, maybe you should seriously consider Celery for this task. I am really in love with ZeroMQ, however this is exactly the kind of thing that Celery is very good at, and in my opinion it is not so difficult to learn, as someone may think.
+"
+22,"Here's the culprit:
+profile = models.ForeignKey(Profile, default=Profile)
+#                                    ^^^^^^^^^^^^^^^
 
-What I would like to do, is to set to an arbitrary value the G channel for those pixels whose G channel is already below 5. I can manage to isolate the pixel I am interested in using:
->>> a[np.where(a[:, :, 1] < 5)]
-array([[ 7.,  3.,  1.],
-       [ 8.,  1.,  1.]])
+You can't set a Model class as a Foreignkey default. If you're thinking of setting an hardcoded default then you should use an int and be sure the selected value exists as a key in your Profile model.
+"
+23,"This is documented on the doxygen website, but to summarize here:
+You can use doxygen to document your Python code. You can either use the Python documentation string syntax:
+""""""@package docstring
+Documentation for this module.
 
-but I am struggling to understand how to assign a new value to the G channel only. I tried:
->>> a[np.where(a[:, :, 1] < 5)][1] = 9
->>> a
-array([[[ 7.,  3.,  1.],
-        [ 9.,  6.,  9.]],
+More details.
+""""""
 
-       [[ 4.,  6.,  8.],
-        [ 8.,  1.,  1.]]])
+def func():
+    """"""Documentation for a function.
 
-...but it seems not to produce any effect. I also tried:
->>> a[np.where(a[:, :, 1] < 5), 1] = 9
->>> a
-array([[[ 7.,  3.,  1.],
-        [ 9.,  9.,  9.]],
+    More details.
+    """"""
+    pass
 
-       [[ 4.,  6.,  8.],
-        [ 9.,  9.,  9.]]])
+In which case the comments will be extracted by doxygen, but you won't be able to use any of the special doxygen commands.
+Or you can (similar to C-style languages under doxygen) double up the comment marker (#) on the first line before the member:
+## @package pyexample
+#  Documentation for this module.
+#
+#  More details.
 
-...(failing to understand what is happening). Finally I tried:
->>> a[np.where(a[:, :, 1] < 5)][:, 1] = 9
->>> a
-array([[[ 7.,  3.,  1.],
-        [ 9.,  6.,  9.]],
+## Documentation for a function.
+#
+#  More details.
+def func():
+    pass
 
-       [[ 4.,  6.,  8.],
-        [ 8.,  1.,  1.]]])
+In that case, you can use the special doxygen commands. There's no particular Python output mode, but you can apparently improve the results by setting OPTMIZE_OUTPUT_JAVA to YES.
+Honestly, I'm a little surprised at the difference - it seems like once doxygen can detect the comments in ## blocks or """""" blocks, most of the work would be done and you'd be able to use the special commands in either case. Maybe they expect people using """""" to adhere to more Pythonic documentation practices and that would interfere with the special doxygen commands?
+"
+24,"I have this list and number:
+list = ['B','C']
 
-I suspect I am missing something fundamental on how NumPy works (this is the first time I use the library). I would appreciate some help in how to achieve what I want as well as some explanation on what happened with my previous attempts.
-Many thanks in advance for your help and expertise!
-EDIT: The outcome I would like to get is:
->>> a
-array([[[ 7.,  9.,  1.],     # changed the second number here
-        [ 9.,  6.,  9.]],
+The outcome that I need for my table is:
+B    C    Prob
+0    0    x
+0    1    x
+1    0    x
+1    1    x
 
-       [[ 4.,  6.,  8.],
-        [ 8.,  9.,  1.]]])   # changed the second number here
+How can I build this truth table (there can be more vairables, not only 3) and assign a number to that row's probability?
+I need to build it with a dictionary, I tried with some list comprehension but I don't know how to generate dynamically the truth table, considering that there can be more/less than 3 variables.
+EDIT: to be more clear my goal is to have a dictionary like this:
+dict = {""B"":0/1,""C"":0/1,""Prob"":arbitraryNumber}
+
+and I need to insert all these dictionaries into a list to represent the structure of a table, is it clearer now?
+Thank you very much
+"
+25,"AppEngine can now write to a local ""ephemeral"" disk storage when using Managed-VM which is not supported when using the sandbox method as specified on this documentation:
+https://cloud.google.com/appengine/docs/managed-vms/tutorial/step3
+"
+26,"Given a Python list whose elements are either integers or lists of integers (only we don't know how deep the nesting goes), how can we find the sum of each individual integer within the list?
+It's fairly straightforward to find the sum of a list whose nesting only goes one level deep, 
+but what if the nesting goes two, three, or more levels deep?
+I know the best approach is recursion, but this is a challenge wherein I have to do it without recursion.
+Please help!!
+"
+27,"Try this:
+import os
+path = 'path\\to\\your\\directory\\'
+files = os.listdir (path)
+for i in files:
+    if i.endswith('.py'):
+        os.system(""python ""+path+i)
 
 "
-99,"I want to match either key or key=val in python such that the resulting groupdict() from the Match object will either have val as None or have a value. 
-The following is close:
->>> regex = re.compile('(?P<key>[^=]+)=?(?P<val>.*)')
->>> regex.match('x=y').groupdict()
-{'key': 'x', 'val': 'y'}            # yes!
->>> regex.match('x').groupdict()
-{'key': 'x', 'val': ''}             # want None, not ''
+28,"I'm using Cygwin and Python2.7 and I have already installed some third party modules (PySide, PyGame) on my computer and when I run them using the normal GUI they work fine. But when I run python inside Cygwin it doesn't recognize the modules I already have installed. I'm using Windows 7 for this. Is there anyway I can get Cygwin to recognize these libraries? 
+"
+29,"Something like this should to the trick:
+import numpy
+from scipy.optimize import linprog
 
-But I want val to be None in the second case. I tried moving the optional = into the second group:
->>> regex = re.compile('(?P<key>[^=]+)(?P<val>=.+)?')
->>> regex.match('x').groupdict()
-{'key': 'x', 'val': None}           # yes!
->>> regex.match('x=y').groupdict()
-{'key': 'x', 'val': '=y'}           # don't want the =
+A = 10
+B = 20
+m = 2
+n = m * m
 
-That gives me the None, but then attaches the = to val. I also tried using the lookbehind with (?<==) but that didn't work for either expression. Is there a way to achieve this?
+# the coefficients of a linear function to minimize.
+# setting this to all ones minimizes the sum of all variable
+# values in the matrix, which solves the problem, but see below.
+c = numpy.ones(n)
+
+# the constraint matrix.
+# This is matrix-multiplied with the current solution candidate
+# to form the left hand side of a set of normalized 
+# linear inequality constraint equations, i.e.
+#
+# x_0 * A_ub[0][0] + x_1 * A_ub[0][1] <= b_0
+# x_1 * A_ub[1][0] + x_1 * A_ub[1][1] <= b_1
+# ...
+A_ub = numpy.zeros((2 * m, n))
+
+# row sums. Since the <= inequality is a fixed component,
+# we just multiply everthing by (-1), i.e. we demand that
+# the negative sums are smaller than the negative limit -A.
+#
+# Assign row ranges all at once, because numpy can do this.
+for r in xrange(0, m):
+    A_ub[r][r * m:(r + 1) * m] = -1
+
+# We want that the sum of the x  in each (flattened)
+# column is smaller than B
+#
+# The manual stepping for the column sums in row-major encoding
+# is a little bit annoying here.
+for r in xrange(0, m):
+    for j in xrange(0, m):
+        A_ub[r + m][r + m * j] = 1
+
+# the actual upper limits for the normalized inequalities.
+b_ub = [-A] * m + [B] * m
+
+# hand the linear program to scipy
+solution = linprog(c, A_ub=A_ub, b_ub=b_ub)
+
+# bring the solution into the desired matrix form
+print numpy.reshape(solution.x, (m, m))
+
+Caveats
+
+I use <=, not < as indicated in your question, because that's what numpy supports.
+This minimizes the total sum of all values in the target vector.
+For your use case, you probably want to minimize the distance
+to the original sample, which the linear program cannot handle, since neither the squared error nor the absolute difference can be expressed using a linear combination (which is what c stands for). For that, you will probably need to go to full minimize(). 
+
+Still, this should get you rough idea.
+"
+30,"Assignment itself does nothing. rc here is your client. Doing rc[0], or any sort of indexing, generates and returns a DirectView object that's a view with whatever engines you specify in []. This is a shorthand for generating the views: it's not actually just getting a specific object.
+Thus, those views aren't unique. The best way to explain it, I think, is with an example. Say you have 2 engines. You want to run some tasks on only engine one, and want the tasks to block. You want to run others on only engine one, but don't want them to block. You want to run yet more on engines 1 and 2, and don't want them to block. Then you could do:
+view_1_block = rc[0]
+view_1_block.block = True
+view_2_noblock = rc[0]
+view_2_noblock.block = False
+view_3_noblock = rc[[0,1]]
+view_3_noblock.block = False
+
+Then, you can use these to run tasks in whatever way you'd like, eg
+view_1_block.map(lambda x:x**10, range(32)) # blocks, returns results, runs only on 1
+view_3_noblock.map(lambda x:x**10, range(32)) # does not block, returns AsyncResult, runs on 1 and 2
+
+There's no actual magic being used here. When you run rc[0] twice, it generates two views. The second view is not the same as the first. When you assign rc[0] to a variable, and then use that variable, you're working with one view, and not creating a new one. 
+iPython, like Numpy and Scipy, has quite a few shorthand notations that don't necessarily fit Python's idioms perfectly. This is especially the case with [] and getitem. A purer Python way of writing this could would be to use the much more unwieldy rc.direct_view(1), and so on, which would make clear that this wasn't just getting an item, and was actually creating a view.
+"
+31,"My data looks like:
+{12,} {13,} {10,}
+{16,} {17, 15,} {22,}
+{27,} {28,24,29,} {28,} {28,}
+
+Each line is a sequence. For each line, if multiple numbers occur in {  }, I want to sort them in each bracket(ascending sort ), while keeping the order of the rest. At last, I want to remove the brackets. So I want my output to be like this:
+12, 13, 10
+16, 15, 17, 22
+27, 24, 28, 29, 28, 28
+
+My thought was converting each line into a list, but then I was totally stuck.
+"
+32,"Currently i filter by some option in django's admin interface. For instance lets say i filter by 'By status'. Is it possible to select multiple statuses to filter results from? Here is the screenshot of the filter:
+
+Can i select multiple items from this list? 
+"
+33,"What you're looking for is spelled: if isinstance(handler, StreamHandler): - but I'd really like to know why you want to do such a thing instead of using the sensible solution (ie not configuring a StreamHandler for your logger at all...). 
+"
+34,"you don't want the future flag if you're working from the deformable object:
+targetMesh = ""pSphere1""    
+blendshapes = cmds.ls(*cmds.listHistory(targetMesh) or [], type= 'blendShape')
+
+To get the actual shapes, you'd add
+source_shapes =  cmds.ls(*cmds.listHistory(*blendshapes) or [], type= 'mesh', ni=True)
+
+"
+35,"Some experimentation and I figured this one out:
+def methodA(arg, **kwargs):
+    methodB(""argvalue"", **kwargs)
+Seems obvious now...
+"
+36,"You could just enumerate the files like so
+files = [self.model_file, self.model_file2, self.model_file3]
+values = [1 ,5 ,7]
+for n in range(len(value)):  
+    pickle_model(self.model, files[n]) 
+
+Does this answer the question?
+"
+37,"I have data in XML format. Example is shown as follow. I want to extract data from <text> tag. 
+Here is my XML data.
+    <text>
+    The 40-Year-Old Virgin is a 2005 American buddy comedy
+    film about a middle-aged man's journey to finally have sex.
+
+    <h1>The plot</h1>
+    Andy Stitzer (Steve Carell) is the eponymous 40-year-old virgin.
+    <h1>Cast</h1>
+
+    <h1>Soundtrack</h1>
+
+    <h1>External Links</h1>
+</text>
+
+I need only The 40-Year-Old Virgin is a 2005 American buddy comedy film about a middle-aged man's journey to finally have sex. Is it possible? thanks
+"
+38,"Easy solution would be to apply : idxmax() function to get indices of rows with max values. 
+This would filter out all the rows with max value in the group.
+In [365]: import pandas as pd
+
+In [366]: df = pd.DataFrame({
+'sp' : ['MM1', 'MM1', 'MM1', 'MM2', 'MM2', 'MM2', 'MM4', 'MM4','MM4'],
+'mt' : ['S1', 'S1', 'S3', 'S3', 'S4', 'S4', 'S2', 'S2', 'S2'],
+'val' : ['a', 'n', 'cb', 'mk', 'bg', 'dgb', 'rd', 'cb', 'uyi'],
+'count' : [3,2,5,8,10,1,2,2,7]
+})
+
+In [367]: df                                                                                                       
+Out[367]: 
+   count  mt   sp  val
+0      3  S1  MM1    a
+1      2  S1  MM1    n
+2      5  S3  MM1   cb
+3      8  S3  MM2   mk
+4     10  S4  MM2   bg
+5      1  S4  MM2  dgb
+6      2  S2  MM4   rd
+7      2  S2  MM4   cb
+8      7  S2  MM4  uyi
+
+
+### Apply idxmax() and use .loc() on dataframe to filter the rows with max values:
+In [368]: df.loc[df.groupby([""sp"", ""mt""])[""count""].idxmax()]                                                       
+Out[368]: 
+   count  mt   sp  val
+0      3  S1  MM1    a
+2      5  S3  MM1   cb
+3      8  S3  MM2   mk
+4     10  S4  MM2   bg
+8      7  S2  MM4  uyi
+
+### Just to show what values are returned by .idxmax() above:
+In [369]: df.groupby([""sp"", ""mt""])[""count""].idxmax().values                                                        
+Out[369]: array([0, 2, 3, 4, 8])
+
+"
+39,"use the s parameter.
+from pandas.tools.plotting import scatter_matrix
+
+df = pd.DataFrame(np.random.rand(10, 2))
+scatter_matrix(df, alpha=0.5, figsize=(8, 8), diagonal='kde', s=1000)
+
+
+"
+40,"I'm trying to implement some sort of API on tornado and I have such question:
+is it possible to route two urls to one handler separating by method.
+class Handler():
+   def get(self):
+       #only for the first url
+   def post(self):
+       #only for the secornd url
+handlers = [
+   (r""/url1"",Handler), #only GET are allowed
+   (r""/url2"",Handler), #only POST are allowed
+]
+
+So if someone trying to send POST to the first url he should see error message
+"
+41,"The solution to my problem is: 
+MaxPlus.Core.EvalMAXScript(WM3_MC_BuildFromNode(for mod in $node.modifiers where isKindOf mod Morpher collect mod)[1] 3 $target)
+
+This solution is found by Swordslayer on the autodesk forum for 3ds Max
+"
+42,"I'm running on debian jessie. I'm trying to parse my pdf with tabula-py library but I get this error 
+   2016 12:16:57 PM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont 
+
+getawtFont  
+0                                             Italic                          
+1   2016 12:16:57 PM org.apache.fontbox.util.Font...                          
+2                                             Italic                          
+                                       Oct 13  \
+0  INFO: Can't find the specified font Tahoma   
+1                                      Oct 13   
+2             WARNING: Font not found: Tahoma   
+
+How can do to fix that ?
+Here is my code :
+import cv2
+import numpy as np
+# from matplotlib import pyplot as plt
+from wand.image import Image
+from tabula import read_pdf_table
+
+# Converting first page into JPG
+with Image(filename=""ed.pdf"", resolution=200) as pdf:
+    pdf.compression_quality = 99
+    pdf.save(filename=""temp.png"")
+
+img = cv2.imread('temp.png', 0)
+img2 = img.copy()
+template = cv2.imread('test cust.png', 0)
+imgw, imgh = img.shape[::-1]
+w, h = template.shape[::-1]
+
+methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR', 'cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
+
+for meth in methods:
+    img = img2.copy()
+    method = eval(meth)
+
+    # Apply template Matching
+    res = cv2.matchTemplate(img, template, method)
+    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
+
+    # If the method is TM_SQDIFF or TM_SQDIFF_NORMED, take minimum
+    if method in [cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]:
+        top_left = min_loc
+    else:
+        top_left = max_loc
+
+    bottom_right = (top_left[0] + w, top_left[1] + h)
+
+    top = top_left[1];
+    left = top_left[0];
+    bottom = imgh - bottom_right[1];
+    right = imgw - bottom_right[0];
+
+    cv2.rectangle(img, top_left, bottom_right, [0,255,0], 10)
+
+    df = read_pdf_table('ed.pdf', area=(top,left,bottom,right))
+    print(df)
+
+The error will be happened at this line 
+df = read_pdf_table('ed.pdf', area=(top,left,bottom,right))
+"
+43,"After the installation of motionless library, I try to run my code and the following error  message occurs. 
+**Traceback (most recent call last):
+File ""C:\Users\Kevin\Downloads\tracker.py"", line 4, in <module>
+
+from motionless import CenterMap
+
+File ""<frozen importlib._bootstrap>"", line 2237, in _find_and_load
+File ""<frozen importlib._bootstrap>"", line 2222, in _find_and_load_unlocked
+File ""<frozen importlib._bootstrap>"", line 2164, in _find_spec
+File ""<frozen importlib._bootstrap>"", line 1940, in find_spec
+File ""<frozen importlib._bootstrap>"", line 1916, in _get_spec
+File ""<frozen importlib._bootstrap>"", line 1897, in _legacy_get_spec
+File ""<frozen importlib._bootstrap>"", line 863, in spec_from_loader
+File ""<frozen importlib._bootstrap>"", line 904, in spec_from_file_location
+File ""C:\Python34\lib\site-packages\motionless-1.1-py3.4.egg\motionless.py"", 
+
+line 55
+if label and (len(label) <> 1 or not label in Marker.LABELS):
+                          ^
+
+SyntaxError: invalid syntax**
+
+"
+44,"Here's a way of doing it without collections.Counter, as requested in chat:
+def countLetters(word):
+    d = {}
+    for l in word:
+        d[l] = d.get(l,0) + 1
+    return d
+
+def checkSubset(answer,letters):
+    a, l = countLetters(answer), countLetters(letters)
+    return all(l.get(x,0) >= a.get(x) for x in a.keys())
+
+print(checkSubset('dog','odr'))
+
+"
+45,"core.exceptions is part of django; what version of django do you have installed? The AppEngine comes with the appropriate version for whatever release you've downloaded (in the lib/django directory). It can be installed by going to that directory and running python setup.py install
+"
+46,"I have a dataframe and I grouped it by two keys df.groupby(['key1',key2']). For each key2 entry, how do I display the its percent of key1 values?
+"
+47,"Use collections.Counter() to convert x and y to multi-sets, then subtract to see if all of y's letters can be found in x:
+from collections import Counter
+
+def checkYinX(y, x):
+    return not (Counter(y) - Counter(x))
+
+Subtracting multi-sets removes characters when their count falls to 0. If this results in an empty multi-set, it becomes False in a boolean context, like all 'empty' python types. not turns that into True if that is the case.
+Demo:
+>>> x = ""dsjcosnag""
+>>> y = ""dog""
+>>> print(checkYinX(y,x))
+True
+>>> print(checkYinX('cat',x))
+False
+
+"
+48,"I've got a directory structure like this:
+src/
+--scripts/
+----foo/a.py
+----bar/b.py
+--lib1
+--lib2
+--lib3
+
+The intent if to have scripts/foo/ and scripts/bar/ be directories of runnable python scripts that make use of the modules in lib1, lib2, lib3. Scripts, lib1, lib2, and lib3 are all separate internal git repositories under active development. There isn't a static interface or published version to depend on. Basically, they are all being written nearly at the same time by a small team.
+I've played with making lib[1-3] submodules and I really hate the workflow. What I think I would like is to be able to do ""import lib1"" from foo/a.py and have it use the current code in lib1. Once things mature we will likely version everything and work to product proper packages. 
+One way to do this would to muck with sys.path in each of the scripts to explicitly look in '../../' or something. I was wondering if there was something more elegant. Could I get something like pip install -r requirements.txt to do this work for me? I don't want to make an official pypi setup.py, I just want to get a pointer to the current contents of the lib[1-3] directory. The reason I like the requirements.txt approach is that as the libs mature, I'll end up putting version and git URLs in there. 
+Or, is there a completely different way to do this?
+"
+49,"How do I turn a python program into an .egg file?
+"
+50,"It is in most of the situations easy to implement copy constructors (or overloaded assignment operator) in C++ since there is a concept of pointers. However, I'm quite confused about how to implement shallow and deep copy in Python.
+I know that there are special commands in one of the libraries but they don't work on classes that you have written by yourself. So what are the common ways to implement?
+P.S. Showing process on some basic data structures (linked list or tree) will be appreciated.
+EDIT: Thanks, they worked, it was my mistake in syntax.
+I am very interested in overwriting these functions with __copy__() and __deep_copy()__. For example. how can I make a deep copy without knowing which type of information is in a data structure?
+"
+51,"Be pythonic. Use a comprehension:
+z={i:d[i] for d in [x,y] for i in d}
+
+>>> print z
+{'a': 1, 'c': 11, 'b': 10}
+
+"
+52,"If item_info is a RawQuerySet, try {% if item_info.all %} instead of {% if item_info %}. RawQuerySet does not define a __bool__() method, so the instances are always considered True. See the warnings in this section of the docs, repeated below, just in case this link dies in the future:
+
+While a RawQuerySet instance can be iterated over like a normal
+  QuerySet, RawQuerySet doesn’t implement all methods you can use with
+  QuerySet. For example, bool() and len() are not defined in
+  RawQuerySet, and thus all RawQuerySet instances are considered True.
+  The reason these methods are not implemented in RawQuerySet is that
+  implementing them without internal caching would be a performance
+  drawback and adding such caching would be backward incompatible.
+
+"
+53,"Why is it that I cannot access the attribute of an object as seen in the following example? (raises an error)
+class X(object):
+def __init__(self):
+    self.y = Y(self)
+    self.variable = 5
+
+class Y(object):
+    def __init__(self,parent):
+        self.parent = parent
+        print self.parent.variable
+
+my_instance = X()
+
+Error raised: AttributeError: 'X' object has no attribute 'variable'
+Shouldn't variable be accessible to the instance of Y that is created when X is initialized?
+"
+54,"Use virtualenv to create your private Python libraries installation.
+"
+55,"When I call socket.getsockname() on a socket object, it returns a tuple of my machine's internal IP and the port. However, I would like to retrieve my external IP. What's the cheapest, most efficient manner of doing this?
+"
+56,"(I'm trying to comment on people suggesting to roll their own Calendar widget, but either I don't see the comment button, or I don't have enough rep.)
+What happened to DRY? I think it would be best to re-use the admin widget, but perhaps it should be separated from admin, and easier to use. Thanks for this information anyways.
+"
+57,"This might do the trick:
+(?=[\w:])(\w*)(?::(\w*))?
+
+(\w*)(?::(\w*))? describes the structure you want, but it has a problem that it also matches empty string; thus we have to assure that there is at least one non-space character at the start (which will get matched by the greedy operators), and the lookahead at the start does it.
+Edit: wrong paste :)
+"
+58,"Here's another example that was tested, and will match search & replace patterns:
+import fileinput
+import sys
+
+def replaceAll(file,searchExp,replaceExp):
+    for line in fileinput.input(file, inplace=1):
+        if searchExp in line:
+            line = line.replace(searchExp,replaceExp)
+        sys.stdout.write(line)
+
+Example use:
+replaceAll(""/fooBar.txt"",""Hello\sWorld!$"",""Goodbye\sWorld."")
+
+"
+59,"I have a function where I need to do something to a string.  I need the function to return a boolean indicating whether or not the operation succeeded, and I also need to return the modified string.  
+In C#, I would use an out parameter for the string, but there is no equivalent in Python.  I'm still very new to Python and the only thing I can think of is to return a tuple with the boolean and modified string.
+Related question: Is it pythonic for a function to return multiple values?
+"
+60,"How can I generate all the paths to text strings in a HTML document, preferably using BeautifulSoup? 
+I have f.e. this code:
+<DIV class=""art-info""><SPAN class=""time""><SPAN class=""time-date"" content=""2012-02-28T14:46CET"" itemprop=""datePublished"">
+             28. february 2012
+            </SPAN>
+            14:46
+           </SPAN></DIV><DIV>
+           Something,<P>something else</P>continuing.
+          </DIV>
+
+I'd like to divide HTML code into paths to text strings, like
+str1 >>>  <DIV class=""art-info""><SPAN class=""time""><SPAN class=""time-date"" content=""2012-02-28T14:46CET"" itemprop=""datePublished"">28. february 2012</SPAN></SPAN></DIV>
+str2 >>>  <DIV class=""art-info""><SPAN class=""time"">14:46</SPAN></DIV>
+str3 >>>  <DIV>Something,continuing.</DIV>
+str4 >>>  <DIV><P>something else</P></DIV>
+
+or
+str1 >>>  <DIV><SPAN><SPAN>28. february 2012</SPAN></SPAN></DIV>
+str2 >>>  <DIV><SPAN>14:46</SPAN></DIV>
+str3 >>>  <DIV>Something,continuing.</DIV>
+str4 >>>  <DIV><P>something else</P></DIV>
+
+or  
+str1 >>>  //div/span/span/28. february
+str2 >>>  //div/span/14:46
+str3 >>>  //div/Something,continuing.
+str4 >>>  //div/p/something else
+
+I've studied BeautifulSoup documentation, but I can't figure out how to do it. Do you have any ideas?
+"
+61,"This answer is specific to Windows NT-based OS.
+Idle thread functioality
+Tasks may vary between architectures, but generally these are the tasks performed by idle threads:
+
+Enable interrupts to allow pending interrupts be delivered
+Disable interrupts (using STI or CLI instructions, more on wiki)
+On the DEBUG (or checked) builds, query if a kernel debugger is attached and allow breakpoints if been requested
+Handle deferred procedure calls
+Check if there are any runnable threads ready for execution. If there is one, update the idle processor control block with a pointer to the thread
+Check the queues of other processors, if possible schedule thread awaiting execution on the idle processor
+Call a power management routine, which may halt a processor or downgrade CPU tick rate and do other similar power saving activities
+
+Additional info
+When there are no runnable threads for a logical processor, Windows executes a kernel-mode idle thread. There is only 1 Idle process that has as many idle threads as there are logical processors. So on a Quad core machine with 4 logical/physical processors, there will be 1 Idle process and 4 idle threads.
+In Windows, Idle process has ID = 0, so do all the Idle threads. These objects are represented by standard EPROCESS/KPROCESS and ETHREAD/KTHREAD data structures. But they are not executive manager processes and threads objects. There are no user-land address space and no user-land code is executed..
+Idle process is statically allocated at system boot time before the process manager and object manager are set up. Idle thread structures are allocated dynamically as logical processors are brought live.
+Idle thread priority is set to 0. However, this value doesn't actually matter as this thread only gets executed when there are no other threads available to run. Idle thread priority is never compared with priority of any other threads.
+Idle threads are also special cases for preemption. The idle thread main routine KiIdleLoop (implementation from reactos) performs several tasks that are not interrupted by other threads. When there are no runnable threads available to run on a processor, that processor is marked as idle in a processor control block. Then if a runnable threads arrives to the queue scheduled for execution, that thread's address pointer is stored in the NextThread pointer of the idle processor control block. During the run of an idle thread, this pointer address gets checked on every iteration inside a while loop.
+Source: Windows Internals. M. Russinovich. 6-th edition. Part 1, p.453 - 456.
+"
+62,"I was never satisfied with David Mertz's articles at IBM on metaclsses so I recently wrote my own metaclass article.  Enjoy.
+"
+63,"This works. I used a few short cuts to save on typing.
+import csv
+import sqlite3
+import itertools
+
+params = ['No', 'Source', 'Host', 'Link', 'Date', 'Time', 'time2', 'Category', 'AuthorId', 'AuthorName', 'AuthorUrl', 'Auth', 'Followers', 'Following', 'Age', 'Gender', 'Language', 'Country', 'Province', 'City', 'Location', 'Sentiment', 'Title', 'Snippet', 'Description', 'Tags', 'Contents', 'View', 'Comments', 'Rating', 'Favourites', 'Duration', 'Bio', 'UniqueId']
+
+create_str = ""CREATE TABLE t (%s);"" % ', '.join('""%s""' % p for p in params)
+insert_str = ""INSERT INTO t VALUES (%s)"" % ', '.join(itertools.repeat('?', len(params)))
+
+with open('database.csv') as fin:
+    dr = csv.DictReader(fin, fieldnames=params, skipinitialspace=True)
+    lst = [tuple(d[p] for p in params) for d in dr]
+
+con = sqlite3.connect("":memory:"")
+cur = con.cursor()
+cur.execute(create_str)
+
+cur.executemany(insert_str, lst)
+con.commit()
+
+for row in cur.execute(""select * from t;""):
+    print(row)
+
+Note its bad practice to use string format operations to build up sql query strings. It can lead to sql injection attacks, if used with unknown input data. I am doing so here because the strings are only being built from known values and unknown input (that from the file) is built properly using the standard '?' placeholder with tuple passed to execute method.
+Note also you have far too many parameters in one table. It should be more normalised across multiple tables, but I guess you will learn that at some point.
+"
+64,"If you are looking for something more simple, you can use the subprocess module (python default) to start and check your processes...
+A basic version would look like this:
+# run.py
+
+import subprocess, time
+
+# add your listener processor call here
+_PROCESS_ARGS = ['python','/path/to/listener.py']
+_PROCESS_TOTAL = 10
+
+process_list = []
+
+# start the processes...
+for i in range(_PROCESS_TOTAL):     
+    process_list.append(subprocess.Popen(_PROCESS_ARGS))
+
+while True:     
+    for i in range(_PROCESS_TOTAL):         
+        p = process_list[i]         
+            if p.poll() != None: # check if process is running                      
+                process_list[i] = subprocess.Popen(_PROCESS_ARGS) # if not, replace with new one
+    time.sleep(1) # check only every second...
+
+"
+65,"I'm not a python guy but it looks like os.readlink()?  The logic I would use in perl is to use readlink() to find the target and the use stat() to test to see if the target exists.
+Edit: I banged out some perl that demos readlink.  I believe perl's stat and readlink and python's os.stat() and os.readlink()are both wrappers for the system calls, so this should translate reasonable well as proof of concept code:
+wembley 0 /home/jj33/swap > cat p
+my $f = shift;
+
+while (my $l = readlink($f)) {
+  print ""$f -> $l\n"";
+  $f = $l;
+}
+
+if (!-e $f) {
+  print ""$f doesn't exist\n"";
+}
+wembley 0 /home/jj33/swap > ls -l | grep ^l
+lrwxrwxrwx    1 jj33  users          17 Aug 21 14:30 link -> non-existant-file
+lrwxrwxrwx    1 root     users          31 Oct 10  2007 mm -> ../systems/mm/20071009-rewrite//
+lrwxrwxrwx    1 jj33  users           2 Aug 21 14:34 mmm -> mm/
+wembley 0 /home/jj33/swap > perl p mm
+mm -> ../systems/mm/20071009-rewrite/
+wembley 0 /home/jj33/swap > perl p mmm
+mmm -> mm
+mm -> ../systems/mm/20071009-rewrite/
+wembley 0 /home/jj33/swap > perl p link
+link -> non-existant-file
+non-existant-file doesn't exist
+wembley 0 /home/jj33/swap >
+
+"
+66,"These are format specifiers. The %d specifier refers specifically to a decimal (base 10) integer. The %s specifier refers to a Python string.
+"
+67,"You may also want to have a look at httplib2, with examples. I find using httplib2 is more concise than using the built-in HTTP modules.
+"
+68,"I'm posting this without further comments, for learning purposes (in the real life please do use a library). Note that there's no error checking (a homework for you!)
+Feel free to ask if there's something you don't understand.
+# PART 1. The Lexer
+
+symbols = None
+
+def read(input):
+    global symbols
+    import re
+    symbols = re.findall(r'\w+|[()]', input)
+
+def getsym():
+    global symbols
+    return symbols[0] if symbols else None
+
+def popsym():
+    global symbols
+    return symbols.pop(0)
+
+# PART 2. The Parser
+# Built upon the following grammar:
+#  
+#     program = expr*
+#     expr    = '(' func args ')'
+#     func    = AND|OR|NOT
+#     args    = arg*
+#     arg     = string|expr
+#     string  = [a..z]
+
+def program():
+    r = []
+    while getsym():
+        r.append(expr())
+    return r
+
+def expr():
+    popsym() # (
+    f = func()
+    a = args()
+    popsym() # )
+    return {f: a}
+
+def func():
+    return popsym()
+
+def args():
+    r = []
+    while getsym() != ')':
+        r.append(arg())
+    return r
+
+def arg():
+    if getsym() == '(':
+        return expr()
+    return string()
+
+def string():
+    return popsym()
+
+# TEST = Lexer + Parser
+
+def parse(input):
+    read(input)
+    return program()
+
+print parse('(AND a b (OR c d)) (NOT foo) (AND (OR x y))')
+# [{'AND': ['a', 'b', {'OR': ['c', 'd']}]}, {'NOT': ['foo']}, {'AND': [{'OR': ['x', 'y']}]}]
+
+"
+69,"The zip commands in that tutorial are missing a parameter. I ran into this exact problem today with pysftp, which is built on paramiko. libffi-72499c49.so.6.0.4 is in a hidden dot directory inside lib64/python2.7/site-packages/.libs_cffi_backend. Depending on how you zipped up the dependencies in your virtualenv, you may have inadvertantly excluded this directory.
+
+First, make sure libffi-devel and openssl-devel are installed on your Amazon Linux instance, otherwise the cryptography module may not be compiling correctly.
+sudo yum install libffi-devel openssl-devel
+
+
+If those packages were not installed before, delete and rebuild your virtualenv.
+
+Make sure that when you are zipping up your site-packages that you use '.' instead of '*', otherwise you will not be including files and directories that are hidden because their names begin with a period.
+cd path/to/my/helloworld-env/lib/python2.7/site-packages
+zip -r9 path/to/zip/worker_function.zip .
+cd path/to/my/helloworld-env/lib64/python2.7/site-packages
+zip -r9 path/to/zip/worker_function.zip .
+
+
+"
+70,"I have a table which already contains some data in it. Now i want to upload new data from a csv file and want to update some of the previous values of that table. I am using django 1.3 and sqlite3 as database. But i am not able to update the table.
+"
+71,"I have the following code:
+import threading
+import time
+
+class TestWorker (threading.Thread):
+    def __init__(self, threadID, name):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+
+    def run(self):
+        print ""Starting "" + self.name
+        time.sleep(20)
+        print ""Exiting "" + self.name
+        # how do I let the calling thread know it's done?
+
+class TestMain:
+    def __init__(self):
+        pass
+
+    def do_work(self):
+        thread = TestWorker(1, ""Thread-1"")
+        thread.start()
+
+    def do_something_else(self):
+        print ""Something else""
+
+    def on_work_done(self):
+        print ""work done""
+
+How can I let the main thread know that the TestWorker has finished (call on_work_done()), without blocking calls to do_something_else() as thread.join() would?
+"
+72,"I've recently decided to start using .format() instead of % (see this question). Instead of the {0}, {1} syntax, I'm wondering if the following is an acceptable use:
+import os
+def get_filename(player_name):
+    for ext in ('jpg', 'jpeg', 'png'):
+        filename = ""data/avatars/{player_name}.{ext}"".format(**locals())
+        if os.path.exists(filename):
+            return filename
+    return None
+
+I like the straightforwardness of it - local variables go into the string - but am wondering if there's any reason I shouldn't do the above.
+"
+73,"It took me a long time to get this working for PHP, after a lot of communication with Google it was finally revealed to me that in your app.yaml file you need to have a line that reads:
+threadsafe: false
+
+In order for the pipeline to successfully pick up and deploy your git push (I use sourcetree, but command line git has the same end result) that line must be present.  If it's omitted or set to true the pipeline won't be able to deploy it.
+I wanted to throw this answer on here in case anyone stumbled on this thread looking for help.  One of my projects has ""randomly broken"" and after 3 months of successfully using my release pipeline for multiple commits per day it suddenly no longer deploys when I push.  Ultimately giving the extremely helpful error message of ""Unable to get deployment status"" - and now none of my changes can be applied to the live site.  Copying the entire source code, changing the app name, and pushing to a new GAE project with release pipeline works fine, but I need the original site to start working again.
+"
+74,"I have a list of lists m which I need to modify
+I need that the sum of each row to be greater than A and the sum of each column to be lesser than B 
+I have something like this
+x = 5     #or other number, not relevant
+rows = len(m)
+cols = len(m[0])
+
+for r in range(rows): 
+    while sum(m[r]) < A:  
+        c = randint(0, cols-1)
+        m[r][c] += x 
+
+for c in range(cols): 
+    cant = sum([m[r][c] for r in range(rows)])
+    while cant > B:
+        r = randint(0, rows-1)
+        if m[r][c] >= x:  #I don't want negatives
+            m[r][c] -= x
+
+My problem is: I need to satisfy both conditions and, this way, after the second for I won't be sure if the first condition is still met.
+Any suggestions on how to satisfy both conditions and, of course, with the best execution? I could definitely consider the use of numpy
+Edit (an example)
+#input
+m = [[0,0,0],
+    [0,0,0]]
+A = 20
+B = 25
+
+# one desired output (since it chooses random positions)
+m = [[10,0,15],
+    [15,0,5]]
+
+I may need to add 
+This is for the generation of the random initial population of a genetic algorithm, the restrictions are to make them a possible solution, and I would need to run this like 80 times to get different possible solutions
+"
+75,"Try downloading the appropriate wheel from here.
+Then use pip install [package].
+"
+76,"SELECT * FROM attachments WHERE post_id in (SELECT id FROM posts WHERE topic_id = ?);
+
+Something like this?
+Edit:
+Not what the poster wanted after all. I don't think it is possible to do what you want with your table structure, without using more than one query.
+"
+77,"Try using a string for fk_name:
+fk_name = 'linea'
+
+As an aside, I recommend that you use the Django convention, and name your models SensorAsignado and Linea instead of sensor_asignado and linea. It will make your code easier to understand for other Django users.
+"
+78,"This is not atomic but it works.
+os.path.islink(filename) and not os.path.exists(filename)
+Indeed by RTFM
+ (reading the fantastic manual) we see
+
+os.path.exists(path)
+Return True if path refers to an existing path. Returns False for  broken symbolic links.
+
+It also says:
+
+On some platforms, this function may return False if permission is not granted to execute os.stat() on the requested file, even if the path physically exists.
+
+So if you are worried about permissions, you should add other clauses.
+"
+79,"I doing a simple python GUI using tkinter to do screen recording.Basically, I am using ffmpeg commands at the backend with tkinter as the front end triggering the ffmpeg commands.There is something that I stuck with.I dont know why my time is unable to trigger off if I program in this way.
+The code below is basically the recording method.You will notice that I am actually trying to update my tkinter GUI in the while loop.This method is actually in my class named Gui_Rec() which contains other methods I need for my screen recording program.
+def rec(self):
+    global videoFile
+    mydate = datetime.datetime.now()
+    videoFile = mydate.strftime(""\%d%b_%Hh%Mm.avi"")
+
+    self.l['text']=os.path.expanduser('~')+""\Videos""
+    self.l1['text']=videoFile
+    self.b.config(state=DISABLED)
+    self.b1.config(state=ACTIVE)
+
+    t = Thread(target=self.rec_thread)#trigger another method using thread which will run ffmpeg commands here
+    t.start()
+
+
+    while True:
+        if self.count_flag == False:
+            break
+
+        self.label['text'] = str(""%02dm:%02ds"" % (self.mins,self.secs))
+
+        if self.secs == 0:
+            time.sleep(0)
+        else:
+            time.sleep(1)
+
+        if(self.mins==0 and self.secs==1):
+            self.b1.config(fg=""white"")
+            self.b1.config(bg=""red"")
+            self.b.config(fg=""white"")
+            self.b.config(bg=""white"")
+
+        if self.secs==60:
+            self.secs=0
+            self.mins+=1
+            self.label['text'] = str(""%02dm:%02ds"" % (self.mins,self.secs))
+
+        main.gui.update()               
+        self.secs = self.secs+1
+
+other method in the class Gui_Rec() then this below
+def main():
+   gui = Gui_Rec()
+   gui.minsize(300,155)
+   gui.maxsize(390,195)
+   gui.title(""Desktop REC"")
+   gui.attributes(""-topmost"", 1)
+   gui.mainloop() #start mainloop of program
+
+
+if __name__ == '__main__':
+       main()
+
+Strangely, if I don't put the above section of code in the the def main(), the GUI will be update with the duration of the time running when rec button is pressed.I don't really know how to go about solving this.Tried putting it in another thread yet it doesn't  work as well.Thank you everyone for your help.
+"
+80,"Use the powerset function given in the itertools examples. powerset([L1,L2,L3]) will give you all subsets of the set of 3 lists. For each subset you can take the cartesian product, and then chain them all together.
+>>> from itertools import chain, product
+>>> result = chain.from_iterable(product(*lists) for lists in powerset([L1,L2,L3]))        
+>>> list(result)
+
+[(), (1,), (2,), ('a',), ('b',), ('A',), ('B',), (1, 'a'), (1, 'b'), (2, 'a'), 
+(2, 'b'), (1, 'A'), (1, 'B'), (2, 'A'), (2, 'B'), ('a', 'A'), ('a', 'B'), 
+('b', 'A'), ('b', 'B'), (1, 'a', 'A'), (1, 'a', 'B'), (1, 'b', 'A'), 
+(1, 'b', 'B'), (2, 'a', 'A'), (2, 'a', 'B'), (2, 'b', 'A'), (2, 'b', 'B')]
+
+"
+81,"You can consider changing your backend to TkAgg in the Python 2 virtualenv by running the following:
+sudo apt install python-tk  # install Python 2 bindings for Tk
+pip --no-cache-dir install -U --force-reinstall matplotlib  # reinstall matplotlib   
+
+To confirm the backend is indeed TkAgg, run
+python -c 'import matplotlib as mpl; print(mpl.get_backend())'
+
+and you should see TkAgg.
+"
+82,"Im trying to call a python file containing a sentence/word tokenizer from my php file like this:
+$output = shell_exec('python tokenizer.py $sentence')
+
+I've tried single exec, full paths to python and tokenizer.py, wrapping $sentence in double quotes. But logically, It should not be the problem because calling print(1) at the beginning of python the python code before actually using any nltk packages makes $output equal to '1'. So I came to conclusion that the problem here is the nltk itself, like the path to the modules is not correct or something...
+But, calling python from the shell using the same command as above gives me fully tokenized output! To conclude: looks like when calling python from php magically 'turns off' nltk, while it fully works when executed from the shell.
+Here's the part of the python code I am using:
+import sys
+import nltk
+from nltk.tokenize import sent_tokenize
+
+sample_text2 = sys.argv[1]
+gust = sent_tokenize(sample_text2)
+#print(1) here doesn't work, but everywhere above (before calling sent_tokenize) it does.
+
+The server's running on CentOS (Linux), I am accessing it via SSH.
+Obvious question: What am I doing wrong here with PHP? Or generally? Any alternatives?
+EDIT
+As visible in dvhh's answer and its comments, the situation happened because there were two versions installed on the server (2.6 and 2.7), while the www user had access to 2.6 and through console, the default version was 2.7. The solution was to change the default python to 2.7 for both cases and to put the nltk modules to one of the dependency folders. (Or append the dependency directory using sys.path.append)
+"
+83,"n should be incremented unconditionally. If it isn't the program gets stuck in an infinite loop the first time it encounters a non-prime.
+def primegen():
+    n = 1
+    while True:
+        if isprime(n):
+            print n
+            cont = raw_input(""continue? Enter Y/N"")
+            if cont == 'N':
+                break
+        n += 1
+
+"
+84,"An other very good documentation tool is sphinx. It will be used for the upcoming python 2.6 documentation and is used by django and a lot of other python projects.
+From the sphinx website:
+
+Output formats: HTML (including Windows HTML Help) and LaTeX, for printable PDF versions
+Extensive cross-references: semantic markup and automatic links for functions, classes, glossary terms and similar pieces of information
+Hierarchical structure: easy definition of a document tree, with automatic links to siblings, parents and children
+Automatic indices: general index as well as a module index
+Code handling: automatic highlighting using the Pygments highlighter
+Extensions: automatic testing of code snippets, inclusion of docstrings from Python modules, and more
+
+"
+85,"In a html5 page using image map, I would like to use python (or Perl, Ruby, C) to crawl it to find a particular image (those are separated by a transparency area) in another one and click it when this image is found. The image are the same all the times. What is the best way to achieve this ? 
+Edit: for french readers, the trick is implemented, see http://www.sputnick-area.net/?p=572
+"
+86,"EDIT: 
+The following print shows my intended value.
+(both sys.stdout.encoding and sys.stdin.encoding are 'UTF-8').
+Why is the variable value different than its print value? I need to get the raw value into a variable.
+>>username = 'Jo\xc3\xa3o'
+>>username.decode('utf-8').encode('latin-1')
+'Jo\xe3o'
+>>print username.decode('utf-8').encode('latin-1')
+João
+
+Original question:
+I'm having an issue querying a BD and decoding the values into Python.
+I confirmed my DB NLS_LANG using
+select property_value from database_properties where property_name='NLS_CHARACTERSET';
+
+'''AL32UTF8 stores characters beyond U+FFFF as four bytes (exactly as Unicode defines 
+UTF-8). Oracle’s “UTF8” stores these characters as a sequence of two UTF-16 surrogate
+characters encoded using UTF-8 (or six bytes per character)'''
+
+os.environ[""NLS_LANG""] = "".AL32UTF8""
+
+....
+conn_data = str('%s/%s@%s') % (db_usr, db_pwd, db_sid)
+
+sql = ""select user_name apex.users where user_id = '%s'"" % userid
+
+...
+
+cursor.execute(sql)
+ldap_username = cursor.fetchone()
+...
+
+where 
+print ldap_username
+>>'Jo\xc3\xa3o'
+
+I've both tried (which return the same)
+ldap_username.decode('utf-8')
+>>u'Jo\xe3o'
+unicode(ldap_username, 'utf-8')
+>>u'Jo\xe3o'
+
+where
+u'João'.encode('utf-8')
+>>'Jo\xc3\xa3o'
+
+how to get the queries result back to the proper 'João' ?
+"
+87,"I was wondering if anyone here had some experience writing this type of script and if they could give me some pointers.
+I would like to modify this script to validate that the check-in file does not have a Carriage Return in the EOL formatting. The EOL format is CR LF in Windows and LF in Unix. When a User checks-in code with the Windows format. It does not compile in Unix anymore. I know this can be done on the client side but I need to have this validation done on the server side. To achieve this, I need to do the following:
+1) Make sure the file I check is not a binary, I dont know how to do this with svnlook, should I check the mime:type of the file? The Red Book does not indicate this clearly or I must have not seen it.
+2) I would like to run the dos2unix command to validate that the file has the correct EOL format. I would compare the output of the dos2unix command against the original file. If there is a diff between both, I give an error message to the client and cancel the check-in.
+I would like your comments/feedback on this approach.
+"
+88,"The inefficient way to do this is to use a loop:
+def fibR(n):
+    if n == 1 or n ==2:
+        return 1
+    return fibR(n-1) + fibR(n-2)
+
+for i in range(1,6):
+    print(fibR(i))
+
+However, this is inefficient because it will calculate the lower Fibonacci numbers more than once. You can use an array to store the intermediate Fibonacci numbers and improve performance:
+def fibR(n):
+    if n > len(fibR.values) - 1:
+        for i in range(len(fibR.values), n+1):
+            fibR.values.append(fibR(i-2) + fibR(i-1))
+    return fibR.values[n]
+
+fibR.values = [0, 1, 1]
+for i in range(1,6):
+    print(fibR(i))
+
+"
+89,"If you just want to copy the file then just do that using shutil. There are still several things that openpyxl doesn't support such as images and charts that will be lost. And, as you're seeing, memory is an issue. Each cell uses about 45 kB of memory.
+The openpyxl documentation is pretty clear about the different options used when opening workbooks: data_only only read the results of any formulae and ignore the formulae.
+See https://bitbucket.org/openpyxl/openpyxl/issue/171/copy-worksheet-function if you want to copy worksheets.
+Otherwise you can use two workbooks, one in read-only mode and the other in write-only mode. But if you want to copy, this is best done in the file system.
+If you only want to copy the values from one workbook to another then you can combine read-only and write-only modes to reduce the memory footprint. The following pseudo-code should give you a basis.
+wb1 = load_workbook(""file.xlsx"", read_only=True, data_only=True)
+wb2 = Workbook(write_only=True)
+for ws1 in wb1:
+    ws2 = wb2.create_sheet(ws1.title)
+    for r1 in ws1:
+        ws2.append(r1) # this might need unpacking to use values
+wb2.save(""copy.xlsx"")
+
+"
+90,"You could use a supervisor. A well known one that's written in Python would be supervisord, a more recent one also in Python would be Circus, and then there are Monit or daemontools and probably many more.
+"
+91,"The only thing that stops you from using urlopen directly on a file object is the fact that the builtin file object lacks a len definition. A simple way is to create a subclass, which provides urlopen with the correct file. 
+I have also modified the Content-Type header in the file below.
+import os
+import urllib2
+class EnhancedFile(file):
+    def __init__(self, *args, **keyws):
+        file.__init__(self, *args, **keyws)
+
+    def __len__(self):
+        return int(os.fstat(self.fileno())[6])
+
+theFile = EnhancedFile('a.xml', 'r')
+theUrl = ""http://example.com/abcde""
+theHeaders= {'Content-Type': 'text/xml'}
+
+theRequest = urllib2.Request(theUrl, theFile, theHeaders)
+
+response = urllib2.urlopen(theRequest)
+
+theFile.close()
+
+
+for line in response:
+    print line
+
+"
+92,"I think it certainly sounds like a viable option. As far as I know, the only ""interaction"" the official Python installer has with Windows is to add registry keys associating .py and .pyw files with the proper executables and possibly modifying the PATH variable. As long as the user has the correct .dll files to which the .exe's are linked, you could just zip up c:\Python33 or whichever version you're using and distribute that with your application. Before you do that, though, clone the directory and go through c:\clonedPython\libs\site-packages and get rid of any modules that aren't required for your application. Don't delete any necessary dependencies!
+Portable Python is a possibility, but there may be some issues with certain modules not working properly, and it's not available yet for Python 3.3 (3.2.1 is the latest version, as well as 2.7.3), so if you have version-dependent syntax that might not be the best choice.
+"
+93,"I found, the foreign key constraint in the column must be removed
+from sqlalchemy import (Column, Integer, create_engine, 
+                        ForeignKeyConstraint)
+from sqlalchemy.ext.declarative import declarative_base
+
+
+#engine = create_engine('sqlite:///memory')
+engine = create_engine('postgres:///memory')
+Base = declarative_base()
+
+
+class Test(Base):
+    __tablename__ = 'test'
+    id = Column(Integer, primary_key=True)
+    id2 = Column(Integer, primary_key=True)
+
+
+class Test2(Test):
+    __tablename__ = 'test2'
+    # No foreign key here
+    id = Column(Integer, primary_key=True)
+    id2 = Column(Integer, primary_key=True)
+
+    __table_args__ = (
+        # this constraints must be the alone to Test model
+        ForeignKeyConstraint([id, id2], [Test.id, Test.id2]),
+    )
+
+
+Base.metadata.create_all(engine)
+
+"
+94,"%d stands for ""decimal"". ! is there with the rest of the string. %d means that a decimal number will be outputted there. Synonim for %d is also %i. same goes for instance with %s and strings
+"
+95,"Shobhit Bhatnagar, try this one - pip install -e git+https://github.com/dvska/gdata-python3#egg=gdata
+"
+96,"For those using GUI (navigator), select Environments > root. On the right is a list of packages - installed, not installed, etc. 
+Select ""not installed"", search for seaborn. If it appears, then click the row, and select Apply button at bottom of that page.
+If it doesn't appear, then something else is wrong with your install.
+Hope that helps.
+"
+97,"A more conventional way to store ""meta"" data along with a dict would be either:
+
+to maintain two dicts with same set of keys, one for the actual data, one for ""meta""
+to have a dict with (""raw"") keys, and values are 2-tuples: ( value, item-meta-data )
+
+Both are simple and require no special magic.  You would also avoid problems like the one you describe in your question (and others to come).
+"
+98,"since col is list . u can just copy list items to angles and append it
+angles=col[:]
+angles.append(angle)
+
+"
+99,"You have to iterate through the entire list, which is O(n) time, and then insert each into a set, which is O(1) time. So the overall time complexity is O(n), where n is the length of the list.
+No other space other than the set being created or the list being used is needed.
 "

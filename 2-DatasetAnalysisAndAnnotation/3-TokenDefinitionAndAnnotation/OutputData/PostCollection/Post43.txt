@@ -1,0 +1,62 @@
+I'm running on debian jessie. I'm trying to parse my pdf with tabula-py library but I get this error 
+   2016 12:16:57 PM org.apache.pdfbox.pdmodel.font.PDTrueTypeFont 
+
+getawtFont  
+0                                             Italic                          
+1   2016 12:16:57 PM org.apache.fontbox.util.Font...                          
+2                                             Italic                          
+                                       Oct 13  \
+0  INFO: Can't find the specified font Tahoma   
+1                                      Oct 13   
+2             WARNING: Font not found: Tahoma   
+
+How can do to fix that ?
+Here is my code :
+import cv2
+import numpy as np
+# from matplotlib import pyplot as plt
+from wand.image import Image
+from tabula import read_pdf_table
+
+# Converting first page into JPG
+with Image(filename="ed.pdf", resolution=200) as pdf:
+    pdf.compression_quality = 99
+    pdf.save(filename="temp.png")
+
+img = cv2.imread('temp.png', 0)
+img2 = img.copy()
+template = cv2.imread('test cust.png', 0)
+imgw, imgh = img.shape[::-1]
+w, h = template.shape[::-1]
+
+methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR', 'cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
+
+for meth in methods:
+    img = img2.copy()
+    method = eval(meth)
+
+    # Apply template Matching
+    res = cv2.matchTemplate(img, template, method)
+    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
+
+    # If the method is TM_SQDIFF or TM_SQDIFF_NORMED, take minimum
+    if method in [cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]:
+        top_left = min_loc
+    else:
+        top_left = max_loc
+
+    bottom_right = (top_left[0] + w, top_left[1] + h)
+
+    top = top_left[1];
+    left = top_left[0];
+    bottom = imgh - bottom_right[1];
+    right = imgw - bottom_right[0];
+
+    cv2.rectangle(img, top_left, bottom_right, [0,255,0], 10)
+
+    df = read_pdf_table('ed.pdf', area=(top,left,bottom,right))
+    print(df)
+
+The error will be happened at this line 
+df = read_pdf_table('ed.pdf', area=(top,left,bottom,right))
+

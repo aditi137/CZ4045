@@ -1,0 +1,6 @@
+How would I replace the the hard coded 'python' with snippet['language'] from a for loop in my view?
+{% highlight 'python', lineno='inline' -%}
+    {{snippet['code']}}
+{% endhighlight %}
+
+

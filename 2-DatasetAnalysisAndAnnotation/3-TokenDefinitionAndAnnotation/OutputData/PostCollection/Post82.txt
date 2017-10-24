@@ -1,0 +1,9 @@
+You can consider changing your backend to TkAgg in the Python 2 virtualenv by running the following:
+sudo apt install python-tk  # install Python 2 bindings for Tk
+pip --no-cache-dir install -U --force-reinstall matplotlib  # reinstall matplotlib   
+
+To confirm the backend is indeed TkAgg, run
+python -c 'import matplotlib as mpl; print(mpl.get_backend())'
+
+and you should see TkAgg.
+

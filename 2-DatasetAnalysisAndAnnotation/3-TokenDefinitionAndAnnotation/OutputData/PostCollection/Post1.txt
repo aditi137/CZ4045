@@ -1,0 +1,7 @@
+I am writing a simple Python for loop to prnt the current character in a string. However, I could not get the index of the character. Here is what I have, does anyone know a good way to get the current index of the character in the loop?
+ loopme = 'THIS IS A VERY LONG STRING WITH MANY MANY WORDS!'
+
+ for w  in loopme:
+    print "CURRENT WORD IS " + w + " AT CHARACTER " 
+
+

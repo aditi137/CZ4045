@@ -1,0 +1,6 @@
+It took me a long time to get this working for PHP, after a lot of communication with Google it was finally revealed to me that in your app.yaml file you need to have a line that reads:
+threadsafe: false
+
+In order for the pipeline to successfully pick up and deploy your git push (I use sourcetree, but command line git has the same end result) that line must be present.  If it's omitted or set to true the pipeline won't be able to deploy it.
+I wanted to throw this answer on here in case anyone stumbled on this thread looking for help.  One of my projects has "randomly broken" and after 3 months of successfully using my release pipeline for multiple commits per day it suddenly no longer deploys when I push.  Ultimately giving the extremely helpful error message of "Unable to get deployment status" - and now none of my changes can be applied to the live site.  Copying the entire source code, changing the app name, and pushing to a new GAE project with release pipeline works fine, but I need the original site to start working again.
+

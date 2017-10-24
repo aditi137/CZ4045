@@ -1,0 +1,14 @@
+I've got a directory structure like this:
+src/
+--scripts/
+----foo/a.py
+----bar/b.py
+--lib1
+--lib2
+--lib3
+
+The intent if to have scripts/foo/ and scripts/bar/ be directories of runnable python scripts that make use of the modules in lib1, lib2, lib3. Scripts, lib1, lib2, and lib3 are all separate internal git repositories under active development. There isn't a static interface or published version to depend on. Basically, they are all being written nearly at the same time by a small team.
+I've played with making lib[1-3] submodules and I really hate the workflow. What I think I would like is to be able to do "import lib1" from foo/a.py and have it use the current code in lib1. Once things mature we will likely version everything and work to product proper packages. 
+One way to do this would to muck with sys.path in each of the scripts to explicitly look in '../../' or something. I was wondering if there was something more elegant. Could I get something like pip install -r requirements.txt to do this work for me? I don't want to make an official pypi setup.py, I just want to get a pointer to the current contents of the lib[1-3] directory. The reason I like the requirements.txt approach is that as the libs mature, I'll end up putting version and git URLs in there. 
+Or, is there a completely different way to do this?
+

@@ -1,0 +1,3 @@
+In a html5 page using image map, I would like to use python (or Perl, Ruby, C) to crawl it to find a particular image (those are separated by a transparency area) in another one and click it when this image is found. The image are the same all the times. What is the best way to achieve this ? 
+Edit: for french readers, the trick is implemented, see http://www.sputnick-area.net/?p=572
+

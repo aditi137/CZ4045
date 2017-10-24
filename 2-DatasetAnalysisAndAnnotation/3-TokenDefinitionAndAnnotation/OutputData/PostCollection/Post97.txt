@@ -1,0 +1,5 @@
+For those using GUI (navigator), select Environments > root. On the right is a list of packages - installed, not installed, etc. 
+Select "not installed", search for seaborn. If it appears, then click the row, and select Apply button at bottom of that page.
+If it doesn't appear, then something else is wrong with your install.
+Hope that helps.
+

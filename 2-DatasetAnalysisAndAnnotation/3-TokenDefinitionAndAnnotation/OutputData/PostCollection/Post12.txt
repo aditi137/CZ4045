@@ -1,0 +1,2 @@
+This could be an oversimplification, i don't think it would be a good idea to try to make a general purpose ui library this way. On the other hand you could use this approach (metaclasses and friends) to simplify the definition of certain classes of user interfaces for an existing ui library and depending of the application that could actually save you a significant amount of time and code lines.
+

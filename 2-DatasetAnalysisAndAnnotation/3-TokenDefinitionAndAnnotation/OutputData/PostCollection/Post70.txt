@@ -1,0 +1,16 @@
+The zip commands in that tutorial are missing a parameter. I ran into this exact problem today with pysftp, which is built on paramiko. libffi-72499c49.so.6.0.4 is in a hidden dot directory inside lib64/python2.7/site-packages/.libs_cffi_backend. Depending on how you zipped up the dependencies in your virtualenv, you may have inadvertantly excluded this directory.
+
+First, make sure libffi-devel and openssl-devel are installed on your Amazon Linux instance, otherwise the cryptography module may not be compiling correctly.
+sudo yum install libffi-devel openssl-devel
+
+
+If those packages were not installed before, delete and rebuild your virtualenv.
+
+Make sure that when you are zipping up your site-packages that you use '.' instead of '*', otherwise you will not be including files and directories that are hidden because their names begin with a period.
+cd path/to/my/helloworld-env/lib/python2.7/site-packages
+zip -r9 path/to/zip/worker_function.zip .
+cd path/to/my/helloworld-env/lib64/python2.7/site-packages
+zip -r9 path/to/zip/worker_function.zip .
+
+
+

@@ -1,0 +1,21 @@
+The inefficient way to do this is to use a loop:
+def fibR(n):
+    if n == 1 or n ==2:
+        return 1
+    return fibR(n-1) + fibR(n-2)
+
+for i in range(1,6):
+    print(fibR(i))
+
+However, this is inefficient because it will calculate the lower Fibonacci numbers more than once. You can use an array to store the intermediate Fibonacci numbers and improve performance:
+def fibR(n):
+    if n > len(fibR.values) - 1:
+        for i in range(len(fibR.values), n+1):
+            fibR.values.append(fibR(i-2) + fibR(i-1))
+    return fibR.values[n]
+
+fibR.values = [0, 1, 1]
+for i in range(1,6):
+    print(fibR(i))
+
+

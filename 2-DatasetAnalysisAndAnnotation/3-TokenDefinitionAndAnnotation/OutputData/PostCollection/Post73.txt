@@ -1,0 +1,11 @@
+I've recently decided to start using .format() instead of % (see this question). Instead of the {0}, {1} syntax, I'm wondering if the following is an acceptable use:
+import os
+def get_filename(player_name):
+    for ext in ('jpg', 'jpeg', 'png'):
+        filename = "data/avatars/{player_name}.{ext}".format(**locals())
+        if os.path.exists(filename):
+            return filename
+    return None
+
+I like the straightforwardness of it - local variables go into the string - but am wondering if there's any reason I shouldn't do the above.
+

@@ -1,0 +1,6 @@
+SELECT * FROM attachments WHERE post_id in (SELECT id FROM posts WHERE topic_id = ?);
+
+Something like this?
+Edit:
+Not what the poster wanted after all. I don't think it is possible to do what you want with your table structure, without using more than one query.
+

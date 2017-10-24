@@ -1,0 +1,24 @@
+If you are looking for something more simple, you can use the subprocess module (python default) to start and check your processes...
+A basic version would look like this:
+# run.py
+
+import subprocess, time
+
+# add your listener processor call here
+_PROCESS_ARGS = ['python','/path/to/listener.py']
+_PROCESS_TOTAL = 10
+
+process_list = []
+
+# start the processes...
+for i in range(_PROCESS_TOTAL):     
+    process_list.append(subprocess.Popen(_PROCESS_ARGS))
+
+while True:     
+    for i in range(_PROCESS_TOTAL):         
+        p = process_list[i]         
+            if p.poll() != None: # check if process is running                      
+                process_list[i] = subprocess.Popen(_PROCESS_ARGS) # if not, replace with new one
+    time.sleep(1) # check only every second...
+
+

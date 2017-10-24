@@ -1,0 +1,2 @@
+I was never satisfied with David Mertz's articles at IBM on metaclsses so I recently wrote my own metaclass article.  Enjoy.
+

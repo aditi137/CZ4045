@@ -1,0 +1,40 @@
+Okay, i've used the API docs and found the problem.
+The parameter you need to use to order the data is: "order=asc|desc", and not "sort_order" as previously thought.
+Please use this function:
+def download_contract_from_quandl(contract, dl_dir):
+"""
+Download an individual futures contract from Quandl and then
+store it to disk in the 'dl_dir' directory. An auth_token is
+required, which is obtained from the Quandl upon sign-up.
+"""
+# Construct the API call from the contract and auth_token
+api_call = "https://www.quandl.com/api/v3/datasets/"
+api_call += "CME/%s.csv" % contract
+# If you wish to add an auth token for more downloads, simply
+# comment the following line and replace MY_AUTH_TOKEN with
+# your auth token in the line below
+params = "?auth_token=YOUR_TOKEN"
+params += "&order=asc"
+full_url = "%s%s" % (api_call, params)
+
+# Download the data from Quandl
+data = requests.get(full_url).text
+# Store the data to disk
+fc = open('%s/%s.csv' % (dl_dir, contract), 'w')
+fc.write(data)
+
+Note:
+The way you are using the api, by simple http request, altough works, is the not the ideal way to use their API.
+There is a python package called Quandl, you can install like so:
+pip3 install quandl
+
+On your system.
+Also then you would have a single (and not multiple using auth_token=YOUR_TOKEN in each request) auth call like so:
+quandl.ApiConfig.api_key = 'YOUR_TOEKN'
+
+And then each api call will be simple and elegent using their package instead or creating an http request manually, like so:
+data = quandl.get("CME/ESH2010.csv", order="asc")
+
+I will advise using the second method of using the API, but both will work perfectly.
+Cheers, Or.
+
