@@ -9,7 +9,12 @@ nltk.download('punkt')
 plt.style.use('ggplot')
 
 def convert_html_to_text(row):
-    bs_obj = BeautifulSoup(row['Body'], "lxml")
+    body = row['Body']
+    lis = body.split("</code>")
+    lis = [item[0:item.find("<code>")] if item.find("<code>") != -1 else item
+           for item in lis]
+    body = ''.join(lis)
+    bs_obj = BeautifulSoup(body, "lxml")
     return bs_obj.text
 
 def text_word_count(row):
