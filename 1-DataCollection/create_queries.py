@@ -1,6 +1,8 @@
 import pandas as pd
+import os
 
-question_ids = list(pd.read_csv('questions.csv')['Id'])
+inputSubdir = 'InputData'
+question_ids = list(pd.read_csv(os.path.join(inputSubdir,'questions.csv'))['Id'])
 print question_ids[0:5]
 query = "select *\nfrom Posts\nwhere PostTypeId = 2\nand ParentId in ("
 for i in range(len(question_ids)):
