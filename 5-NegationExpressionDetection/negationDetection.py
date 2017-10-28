@@ -24,7 +24,7 @@ plt.hist(posts['NumNegWords'], bins=range(0, 20, 1), histtype='bar', ec='black')
 plt.xlabel('Number of negative words')
 plt.ylabel('Number of posts')
 plt.title('Negation Expressions count')
-plt.savefig(os.path.join(outputSubDir, 'negation_expression_count.png'))
 plt.text(8, 500, "%d posts (%.2f%%) \nhave negation expressions" % (num_posts_with_neg, per),
          bbox={'facecolor': 'red', 'alpha': 0.5, 'pad': 10})
+plt.savefig(os.path.join(outputSubDir, 'negation_expression_count.png'))
 plt.show()
