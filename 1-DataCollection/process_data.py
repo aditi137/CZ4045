@@ -15,7 +15,7 @@ def convert_html_to_text(row):
            for item in lis]
     body = ''.join(lis)
     bs_obj = BeautifulSoup(body, "lxml")
-    return bs_obj.text.replace("\n", " ")
+    return bs_obj.text
 
 def text_word_count(row):
     return len(word_tokenize(row['Text']))
