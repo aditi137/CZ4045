@@ -1,2 +1,5 @@
-What you're looking for is spelled: if isinstance(handler, StreamHandler): - but I'd really like to know why you want to do such a thing instead of using the sensible solution (ie not configuring a StreamHandler for your logger at all...). 
+My possibilities are limited, as I do have a nice host but can just use the normal server plan. Which means, only a normal server on port 80.
+I have tried to read up some on WebSockets and/or Comet, and they mostly seem to require a second server running on another port.
+Is there a way to get a stable Comet-like behaviour that scales nicely. My solution up to now is a script that sends a GET request every 5 seconds, which is not a good way to make a web chat. And I am afraid it might kill my server when a few dozen people are online.
+So how can I get a reliable comet-like behaviour?
 

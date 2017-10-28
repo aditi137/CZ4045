@@ -1,16 +1,5 @@
-Why is it that I cannot access the attribute of an object as seen in the following example? (raises an error)
-class X(object):
-def __init__(self):
-    self.y = Y(self)
-    self.variable = 5
-
-class Y(object):
-    def __init__(self,parent):
-        self.parent = parent
-        print self.parent.variable
-
-my_instance = X()
-
-Error raised: AttributeError: 'X' object has no attribute 'variable'
-Shouldn't variable be accessible to the instance of Y that is created when X is initialized?
+In a Keras model with the Functional API I need to call fit_generator to train on augmented images data using an ImageDataGenerator.
+The problem is my model has two outputs: the mask I'm trying to predict and a binary value
+I obviously only want to augment the input and the mask output and not the binary value.
+How can I achieve this?
 

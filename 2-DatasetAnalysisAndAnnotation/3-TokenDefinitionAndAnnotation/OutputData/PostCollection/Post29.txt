@@ -1,2 +1,4 @@
-I'm using Cygwin and Python2.7 and I have already installed some third party modules (PySide, PyGame) on my computer and when I run them using the normal GUI they work fine. But when I run python inside Cygwin it doesn't recognize the modules I already have installed. I'm using Windows 7 for this. Is there anyway I can get Cygwin to recognize these libraries? 
+If you can hook your authentication into the Django authentication scheme you'll be able to use request.user.
+I think this should just be a case of calling authenticate() and login() based on the contents of your Cookie.
+Edit: @Staale - I always use the locals() trick for my context so all my templates can see request and so request.user.  If you're not then I guess it wouldn't be so straightforward.
 

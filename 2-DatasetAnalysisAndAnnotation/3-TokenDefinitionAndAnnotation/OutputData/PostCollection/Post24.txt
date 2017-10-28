@@ -1,31 +1,7 @@
-This is documented on the doxygen website, but to summarize here:
-You can use doxygen to document your Python code. You can either use the Python documentation string syntax:
-"""@package docstring
-Documentation for this module.
-
-More details.
-"""
-
-def func():
-    """Documentation for a function.
-
-    More details.
-    """
-    pass
-
-In which case the comments will be extracted by doxygen, but you won't be able to use any of the special doxygen commands.
-Or you can (similar to C-style languages under doxygen) double up the comment marker (#) on the first line before the member:
-## @package pyexample
-#  Documentation for this module.
-#
-#  More details.
-
-## Documentation for a function.
-#
-#  More details.
-def func():
-    pass
-
-In that case, you can use the special doxygen commands. There's no particular Python output mode, but you can apparently improve the results by setting OPTMIZE_OUTPUT_JAVA to YES.
-Honestly, I'm a little surprised at the difference - it seems like once doxygen can detect the comments in ## blocks or """ blocks, most of the work would be done and you'd be able to use the special commands in either case. Maybe they expect people using """ to adhere to more Pythonic documentation practices and that would interfere with the special doxygen commands?
+I figured out how to make it work. From this:
+qry = "Insert into prints set print = '{0}'".format(printBin)
+
+To this:
+qry = "Insert into prints set print = '0x{0}'".format(printBin)
+
 

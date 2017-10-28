@@ -1,8 +1,19 @@
-use the s parameter.
-from pandas.tools.plotting import scatter_matrix
-
-df = pd.DataFrame(np.random.rand(10, 2))
-scatter_matrix(df, alpha=0.5, figsize=(8, 8), diagonal='kde', s=1000)
-
-
+O(n):  The Counter() method is best (if your objects are hashable):
+def compare(s, t):
+    return Counter(s) == Counter(t)
+
+O(n log n):  The sorted() method is next best (if your objects are orderable):
+def compare(s, t):
+    return sorted(s) == sorted(t)
+
+O(n * n): If the objects are neither hashable, nor orderable, you can use equality:
+def compare(s, t):
+    t = list(t)   # make a mutable copy
+    try:
+        for elem in s:
+            t.remove(elem)
+    except ValueError:
+        return False
+    return not t
+
 

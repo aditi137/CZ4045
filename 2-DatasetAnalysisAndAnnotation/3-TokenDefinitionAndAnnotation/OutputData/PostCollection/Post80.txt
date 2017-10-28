@@ -1,56 +1,14 @@
-I doing a simple python GUI using tkinter to do screen recording.Basically, I am using ffmpeg commands at the backend with tkinter as the front end triggering the ffmpeg commands.There is something that I stuck with.I dont know why my time is unable to trigger off if I program in this way.
-The code below is basically the recording method.You will notice that I am actually trying to update my tkinter GUI in the while loop.This method is actually in my class named Gui_Rec() which contains other methods I need for my screen recording program.
-def rec(self):
-    global videoFile
-    mydate = datetime.datetime.now()
-    videoFile = mydate.strftime("\%d%b_%Hh%Mm.avi")
-
-    self.l['text']=os.path.expanduser('~')+"\Videos"
-    self.l1['text']=videoFile
-    self.b.config(state=DISABLED)
-    self.b1.config(state=ACTIVE)
-
-    t = Thread(target=self.rec_thread)#trigger another method using thread which will run ffmpeg commands here
-    t.start()
-
-
-    while True:
-        if self.count_flag == False:
-            break
-
-        self.label['text'] = str("%02dm:%02ds" % (self.mins,self.secs))
-
-        if self.secs == 0:
-            time.sleep(0)
-        else:
-            time.sleep(1)
-
-        if(self.mins==0 and self.secs==1):
-            self.b1.config(fg="white")
-            self.b1.config(bg="red")
-            self.b.config(fg="white")
-            self.b.config(bg="white")
-
-        if self.secs==60:
-            self.secs=0
-            self.mins+=1
-            self.label['text'] = str("%02dm:%02ds" % (self.mins,self.secs))
-
-        main.gui.update()               
-        self.secs = self.secs+1
-
-other method in the class Gui_Rec() then this below
-def main():
-   gui = Gui_Rec()
-   gui.minsize(300,155)
-   gui.maxsize(390,195)
-   gui.title("Desktop REC")
-   gui.attributes("-topmost", 1)
-   gui.mainloop() #start mainloop of program
-
-
-if __name__ == '__main__':
-       main()
-
-Strangely, if I don't put the above section of code in the the def main(), the GUI will be update with the duration of the time running when rec button is pressed.I don't really know how to go about solving this.Tried putting it in another thread yet it doesn't  work as well.Thank you everyone for your help.
+I'm creating a telegram bot that searchs for words in a online dictionary, the problem comes when I need to create the command in Telegram for searching in that dictionary, at the momment I have this:
+from rae import Drae
+drae = Drae()
+
+  if text.startswith('/'):
+     if text =='/define':
+        drae.search(u' ')  # The problem is here, I don't know how to implement the command and the word who the client wants to search.
+        setEnabled(chat_id, True)
+
+
+I'm using this Telegram API in Python: https://github.com/yukuku/telebot
+And this API for the Dictionary: https://github.com/dialelo/rae-1
+
 

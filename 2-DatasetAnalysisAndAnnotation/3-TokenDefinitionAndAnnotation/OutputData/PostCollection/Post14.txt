@@ -1,10 +1,46 @@
-Here's how I'd write it:
-search = re.compile(r'^The.*said').search
-match = search(input)
-if match:
-    match = match.group(0)
-
-If input is "The cat said my name", match will be "The cat said".
-If input is "The cat never mentioned my name", match will be None.
-I really like the fact that Python makes it possible to compile a regular expression and assign the particular method of interest to a variable in one line.
+I'm writing a small web app on AppEngine/Python for accessing the GitHub API. 
+I've successfully performed the Oauth2 flow (ie. I can access the logged user info). What I'd like to do now is that as the user goes back to my webpage uri which I specified as the redirect_uri for GitHub, having authorized the app, I make the request for obtaining the access token and then redirect the user to the homepage. 
+Now, if I perform the redirect with self.redirect("/") at the end of the handler for the redirect_uri, Python trows the error AttributeError: url. 
+What am I doing wrong? 
+Here's the class definition of the handler for redirect_uri
+class RedirectGithub(webapp2.RequestHandler):
+    def get(self):
+        self.github_code = self.request.get("code")
+        self.payload = {
+        "client_id": GITHUB_CLIENT_ID, 
+        "client_secret": GITHUB_CLIENT_SECRET,  
+        "code": self.github_code, 
+        "redirect_uri": GITHUB_REDIRECT_URI, 
+    }
+
+    self.data = urllib.urlencode(self.payload)
+    self.request = urllib2.Request(GITHUB_URL_ACCESSTOKEN, self.data)
+    self.github_response = urllib2.urlopen(self.request)
+    github_access_token = urlparse.parse_qs(self.github_response.read())
+    self.redirect("/")
+
+Here's the full stack trace
+    Traceback (most recent call last):
+      File "/base/data/home/runtimes/python27/python27_lib/versions/third_party/webapp2-2.3/webapp2.py", line 1511, in __call__
+        rv = self.handle_exception(request, response, e)
+      File "/base/data/home/runtimes/python27/python27_lib/versions/third_party/webapp2-2.3/webapp2.py", line 1505, in __call__
+        rv = self.router.dispatch(request, response)
+      File "/base/data/home/runtimes/python27/python27_lib/versions/third_party/webapp2-2.3/webapp2.py", line 1253, in default_dispatcher
+        return route.handler_adapter(request, response)
+      File "/base/data/home/runtimes/python27/python27_lib/versions/third_party/webapp2-2.3/webapp2.py", line 1077, in __call__
+        return handler.dispatch()
+      File "/base/data/home/runtimes/python27/python27_lib/versions/third_party/webapp2-2.3/webapp2.py", line 547, in dispatch
+        return self.handle_exception(e, self.app.debug)
+      File "/base/data/home/runtimes/python27/python27_lib/versions/third_party/webapp2-2.3/webapp2.py", line 545, in dispatch
+        return method(*args, **kwargs)
+      File "/base/data/home/apps/MY_APP", line 125, in get
+        self.redirect("/")
+      File "/base/data/home/runtimes/python27/python27_lib/versions/third_party/webapp2-2.3/webapp2.py", line 583, in redirect
+        response=self.response)
+      File "/base/data/home/runtimes/python27/python27_lib/versions/third_party/webapp2-2.3/webapp2.py", line 1740, in redirect
+        uri = str(urlparse.urljoin(request.url, uri))
+      File "/base/data/home/runtimes/python27/python27_dist/lib/python2.7/urllib2.py", line 229, in __getattr__
+        raise AttributeError, attr
+    AttributeError: url
+
 

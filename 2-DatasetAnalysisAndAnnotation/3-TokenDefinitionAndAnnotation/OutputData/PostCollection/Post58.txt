@@ -1,6 +1,37 @@
-This might do the trick:
-(?=[\w:])(\w*)(?::(\w*))?
-
-(\w*)(?::(\w*))? describes the structure you want, but it has a problem that it also matches empty string; thus we have to assure that there is at least one non-space character at the start (which will get matched by the greedy operators), and the lookahead at the start does it.
-Edit: wrong paste :)
+In my Python program I have the following code:
+def main():
+    # The file's path
+    path = os.path.dirname(os.path.realpath(__file__))
+    ...
+    # Config file relative to this file
+    loggingConf = open('{0}/configs/logging.yml'.format(path), 'r')
+    logging.config.dictConfig(yaml.load(loggingConf))
+    loggingConf.close()
+    logger = logging.getLogger(LOGGER)
+    ...
+
+and this is my logging.yml configuration file:
+version: 1
+formatters:
+  default:
+    format: '%(asctime)s %(levelname)s %(name)s %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: default
+    stream: ext://sys.stdout
+  file:
+    class : logging.FileHandler
+    formatter: default
+    filename: bot.log
+loggers:
+  cloaked_chatter:
+    level: DEBUG
+    handlers: [console, file]
+    propagate: no
+
+The problem is that the bot.log file is created where the program is launched. I want it to always be created in the project's folder, i.e. in the same folder as my Python program.
+For an example, launching the program with ./bot.py would create the log file in the same folder. But launching it with python3 path/bot.py would create the log file a level above the Python program in the file hierarchy.
+How should I write the filename in the config file to solve this? Or do I need to write a custom handler? If so, how? Or is this not possible to solve using dictConfig?
 

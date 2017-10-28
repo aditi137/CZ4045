@@ -1,40 +1,7 @@
-I'm trying to find a blendshape deformer from a target mesh in the python maya api. I'm pretty sure I have to iterate through the dependency graph to get the blendshape.
-This is what i'm trying:
-import maya.OpenMaya as OpenMaya
-import maya.OpenMayaAnim as OpenMayaAnim
-
-#Name of our targetmesh.
-targetMesh = "pSphere1"
-
-#Add selection.
-mSel = OpenMaya.MSelectionList()
-mSel.add(targetMesh, True)
-
-#Get MObj
-mObj = OpenMaya.MObject()
-mSel.getDependNode(0, mObj)
-
-#Make iterator.
-itDG = OpenMaya.MItDependencyGraph(mObj,
-                                   OpenMaya.MFn.kBlendShape, 
-                                   OpenMaya.MItDependencyGraph.kUpstream)
-
-while not itDG.isDone():
-    oCurrentItem = itDG.currentItem()
-    blndSkin = OpenMayaAnim.MFnBlendShapeDeformer(oCurrentItem)
-    print blndSkin
-    break
-
-Unfortunately I get no blendshape deformer.
-The same example with maya.cmds:
-import maya.cmds as cmds
-
-targetMesh = "pSphere1"    
-
-history = cmds.listHistory(targetMesh, future=True)
-blndshape = cmds.ls(history, type="blendShape")
-
-print blndshape
-
-Any help would be greatly appreciated!
+I am just very curious. Django runs the following line:
+email_body = get_template("applicant/email_with_token.txt").render(Context())
+
+it runs it from form_valid() of a class-based view. New context is created based on a regular python dictionary. No parameters are passed, that come from a view, user, session, etc... Inside of the template there is {% load i18n %} and a bunch of context/variables.
+Still, Django recognizes the language of the current session and applies appropriate translations.
+So, where from does it know the session language?
 

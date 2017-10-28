@@ -1,11 +1,8 @@
-If item_info is a RawQuerySet, try {% if item_info.all %} instead of {% if item_info %}. RawQuerySet does not define a __bool__() method, so the instances are always considered True. See the warnings in this section of the docs, repeated below, just in case this link dies in the future:
-
-While a RawQuerySet instance can be iterated over like a normal
-  QuerySet, RawQuerySet doesn’t implement all methods you can use with
-  QuerySet. For example, bool() and len() are not defined in
-  RawQuerySet, and thus all RawQuerySet instances are considered True.
-  The reason these methods are not implemented in RawQuerySet is that
-  implementing them without internal caching would be a performance
-  drawback and adding such caching would be backward incompatible.
-
+I was using Jupyter in Windows and just switched to Ubuntu. I found the colour of the code is very weird in the firefox browser. E.g. it highlights the variables in every other line.
+I tried to solve this problem by installing a custom theme and the effect should be like
+
+Instead, it still highlights every other variable on my side, like
+
+This just makes my eyes very tired when try to debug the code.
+I also tried disabling all the add-ons in Firefox which didn't help. Is there any setting that I can change to restore to the default colour display? 
 

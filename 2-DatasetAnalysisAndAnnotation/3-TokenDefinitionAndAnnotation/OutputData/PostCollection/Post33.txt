@@ -1,4 +1,3 @@
-Currently i filter by some option in django's admin interface. For instance lets say i filter by 'By status'. Is it possible to select multiple statuses to filter results from? Here is the screenshot of the filter:
-
-Can i select multiple items from this list? 
+I have a ton of scripts I need to execute, each on a separate machine. I'm trying to use Jenkins to do this. I have a Python script that can execute a single test and handles time limits and collection of test results, and a handful of Jenkins jobs that run this Python script with different args. When I run this script from the command line, it works fine. But when I run the script via Jenkins (with the exact same arguments) the test times out. The script handles killing the test, so control is returned all the way back to Jenkins and everything is cleaned up. How can I debug this? The Python script is using subprocess.popen to launch the test.
+As a side note, I'm open to suggestions for how to do this better, with or without Jenkins and my Python script. I just need to run a bunch of scripts on different machines and collect their output.
 

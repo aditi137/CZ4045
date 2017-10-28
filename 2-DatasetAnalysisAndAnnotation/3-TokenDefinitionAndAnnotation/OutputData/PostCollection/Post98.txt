@@ -1,7 +1,50 @@
-A more conventional way to store "meta" data along with a dict would be either:
-
-to maintain two dicts with same set of keys, one for the actual data, one for "meta"
-to have a dict with ("raw") keys, and values are 2-tuples: ( value, item-meta-data )
-
-Both are simple and require no special magic.  You would also avoid problems like the one you describe in your question (and others to come).
+Here is my attempt to achieve it without abandoning QListWidget()... utilizing layout's .insertLayout() method to attach QLabel without losing GUI space usually taken by QGroupBox()...
+
+
+from PyQt4 import QtGui, QtCore
+
+class MyApp(object):
+    def __init__(self):
+        super(MyApp, self).__init__()
+        app = QtGui.QApplication(sys.argv)
+        self.mainWidget = QtGui.QWidget()
+        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainWidget.setLayout(self.mainLayout)
+
+        self.groupbox = QtGui.QGroupBox()
+        self.groupbox.setTitle('My Groupbox')
+        self.layout = QtGui.QVBoxLayout()
+        self.groupbox.setLayout(self.layout)
+
+        self.listGroupbox = QtGui.QGroupBox()
+        self.listLayout = QtGui.QHBoxLayout()
+        self.listGroupbox.setLayout(self.listLayout)
+        self.listA=QtGui.QListWidget()
+        self.listB=QtGui.QListWidget()
+
+        self.subLayoutA=QtGui.QVBoxLayout()        
+        self.listLayout.insertLayout(0,self.subLayoutA)
+        self.subLayoutA.addWidget(QtGui.QLabel('Label A') )
+        self.subLayoutA.addWidget(self.listA)
+
+        self.subLayoutB=QtGui.QVBoxLayout()
+        self.listLayout.insertLayout(1,self.subLayoutB)
+        self.subLayoutB.addWidget(QtGui.QLabel('Label B') )
+        self.subLayoutB.addWidget(self.listB)
+
+
+        self.layout.addWidget(self.listGroupbox) 
+
+        self.okButton = QtGui.QPushButton('OK')
+        self.okButton.clicked.connect(self.OK) 
+        self.layout.addWidget(self.okButton)                      
+        self.mainLayout.addWidget(self.groupbox)
+        self.mainWidget.show()
+        sys.exit(app.exec_())
+
+    def OK(self):
+        print 'Ok'    
+if __name__ == '__main__':
+    MyApp()
+
 

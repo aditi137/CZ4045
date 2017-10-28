@@ -1,36 +1,35 @@
-I hope you find this solution satisfactory:
-import re
-
-data = """
-Views 2.x-dev
-Viewfield 6.x-2.x, xxxx-xx-xx
-Version 6.x-2.3
-ctools 7.x-1.x-dev
-XML sitemap 6.x-1, 2009-08-24
-6.x-1.6
-"""
-## Solution 1: 
-## 1) Finds all results that matches with the pattern 
-## '<number>.x-<other_chars>' in a not greedy way 
-## (that is why the '?')
-## 2) Treat the found match and remove any ','
-
-results = []
-for result in re.findall( r"[0-9]\.x{1}\-.*x?", data ):
-    results.append(result.split(",")[0])
-
-print (results)
-
-## Solution 2: (and my favourite)
-## Create a list with those words that matches the pattern 
-## <number>.x at their beginning
-## The words are the result of splitting the 'data' with the
-## split function from the regex module with a
-## non-capturing version of regular parentheses.
-
-result = [ x  for x in re.split(r'(?:,|\s)\s*', data) \ 
-           if re.match(r'^[0-9].x',x) ]
-
-print (result)
-
+You can use the pandas library for this. Doing so, you can leverage pandas' amazing handling of big CSV files (even in the hundreds of MB).
+Code:
+import pandas as pd
+
+csv_file = 'test_csv.csv'
+df = pd.read_csv(csv_file, header=None)
+print df
+print "-------------------------------------------"
+
+path = "C:/Abc/bcd/Def/Test/temp/test/GLNext/"
+df[0] = df[0].replace({path:""}, regex=True)
+
+print df
+# df.to_csv("truncated.csv") # Export to new file.
+
+Result:
+                                                   0   1    2   3
+0    C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.frag   0    0   0
+1    C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.vert   0    0   0
+2  C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.lin...  16   24   3
+3  C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.lin...  87  116  69
+4  C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.lin...  75   95  61
+5  C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.lin...   0    0 NaN
+6  C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.lin...   0    0   0
+-------------------------------------------
+                            0   1    2   3
+0                  FILE0.frag   0    0   0
+1                  FILE0.vert   0    0   0
+2      FILE0.link-link-0.frag  16   24   3
+3      FILE0.link-link-0.vert  87  116  69
+4  FILE0.link-link-0.vert.bin  75   95  61
+5           FILE0.link-link-0   0    0 NaN
+6           FILE0.link-link-6   0    0   0
+
 

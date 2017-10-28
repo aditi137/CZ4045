@@ -1,5 +1,11 @@
-since col is list . u can just copy list items to angles and append it
-angles=col[:]
-angles.append(angle)
-
+The major problem with passing locals() (or globals()) to format (or %) is that often, format strings can come from untrusted sources, and you risk exposing variables you didn't want to. If you're just formatting a literal string, that isn't an issue, but if you ever may have untrusted format strings, you have to think very carefully about what you're doing—and it's easier to just not do it.
+The more minor problem is that some of your code's readers won't understand locals, or the ** syntax, and will have a hard time figuring out what it does or why it works. This isn't much of an argument. In fact, you could even say that a lot of Python's design decisions come down to making sure this is almost never a good argument—the language is exactly big enough that it's reasonable to expect your readers to understand/learn anything pythonic you write. But it's still worth thinking about.
+Then there's the style issue. Every few months, someone comes along suggesting that the language should make it easier to do this, and it starts an argument on the mailing lists. Some people definitely think that this feels "implicit rather than explicit". Others disagree. I think it's pretty well settled that magic locals here would not be pythonic… but if you have to explicitly pass locals(), maybe that's fine and maybe it isn't. Like most style arguments that haven't gathered a consensus, it's really up to you. (By the way, the format API ultimately came out of an argument like this, where the original suggestion was for more-perl-like string interpolation with an implicit locals.)
+But ultimately, you have to consider what you're saving. Compare this:
+filename = "data/avatars/{player_name}.{ext}".format(**locals())
+
+to:
+filename = "data/avatars/{0}.{1}".format(player_name, ext)
+
+Your version isn't clearer, more explicit, easier to type, or even shorter. So, I'd say the risk of making it a little harder for novices to read, and annoying to some segment of the community (even if it's for bad reasons), isn't worth it if there's no benefit.
 

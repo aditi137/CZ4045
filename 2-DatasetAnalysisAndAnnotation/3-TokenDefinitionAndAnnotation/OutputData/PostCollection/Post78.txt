@@ -1,5 +1,3 @@
-Try using a string for fk_name:
-fk_name = 'linea'
-
-As an aside, I recommend that you use the Django convention, and name your models SensorAsignado and Linea instead of sensor_asignado and linea. It will make your code easier to understand for other Django users.
+Take a look at this link, it explains how Access-Control-Allow-Origin works.
+You might be hosting it on one url and directing ajax to another, and browsers have a same origin policy preventing this from working.
 

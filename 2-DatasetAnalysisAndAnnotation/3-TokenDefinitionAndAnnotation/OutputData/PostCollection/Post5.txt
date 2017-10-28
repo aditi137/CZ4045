@@ -1,17 +1,13 @@
-If a worker name can't include a space, you can check that and change the behavior accordingly.
-This will even work if the user combine the 2 options (e.g. entering 'a' and then 'b c'), although it is not perfect (it is possible to get more than n names, for example if n == 3 and inputting 'a b' and 'c d')
-n = int(input("enter the no of workers \n"))
-print("enter the names of workers")
-NameList = []
-while len(NameList) < n:
-    worker_name = input()
-    if ' ' in worker_name:
-        if NameList:
-            NameList.extend(worker_name.split())
-        else:
-            NameList = worker_name.split()
-    else:
-        NameList.append(worker_name)
-print(NameList)
-
+In Python 3, you can use collections.ChainMap which groups multiple dicts or other mappings together to create a single, updateable view:
+>>> from collections import ChainMap
+>>> x = {'a':1, 'b': 2}
+>>> y = {'b':10, 'c': 11}
+>>> z = ChainMap({}, y, x)
+>>> for k, v in z.items():
+        print(k, '-->', v)
+
+a --> 1
+b --> 10
+c --> 11
+
 

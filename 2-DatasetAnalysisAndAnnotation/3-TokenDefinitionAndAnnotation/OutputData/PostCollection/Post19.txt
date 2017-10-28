@@ -1,16 +1,32 @@
-As an aside: When using functions instead of methods, you could also use functools.partial:
-import functools
-
-def foo(arg, **kwargs):
-    ...
-
-bar = functools.partial(foo, "argvalue")
-
-The last line will define a function "bar" that, when called, will call foo with the first argument set to "argvalue" and all other functions just passed on:
-bar(5, myarg="value")
-
-will call
-foo("argvalue", 5, myarg="value")
-
-Unfortunately that will not work with methods.
+I am building a RESTful application with Flask which will use sessions to track the logged in user. Here is the login code which I adapted from this Flask tutorial
+@mod.route('/login/', methods=['GET', 'POST'])
+def login():
+  user = User.query.filter_by(email=request.json['email']).first()
+  # we use werkzeug to validate user's password
+  if user and check_password_hash(user.password, request.json['password']):
+    # the session can't be modified as it's signed, 
+    # it's a safe place to store the user id
+    session['user_id'] = user.id
+    resp = jsonify({'status':'authenticated'})
+  else:
+    resp = jsonify({'status':'Invalid usernam/password'})
+    resp.status_code = 401
+  return resp
+
+When a user first logs in, I store their userid in the session, so that when the same user requests a resource, the data is tailored to them:
+@mod.route('/address/')
+@requires_login
+def user_data():
+  user = User.query.filter_by(id=session['usr_id']).first
+  resp = jsonify(user.address)
+  return resp
+
+If I issue this command after logging in:
+curl http://localhost:5000/address/
+
+I receive:
+{"status": 401, "message": "Unauthorized"}
+
+instead of the address information for my logged in user.
+Can anyone tell me how I can use the session in subsequent curl calls to return data that is specific to the userid stored in the cookie?
 

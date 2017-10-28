@@ -1,5 +1,17 @@
-Some experimentation and I figured this one out:
-def methodA(arg, **kwargs):
-    methodB("argvalue", **kwargs)
-Seems obvious now...
+If the program works and the speed is acceptable, I wouldn't change it.
+Otherwise, you could try unutbu's answer.
+Generally, I would leave away the 
+png = "png"
+jpg = "jpg"
+
+stuff as I don't see any purpose in not using the strings directly.
+And better test for ".png" instead of "png".
+An even better solution would be to define 
+extensions = ('.png', '.jpg')
+
+somewhere centally and use that in
+if any(currentFile.endswith(ext) for ext in extensions):
+    os.remove(currentFile)
+
+.
 

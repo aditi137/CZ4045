@@ -1,12 +1,6 @@
-n should be incremented unconditionally. If it isn't the program gets stuck in an infinite loop the first time it encounters a non-prime.
-def primegen():
-    n = 1
-    while True:
-        if isprime(n):
-            print n
-            cont = raw_input("continue? Enter Y/N")
-            if cont == 'N':
-                break
-        n += 1
-
+I'm testing a web application using Django-nose to monitor the code coverage. At first it worked perfectly well, but when trying to generate HTML it fails with the error:
+Imput error: No module named copy_reg
+It happened after a few times (until then in worked). I tried it on a computer with newly installed django, django-nose and coverage and the very same code works fine. Re-installing django and django-nose didn't help.
+Any suggestions? Should I re-install any library or something?
+Thank you in advance!
 

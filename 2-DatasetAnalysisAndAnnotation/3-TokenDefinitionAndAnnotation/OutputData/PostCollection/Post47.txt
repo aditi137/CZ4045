@@ -1,2 +1,5 @@
-I have a dataframe and I grouped it by two keys df.groupby(['key1',key2']). For each key2 entry, how do I display the its percent of key1 values?
+Try doing this for your path insertion instead:
+sys.path.insert(0, os.path.abspath('../'))
+
+Also consider a better name for your directory than src.
 

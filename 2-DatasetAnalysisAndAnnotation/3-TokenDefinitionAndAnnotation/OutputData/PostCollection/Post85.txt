@@ -1,11 +1,9 @@
-An other very good documentation tool is sphinx. It will be used for the upcoming python 2.6 documentation and is used by django and a lot of other python projects.
-From the sphinx website:
-
-Output formats: HTML (including Windows HTML Help) and LaTeX, for printable PDF versions
-Extensive cross-references: semantic markup and automatic links for functions, classes, glossary terms and similar pieces of information
-Hierarchical structure: easy definition of a document tree, with automatic links to siblings, parents and children
-Automatic indices: general index as well as a module index
-Code handling: automatic highlighting using the Pygments highlighter
-Extensions: automatic testing of code snippets, inclusion of docstrings from Python modules, and more
-
+I am working with a big set of data (240, 131000) and bigger. I am currently using the code below to plot this.
+fig,ax = pyplot.subplots()
+spectrum = ax.pcolor(waterfallplot, cmap='viridis')
+pyplot.colorbar()
+pyplot.show()
+
+However, it's taking a very long time (30 min+) and the plot still hasn't shown up yet. A quick breakpoint check says the code gets to the spectrum= line, but doesn't go past. Looking at the memory on my computer, it hasn't even gotten close to the limit. 
+Does anyone have a better way of doing this?
 

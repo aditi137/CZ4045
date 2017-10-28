@@ -1,8 +1,13 @@
-you don't want the future flag if you're working from the deformable object:
-targetMesh = "pSphere1"    
-blendshapes = cmds.ls(*cmds.listHistory(targetMesh) or [], type= 'blendShape')
-
-To get the actual shapes, you'd add
-source_shapes =  cmds.ls(*cmds.listHistory(*blendshapes) or [], type= 'mesh', ni=True)
-
+You can use zip and Explain Python's slice notation:
+>>> path1 = [0, 3, 1]
+>>> splitsOfPath1 = zip(path1, path1[1::])
+>>> splitsOfPath1
+[(0, 3), (3, 1)]
+>>>
+>>> path2 = [0, 3, 2, 1]
+>>> splitsOfPath2 = zip(path2, path2[1::])
+>>> splitsOfPath2
+[(0, 3), (3, 2), (2, 1)]
+>>>
+
 
