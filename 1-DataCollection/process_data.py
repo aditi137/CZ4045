@@ -10,8 +10,8 @@ plt.style.use('ggplot')
 
 def convert_html_to_text(row):
     body = row['Body']
-    lis = body.split("</code>")
-    lis = [item[0:item.find("<code>")] if item.find("<code>") != -1 else item
+    lis = body.split("</code></pre>")
+    lis = [item[0:item.find("<pre><code>")] if item.find("<pre><code>") != -1 else item
            for item in lis]
     body = ''.join(lis)
     bs_obj = BeautifulSoup(body, "lxml")
