@@ -1,2 +1,13 @@
-Shobhit Bhatnagar, try this one - pip install -e git+https://github.com/dvska/gdata-python3#egg=gdata
+Python uses strict (eager) evaluation strategy: the arguments to a function are always evaluated completely before the function is applied. The evaluation order is left to right (except when evaluating assignment):
+Not descending into attribute lookups:
+
+Evaluate text.find (we'll name the result F1)
+Evaluate 'zip' → A1
+Evaluate text.find → F2
+Evaluate 'zip' → A2
+Call F2.__call__(A2) (we'll call the return value R1) (text.find('zip'))
+Evaluate 1 → A3
+Call R1.__add__(A3) (returns R2) (R1 + 1)
+Call F1.__call__(A1, R2) (returns the final result) (text.find('zip', R2))
+
 

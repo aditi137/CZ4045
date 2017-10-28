@@ -1,3 +1,10 @@
-(I'm trying to comment on people suggesting to roll their own Calendar widget, but either I don't see the comment button, or I don't have enough rep.)
-What happened to DRY? I think it would be best to re-use the admin widget, but perhaps it should be separated from admin, and easier to use. Thanks for this information anyways.
+I have a main python script which starts a thread running in the background.
+poll = threading.Thread(target=poll_files, args=myargs)
+I want my main script to wait until something specific happens in my poll thread. I want to use an Event object. So in my main script, I do:
+trigger = threading.Event()
+and when I want to wait:
+trigger.wait()
+My question is, inside my poll thread, how do I set the Event to True? I know I do:
+trigger.set()
+but do I need to also have trigger = threading.Event() inside my poll thread?
 

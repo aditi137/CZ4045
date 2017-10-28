@@ -1,17 +1,5 @@
-I have data in XML format. Example is shown as follow. I want to extract data from <text> tag. 
-Here is my XML data.
-    <text>
-    The 40-Year-Old Virgin is a 2005 American buddy comedy
-    film about a middle-aged man's journey to finally have sex.
-
-    <h1>The plot</h1>
-    Andy Stitzer (Steve Carell) is the eponymous 40-year-old virgin.
-    <h1>Cast</h1>
-
-    <h1>Soundtrack</h1>
-
-    <h1>External Links</h1>
-</text>
-
-I need only The 40-Year-Old Virgin is a 2005 American buddy comedy film about a middle-aged man's journey to finally have sex. Is it possible? thanks
+I'm writing a console program with Python under Windows.
+The user need to login to use the program, when he input his password, I'd like they to be echoed as "*", while I can get what the user input.
+I found in the standard library a module called getpass, but it will not echo anything when you input(linux like).
+Thanks.
 

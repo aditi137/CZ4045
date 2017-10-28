@@ -1,6 +1,36 @@
-Here's the culprit:
-profile = models.ForeignKey(Profile, default=Profile)
-#                                    ^^^^^^^^^^^^^^^
-
-You can't set a Model class as a Foreignkey default. If you're thinking of setting an hardcoded default then you should use an int and be sure the selected value exists as a key in your Profile model.
+I have two files, one of the test.py is
+import new.py
+
+class Test:
+
+    def __init__(self):
+        return
+    def run(self):
+        return 1
+
+if __name__ == "__main__":
+    one=Test()
+    one.run()
+
+and new.py
+class New:
+    def __init__(self):
+        one.run()
+
+New()
+
+Now when i run python test.py I get this error,
+Traceback (most recent call last):
+  File "test.py", line 1, in <module>
+    import new.py
+  File "/home/phanindra/Desktop/new.py", line 5, in <module>
+    New()
+  File "/home/phanindra/Desktop/new.py", line 3, in __init__
+    one.run()
+NameError: global name 'one' is not defined
+
+But I want to use this instance of one in my New!!
+Can I do this??
+edit:
+I want to access the variable in test.py in new.py to do some process and give them back to test.py. Isn't this possible?
 

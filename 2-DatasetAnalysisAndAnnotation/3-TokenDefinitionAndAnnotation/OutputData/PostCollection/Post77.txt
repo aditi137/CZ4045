@@ -1,6 +1,16 @@
-SELECT * FROM attachments WHERE post_id in (SELECT id FROM posts WHERE topic_id = ?);
-
-Something like this?
-Edit:
-Not what the poster wanted after all. I don't think it is possible to do what you want with your table structure, without using more than one query.
+How about this. 
+from rae import Drae
+
+drae = Drae()
+
+if text.startswith('/'):
+  if text.startswith('/define'):
+    try:
+      [command, data] = text.split(' ',1)
+    except:
+      send('Write: /define <word>')
+    meanings = drae.search(data) 
+    reply(str(meanings)) 
+    setEnabled(chat_id, True)
+
 

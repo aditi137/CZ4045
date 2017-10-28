@@ -1,16 +1,17 @@
-Use collections.Counter() to convert x and y to multi-sets, then subtract to see if all of y's letters can be found in x:
-from collections import Counter
-
-def checkYinX(y, x):
-    return not (Counter(y) - Counter(x))
-
-Subtracting multi-sets removes characters when their count falls to 0. If this results in an empty multi-set, it becomes False in a boolean context, like all 'empty' python types. not turns that into True if that is the case.
-Demo:
->>> x = "dsjcosnag"
->>> y = "dog"
->>> print(checkYinX(y,x))
-True
->>> print(checkYinX('cat',x))
-False
-
+I don't get this part here:
+
+This worked okay, but there was no easy way of checking if x[3][24] was supposed to exist or not (so I couldn't raise the season_not_found exception)
+
+There is a way to do it - called in:
+>>>x={}
+>>>x[1]={}
+>>>x[1][2]={}
+>>>x
+{1: {2: {}}}
+>>> 2 in x[1]
+True
+>>> 3 in x[1]
+False
+
+what seems to be the problem with that?
 

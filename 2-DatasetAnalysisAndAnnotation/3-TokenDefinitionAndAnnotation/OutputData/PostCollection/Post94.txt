@@ -1,32 +1,68 @@
-I found, the foreign key constraint in the column must be removed
-from sqlalchemy import (Column, Integer, create_engine, 
-                        ForeignKeyConstraint)
-from sqlalchemy.ext.declarative import declarative_base
-
-
-#engine = create_engine('sqlite:///memory')
-engine = create_engine('postgres:///memory')
-Base = declarative_base()
-
-
-class Test(Base):
-    __tablename__ = 'test'
-    id = Column(Integer, primary_key=True)
-    id2 = Column(Integer, primary_key=True)
-
-
-class Test2(Test):
-    __tablename__ = 'test2'
-    # No foreign key here
-    id = Column(Integer, primary_key=True)
-    id2 = Column(Integer, primary_key=True)
-
-    __table_args__ = (
-        # this constraints must be the alone to Test model
-        ForeignKeyConstraint([id, id2], [Test.id, Test.id2]),
-    )
-
-
-Base.metadata.create_all(engine)
-
+It seems like rowsInserted signal emits after rows were inserted, but before model fills data in inserted rows.
+So I call printSomeData function from dropMimeData function (after data was dropped) and it works.
+Here corrected code:
+class PlModel(QtGui.QStandardItemModel):
+    def __init__(self):
+        QtGui.QStandardItemModel.__init__(self)
+        # no need for connect
+        #self.rowsInserted.connect(self.printSomeData)
+
+    def supportedDragActions(self):
+        return QtCore.Qt.MoveAction
+
+    def supportedDropActions(self):
+        return QtCore.Qt.CopyAction | QtCore.Qt.MoveAction
+
+    def canDropMimeData(self, QMimeData, Qt_DropAction, p_int, p_int_1, QModelIndex):
+        if not self.itemFromIndex(QModelIndex) and p_int_1 == p_int == -1:
+            return False
+        elif QModelIndex.isValid():
+            if self.item(self.itemFromIndex(QModelIndex).row(), 0) is None:
+                return False
+            else:
+                return QtGui.QStandardItemModel.canDropMimeData(self, QMimeData, Qt_DropAction, p_int, p_int_1, QModelIndex)
+        else:
+            return QtGui.QStandardItemModel.canDropMimeData(self, QMimeData, Qt_DropAction, p_int, p_int_1, QModelIndex)
+
+    def dropMimeData(self, mimedata, dropaction, row, col, modelindex):
+        if not self.itemFromIndex(modelindex):
+            if row == col == -1:
+                return False    
+            else:
+                result = QtGui.QStandardItemModel.dropMimeData(self, mimedata, dropaction, row, 0, self.index(row, 0))
+                if result:
+                    self.printSomeData(self.index(row, 0))
+                return result
+        elif self.itemFromIndex(modelindex).isDragEnabled():
+            if row == col == -1:
+                crow = self.item(modelindex.row(), 0).rowCount()
+                result = QtGui.QStandardItemModel.dropMimeData(self, mimedata, dropaction, crow, 0, self.indexFromItem(self.item(modelindex.row(), 0)))
+                if result:
+                    self.printSomeData(self.indexFromItem(self.item(modelindex.row(), 0)))
+                return result
+            else:
+                result = QtGui.QStandardItemModel.dropMimeData(self, mimedata, dropaction, row, 0, modelindex)
+                if result:
+                    self.printSomeData(modelindex)
+                return result
+        elif self.itemFromIndex(modelindex).isDropEnabled():
+            if col != -1:
+                return False
+            else:
+                result = QtGui.QStandardItemModel.dropMimeData(self, mimedata, dropaction, row, 0, modelindex)
+                if result:
+                    self.printSomeData(modelindex)
+                return result
+        else:
+            result = QtGui.QStandardItemModel.dropMimeData(self, mimedata, dropaction, row, 0, modelindex)
+                if result:
+                    self.printSomeData(modelindex)
+                return result
+
+    def printSomeData(self, ind: QtCore.QModelIndex):
+        row = ind.row()
+        item = self.itemFromIndex(ind)
+        for i in range(0, item.rowCount()):
+            print(self.index(i, 0, ind).data(QtCore.Qt.DisplayRole))
+
 

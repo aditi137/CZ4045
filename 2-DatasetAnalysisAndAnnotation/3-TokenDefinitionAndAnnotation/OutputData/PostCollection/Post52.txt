@@ -1,7 +1,6 @@
-Be pythonic. Use a comprehension:
-z={i:d[i] for d in [x,y] for i in d}
-
->>> print z
-{'a': 1, 'c': 11, 'b': 10}
-
+In a more general sense of not having to explicitly set variables in each view, it sounds like you want to look at writing your own context processor.
+From the docs:
+
+A context processor has a very simple interface: It's just a Python function that takes one argument, an HttpRequest object, and returns a dictionary that gets added to the template context. Each context processor must return a dictionary.
+
 

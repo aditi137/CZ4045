@@ -1,26 +1,23 @@
-The only thing that stops you from using urlopen directly on a file object is the fact that the builtin file object lacks a len definition. A simple way is to create a subclass, which provides urlopen with the correct file. 
-I have also modified the Content-Type header in the file below.
-import os
-import urllib2
-class EnhancedFile(file):
-    def __init__(self, *args, **keyws):
-        file.__init__(self, *args, **keyws)
-
-    def __len__(self):
-        return int(os.fstat(self.fileno())[6])
-
-theFile = EnhancedFile('a.xml', 'r')
-theUrl = "http://example.com/abcde"
-theHeaders= {'Content-Type': 'text/xml'}
-
-theRequest = urllib2.Request(theUrl, theFile, theHeaders)
-
-response = urllib2.urlopen(theRequest)
-
-theFile.close()
-
-
-for line in response:
-    print line
-
+So I have this line of code in views.py
+def display_agao(request):
+    query_agao = Butuan_Parcel.objects.filter(newpin="162-01-0001-002-29")
+    djf = Django.Django(geodjango='geom',properties=['id','newpin'])
+    geoj = GeoJSON.GeoJSON()
+    butuan_agao = geoj.encode(djf.decode(query_agao.transform(3857)))
+
+    query_subclass = tbl_subclass.objects.all()
+    return render(request,"index1.html",{'butuan_agao': butuan_agao, 'query_agao':query_agao,'query_subclass':query_subclass})
+
+I want to get the value from the html file and so that I can get a newpin depends on the users query and able to display the layer from the map..
+    <form action="." method="GET">
+            <select name="q">
+             {% for parcel in query_agao %}
+            <option type="text"  value="{{ parcel.newpin }}">{{ parcel.newpin }}</option>
+             {% endfor %}
+              </select>
+              <input type="submit" value="Search">
+
+        </form>
+
+just sample form above...
 

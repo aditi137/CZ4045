@@ -1,14 +1,6 @@
-Here's a way of doing it without collections.Counter, as requested in chat:
-def countLetters(word):
-    d = {}
-    for l in word:
-        d[l] = d.get(l,0) + 1
-    return d
-
-def checkSubset(answer,letters):
-    a, l = countLetters(answer), countLetters(letters)
-    return all(l.get(x,0) >= a.get(x) for x in a.keys())
-
-print(checkSubset('dog','odr'))
-
+On a side note, it might be good to checkout argparse module in python, from the documentation -
+
+The argparse module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and argparse will figure out how to parse those out of sys.argv. The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid arguments.
+
+It also has support for optional arguments. Maybe you can take a look at this to get started on that.
 

@@ -1,2 +1,25 @@
-core.exceptions is part of django; what version of django do you have installed? The AppEngine comes with the appropriate version for whatever release you've downloaded (in the lib/django directory). It can be installed by going to that directory and running python setup.py install
+Edit 3: I replaced __file__ with sys.argv[0], when I need to know the location of my script/executable. This is not exactly the same, but in my case it seems to run fine (at least on executable version...). Now everything is working fine, in one-file mode, with use of accepted answer's function to access resource files!
+
+Edit 2: as shown in accepted answer's comments, problem is coming from path resolution in my script; I try to use __file__ to get the location of the script, so that I can access to its resource files. This does not work once packaged, as __file__ will return filename from Python.dll to the script, so quite always no path and just a file name. So I have to find another trick to make access to resource files; a work-around for the moment is to move current directory to the executable path.
+By the way, this means that the ConfigParser should report problem when accessing the file, and not that a section is missing.
+I'll update this question with the way I resolved this path resolution question.
+
+I've got problems with pyinstaller, and as it's the first time I'm using it, it's sure that I've done something wrong.
+So, here's the problem: pyisntaller runs smoothly on a script I wrote, and generates some stuff in dist folder. Ok, so now I want to execute it to see if all went well, and here's what I get:
+C:\Program Files\PyInstaller\pyinstaller-1.5.1>p_tool\dist\p_tool\p_tool.exe -?
+Traceback (most recent call last):
+  File "<string>", line 104, in <module>
+  File "p_tool\build\pyi.win32\p_tool\outPYZ1.pyz/logging.config", line 76, in f
+ileConfig
+  File "p_tool\build\pyi.win32\p_tool\outPYZ1.pyz/logging.config", line 112, in
+_create_formatters
+  File "p_tool\build\pyi.win32\p_tool\outPYZ1.pyz/ConfigParser", line 532, in ge
+t
+ConfigParser.NoSectionError: No section: 'formatters'
+
+My first idea was that the logging.conf file was missing, so I added it (and some other resource files) in the p_tool.spec file, but this is not better.
+Python version: 2.6.6, under WinXP. I'm using pyinstaller as I will need it to package files for a Solaris workstation.
+So, anyone did have this problem? The only topic related is the following question: PyInstaller Problem, really close to my problem, but hopelessly it got no answer.
+
+Edit3: details about logging removed, as not really related to the problem.
 

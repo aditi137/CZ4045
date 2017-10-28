@@ -1,3 +1,75 @@
-In a html5 page using image map, I would like to use python (or Perl, Ruby, C) to crawl it to find a particular image (those are separated by a transparency area) in another one and click it when this image is found. The image are the same all the times. What is the best way to achieve this ? 
-Edit: for french readers, the trick is implemented, see http://www.sputnick-area.net/?p=572
+I'm trying to click on a particular button on a webpage with Selenium in Python. How do I select and click on the button "Replace", with the following HTML?
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable no-close" tabindex="-1" role="dialog" style="position: absolute; height: auto; width: 300px; top: 411.009px; left: 692.001px; display: block;" aria-describedby="dialog" aria-labelledby="ui-id-5">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+        <span id="ui-id-5" class="ui-dialog-title">Search and replace</span>
+        <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" aria-disabled="false" title="close">
+            <span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
+            <span class="ui-button-text">close</span>
+        </button>
+    </div>
+    <div id="dialog" class="title ui-dialog-content ui-widget-content" style="width: auto; min-height: 62px; max-height: none; height: auto;">
+        <div class="findReplaceText">Search for:</div>
+        <input type="text" id="FindTerm" class="text ui-widget-content ui-corner-all input-large">
+        <br>
+        <div class="findReplaceText">Replace with:</div> 
+        <input type="text" id="ReplaceTerm" class="text ui-widget-content ui-corner-all input-large"></div>
+    <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;">
+    </div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <div class="ui-dialog-buttonset">
+            <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                <span class="ui-button-text">Replace</span>
+            </button>
+            <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                <span class="ui-button-text">Cancel</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+There is another instance of a "Replace" button within the HTML which should be ignored:
+<button type="button" class="titleButton replaceButton" id="riskFieldTemplateReplace">Replace</button>
+
+Update: 
+Unsure if this is helpful. How the buttons HTML updates when hovering / clicking.
+When hovering over the button:
+<div class="ui-dialog-buttonset">
+    <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover" role="button" aria-disabled="false">
+        <span class="ui-button-text">Replace</span>
+    </button>
+</div>
+
+When clicking the button:
+<div class="ui-dialog-buttonset">
+    <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover ui-state-focus ui-state-active" role="button" aria-disabled="false">
+        <span class="ui-button-text">Replace</span>
+    </button>
+</div>
+
+When I run: 
+driver.find_element_by_xpath(".//button[//span[text() = 'Replace' and @class = 'ui-button']]").click()
+
+I'm presented with the following: 
+Traceback (most recent call last):
+  File "<pyshell#205>", line 1, in <module>
+    driver.find_element_by_xpath(".//button[//span[text() = 'Replace' and @class = 'ui-button']]").click()
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 294, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 748, in find_element
+    {'using': by, 'value': value})['value']
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 237, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python34\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":".//button[//span[text() = 'Replace' and @class = 'ui-button']]"}
+  (Session info: chrome=52.0.2743.116)
+  (Driver info: chromedriver=2.22.397933 (1cab651507b88dec79b2b2a22d1943c01833cc1b),platform=Windows NT 6.1.7601 SP1 x86_64)
+
 

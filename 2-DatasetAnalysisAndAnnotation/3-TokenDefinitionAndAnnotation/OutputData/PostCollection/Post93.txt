@@ -1,3 +1,50 @@
-I think it certainly sounds like a viable option. As far as I know, the only "interaction" the official Python installer has with Windows is to add registry keys associating .py and .pyw files with the proper executables and possibly modifying the PATH variable. As long as the user has the correct .dll files to which the .exe's are linked, you could just zip up c:\Python33 or whichever version you're using and distribute that with your application. Before you do that, though, clone the directory and go through c:\clonedPython\libs\site-packages and get rid of any modules that aren't required for your application. Don't delete any necessary dependencies!
-Portable Python is a possibility, but there may be some issues with certain modules not working properly, and it's not available yet for Python 3.3 (3.2.1 is the latest version, as well as 2.7.3), so if you have version-dependent syntax that might not be the best choice.
+Only 1 test file
+If doesn't have many test files, putting it in a top-level directory is nice (I think this is a pythonic (recommended) way):
+module/
+  lib/
+    __init__.py
+    module.py
+  test.py
+
+Many test files
+If has many test files, put it in a tests folder:
+module/
+  lib/
+    __init__.py
+    module.py
+  tests/
+    test_module.py
+    test_module2.py
+
+but if you put the tests in tests folder, test can't import ..lib in CLI because __main__  can't import relative modules, so instead we can use nose, or we can add a parent directory to the python import path, and for that I will create a
+env.py
+import sys
+import os
+
+# append module root directory to sys.path
+sys.path.append(
+    os.path.dirname(
+        os.path.dirname(
+            os.path.abspath(__file__)
+        )
+    )
+)
+
+in
+module/
+  tests/
+    test_module.py
+    env.py
+
+and import env before test import module
+test_module.py
+import unittest
+# append parent directory to import path
+import env
+# now we can import the lib module
+from lib import module
+
+if __name__ == '__main__':
+    unittest.main()
+
 

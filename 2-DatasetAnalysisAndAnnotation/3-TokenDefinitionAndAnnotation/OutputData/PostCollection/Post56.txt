@@ -1,2 +1,8 @@
-When I call socket.getsockname() on a socket object, it returns a tuple of my machine's internal IP and the port. However, I would like to retrieve my external IP. What's the cheapest, most efficient manner of doing this?
+You can do something like this using a generator expression: 
+truth_table = {'a': True, 'b': True, 'c': True, 'd': Y, 'e': Z}
+X = tuple(k for k,v in sorted(truth_table.items()) if v)
+
+...or in one line:
+X = tuple(k for k,v in sorted({'a': True, 'b': True, 'c': True, 'd': Y, 'e': Z}.items()) if v)
+
 

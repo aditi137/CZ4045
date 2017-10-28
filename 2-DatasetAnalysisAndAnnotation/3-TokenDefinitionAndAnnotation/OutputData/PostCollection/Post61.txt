@@ -1,30 +1,9 @@
-How can I generate all the paths to text strings in a HTML document, preferably using BeautifulSoup? 
-I have f.e. this code:
-<DIV class="art-info"><SPAN class="time"><SPAN class="time-date" content="2012-02-28T14:46CET" itemprop="datePublished">
-             28. february 2012
-            </SPAN>
-            14:46
-           </SPAN></DIV><DIV>
-           Something,<P>something else</P>continuing.
-          </DIV>
-
-I'd like to divide HTML code into paths to text strings, like
-str1 >>>  <DIV class="art-info"><SPAN class="time"><SPAN class="time-date" content="2012-02-28T14:46CET" itemprop="datePublished">28. february 2012</SPAN></SPAN></DIV>
-str2 >>>  <DIV class="art-info"><SPAN class="time">14:46</SPAN></DIV>
-str3 >>>  <DIV>Something,continuing.</DIV>
-str4 >>>  <DIV><P>something else</P></DIV>
-
-or
-str1 >>>  <DIV><SPAN><SPAN>28. february 2012</SPAN></SPAN></DIV>
-str2 >>>  <DIV><SPAN>14:46</SPAN></DIV>
-str3 >>>  <DIV>Something,continuing.</DIV>
-str4 >>>  <DIV><P>something else</P></DIV>
-
-or  
-str1 >>>  //div/span/span/28. february
-str2 >>>  //div/span/14:46
-str3 >>>  //div/Something,continuing.
-str4 >>>  //div/p/something else
-
-I've studied BeautifulSoup documentation, but I can't figure out how to do it. Do you have any ideas?
+I am working with .h5 files with little experience.
+In a script I wrote I load in data from an .h5 file. The shape of the resulting array is: [3584, 3584, 75]. Here the values 3584 denotes the number of pixels, and 75 denotes the number of time frames. Loading the data and printing the shape takes 180 ms. I obtain this time using os.times().
+If I now want to look at the data at a specific time frame I use the following piece of code:
+data_1 = data[:, :, 1]
+
+The slicing takes up a lot of time (1.76 s). I understand that my 2D array is huge but at some point I would like to loop over time which will take very long as I'm performing this slice within the for loop.
+Is there a more effective/less time consuming way of slicing the time frames or handling this type of data?
+Thank you!
 

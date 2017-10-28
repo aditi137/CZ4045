@@ -1,32 +1,5 @@
-I have the following code:
-import threading
-import time
-
-class TestWorker (threading.Thread):
-    def __init__(self, threadID, name):
-        threading.Thread.__init__(self)
-        self.threadID = threadID
-        self.name = name
-
-    def run(self):
-        print "Starting " + self.name
-        time.sleep(20)
-        print "Exiting " + self.name
-        # how do I let the calling thread know it's done?
-
-class TestMain:
-    def __init__(self):
-        pass
-
-    def do_work(self):
-        thread = TestWorker(1, "Thread-1")
-        thread.start()
-
-    def do_something_else(self):
-        print "Something else"
-
-    def on_work_done(self):
-        print "work done"
-
-How can I let the main thread know that the TestWorker has finished (call on_work_done()), without blocking calls to do_something_else() as thread.join() would?
+def sumD(num):
+    if num == 0: return 0
+    return (num % 10) + sumD(num // 10)
+
 

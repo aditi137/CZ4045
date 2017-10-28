@@ -1,59 +1,6 @@
-Something like this should to the trick:
-import numpy
-from scipy.optimize import linprog
-
-A = 10
-B = 20
-m = 2
-n = m * m
-
-# the coefficients of a linear function to minimize.
-# setting this to all ones minimizes the sum of all variable
-# values in the matrix, which solves the problem, but see below.
-c = numpy.ones(n)
-
-# the constraint matrix.
-# This is matrix-multiplied with the current solution candidate
-# to form the left hand side of a set of normalized 
-# linear inequality constraint equations, i.e.
-#
-# x_0 * A_ub[0][0] + x_1 * A_ub[0][1] <= b_0
-# x_1 * A_ub[1][0] + x_1 * A_ub[1][1] <= b_1
-# ...
-A_ub = numpy.zeros((2 * m, n))
-
-# row sums. Since the <= inequality is a fixed component,
-# we just multiply everthing by (-1), i.e. we demand that
-# the negative sums are smaller than the negative limit -A.
-#
-# Assign row ranges all at once, because numpy can do this.
-for r in xrange(0, m):
-    A_ub[r][r * m:(r + 1) * m] = -1
-
-# We want that the sum of the x  in each (flattened)
-# column is smaller than B
-#
-# The manual stepping for the column sums in row-major encoding
-# is a little bit annoying here.
-for r in xrange(0, m):
-    for j in xrange(0, m):
-        A_ub[r + m][r + m * j] = 1
-
-# the actual upper limits for the normalized inequalities.
-b_ub = [-A] * m + [B] * m
-
-# hand the linear program to scipy
-solution = linprog(c, A_ub=A_ub, b_ub=b_ub)
-
-# bring the solution into the desired matrix form
-print numpy.reshape(solution.x, (m, m))
-
-Caveats
-
-I use <=, not < as indicated in your question, because that's what numpy supports.
-This minimizes the total sum of all values in the target vector.
-For your use case, you probably want to minimize the distance
-to the original sample, which the linear program cannot handle, since neither the squared error nor the absolute difference can be expressed using a linear combination (which is what c stands for). For that, you will probably need to go to full minimize(). 
-
-Still, this should get you rough idea.
+a = {1: 2, 3: 4, 5: 6}
+b = {7:8, 1:2}
+combined = dict(a.items() + b.items())
+print combined
+
 

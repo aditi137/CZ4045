@@ -1,2 +1,15 @@
-Use virtualenv to create your private Python libraries installation.
+You don't.
+You're going about this the wrong way: you're making the mistake
+
+This existing thing doesn't meet my needs. I want to make it meet my needs!
+
+instead, the way to go about the problem is
+
+This existing thing doesn't meet my needs. I need a thing that does meet my needs!
+
+Once you realize that, the problem is now pretty straightforward. e.g.
+DEFAULT_ALPHABET = "abcdefghijklmnopqrstuvwxyz0123456789 .,?!"
+def myord(x, alphabet=DEFAULT_ALPHABET):
+    return alphabet.find(x)
+
 

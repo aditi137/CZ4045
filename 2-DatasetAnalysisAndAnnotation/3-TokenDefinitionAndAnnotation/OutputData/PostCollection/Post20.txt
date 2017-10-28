@@ -1,35 +1,64 @@
-In python 3 I have a line asking for input that will then look in an imported dictionary and then list all their inputs that appear in the dictionary. My problem is when I run the code and put in the input it will only return the last word I input.
-For example
-the dictionary contains (AIR, AMA)
-and if I input (AIR, AMA) it will only return AMA.
-Any information to resolve this would be very helpful!
-The dictionary: 
-EXCHANGE_DATA = [('AIA', 'Auckair', 1.50),
-                 ('AIR', 'Airnz', 5.60),
-                 ('AMP', 'Amp',3.22), 
-
-The Code:
-import shares
-a=input("Please input")
-s1 = a.replace(' ' , "")
-print ('Please list portfolio: ' + a)
-print (" ")
-n=["Code", "Name", "Price"]
-print ('{0: <6}'.format(n[0]) + '{0:<20}'.format(n[1]) + '{0:>8}'.format(n[2]))
-z = shares.EXCHANGE_DATA[0:][0]
-b=s1.upper()
-c=b.split()
-f=shares.EXCHANGE_DATA
-def find(f, a):
-    return [s for s in f if a.upper() in s]
-x= (find(f, str(a)))
-toDisplay = []
-a = a.split()
-for i in a:
-    temp = find(f, i)
-    if(temp):
-        toDisplay.append(temp)
-for i in toDisplay:
-    print ('{0: <6}'.format(i[0][0]) + '{0:<20}'.format(i[0][1]) + ("{0:>8.2f}".format(i[0][2])))
-
+You can generate the truth table using a powerset,
+def power_set(items):
+    n = len(items)
+    for i in xrange(2**n):
+        combo = []
+        for j in xrange(n):
+            if (i >> j) % 2 == 1:
+                combo.append(1)
+            else:
+                combo.append(0)
+        yield combo    # if you want tuples, change to yield tuple(combo)
+
+
+In [13]: list(power_set(l))
+Out[13]: [[0, 0], [1, 0], [0, 1], [1, 1]]
+
+In [14]: l=['B','C','E']
+
+In [15]: list(power_set(l))
+Out[15]: 
+[[0, 0, 0],
+[1, 0, 0],
+ [0, 1, 0],
+ [1, 1, 0],
+ [0, 0, 1],
+ [1, 0, 1],
+ [0, 1, 1],
+ [1, 1, 1]]
+
+If you want to  make a dict of the data, change yield combo to yield tuple(combo)
+Then you can store key value pairings  like:
+d={}
+for data in power_set(l):
+    d[data]="your_calc_prob"
+print d
+{(0, 1): 'your_calc_prob', (1, 0): 'your_calc_prob', (0, 0): 'your_calc_prob', (1, 1): 'your_calc_prob'}
+
+If you want the output sorted you can use sorted() which makes a copy of the list and returns a list:
+ sorted(list(power_set(l)))
+ Out[21]: 
+ [[0, 0, 0],
+ [0, 0, 1],
+ [0, 1, 0],
+ [0, 1, 1],
+ [1, 0, 0],
+ [1, 0, 1],
+ [1, 1, 0],
+ [1, 1, 1]]
+
+Or you can use the list method sort() which sorts the list  in place:
+In [22]: data = list(power_set(l))  
+In [23]: data.sort()
+In [24]: data
+Out[24]: 
+[[0, 0, 0],
+[0, 0, 1],
+[0, 1, 0],
+[0, 1, 1],
+[1, 0, 0],
+[1, 0, 1],
+[1, 1, 0],
+[1, 1, 1]]
+
 

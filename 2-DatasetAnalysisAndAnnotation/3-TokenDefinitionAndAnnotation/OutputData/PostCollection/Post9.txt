@@ -1,55 +1,6 @@
-For one, you could create a custom subclass of GObject, which provides some custom signals. The following example is a slightly adapted version of the one given in the linked article:
-import pygtk
-pygtk.require('2.0')
-import gobject
-
-class Car(gobject.GObject):
-
-    __gsignals__ = {
-        'engine-started': (gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, ()),
-        'engine-stopped': (gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, ()),
-    }
-
-    def __init__(self):
-        gobject.GObject.__init__(self)
-        self._state = 0
-
-    def start(self):
-        if not self._state:
-            self._state = 1
-            self.emit('engine-started')
-
-    def stop(self):
-        if self._state:
-            self._state = 0
-            self.emit('engine-stopped')
-
-
-gobject.type_register(Car)
-
-def kill_switch(c):
-    def callback(*unused, **ignored):
-        c.stop()
-    return callback
-
-def on_start(*unused, **ignored):
-    print "Started..."
-
-def on_stop(*unused, **ignored):
-    print "Stopped..."
-
-some_car = Car()
-some_car.connect('engine-started', on_start)
-some_car.connect('engine-started', kill_switch(some_car))
-some_car.connect('engine-stopped', on_stop)
-some_car.start()
-
-Another approach would be to take advantage of one of the many event/signalling packages already on PyPI, for example:
-
-Zope Event
-Louie
-PyDispatcher
-Darts Events
-Trellis
-
+>>> import os
+>>> os.path.abspath('mydir/myfile.txt')
+'C:\\example\\cwd\\mydir\\myfile.txt'
+>>> 
+
 

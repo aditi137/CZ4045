@@ -1,6 +1,4 @@
-Given a Python list whose elements are either integers or lists of integers (only we don't know how deep the nesting goes), how can we find the sum of each individual integer within the list?
-It's fairly straightforward to find the sum of a list whose nesting only goes one level deep, 
-but what if the nesting goes two, three, or more levels deep?
-I know the best approach is recursion, but this is a challenge wherein I have to do it without recursion.
-Please help!!
+I am working on a small intranet site for a small company, where user should be able to post. I have imagined a very simple authentication mechanism where people just enter their email address, and gets sent a unique login url, that sets a cookie that will always identify them for future requests.
+In my template setup, I have base.html, and the other pages extend this. I want to show logged in or register button in the base.html, but how can I ensure that the necessary variables are always a part of the context? It seems that each view just sets up the context as they like, and there is no global context population. Is there a way of doing this without including the user in each context creation?
+Or will I have to make my own custom shortcuts to setup the context properly?
 

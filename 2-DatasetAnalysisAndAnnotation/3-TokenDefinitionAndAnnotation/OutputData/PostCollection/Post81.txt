@@ -1,11 +1,16 @@
-Use the powerset function given in the itertools examples. powerset([L1,L2,L3]) will give you all subsets of the set of 3 lists. For each subset you can take the cartesian product, and then chain them all together.
->>> from itertools import chain, product
->>> result = chain.from_iterable(product(*lists) for lists in powerset([L1,L2,L3]))        
->>> list(result)
-
-[(), (1,), (2,), ('a',), ('b',), ('A',), ('B',), (1, 'a'), (1, 'b'), (2, 'a'), 
-(2, 'b'), (1, 'A'), (1, 'B'), (2, 'A'), (2, 'B'), ('a', 'A'), ('a', 'B'), 
-('b', 'A'), ('b', 'B'), (1, 'a', 'A'), (1, 'a', 'B'), (1, 'b', 'A'), 
-(1, 'b', 'B'), (2, 'a', 'A'), (2, 'a', 'B'), (2, 'b', 'A'), (2, 'b', 'B')]
-
+When Python executes a script file, the whole file is parsed first. You can notice that when you introduce a syntax error somewhere: Regardless of where it is, it will prevent any line from executing.
+So since Python parses the file first, literals can be loaded effectively into the memory. Since Python knows that these are constant, all variables that represent those constant values can point to the same object in memory. So the object is shared.
+This works for ints and floats, but even for strings; even when there is a constant expression that needs to be evaluated first:
+a = "foo"
+b = "foo"
+c = "fo" + "o"
+print(a is b)
+print(a is c)
+
+Now in IDLE, the behavior is very different: As an interactive interpreter, IDLE executes every line separately. So a = 1.1 and b = 1.1 are executed in separated contexts which makes it impossible (or just very hard) to figure out that they both share the same constant literal value and could share the memory. So instead, the interpreter will allocate two different objects, which causes the identity check using is to fail.
+For small integers, the situation is a bit different. Because they are often used, CPython stores a set of integers (in the range between -5 and 256) statically and makes that every value of these points to the same int object. That’s why you get a different result for small integers than for any other object. See also the following questions:
+
+"is" operator behaves unexpectedly with integers
+What's with the Integer Cache inside Python?
+
 

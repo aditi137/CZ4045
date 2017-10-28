@@ -1,28 +1,2 @@
-I'm not a python guy but it looks like os.readlink()?  The logic I would use in perl is to use readlink() to find the target and the use stat() to test to see if the target exists.
-Edit: I banged out some perl that demos readlink.  I believe perl's stat and readlink and python's os.stat() and os.readlink()are both wrappers for the system calls, so this should translate reasonable well as proof of concept code:
-wembley 0 /home/jj33/swap > cat p
-my $f = shift;
-
-while (my $l = readlink($f)) {
-  print "$f -> $l\n";
-  $f = $l;
-}
-
-if (!-e $f) {
-  print "$f doesn't exist\n";
-}
-wembley 0 /home/jj33/swap > ls -l | grep ^l
-lrwxrwxrwx    1 jj33  users          17 Aug 21 14:30 link -> non-existant-file
-lrwxrwxrwx    1 root     users          31 Oct 10  2007 mm -> ../systems/mm/20071009-rewrite//
-lrwxrwxrwx    1 jj33  users           2 Aug 21 14:34 mmm -> mm/
-wembley 0 /home/jj33/swap > perl p mm
-mm -> ../systems/mm/20071009-rewrite/
-wembley 0 /home/jj33/swap > perl p mmm
-mmm -> mm
-mm -> ../systems/mm/20071009-rewrite/
-wembley 0 /home/jj33/swap > perl p link
-link -> non-existant-file
-non-existant-file doesn't exist
-wembley 0 /home/jj33/swap >
-
+I was never satisfied with David Mertz's articles at IBM on metaclsses so I recently wrote my own metaclass article.  Enjoy.
 

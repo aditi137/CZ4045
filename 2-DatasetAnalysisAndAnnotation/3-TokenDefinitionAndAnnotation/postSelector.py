@@ -10,7 +10,19 @@ def main():
         os.makedirs(outputSubdir)
 
     posts = pandas.read_csv(os.path.join(inputSubdir, 'posts.csv'), encoding='utf-8')['Text']
-    selectedPosts = random.sample(posts, 100)
+
+    # filter out blank posts due to missing code blocks
+    filtered_posts = []
+    for post in posts:
+        if(isinstance(post, float)):
+            if (math.isnan(post)):
+                continue
+        elif(post.isspace()):
+            continue
+        else:
+            filtered_posts.append(post)
+
+    selectedPosts = random.sample(filtered_posts, 100)
 
     df = pandas.DataFrame(selectedPosts)
     df.columns = ['post']

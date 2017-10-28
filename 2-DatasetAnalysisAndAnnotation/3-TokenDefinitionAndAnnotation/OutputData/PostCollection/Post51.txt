@@ -1,6 +1,10 @@
-It is in most of the situations easy to implement copy constructors (or overloaded assignment operator) in C++ since there is a concept of pointers. However, I'm quite confused about how to implement shallow and deep copy in Python.
-I know that there are special commands in one of the libraries but they don't work on classes that you have written by yourself. So what are the common ways to implement?
-P.S. Showing process on some basic data structures (linked list or tree) will be appreciated.
-EDIT: Thanks, they worked, it was my mistake in syntax.
-I am very interested in overwriting these functions with __copy__() and __deep_copy()__. For example. how can I make a deep copy without knowing which type of information is in a data structure?
+As I commented above, this should not be used on untrusted sources. Also it may not me explicit enough to be Pythonic.
+One can also define a function to do that, but to access the right locals, it needs to do some frame handling
+def format_locals(string):
+    return string.format(**sys._getframe().f_back.f_locals)
+
+This kind of pattern is not nice and things like Pypy can't optmize this kind of code.
+I would use this code (unless you need Python 2.6 support so you must add the indexes):
+filename = 'data/avatars/{}.{}'.format(player_name, ext)
+
 

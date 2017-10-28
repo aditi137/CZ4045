@@ -1,23 +1,13 @@
-After the installation of motionless library, I try to run my code and the following error  message occurs. 
-**Traceback (most recent call last):
-File "C:\Users\Kevin\Downloads\tracker.py", line 4, in <module>
-
-from motionless import CenterMap
-
-File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
-File "<frozen importlib._bootstrap>", line 2222, in _find_and_load_unlocked
-File "<frozen importlib._bootstrap>", line 2164, in _find_spec
-File "<frozen importlib._bootstrap>", line 1940, in find_spec
-File "<frozen importlib._bootstrap>", line 1916, in _get_spec
-File "<frozen importlib._bootstrap>", line 1897, in _legacy_get_spec
-File "<frozen importlib._bootstrap>", line 863, in spec_from_loader
-File "<frozen importlib._bootstrap>", line 904, in spec_from_file_location
-File "C:\Python34\lib\site-packages\motionless-1.1-py3.4.egg\motionless.py", 
-
-line 55
-if label and (len(label) <> 1 or not label in Marker.LABELS):
-                          ^
-
-SyntaxError: invalid syntax**
-
+Say I have the following methods:
+def methodA(arg, **kwargs):
+    pass
+
+def methodB(arg, *args, **kwargs):
+    pass
+
+In methodA I wish to call methodB, passing on the kwargs. However, it seems that if I define methodA as follows, the second argument will be passed on as positional rather than named variable arguments.
+def methodA(arg, **kwargs):
+    methodB("argvalue", kwargs)
+
+How do I make sure that the **kwargs in methodA gets passed as **kwargs to methodB?
 

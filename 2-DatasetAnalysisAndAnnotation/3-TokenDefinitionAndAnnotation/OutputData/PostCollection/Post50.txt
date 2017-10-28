@@ -1,2 +1,2 @@
-How do I turn a python program into an .egg file?
+You're instantiating before adding/initializing the variable attribute. It will have no knowledge of the variable unless again instantiated or swapped as the other answer mentioned.
 

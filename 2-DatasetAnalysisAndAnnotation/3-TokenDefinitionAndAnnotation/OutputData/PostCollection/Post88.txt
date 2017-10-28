@@ -1,6 +1,22 @@
-I was wondering if anyone here had some experience writing this type of script and if they could give me some pointers.
-I would like to modify this script to validate that the check-in file does not have a Carriage Return in the EOL formatting. The EOL format is CR LF in Windows and LF in Unix. When a User checks-in code with the Windows format. It does not compile in Unix anymore. I know this can be done on the client side but I need to have this validation done on the server side. To achieve this, I need to do the following:
-1) Make sure the file I check is not a binary, I dont know how to do this with svnlook, should I check the mime:type of the file? The Red Book does not indicate this clearly or I must have not seen it.
-2) I would like to run the dos2unix command to validate that the file has the correct EOL format. I would compare the output of the dos2unix command against the original file. If there is a diff between both, I give an error message to the client and cancel the check-in.
-I would like your comments/feedback on this approach.
+I have a question regarding Python ASCII Art.
+User inputs 6.
+XXXXXX
+X    X
+XX  XX
+XX  XX
+X    X
+XXXXXX
+
+User inputs 8.
+XXXXXXXX
+X      X
+X      X
+XXX  XXX
+XXX  XXX
+X      X
+X      X
+XXXXXXXX
+
+How would I craft something like this in Python 3, using input from the user?
+Could someone point me in the right direction. I just started learning python at home. This is one of the questions in the bonus quiz section of a book I purchased from Amazon. 
 
