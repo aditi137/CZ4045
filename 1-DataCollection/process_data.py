@@ -4,26 +4,32 @@ import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
 import nltk
 from nltk.tokenize import word_tokenize
+import re
 
 nltk.download('punkt')
 plt.style.use('ggplot')
 
+
 def convert_html_to_text(row):
     body = row['Body']
-    lis = body.split("</code>")
-    lis = [item[0:item.find("<code>")] if item.find("<code>") != -1 else item
+    lis = body.split("</code></pre>")
+    lis = [item[0:item.find("<pre><code>")] if item.find("<pre><code>") != -1 else item
            for item in lis]
     body = ''.join(lis)
     bs_obj = BeautifulSoup(body, "lxml")
-    return bs_obj.text
+    text = bs_obj.text
+    text = re.sub(r'\n\n+', '\n', text)
+    return text
+
 
 def text_word_count(row):
     return len(word_tokenize(row['Text']))
 
+
 inputSubdir = 'InputData'
 outputSubdir = 'OutputData'
 if not os.path.exists(outputSubdir):
-	os.makedirs(outputSubdir)
+    os.makedirs(outputSubdir)
 
 questions = pandas.read_csv(os.path.join(inputSubdir, 'questions.csv'))
 answers = pandas.read_csv(os.path.join(inputSubdir, 'answers.csv'))
@@ -57,7 +63,8 @@ print answers_count
 
 # post word count
 questions = questions.reset_index()
-posts = pandas.concat([questions, answers]).sort_values('ParentId')[['ParentId', 'Id', 'PostTypeId', 'Body']].reset_index(drop=True)
+posts = pandas.concat([questions, answers]).sort_values('ParentId')[
+    ['ParentId', 'Id', 'PostTypeId', 'Body']].reset_index(drop=True)
 posts['Text'] = posts.apply(convert_html_to_text, axis=1)
 posts['Post length'] = posts.apply(text_word_count, axis=1)
 
@@ -69,4 +76,3 @@ plt.show()
 
 posts.drop('Body', axis=1, inplace=True)
 posts.to_csv(os.path.join(outputSubdir, 'posts.csv'), index=False, encoding='utf-8')
-
