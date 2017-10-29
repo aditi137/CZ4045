@@ -12,11 +12,10 @@ plt.style.use('ggplot')
 
 def convert_html_to_text(row):
     body = row['Body']
-    lis = body.split("</code></pre>")
-    lis = [item[0:item.find("<pre><code>")] if item.find("<pre><code>") != -1 else item
-           for item in lis]
-    body = ''.join(lis)
     bs_obj = BeautifulSoup(body, "lxml")
+    codeblocks = bs_obj.select('pre > code')
+    for codeblock in codeblocks:
+        codeblock.decompose()
     text = bs_obj.text
     text = re.sub(r'\n\n+', '\n', text)
     return text
@@ -76,3 +75,5 @@ plt.show()
 
 posts.drop('Body', axis=1, inplace=True)
 posts.to_csv(os.path.join(outputSubdir, 'posts.csv'), index=False, encoding='utf-8')
+
+
