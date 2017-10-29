@@ -1,4 +1,3 @@
-I'm trying to create a sqlite3 table using python. My code is given below:
-This code runs fine the first time I run it and my database is created. However, if I run it a second time, I get the following error:
-I have no idea what's going wrong. Can anybody help?
-
+A straightforward solution:
+I have changed some variable names to avoid conflicts.
+On large data, you may convert intervals to a set.

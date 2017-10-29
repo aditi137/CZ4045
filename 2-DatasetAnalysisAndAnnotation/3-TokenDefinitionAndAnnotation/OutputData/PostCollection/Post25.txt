@@ -1,11 +1,1 @@
-Edit 3: I replaced __file__ with sys.argv[0], when I need to know the location of my script/executable. This is not exactly the same, but in my case it seems to run fine (at least on executable version...). Now everything is working fine, in one-file mode, with use of accepted answer's function to access resource files!
-Edit 2: as shown in accepted answer's comments, problem is coming from path resolution in my script; I try to use __file__ to get the location of the script, so that I can access to its resource files. This does not work once packaged, as __file__ will return filename from Python.dll to the script, so quite always no path and just a file name. So I have to find another trick to make access to resource files; a work-around for the moment is to move current directory to the executable path.
-By the way, this means that the ConfigParser should report problem when accessing the file, and not that a section is missing.
-I'll update this question with the way I resolved this path resolution question.
-I've got problems with pyinstaller, and as it's the first time I'm using it, it's sure that I've done something wrong.
-So, here's the problem: pyisntaller runs smoothly on a script I wrote, and generates some stuff in dist folder. Ok, so now I want to execute it to see if all went well, and here's what I get:
-My first idea was that the logging.conf file was missing, so I added it (and some other resource files) in the p_tool.spec file, but this is not better.
-Python version: 2.6.6, under WinXP. I'm using pyinstaller as I will need it to package files for a Solaris workstation.
-So, anyone did have this problem? The only topic related is the following question: PyInstaller Problem, really close to my problem, but hopelessly it got no answer.
-Edit3: details about logging removed, as not really related to the problem.
-
+What you can do is add a third parameter that will keep track of the original size, and have your arguments in your overlay_frac() function be based off of that variable, so that the values don't alter in recursion. Here's how I've done it:

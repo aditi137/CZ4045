@@ -1,5 +1,1 @@
-Add an optional quantifier ? to the value part so that it is matched zero or one time
-Changes made
-Moved the = to a non capturing group (?:..)
-(?:=(?P<val>.+))? Matched zero or one time. This is ensured by the ?. That is it checks if =value can be matched (capturing only the value part). If not None is captured.
-
+Hmm... How about (Python):

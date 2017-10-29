@@ -1,2 +1,6 @@
-I have a use case where I have to send_email to user in my views. Now the user who submitted the form will not receive an HTTP response until the email has been sent . I do not want to make the user wait on the send_mail. So i want to send the mail asynchronously without caring of the email error.  I am using using celery for sending mail async but i have read that it may be a overkill for simpler tasks like this. How can i achieve the above task without using celery
-
+In 2012, use the python requests library
+You can run pip install requests to get it.
+Requests has many advantages over the alternatives because the API is much simpler. This is especially true if you have to do authentication. urllib and urllib2 are pretty unintuitive and painful in this case.
+2015-12-30
+People have expressed admiration for the progress bar. It's cool, sure. There are several off-the-shelf solutions now, including tqdm:
+This is essentially the implementation @kvance described 30 months ago.

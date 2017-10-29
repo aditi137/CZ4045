@@ -1,4 +1,1 @@
-If you have installed pylint into your virtualenv, editing the project-file like this should fix it
-See: https://github.com/biermeester/Pylinter#project-settings and 
-https://github.com/biermeester/Pylinter/issues/4
-
+try the follwing code

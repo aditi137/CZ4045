@@ -1,3 +1,1 @@
-Your code fails as you have already consumed the iterator on the first call, if you call none_context() in the with block the original code would work:
-You can see using your original code that if you add a None for each open then the code will work as expected:
-
+Python doesn't support adding functions together which both of your attempts tried to do. Instead, you need to create a new function, such as with lambda which calls the original functions.

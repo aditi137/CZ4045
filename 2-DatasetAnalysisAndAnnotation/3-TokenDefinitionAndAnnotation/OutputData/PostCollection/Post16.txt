@@ -1,7 +1,3 @@
-Given
-I'd like
-Currently I have brute forced it with:
-Finally, I'd like to get to
-by running this right to left. Currently I have
-I'm not fussy about inplace or create a new list, but right now this smells to me. I can't see a way to store a temporary 'last' value and use map/lambda, and nothing else is coming to mind.
-
+as python was not meant to deal with OS-specific issues (it's supposed to be interpreted and cross platform), i would execute an external command to do so:
+in unix the command is ifconfig
+if you execute it as a pipe you get the desired result:

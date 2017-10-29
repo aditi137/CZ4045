@@ -1,3 +1,6 @@
-There is no need to write a context processor for the user object if you already have the "django.core.context_processors.auth" in TEMPLATE_CONTEXT_PROCESSORS and if you're using RequestContext in your views. 
-if you are using django 1.4 or latest the module has been moved to django.contrib.auth.context_processors.auth
-
+I have a simple scrapy project. I am crawling www.anthropologie.com for sale items. I want to use the standard imagePipeline to download the sale items I am scraping. I have enabled the standard imagePipeline in the settings.py file as well as a valid directory for the IMAGE_STORE. I have the required fields image_url and images. My spider is scrapping the correct url for the images as validated by checking the urls in the browser. When I run the spider it is indicated that the pipeline is enabled. However I see no indication that images are being downloaded and I find no images in the correct directory.
+below are examples of my code:
+settings.py:
+items.py
+anthro_spider.py:
+there are no errors reported so I can't figure out what I'm missing.

@@ -1,4 +1,1 @@
-Using your example, the following would show you the value of y
-But trying to print y after your function call will fail with the not defined error as the variable is defined only inside you function, i.e. it is local to that function. This is often referred to as the scope of a variable.
-As soon as the function returns, y ceases to exist.
-
+Like this:

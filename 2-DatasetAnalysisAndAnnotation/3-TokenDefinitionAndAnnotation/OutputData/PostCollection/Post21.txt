@@ -1,6 +1,7 @@
-I apologize if this is a silly question. But I tried to google this and I couldn't find anything to point me in the right direction. I'd just like to understand what I need to do to 'set-up' cdt to 'understand' my python.h include.
-the erroneous statement is this:
-but I also tried
-And CDT responds with an error sign on the side stating:
-I am using Eclipse CDT Juno on Ubuntu 12.04. Any pointers would be great!
-
+I am trying to read a paragraph and capture all the sentences in it with words matching a dynamic list of words.
+The python pre-processing steps will identify the list of words. 
+I want to use this list of words and identify sentences in the paragraph that has at least one of the words from the list. All those identified sentences will be appended to a new variable.
+Input: "Machine learning is the science of getting computers to act without being explicitly programmed. Machine learning is so pervasive today that you probably use it dozens of times a day without knowing it. Many researchers also think it is the best way to make progress towards human-level AI."
+list of words: computer, researcher
+Output: Machine learning is the science of getting computers to act without being explicitly programmed.Many researchers also think it is the best way to make progress towards human-level AI.
+What is the best way to accomplish this ?

@@ -1,10 +1,5 @@
-We need a tool to work with 3D-Harmonics and we've come across https://github.com/SHTOOLS/SHTOOLS - which fits all of our needs, but could not be installed properly on our windows computers (as it's intended for linux\osx).
-When we tried to run pip install . in the directory SHTOOLS-3.3 (we use anaconda for managing packages and it includes pip), we at first got an error saying that we need a Fortran compiler (gfortran) - which we fixed by installing gcc with conda install -c r gcc. Afterwards, we got an error saying we need to install visual C++ compiler - which we downloaded as suggested from https://www.microsoft.com/en-gb/download/details.aspx?id=44266.
-Alas, running the command again, this time from the visual C++ 2008 command prompt, we still get a fatal error and are still stuck with installing the library.
-Some of the errors we get: 
-Followed by
-and 
-The full output of the installation attempt can be found here and here.
-We've tried to download the lib files of the FFTW3, LAPACK and BLAS libraries but couldn't build them properly.
-We would appreciate any help (suggesting a similar library that is compatible with windows \ helping with the install of SHTOOlS).
-
+My guess is that you get this error message at the if resp[0]==correctResp: line:
+Is that true? If yes, it is simply because event.getKeys() returns an empty list [] if no responses were collected. And doing [][0] will give you the above error because there's no first element (index zero) just like [1,2,3,4][1000] will give you the same error. Note that even if you press a lot of keys and none of them are in the keyList, getKeys will return an empty list because it ignores everything but the contents of the keyList (unless you set keyList=None, in which case it accepts all keys).
+There's a few simple ways out of this. Firstly, you can simply check whether resp is empty and give a "fail" score if it is and only check for correctness if it is not. A more general solution, which would work with many response keys and scoring criteria, is to do if correctResp in resp and then score as a success if yes. This comparison will work with an empty list as well, in which case it always returns False as empty lists per definition can't contain anything.
+But in your particular case, you only have one response option so it is even simpler! Since you've "filtered" responses sing the keyList, you KNOW that if resp is [], the subject answered "no-go" and conversely if resp is not [], he/she answered "go". So:
+Actually, I suspect that you also want to give feedback in trials without neutral images. In that case, define correct as bool(resp) is (im in im_n):

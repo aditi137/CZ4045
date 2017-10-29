@@ -1,5 +1,7 @@
-I assume your purpose is to create a program that starts two threads, one (client thread) receives keyboard input and sends to the other (server thread), the server thread prints out everything it received.
-Based on my assumption, you first need to start a ServerThread listen to a port (it's not like what your 'ClientThread' did). Here's an example:
-And these are the output:
-You may check here for more details about Python socket: https://docs.python.org/2/library/socket.html?#example
-
+Here's an example using your provided 10x10 grid. It should give you the basic idea of how to implement this. 
+Just make sure you keep a reference to every Checkbutton (boxes in the example) as well as every IntVar (boxVars in the example).
+Here's why:
+-Checkbuttons are needed to call config(state = DISABLED/NORMAL).
+-IntVars are needed to determine the value of each Checkbutton.
+Aside from those crucial elements its basically just some 2D array processing.
+Here's my example code (now based off of your provided code).

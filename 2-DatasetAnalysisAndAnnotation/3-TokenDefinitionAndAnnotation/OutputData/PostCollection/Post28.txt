@@ -1,6 +1,3 @@
-I guess anther way, possibly faster, to achieve this is 
-1) Use dict comprehension to get desired dict (i.e., taking 2nd col of each array)
-2) Then use pd.DataFrame to create an instance directly from the dict without loop over each col and concat.
-Assuming your mat looks like this (you can ignore this since your mat is loaded from file):
-Then you can do:
-
+Say I have the following methods:
+In methodA I wish to call methodB, passing on the kwargs. However, it seems that if I define methodA as follows, the second argument will be passed on as positional rather than named variable arguments.
+How do I make sure that the **kwargs in methodA gets passed as **kwargs to methodB?

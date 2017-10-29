@@ -1,3 +1,1 @@
-For oldest task you should probably use created_at rather than modified_at (the oldest task could have been modified recently, after all).
-We don't have any way in the API to specifically get the older task, or order by creation time or anything like that, so for now your workaround is in fact the only way to do it. You may be able to make it a little faster by using ?opt_fields=created_at in the task query to cut down on how much data you're loading.
-
+I want to create a ToolBarToolBase object without adding it visibly to the toolbar. I've tried instantiating ToolBarToolBase, but I'm using wxPython version 2.8.12.1 (I can't upgrade, I'm doing this for work) so I don't think it's fully implemented. Is there any way to do this?

@@ -1,8 +1,6 @@
-EDIT
-This is my code:
-It's working as it should within python, so I compiled it to .exe using Pyinstaller.
-I managed to have an exe file now but I'm struggling with the import of pyperclip.
-the exe works except for that last command. I tried -p dir and also --hidden-import pyperclip.
-I ran it with -d and the debug I get is:
-I'm not sure how to proceed right now :\ any input?
-
+While browsing some code, I came across this line:
+I understand that Shedskin is a kind of Python -> C++ compiler, but I can't understand that line.
+Shouldn't if False: never execute? What's going on here?
+For context:
+This is the whole block:
+More context is on Google Code (scroll down all the way).

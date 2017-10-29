@@ -1,3 +1,1 @@
-This is based off of Oblivion's answer but I edited it so it worked for me.
-I made a new listbox class that was based off of the original one but had a new function that I got from Oblivion's code. I then call that function and it makes the listbox an appropriate size.
-
+I'd recommend Fabric, it's made for this kind of thing.

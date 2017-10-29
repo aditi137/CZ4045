@@ -1,2 +1,3 @@
-You might want to use pyserial, which  uses the kernel interfaces (I don't know what PyBBIO does). It provides automatic input buffering - so you don't need an extra process. If you do want to have more processes use multiprocessing. A simpler alternative is threading, which saves you the communication part. For multiprocessing with network support use Ipython's cluster
-
+This is a handy trick for unit tests and the like, when you need to do a pixel-to-pixel comparison with a saved plot.
+One way is to use fig.canvas.tostring_rgb and then numpy.fromstring with the approriate dtype.  There are other ways as well, but this is the one I tend to use.
+E.g.

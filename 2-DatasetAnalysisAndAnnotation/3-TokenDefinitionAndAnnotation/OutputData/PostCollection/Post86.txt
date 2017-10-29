@@ -1,9 +1,9 @@
-I am using Boto in Python to connect to Amazon MWS. I have successfully connected using their scripts but am having trouble parsing the response as I don't fully understand the documentation, and there are little to no examples on the internet. I am new to Python.
-Here is how I get my response from MWS:
-The first product gives a response of this:
-My Issue is trying to get the details from the ItemAttributes:
-At this point I believe it is a dictionary object.
-As I am new to this language I can't figure out how to get all the information that is located in the () such as Brand, Studio, etc.
-Boto has some built in functions such as Response and ResponseFactory, but I am lost again as I keep hitting a wall trying to get info such as Brand, etc..
-Thank you again for any help you can give in this.
-
+Following Flask tutorial, running Win 7, Python 2.7.3, virtualenv, and I am stuck in Step 3: Creating The Database http://flask.pocoo.org/docs/tutorial/dbinit/#tutorial-dbinit
+Such a schema can be created by piping the schema.sql file into the sqlite3 command as follows:
+How to run this command, because CMD < venv > returns:
+"sqlite3" is not recognized as internal or external command, operable program or batch file.
+Is this step necessary?
+Folder Project, 2 files schema.sql and flaskr.py.
+schema.sql
+flaskr.py
+< venv > python

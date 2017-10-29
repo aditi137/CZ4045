@@ -1,3 +1,5 @@
-I don't have any python interpreter here, but it should be something similar to this:
-Note: this will work for this classification, but if you want to retrieve usernames i.e. @USERNAME you will have to tweak this a little more.
-
+You could use a list comprehension like this:
+However, it looks like you're trying to reinvent a dictionary for some reason. If it doesn't have to be ordered, just use a dictionary:
+If it does need to be ordered, you can use collections.OrderedDict rather than dict:
+With a dictionary, if you need it back in the format you have in your question, just call items() on the dictionary.
+Additionally, to convert a list like in your question into some kind of dictionary, just pass it into it:

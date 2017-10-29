@@ -1,8 +1,2 @@
-I am having some trouble attempting to manipulate a CSV file and appending the results to a new column.
-Essentially I have a csv file (delimited ;) with 5 columns currently (of Cartesian coords [X, Y] and components [dX, dY], and magnitude/ length). I wish to add the result of some equations, which differ depending on the value of my Cartesian components, to a 6th column in this csv file (the angle).
-Thus far my code is this (the maths is correct [hopefully], it's just the appending that I'm having trouble with):
-So essentially, I want to add the angle variable to a 6th column, for the correct line of my csv file.
-I tried to create a new list and append (e.g.):
-However, as you may have guessed I ended up with a line like this:
-Thanks for your help in advance.
-
+I have a number that prints out in exponential form:
+How can i make it print in normal form?

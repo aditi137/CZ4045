@@ -1,4 +1,2 @@
-You can use the str.split method.
-If you want to convert it to a tuple, just
-If you are looking to append to a list, try this:
-
+I figured out how to do it.
+One way I found is to send mail through html.

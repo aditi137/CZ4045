@@ -1,4 +1,4 @@
-In case your string always contains Phone: with the phone number following it at the end, you do not need the regex. Also, note that 1-800-MALL is also a valid phone number.
-I suggest this:
-Or, in case regex is still preferable, another solution:
-
+For Python 2
+For Python 3
+For filter and map, you need wrap them with list()
+The recommendation now is that you replace your usage of map and filter with generators expressions or list comprehensions:

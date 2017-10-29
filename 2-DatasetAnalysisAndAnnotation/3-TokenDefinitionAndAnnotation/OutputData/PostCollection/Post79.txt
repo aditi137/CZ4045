@@ -1,3 +1,2 @@
-
-Basically you iterate over the outer list and unpack the first level of any inner lists until there are no inner lists left
-
+I think the information you're looking for is in design_info.column_names:
+and so

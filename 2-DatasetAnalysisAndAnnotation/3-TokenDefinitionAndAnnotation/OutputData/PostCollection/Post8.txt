@@ -1,2 +1,1 @@
-After the installation of motionless library, I try to run my code and the following error  message occurs. 
-
+if it returns a gaierror you know know it's not registered with any DNS

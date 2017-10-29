@@ -1,4 +1,2 @@
-I can test the rank of a matrix using np.linalg.matrix_rank(A) . But how can I test if all the rows of A are orthogonal efficiently?
-I could take all pairs of rows and compute the inner product between them but is there a better way?
-My matrix has fewer rows than columns and the rows are not unit vectors.
-
+Both actions will occur. When you click on a radiobutton, first the variable will change its value, and after that the event handler passed as command option is called if present.
+Also your example would not work, since add_radiobutton doesn't allow the onvalue and offvalue options - only value.

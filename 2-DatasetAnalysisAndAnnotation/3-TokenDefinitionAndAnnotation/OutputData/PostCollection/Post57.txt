@@ -1,6 +1,2 @@
-All I'm trying to make is a program that loops through a word or phrase character-by-character like this:
-I wrote this:
-and the output is exactly what I want:
-But, if there is a repeated letter, it'll remove both at once, like this:
-How can I make it just remove the one letter, without removing both? Can't think of a solution
-
+This prints
+For this work, you need to know the length of the longest string (59 in the example above).

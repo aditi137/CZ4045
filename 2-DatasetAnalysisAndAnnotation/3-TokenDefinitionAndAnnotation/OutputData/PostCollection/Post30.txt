@@ -1,2 +1,8 @@
-The only way I can think of that's guaranteed to give it to you is to hit a service like http://whatismyip.com/ to get it.
-
+So, as far as I understand, the ManyToManyField in the Section class doesn't actually save any DocumentType data in the Section database table, rather it saves the relationship to DocumentType.
+Therefore if I want to access the document_type of a section I have to look up the Section objects via the DocumentType object, and vice versa.
+For instance:
+or:
+or:
+Although this:
+raises ValueError: invalid literal for int() with base 10: 'WAN' because there is no data under the section_document_type m2m field, only the relationship.  So this is still the case:
+Further info here.

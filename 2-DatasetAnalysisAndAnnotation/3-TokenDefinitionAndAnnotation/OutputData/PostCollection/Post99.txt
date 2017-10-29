@@ -1,6 +1,2 @@
-I'm testing a web application using Django-nose to monitor the code coverage. At first it worked perfectly well, but when trying to generate HTML it fails with the error:
-Imput error: No module named copy_reg
-It happened after a few times (until then in worked). I tried it on a computer with newly installed django, django-nose and coverage and the very same code works fine. Re-installing django and django-nose didn't help.
-Any suggestions? Should I re-install any library or something?
-Thank you in advance!
-
+Perhaps make sure that you are using the same parser and maybe specify which html parser you are using in your code that way when you run it on different machine it will know which one to use.
+There is more info about this in the documentation.

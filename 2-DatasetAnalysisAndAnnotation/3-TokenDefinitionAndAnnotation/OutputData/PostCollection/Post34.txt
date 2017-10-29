@@ -1,3 +1,2 @@
-GObjects don't have to be widgets. For example, your application class can be a GObject which defines signals that other widgets connect to.
-Also, I don't think you understood the Shotwell design document correctly. It looks to me like their signalling system is 100% GObject signalling system, just with particular guarantees about the order in which signals are handled. As they say in their design document, such things are possible in plain GObject, but Vala makes it easier to code it their way.
-
+matplotlib has become a mature and widely used graphing package.
+As for your interaction with a web browser, you may have to use another package in conjunction. I suggest CherryPy because it is simple.

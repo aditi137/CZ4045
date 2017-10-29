@@ -1,8 +1,1 @@
-Given a set of points describing some trajectory in the 2D plane, I would like to provide a smooth representation of this trajectory with local high order interpolation. 
-For instance, say we define a circle in 2D with 11 points in the figure below. I would like to add points in between each consecutive pair of points in order or produce a smooth trace. Adding points on every segment is easy enough, but it produces slope discontinuities typical for a "local linear interpolation". Of course it is not an interpolation in the classical sense, because
-the function can have multiple y values for a given x 
-simply adding more points on the trajectory would be fine (no continuous representation is needed).
-so I'm not sure what would be the proper vocabulary for this.
-The code to produce this figure can be found below. The linear interpolation is performed with the lin_refine_implicit function. I'm looking for a higher order solution to produce a smooth trace and I was wondering if there is a way of achieving it with classical functions in Scipy? I have tried to use various 1D interpolations from scipy.interpolate without much success (again because of multiple y values for a given x).
-The end goals is to use this method to provide a smooth GPS trajectory from discrete measurements, so I would think this should have a classical solution somewhere.
-
+A Counter is basically a dict. So you can set your key via the normal dict syntax:

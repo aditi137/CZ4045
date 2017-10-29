@@ -1,4 +1,2 @@
-I am trying to install numpy from a wheel package (that I have generated in my virtualenv) on a Redhat 6.5 with python version =2.6.6:
-I am getting the following error: 
-Any way to fix that? thanks :) 
-
+I'd like to "install" a version of Python locally, which doesn't touch anything on the system (Windows in this case) except the directory I extract it into. I would run it by specifying that particular python.exe. 
+This is for the end-user. Essentially, I want to be able to extract a Python into a directory and start using it immediately, without requiring the user to even know that my program is using Python. I'm looking into py2exe and PyInstaller as well, but I'd like to know if this option is viable.

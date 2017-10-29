@@ -1,18 +1,3 @@
-With standard PyDev
-It seems that this option is only available in Eclipse's Java Editor.
-The Java editor allows you to create "profiles" for the code formatter, while PyDev's options for the code formatter are very limited.
-However,
-You can hack this. PythonTidy.py is an awesome script that cleans up Python code to make it follow PEP8 conventions, and that can be tweaked with your own settings. 
-PythonTidy (code cleanup & formatting)
-Get here (homepage) the source for PythonTidy. 
-You will see inside the file, at the beginning of the code and just after the comments, that many settings are defined. 
-The first one of these is COL_LIMIT with its default value set to 72. Now you can use PythonTidy to format your code the way you want.
-Integration with PyDev
-Now you have to make this work with PyDev's formatting. This blog post will explain it really better than me, but still I'll sum up the steps :
-Write a Jython interface betwenn PyDev's editor (PyEdit) and PythonTidy. This blog's author already wrote a wrapper script in the public domain available in the above link or here in case the link goes 404.
-Save this file anywhere you want, with the name pyedit_pythontidy.py, along with the PythonTidy.py file.
-Configure PyDev to use this script as its Code Formatter. You can do this in Preferences > PyDev > Scripting PyDev
-Note #1: I really recommend reading the original blog post to have a better understanding
-Note #2: The wrapper script author did not implement Code Block formatting, so this means you can only format a full file. This should not be that hard to implement, up to you.
-Note #3: All credits goes to bear330 for the PyDev integration part.
-
+Normally on the linux front, if the usb dongle is of the right type, you will see something like /dev/usbserial or similar device. Maybe check dmesg after plugging the cable.
+(on linux you can run find /dev | grep usb to list all usb related devices)
+Just a side note, I've seen the beaglebone has an ethernet port, why not just using a network socket? It's all easier than reinventing a protocol on usb.

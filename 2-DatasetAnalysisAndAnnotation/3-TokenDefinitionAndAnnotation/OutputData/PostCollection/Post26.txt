@@ -1,6 +1,3 @@
-I think you can avoid a commit hook script in this case by using the svn:eol-style property as described in the SVNBook:
-End-of-Line Character Sequences
-Subversion Properties
-This way SVN can worry about your line endings for you.
-Good luck!
-
+You could first abstract the removing part into a function and then use a list comprehension:
+Used like:
+output:

@@ -1,5 +1,6 @@
-I have this piece of inelegant code that's supposed to print out something that looks like this to the console:
-However, most of the time I get this:
-I'm not sure where the problem lies with my code because occasionally it works as expected and I get the right output (which drives me crazy).
-I'm using Enthought Canopy as my IDE.
-
+Using Pandas data frame group by feature and I want to group by column c_b and calculate unique count for column c_a and column c_c. My expected results are,
+Expected results,
+Met with strange error about unhashable type, does anyone have any ideas? Thanks.
+Input file,
+Source code,
+Error message,

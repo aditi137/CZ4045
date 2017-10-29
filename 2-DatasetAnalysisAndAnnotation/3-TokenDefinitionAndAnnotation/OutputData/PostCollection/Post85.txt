@@ -1,7 +1,4 @@
-Take advantage of algebra:
-Knowing that, you only have to bother generating the values:
-If you need to filter things out by some criteria, you can easily write a filter function:
-If you wanted to shorten things a bit, you could re-write your function so that it returns the valid pair, or None otherwise.
-Or, just create a generator and iterate over that:
-If you want to allow zero padded numbers in b then you can use this filter:
-
+I'm learning python these days, and I have a rather basic question. 
+There's a remote server where a webserver is listening in on incoming traffic. If I enter a uri like the following in my browser, it performs certain processing on some files for me:  
+My rather basic question is: how can I achieve sending the above dynamic parameters (i.e. container = container_name and video = video_name) to 223.58.1.10:8000/processVideo via a python script?
+I've seen ways to ping an IP, but my requirements are more than that. Guidance from experts will be very helpful. Thanks!

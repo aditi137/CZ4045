@@ -1,8 +1,2 @@
-I have a data.frame looking similar to this (except much longer and with way more colornames):
-I want the data.frame to look like this:
-I tried the following:
-In my longer data.frame I typically get the error: 
-ValueError: cannot reindex from a duplicate axis
-Can anyone help?
-Thanks very much in advance!
-
+I'm not really an old hand at Python, but here's an XPath solution using libxml2.
+With result...

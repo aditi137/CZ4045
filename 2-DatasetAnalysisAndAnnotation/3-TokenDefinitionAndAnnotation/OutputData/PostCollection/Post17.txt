@@ -1,6 +1,4 @@
-You want to use itertools.groupby() with a dash of itertools.islice() and itertools.chain:
-The groupby() call groups the input list into chunks where the first item is the same (itemgetter(0) is the grouping key). 
-The islice(group, 1, None) call turns the groups into iterables where the first element will be skipped.
-The chain.from_iterable() call takes each islice() result and chains them together into a new iterable, which list() turns back into a list.
-Demo:
-
+This isn't simple.  But the good news is that it's very well understood.
+Start here: http://en.wikipedia.org/wiki/Job_scheduler
+Then read this: http://en.wikipedia.org/wiki/List_of_job_scheduler_software
+You probably want something like http://en.wikipedia.org/wiki/Simple_Linux_Utility_for_Resource_Management

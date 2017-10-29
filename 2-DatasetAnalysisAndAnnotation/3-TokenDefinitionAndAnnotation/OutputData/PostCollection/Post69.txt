@@ -1,4 +1,2 @@
-I have a xml file "sample.xml" as:
-and respective dtd as "sample.dtd":
-I want "sample.xml" to get validated against "sample.dtd" by making use of python script. How will i achieve this? kindly help.
-
+I am trying to make NAO understand the words in the vocabulary and return the same when read from its memory. Below is the code. But somehow the getdata() from memory object returns empty. 
+Any help is highly appreciated.

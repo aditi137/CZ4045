@@ -1,2 +1,5 @@
-I am running this code below using multiprocessing to run ticker_list through a request and parsing program faster.  The following code works, but it is very slow.  I am not so sure that this is the correct usage of multiprocessing.  If there is a more efficient way to do this then please let me know.
-
+What would be the best way to implement a simple crash / error reporting mechanism? 
+Details: my app is cross-platform (mac/windows/linux) and written in Python, so I just need something that will send me a small amount of text, e.g. just a timestamp and a traceback (which I already generate and show in my error dialog). 
+It would be fine if it could simply email it, but I can't think of a way to do this without including a username and password for the smtp server in the application...
+Should I implement a simple web service on  the server side and have my app send it an HTTP request with the info? Any better ideas?
+Thanks!

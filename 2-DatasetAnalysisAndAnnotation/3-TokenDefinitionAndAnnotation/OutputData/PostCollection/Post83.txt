@@ -1,2 +1,7 @@
-How about this. 
-
+Here is the situation:
+I am using nginx, uwsgi, python3.4, flask for a web service.
+In the login process, I want to setup a global variable to hold the {'token':'user_id'} dictionary for fast user token validation.
+I have tried two ways. 
+The first is using flask.g. But, the problem is that the flask.g global variable can not share data between requests. 
+The second is using app's config dictionary, but the app.config dictionary will changed when uwsgi reloaded.
+Could someone tell me how to achieve the goal?

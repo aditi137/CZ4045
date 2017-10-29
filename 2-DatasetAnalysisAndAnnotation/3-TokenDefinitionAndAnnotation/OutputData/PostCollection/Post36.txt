@@ -1,15 +1,1 @@
-I installed lxml on a mac and trying to use it in my code and I get errors importing tostring and tounicode. Python cannot see it at all. Any ideas what I am doing wrong?
-Here is the code that is causing problems - 
-I get an unresolved import error 
-Also my IDE (eclipse) is able to see the init.py file for lxml.etree module. Here is what it sees ---
-Thanks for any help.
-EDIT:
-The only log I see is 
-    Unresolved import: tostring
-    Unresolved import: tounicode
-And when I add the following line before the import of tostring it works no errors --
-    import etree from lxml
-Also to give you some more background on what I am trying to do. I got the readability code from here (https://github.com/buriy/python-readability) and trying to use it in my project. 
-EDIT2: I fixed the problem but still do not understand why. I wanted to use the code from the readability project directly without installing the package using easy_install. The idea was step into the code so that I understand what its doing. But when I copy the code into my project I get the above mentioned error in the readability code. If I install the package using easy_install then all I can simply import the class exported by readability and use it.
-So can some one tell me what the difference is between using the code directly and the package installed? What is a .egg file? How to create one?
-
+Given a path such as "mydir/myfile.txt", how do I find the absolute filepath relative to the current working directory in Python? E.g. on Windows, I might end up with:

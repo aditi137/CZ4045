@@ -1,5 +1,7 @@
-For bash, This was already answered at Run all Python files in a directory
-You can run:
-If you're on Powershell, You can use:
-EDIT: Like Duncan said, This is a shorter solution on Powershell:
-
+Have you read the last section of this link about multi inputs?
+I think you can add a is_training argument to your input function to distinguish training data from eval data.
+Then you can reuse sharing variables to get the logits for eval data and build a op  for eval.
+Then in your graph, run valudation_accuracy=sess.run(eval_op) to get eval accuracy.
+Update:
+Hi, from my understanding,if you want to train for n batches, evaluate, train, evaluate, you can keep there two ops in the same graph, no need to build a new one.
+Assume you have already build all the needed function, then the code should like this:

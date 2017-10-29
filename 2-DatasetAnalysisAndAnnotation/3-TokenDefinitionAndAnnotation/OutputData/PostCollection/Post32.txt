@@ -1,5 +1,1 @@
-Updated solution and workaround for SplitDateTime with required=False:
-forms.py
-form.html
-urls.py
-
+Compare the difference to a timedelta that you create:

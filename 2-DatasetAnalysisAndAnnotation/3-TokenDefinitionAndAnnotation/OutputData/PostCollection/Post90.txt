@@ -1,2 +1,4 @@
-One way to fix it is to modify the helper function to:
-
+Congratulations, you've discovered the motivating use case for Python's double-underscore name mangling :-)
+For the details and a worked-out example see: http://docs.python.org/tutorial/classes.html#private-variables and at http://docs.python.org/reference/expressions.html#atom-identifiers .
+Here's how to use it for your example:
+The use case is described as a way of implementing the Open-Closed Principle in "The Art of Subclassing" found at http://www.youtube.com/watch?v=yrboy25WKGo&noredirect=1 .

@@ -1,2 +1,3 @@
-I wanted something similar, but with the ability to specify how the values on duplicate keys were merged, so I hacked this out (but did not heavily test it).  Obviously this is not a single expression, but it is a single function call.
-
+I have a list
+i want split after keyword "boulevard, rue, chemin" like in output
+Thanks for your time

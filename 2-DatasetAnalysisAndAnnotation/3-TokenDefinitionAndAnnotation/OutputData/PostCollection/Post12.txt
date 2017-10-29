@@ -1,2 +1,6 @@
-Focus on the shorter time needed for development/prototype and possibly easier maintenance (none of this may apply against Ruby).
-
+My solution was to set up the module like this:
+The setup.py would contain something similar to this:
+and the file a.py would contain the following lines in the header:
+The way it works is very simple: if you don't do anything (i.e. if you don't compile the cython files) then module a.py imports module b.py; however, if you run python setup.py build_ext --inplace then the compiled cython files will appear inside cython_my_module and the next time you run a.py it will automatically import the cython module b.pyx (actually it will import the compiled library b.so).
+So far it seems to work and requires almost no effort. Hope it helps.
+fish2000 solution seems more generic but I haven't tried it yet.

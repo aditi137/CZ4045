@@ -1,4 +1,2 @@
-Have a look at BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/
-You can request a website and then read the HTML source code from it:
-If you want to read JavaScript, look into Headless Browsers.
-
+From the post here: Encrypt string in Python
+using http://code.google.com/p/keyczar/

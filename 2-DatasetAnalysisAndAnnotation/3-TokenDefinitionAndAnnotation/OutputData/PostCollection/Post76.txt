@@ -1,2 +1,1 @@
-You can sort the dataFrame by count and then remove duplicates. I think it's easier:
-
+In python, a directory containing one or more modules sometimes has __init__.py, so that the directory can be treated as a python package, is this correct? What differences the __init__ makes? (also another Q, is a python module just a python code-file with related and possibly independent (to other files) set of classes, functions and variables?)

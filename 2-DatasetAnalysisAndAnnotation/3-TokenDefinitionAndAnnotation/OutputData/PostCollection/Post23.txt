@@ -1,4 +1,2 @@
-From http://docs.python-requests.org/en/latest/user/quickstart/#post-a-multipart-encoded-file
-Requests makes it very simple to upload Multipart-encoded files:
-That's it. I'm not joking - this is one line of code. File was sent. Let's check:
-
+No idea how to mess with alembic, but for the database, you can just log into the SQL console and use DROP DATABASE foo.
+Or were you wanting to clear out all the data, but leave the tables there?  If so, Truncating all tables in a postgres database has some good answers.

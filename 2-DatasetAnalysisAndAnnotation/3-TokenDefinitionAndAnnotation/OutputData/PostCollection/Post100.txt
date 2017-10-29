@@ -1,4 +1,2 @@
-A general answer involves using a Manager object. Adapted from the docs:
-Output:
-Original answer: Python multiprocessing: How do I share a dict among multiple processes?
-
+Ok so I was able to do it in bash:
+Just need to convert it in Python now.

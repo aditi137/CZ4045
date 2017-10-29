@@ -1,10 +1,3 @@
-I'm curious about the benefits and tradeoffs of using numpy ufuncs vs. the built-in operators vs. the 'function' versions of the built-in operators.
-I'm curious about all ufuncs.  Maybe there are times when some are more useful than others.  However, I'll use < for my examples just for simplicity.
-There are several ways to 'filter' a numpy array by a single number to get a boolean array.  Each form gives the same results, but is there a preferred time/place to use one over the other?  This example I'm comparing an array against a single number, so all 3 will work.
-Consider all examples using the following array:
-'<' operator
-operator.lt
-numpy.less
-Note that all of them achieve pretty much the equivalent performance and exactly the same results.  I'm guessing that all of these calls actually end up in the same function anyway since < and operator.lt both map to __lt__ on a numpy array, which is probably implemented using numpy.less or the equivalent?
-So, which is more 'idiomatic' and 'preferred'?
-
+I solved by : 
+counting the number of occurrence of the character in s1 at position i and then find the character s1[i] in s2 that has the same number of occurrence  
+Note I found the find_nth here

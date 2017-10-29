@@ -1,4 +1,8 @@
-I am developing a django application. In my forms. I have a checkbox in my form. My forms submits fine when the box is checked, but when the box is unchecked, the form fails to submit. The field I am using is Boolean.
-Here is my code:
-Does anyone have a solution?
-
+I've been stumped for far too long.  Hoping someone can assist.
+I am writing a Python CLI application that needs to set a temporary environment variable (PATH) for the current command prompt session (Windows).  The application already sets the environment variables permanently for all future sessions, using the method seen here.
+To attempt to set the temporary env vars for the current session, I attempted the following:
+using os.environ to set the environment variables
+using the answer here which makes use of a temporary file.  Unfortunately this works when run directly from the Cmd Prompt, but not from Python.
+calling SET using subprocess.call, subprocess.check_call
+The users of the tool will need this so they do not have to close the command prompt in order to leverage the environment variables I've set permanently.
+I've see other applications do this, but I'm not sure how to accomplish this with Python.

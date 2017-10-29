@@ -1,3 +1,2 @@
-You can get the names from elements with market_listing_item_name class name located in div elements having market_listing_row class:
-Here is the contents of the output.dat file after running the script:
-
+I've installed Ninja IDE on two Windows machines, a Windows 7 machine with only standard Python 3 installed where it gives me that error you mentioned.
+And a Windows XP machine on which I had pythonxy which comes with PyQt in a convenient easy to use installer thus it worked without any further troubles.

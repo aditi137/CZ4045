@@ -1,7 +1,4 @@
-See the documentation for sorted.
-Ascending by key:
-Descending by key:
-Ascending by value:
-Descending by value:
-You could also use key=lambda x: x[1] instead of defining a get_key function if you wanted.
-
+When I tried to run this code, I got an overflow error. I suspect you're having the same problem, but for some reason, it's not throwing an error. 
+If you scale down the features, everything works as expected. Using scipy.stats.linregress:
+Using linear_model.SGDRegressor:
+The value for slope is a little lower, but I'd guess that's because of the regularization.

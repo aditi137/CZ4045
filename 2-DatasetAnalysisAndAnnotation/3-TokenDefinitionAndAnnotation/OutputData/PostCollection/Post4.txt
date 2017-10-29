@@ -1,2 +1,3 @@
-One-liner using re.sub function.
-
+(I wrote this before I saw matzeri's response. I still may try extending python to run code from the C library, but getting the C code I've already written to work would be vastly preferable.)
+I have no idea what's going on with Cygwin's gdb, but after getting over my frustration I answered my alternative question. Turns out you can indeed call a C function from python. Extending Python with C or C++
+I'll try it tomorrow and I see caveats, but if python.org has a section on it, I'm betting it can be done.

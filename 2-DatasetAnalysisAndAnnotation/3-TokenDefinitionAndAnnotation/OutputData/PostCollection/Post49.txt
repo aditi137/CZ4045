@@ -1,7 +1,3 @@
-I don't have pexpect handy to test my answer to your question, but I have a suggestion that should work and, if not, may at least get you closer.  
-Consider this command:
-What is happening?  The entire quoted string is passed as a single argument to ssh, where it is "executed" on the remote.  While ssh isn't explicit about what that means, exactly, we know what execv(2) does: if execve(2) fails to execute its passed arguments, the execv function will invoke /bin/sh with the same arguments (in this case, our quoted string).  The shell then evaluates the quoted string as separate arguments, detects the HereDoc redirection, and executes per usual.  
-Using that information, and taking a quick look at the pexpect.pxssh documentation, it looks like you want:
-If that doesn't work, something is munging your data.  Five minutes with strace(1) will tell you what happened to it, and you can start pointing fingers.  ;-)
-HTH.  
-
+It means that for whatever reason, your account does not have permission to modify the contents of the .ipython folder, which IPython uses to store some settings and cache some data, so IPython will create and use a temporary directory instead.
+To fix this, you should either modify the permissions on the .ipython folder from the command line and give yourself read/write permissions, or modify the IPYTHON_DIR environment variable to point to a folder you do have permissions for. 
+Or, if you don't feel like fixing the error + don't mind that IPython is using a temp folder, don't do anything.

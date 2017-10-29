@@ -1,4 +1,10 @@
-You're over-thinking this and confusing yourself. This appears to be a representation of a directed graph: it looks like edges is a list of Edges, and each Edge has a headNodeId and a tailNodeId. Each of those IDs refers to a Node in the nodes list.
-So all that's happening when you say nodes[ edges[-1].headNodeId ] is "give me the item from 'nodes' whose index is the head node ID of the last item in 'edges'". Then, the code is simply calling addInEdge on that Node.
-A much more verbose version of this would be:
-
+Im trying to make a regular expression in python that allows me to find a word within a string "n" times
+For example, if i wanted to find a expression that could match if the word "cat" is exactly two times. How i would do that?
+It should accept "The blue cat talks to the red cat in the tree". Because it has "cat" exactly two times.
+But it should not accept "The cat is big". Because it has "cat" only once
+And it should not accept either "the dog is yellow". For similar reasons
+Thanks a lot
+EDIT
+Hey guys
+Sorry for complicating the problem too much, but i forgot to mention one thing.
+If i wanted to find "cat" exactly two times, "The catcat runs" would also match

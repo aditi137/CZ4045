@@ -1,3 +1,1 @@
-Runs in 0.7 secs. Faster than most solutions mentioned, though bit clumsy.
-The solution printed is:
-
+Carefully looking into the iterators and how they are involved in those dot product reductions, we could translate all of those into one np.einsum implementation like so -
