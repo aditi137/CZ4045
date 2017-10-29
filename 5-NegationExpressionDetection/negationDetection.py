@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 def detect_negation(row):
     try:
         text = row['Text']
-        negation_words = re.findall(r'(not|never|none|nobody|no)', text, re.IGNORECASE)
+        negation_words = re.findall(r'(not|\bnever\b|\bno\b|n\'t\W|\Wnon|\bnothing\b|\bnobody\b|\bnowhere\b|\bnope\b)', text, re.IGNORECASE)
+        # includes words like: cannot, shouldn't, nontoxic, none, etc.
         return len(negation_words)
     except:
         return 0

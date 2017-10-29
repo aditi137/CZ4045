@@ -61,8 +61,8 @@ POS Tagging:
 
 
 ## Requirements:
-- Python 3.4+
-- nltk 3.2.5
+- Python 2.7
+- nltk 3.0
 - pandas
 - matplotlib
 - beautifulsoup4
