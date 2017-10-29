@@ -44,6 +44,7 @@ questions['ParentId'] = questions['Id']
 
 questions = add_columns(questions)
 answers = add_columns(answers)
+questions = questions.loc[questions['Post length'] > 0]
 answers = answers.loc[answers['Post length'] > 0]
 # print answers.info()
 
