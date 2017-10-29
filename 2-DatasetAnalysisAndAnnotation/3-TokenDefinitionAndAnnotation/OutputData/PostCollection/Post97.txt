@@ -1,12 +1,2 @@
-secondLastLine = None
-lastLine = None
-with open("myfile.txt") as infile:
-    secondLastLine, lastLine = infile.readline(), infile.readline()
-    for line in infile:
-        # do stuff
-        secondLastLine = lastLine
-        lastLine = line
-
-# do stuff with secondLastLine
-
+I have a use case where I have to send_email to user in my views. Now the user who submitted the form will not receive an HTTP response until the email has been sent . I do not want to make the user wait on the send_mail. So i want to send the mail asynchronously without caring of the email error.  I am using using celery for sending mail async but i have read that it may be a overkill for simpler tasks like this. How can i achieve the above task without using celery
 

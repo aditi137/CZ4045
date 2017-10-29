@@ -1,6 +1,2 @@
-The issue is that the default is set to the result of now(), not the execution of it, so the default will be the exact time it was set, rather than the current time at insert.  Use sa.func.current_timestamp() to set it to that function, rather than the result of that function.
-def upgrade():
-    op.add_column('my_table', sa.Column('my_column', sa.DateTime,
-            server_default=sa.func.current_timestamp()))
-
+You can sort the dataFrame by count and then remove duplicates. I think it's easier:
 

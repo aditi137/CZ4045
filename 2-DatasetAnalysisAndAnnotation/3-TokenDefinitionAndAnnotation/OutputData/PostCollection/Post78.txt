@@ -1,3 +1,12 @@
-Take a look at this link, it explains how Access-Control-Allow-Origin works.
-You might be hosting it on one url and directing ajax to another, and browsers have a same origin policy preventing this from working.
+This is by the way a terrible idea, since you already have begun using gitpython, and I have never tried working with that, but I just really want to let you know, that you can do it without cloning it in local, without using gitpython.
+Simply run the git command, in a shell, using subprocess..
+running bash commands in python
+edit: added some demonstration code, of reading stdout and writing stdin.
+some of this is stolen from here:
+http://eyalarubas.com/python-subproc-nonblock.html
+The rest is a small demo..
+first two prerequisites
+shell.py
+nbstreamreader.py:
+then the actual code:
 

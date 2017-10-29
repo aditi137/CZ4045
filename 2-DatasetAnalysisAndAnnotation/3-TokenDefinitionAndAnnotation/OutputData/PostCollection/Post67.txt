@@ -1,37 +1,4 @@
-It's quite easy to do in Python:
-a = [3, 5, 7, 9]
-b = [2, 3, 4, 5]
-c = [2, 4, 6, 8]
 
-a_ex, b_ex, c_ex = zip(*(
-                        [elem if elem in col else None
-                            for col in a, b, c] 
-                                for elem in set(a).union(b, c)
-                      ))
-
-Seems the most direct if you're not worried about the speed.
-I also just noticed my answer to Joining multiple iteratorars by a key sort of applies:
-def paditers(*args):
-    iters = [iter(x) for x in args]
-
-    this = [next(i) for i in iters]
-
-    while True:
-        try:
-            key = min(i for i in this if i != None)
-        except ValueError:
-            break
-        for i, val in enumerate(this):
-            if val == key:
-                yield val
-                this[i] = next(iters[i], None)
-            else:
-                yield None
-
-padded = list(paditers(a, b, c))
-next_item = iter(padded).next
-print zip(*((next_item(), next_item(), next_item()) 
-         for _ in range(len(padded) // 3)))
-
-You can adapt that if you need performance to scale linearly.
+You can simply use this regex over each line and replace by empty string.See demo.
+https://regex101.com/r/cK4iV0/17
 

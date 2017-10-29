@@ -1,22 +1,4 @@
-I have a question regarding Python ASCII Art.
-User inputs 6.
-XXXXXX
-X    X
-XX  XX
-XX  XX
-X    X
-XXXXXX
-
-User inputs 8.
-XXXXXXXX
-X      X
-X      X
-XXX  XXX
-XXX  XXX
-X      X
-X      X
-XXXXXXXX
-
-How would I craft something like this in Python 3, using input from the user?
-Could someone point me in the right direction. I just started learning python at home. This is one of the questions in the bonus quiz section of a book I purchased from Amazon. 
+I can test the rank of a matrix using np.linalg.matrix_rank(A) . But how can I test if all the rows of A are orthogonal efficiently?
+I could take all pairs of rows and compute the inner product between them but is there a better way?
+My matrix has fewer rows than columns and the rows are not unit vectors.
 

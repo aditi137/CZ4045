@@ -1,6 +1,11 @@
->>> import os
->>> os.path.abspath('mydir/myfile.txt')
-'C:\\example\\cwd\\mydir\\myfile.txt'
->>> 
-
+I have a Player class with a score attribute:
+This score increases/decreases as the player succeeds/fails to do objectives. Now I need to tell the player his rank out of the total amount of players with something like
+First I thought of having a list of all the players, and whenever anything happens to a player:
+I check if his score increased or decreased
+find him in the list
+move him until his score is in the correct place
+But this would be extremely slow. There can be hundreds of thousands of players, and a player can reset his own score to 0 which would mean that I'd have to move everyone after him in the stack. Even finding the player would be O(n).
+What I'm looking for is a high performance solution. RAM usage isn't quite as important, although common sense should be used. How could I improve the system to be a lot faster?
+Updated info: I'm storing a player's data into a MySQL database with SQLAlchemy everytime he leaves the gameserver, and I load it everytime he joins the server. These are handled through 'player_join' and 'player_leave' events:
+Also, the player's score is updated upon 'player_kill' event:
 

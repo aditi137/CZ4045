@@ -1,5 +1,11 @@
-In a Keras model with the Functional API I need to call fit_generator to train on augmented images data using an ImageDataGenerator.
-The problem is my model has two outputs: the mask I'm trying to predict and a binary value
-I obviously only want to augment the input and the mask output and not the binary value.
-How can I achieve this?
+Spacy gives you all of that with just using en_nlp = spacy.load('en'); doc=en_nlp(sentence). The documentation gives you details about how to access each of the elements.
+An example is given below:
+Sentences can be obtained by using doc.sents:
+Noun chunks are given by doc.noun_chunks:
+Named entity is given by doc.ents:
+Tokenization: You can iterate over the doc to get tokens. token.orth_ gives str of the token.
+POS is given by token.tag_:
+Lemmatization:
+Dependency parsing. You can traverse the parse tree by using token.dep_ token.rights or token.lefts. You can write a function to print dependencies:
+For more details please consult the spacy documentation.
 

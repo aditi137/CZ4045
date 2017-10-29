@@ -1,5 +1,4 @@
-Supervisor supports options to set permissions on the Unix domain socket.
-http://supervisord.org/configuration.html#unix-http-server-section-example
-I don't know the details but you should be able to call the xmlrpc interface over UNIX domain socket the same way that supervisorctl.py does.  It's calling options.getServerProxy() to get an xmlrpclib.ServerProxy object.
-https://github.com/Supervisor/supervisor/blob/master/supervisor/supervisorctl.py#L188
+I have a xml file "sample.xml" as:
+and respective dtd as "sample.dtd":
+I want "sample.xml" to get validated against "sample.dtd" by making use of python script. How will i achieve this? kindly help.
 

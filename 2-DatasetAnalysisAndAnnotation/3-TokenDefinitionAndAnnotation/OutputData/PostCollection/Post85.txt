@@ -1,9 +1,7 @@
-I am working with a big set of data (240, 131000) and bigger. I am currently using the code below to plot this.
-fig,ax = pyplot.subplots()
-spectrum = ax.pcolor(waterfallplot, cmap='viridis')
-pyplot.colorbar()
-pyplot.show()
-
-However, it's taking a very long time (30 min+) and the plot still hasn't shown up yet. A quick breakpoint check says the code gets to the spectrum= line, but doesn't go past. Looking at the memory on my computer, it hasn't even gotten close to the limit. 
-Does anyone have a better way of doing this?
+Take advantage of algebra:
+Knowing that, you only have to bother generating the values:
+If you need to filter things out by some criteria, you can easily write a filter function:
+If you wanted to shorten things a bit, you could re-write your function so that it returns the valid pair, or None otherwise.
+Or, just create a generator and iterate over that:
+If you want to allow zero padded numbers in b then you can use this filter:
 

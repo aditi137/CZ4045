@@ -1,23 +1,6 @@
-http://www.b-list.org/weblog/2007/nov/02/handle-choices-right-way/
-
-class Entry(models.Model):
-    LIVE_STATUS = 1
-    DRAFT_STATUS = 2
-    HIDDEN_STATUS = 3
-    STATUS_CHOICES = (
-        (LIVE_STATUS, 'Live'),
-        (DRAFT_STATUS, 'Draft'),
-        (HIDDEN_STATUS, 'Hidden'),
-    )
-    # ...some other fields here...
-    status = models.IntegerField(choices=STATUS_CHOICES, default=LIVE_STATUS)
-
-live_entries = Entry.objects.filter(status=Entry.LIVE_STATUS)
-draft_entries = Entry.objects.filter(status=Entry.DRAFT_STATUS)
-
-if entry_object.status == Entry.LIVE_STATUS:
-
-
-This is another nice and easy way of implementing enums although it doesn't really save enums in the database.
-However it does allow you to reference the 'label' whenever querying or specifying defaults as opposed to the top-rated answer where you have to use the 'value' (which may be a number).
+I am developing a plugin in qgis. I have one interface (MMMM.py) with several buttons and one of them opens a new interface (ABC.py) where I introduce values. My objective is to read these values in the main interface (the first one). So I have a script to each interface but when I import the variables, I have several errors. I have troubles to import these variables.
+second script named ABC.py
+first (main) script named MMMM.py
+I tried some ways to import the values x and y to main interface but I have always errors. I am working in qgis.
+What I am doing wrong?
 

@@ -1,2 +1,3 @@
-Is there a way, when I parse an XML document using lxml, to validate that document against its DTD using an external catalog file?   I need to be able to work the fixed attributes defined in a document’s DTD.
+There is no need to write a context processor for the user object if you already have the "django.core.context_processors.auth" in TEMPLATE_CONTEXT_PROCESSORS and if you're using RequestContext in your views. 
+if you are using django 1.4 or latest the module has been moved to django.contrib.auth.context_processors.auth
 

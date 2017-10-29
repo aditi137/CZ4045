@@ -1,8 +1,2 @@
-I was using Jupyter in Windows and just switched to Ubuntu. I found the colour of the code is very weird in the firefox browser. E.g. it highlights the variables in every other line.
-I tried to solve this problem by installing a custom theme and the effect should be like
-
-Instead, it still highlights every other variable on my side, like
-
-This just makes my eyes very tired when try to debug the code.
-I also tried disabling all the add-ons in Firefox which didn't help. Is there any setting that I can change to restore to the default colour display? 
+You might want to use pyserial, which  uses the kernel interfaces (I don't know what PyBBIO does). It provides automatic input buffering - so you don't need an extra process. If you do want to have more processes use multiprocessing. A simpler alternative is threading, which saves you the communication part. For multiprocessing with network support use Ipython's cluster
 

@@ -1,9 +1,4 @@
-This should work: (inplace editing)
-import fileinput
-
-# Does a list of files, and
-# redirects STDOUT to the file in question
-for line in fileinput.input(files, inplace = 1): 
-      print line.replace("foo", "bar"),
-
+If you have installed pylint into your virtualenv, editing the project-file like this should fix it
+See: https://github.com/biermeester/Pylinter#project-settings and 
+https://github.com/biermeester/Pylinter/issues/4
 

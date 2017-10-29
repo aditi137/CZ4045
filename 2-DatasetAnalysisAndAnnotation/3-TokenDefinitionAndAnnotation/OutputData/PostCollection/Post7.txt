@@ -1,4 +1,7 @@
-I'm trying to create a hyper link in python that includes string and variables but i keep getting a syntax error, I think its probably because of quotations but I cant seen to figure it out. Thanks for the help.
-'<a href="http://maps.google.com/maps?z=12&t=m&q=loc:'str(p['latitude']+'+'+str(p['longitude']))'">Click Here</a>'})
-
+Using Django 1.7 and Celery on Heroku with Postgres and RabbitMQ.
+I recently set the CONN_MAX_AGE setting in Django to 60 or so so I could start pooling database connections. This worked fine until I discovered a problem where if for any reason a database connection was killed, Celery would continue using the bad database connection, consuming tasks but immediately throwing the following error within each task:
+I would like to keep pooling database connections, but this has happened a few times now and I obviously can't allow Celery to randomly fail. How can I get Django (or Celery) to force a new database connection only when this error is hit?
+(Alternatively, another idea I had was to force the Celery worker to run with a modified settings.py that sets CONN_MAX_AGE=0 only for Celery... but that feels very much like the wrong way to do it.)
+Please note that this StackOverflow question seems to solve the problem on Rails, but I haven't found an equivalent for Django:
+  On Heroku, Cedar, with Unicorn: Getting ActiveRecord::StatementInvalid: PGError: SSL SYSCALL error: EOF detected
 

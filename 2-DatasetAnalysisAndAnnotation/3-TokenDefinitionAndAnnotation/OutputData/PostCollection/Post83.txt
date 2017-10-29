@@ -1,2 +1,2 @@
-I fixed this by uninstalling coverage.py with pip and installing it using easy_install.
+How about this. 
 

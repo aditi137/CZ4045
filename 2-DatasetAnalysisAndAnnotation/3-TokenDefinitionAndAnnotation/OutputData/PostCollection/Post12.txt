@@ -1,17 +1,2 @@
-a = [None,1,2,3,None,4,None,None]
-
-first = True
-for i in range(len(a)):
-    if first:
-        if a[i] != None:
-            a[:i] = [a[i] for _ in range(i)]
-            first = False
-    if a[i] == None:
-        a[i] = a[i-1]
-
-print a
-
-OUT:
-[1, 1, 2, 3, 3, 4, 4, 4]
-
+Focus on the shorter time needed for development/prototype and possibly easier maintenance (none of this may apply against Ruby).
 

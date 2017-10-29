@@ -1,16 +1,3 @@
-What about something like,
-import csv
-
-with open("file.csv", 'rb') as f:
-    sl = []
-    csvread = csv.reader(f, delimiter=' ')
-    for line in csvread:
-        sl.append(line.replace("C:/Abc/Def/Test/temp\.\test\GLNext\", ""))
-
-To write the list sl out to filenew use,
-with open('filenew.csv', 'wb') as f:
-    csvwrite = csv.writer(f, delimiter=' ')
-    for line in sl:
-        csvwrite.writerow(line)
-
+that would work:
+otherwise, you can set x and y in ABC (by doing self.x = ...) and then access them by c.x
 

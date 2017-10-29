@@ -1,38 +1,5 @@
-The while loop is creating a conflict with Tkinter's mainloop. Threading or multiprocessing are solutions, but I'd recommend looking into Tkinter's after() method. Here's a simplified example of how to handle a timer using after:
-from Tkinter import *
-
-class App(Frame):
-    def __init__(self, parent):
-        Frame.__init__(self, parent)
-
-        self.mins = 0
-        self.secs = 0
-
-        # make a stringvar instance to hold the time
-        self.timer = StringVar()
-        self.timer.set('%d:%d' % (self.mins, self.secs))
-
-        Label(self, textvariable=self.timer).pack()
-        Button(self, text='Start', command=self._start_timer).pack()
-        Button(self, text='Stop', command=self._stop_timer).pack()
-
-    def _start_timer(self):
-        self.secs += 1      # increment seconds
-        if self.secs == 60: # at every minute,
-            self.secs = 0   # reset seconds
-            self.mins += 1  # and increment minutes
-
-        self.timer.set('%d:%d' % (self.mins, self.secs))
-
-        # set up the after method to repeat this method
-        # every 1000 ms (1 second)
-        self.repeater = self.after(1000, self._start_timer)
-
-    def _stop_timer(self):
-        self.after_cancel(self.repeater)
-
-root = Tk()
-App(root).pack()
-mainloop()
-
+I'm trying to implement an OAuth2 authentication server and for the client part i wanted to send a json request to the server (from a Django view) and i found several libraries to do that tho' the most common are httplib2 and urllib2 i was wondering which is the difference between them and which is the best library for this purpose.
+Thanks in advance.
+Edit:
+After searching, i found an extremely useful library called Requests and i use this one since then. (http://docs.python-requests.org/en/latest/)
 

@@ -1,10 +1,6 @@
-I have a main python script which starts a thread running in the background.
-poll = threading.Thread(target=poll_files, args=myargs)
-I want my main script to wait until something specific happens in my poll thread. I want to use an Event object. So in my main script, I do:
-trigger = threading.Event()
-and when I want to wait:
-trigger.wait()
-My question is, inside my poll thread, how do I set the Event to True? I know I do:
-trigger.set()
-but do I need to also have trigger = threading.Event() inside my poll thread?
+All I'm trying to make is a program that loops through a word or phrase character-by-character like this:
+I wrote this:
+and the output is exactly what I want:
+But, if there is a repeated letter, it'll remove both at once, like this:
+How can I make it just remove the one letter, without removing both? Can't think of a solution
 

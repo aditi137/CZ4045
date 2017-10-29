@@ -1,13 +1,3 @@
-Say I have the following methods:
-def methodA(arg, **kwargs):
-    pass
 
-def methodB(arg, *args, **kwargs):
-    pass
-
-In methodA I wish to call methodB, passing on the kwargs. However, it seems that if I define methodA as follows, the second argument will be passed on as positional rather than named variable arguments.
-def methodA(arg, **kwargs):
-    methodB("argvalue", kwargs)
-
-How do I make sure that the **kwargs in methodA gets passed as **kwargs to methodB?
+Also works if it is already an absolute path:
 

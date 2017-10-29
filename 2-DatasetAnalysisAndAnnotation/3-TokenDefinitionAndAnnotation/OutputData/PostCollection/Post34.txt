@@ -1,5 +1,3 @@
-My possibilities are limited, as I do have a nice host but can just use the normal server plan. Which means, only a normal server on port 80.
-I have tried to read up some on WebSockets and/or Comet, and they mostly seem to require a second server running on another port.
-Is there a way to get a stable Comet-like behaviour that scales nicely. My solution up to now is a script that sends a GET request every 5 seconds, which is not a good way to make a web chat. And I am afraid it might kill my server when a few dozen people are online.
-So how can I get a reliable comet-like behaviour?
+GObjects don't have to be widgets. For example, your application class can be a GObject which defines signals that other widgets connect to.
+Also, I don't think you understood the Shotwell design document correctly. It looks to me like their signalling system is 100% GObject signalling system, just with particular guarantees about the order in which signals are handled. As they say in their design document, such things are possible in plain GObject, but Vala makes it easier to code it their way.
 

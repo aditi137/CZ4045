@@ -1,29 +1,3 @@
-I am learning Django and I'm still in the first tutorial. When I try to run:
-python manage.py shell 
-
-I get the following error:
-   Traceback (most recent call last):
-  File "manage.py", line 10, in <module>
-    execute_from_command_line(sys.argv)
-  File "C:\Python27\lib\site-packages\django\core\management\__init__.py", line
-338, in execute_from_command_line
-    utility.execute()
-  File "C:\Python27\lib\site-packages\django\core\management\__init__.py", line
-312, in execute
-    django.setup()
-  File "C:\Python27\lib\site-packages\django\__init__.py", line 18, in setup
-    apps.populate(settings.INSTALLED_APPS)
-  File "C:\Python27\lib\site-packages\django\apps\registry.py", line 108, in pop
-ulate
-    app_config.import_models(all_models)
-  File "C:\Python27\lib\site-packages\django\apps\config.py", line 198, in impor
-t_models
-    self.models_module = import_module(models_module_name)
-  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
-    __import__(name)
-  File "C:\Users\Elashkar\Desktop\django\mysite\polls\models.py", line 2, in <mo
-dule>
-    import datatime
-ImportError: No module named datatime
-
+I don't have any python interpreter here, but it should be something similar to this:
+Note: this will work for this classification, but if you want to retrieve usernames i.e. @USERNAME you will have to tweak this a little more.
 

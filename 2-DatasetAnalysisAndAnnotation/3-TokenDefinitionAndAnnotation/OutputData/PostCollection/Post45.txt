@@ -1,6 +1,4 @@
-On a side note, it might be good to checkout argparse module in python, from the documentation -
-
-The argparse module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and argparse will figure out how to parse those out of sys.argv. The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid arguments.
-
-It also has support for optional arguments. Maybe you can take a look at this to get started on that.
+This depends on the OS and the CPU architecture. On x86 (Intel compatible) the operating system might execute HLT instructions, making the CPU wait until something interesting happens, such as a hardware interrupt. This supposedly consumes very little power. Operating systems report the time spent doing this as "idle" and may even assign it to a fictional "idle" process.
+So, when in Windows task manager you see that the System Idle Process is consuming 90% CPU what it really means is that the CPU does not have an actual a program to run 90% of the time.
+Here's a good article on the subject: What does an idle CPU do?
 

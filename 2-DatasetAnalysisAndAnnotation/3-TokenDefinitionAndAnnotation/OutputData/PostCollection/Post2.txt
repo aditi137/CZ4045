@@ -1,23 +1,2 @@
-Example table:
-  A  |  B  |  C  | ...
------+-----+-----+----
-  3  |  2  |  2  |    
-  5  |  3  |  4  |    
-  7  |  4  |  6  |    
-  9  |  5  |  8  |    
-
-I would like somehow to temper it with Gnumeric and produce matching cells across columns:
-  A  |  B  |  C  | ...
------+-----+-----+----
-  -  |  2  |  2  |    
-  3  |  3  |  -  |    
-  -  |  4  |  4  |    
-  5  |  5  |  -  |    
-  -  |  -  |  6  |    
-  7  |  -  |  -  |    
-  -  |  -  |  8  |    
-  9  |  -  |  -  |    
-
-Real example if with string values instead numbers but it is easier to explain with numbers I think
-If this is not trivial and someone has idea how this can be done with Python lists instead table columns in Gnumeric please post a Python solution.
+Shutil.copy/unicode wasn't the problem here; tyring to copy a non-existent file was.
 

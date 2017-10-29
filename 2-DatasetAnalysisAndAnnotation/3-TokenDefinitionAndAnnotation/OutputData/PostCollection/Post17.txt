@@ -1,29 +1,6 @@
-My initial DataFrame looks as follows:
-   A    B  quantity
-0  1  foo         1
-1  1  baz         2
-2  1  bar         2
-3  1  faz         1
-4  2  foo         2
-5  2  bar         1
-6  3  foo         3
-
-I need to group it by 'A' and make a list of 'B' multiplied by 'quantity':
-   A                               B
-0  1  [foo, baz, baz, bar, bar, faz]
-1  2                 [foo, foo, bar]
-2  3                 [foo, foo, foo]
-
-Currently I'm using groupby() and then apply():
-def itemsToList(tdf, column):
-
-    collist = []
-    for row in tdf[column].iteritems():
-        collist = collist + tdf['quantity'][row[0]]*[row[1]]
-
-    return pd.Series({column: collist})
-
-gb = df.groupby('A').apply(itemsToList, 'B')
-
-I doubt it is an efficient way, so I'm looking for a good, "pandaic" method to achieve this.
+You want to use itertools.groupby() with a dash of itertools.islice() and itertools.chain:
+The groupby() call groups the input list into chunks where the first item is the same (itemgetter(0) is the grouping key). 
+The islice(group, 1, None) call turns the groups into iterables where the first element will be skipped.
+The chain.from_iterable() call takes each islice() result and chains them together into a new iterable, which list() turns back into a list.
+Demo:
 

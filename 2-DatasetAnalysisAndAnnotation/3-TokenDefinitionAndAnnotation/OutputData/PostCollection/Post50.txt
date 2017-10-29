@@ -1,2 +1,3 @@
-You're instantiating before adding/initializing the variable attribute. It will have no knowledge of the variable unless again instantiated or swapped as the other answer mentioned.
+Your code fails as you have already consumed the iterator on the first call, if you call none_context() in the with block the original code would work:
+You can see using your original code that if you add a None for each open then the code will work as expected:
 

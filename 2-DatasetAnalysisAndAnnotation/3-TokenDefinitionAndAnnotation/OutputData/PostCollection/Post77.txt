@@ -1,16 +1,4 @@
-How about this. 
-from rae import Drae
-
-drae = Drae()
-
-if text.startswith('/'):
-  if text.startswith('/define'):
-    try:
-      [command, data] = text.split(' ',1)
-    except:
-      send('Write: /define <word>')
-    meanings = drae.search(data) 
-    reply(str(meanings)) 
-    setEnabled(chat_id, True)
-
+Have a look at BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/
+You can request a website and then read the HTML source code from it:
+If you want to read JavaScript, look into Headless Browsers.
 

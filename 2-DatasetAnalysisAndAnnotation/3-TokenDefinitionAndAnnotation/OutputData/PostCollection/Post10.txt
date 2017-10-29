@@ -1,2 +1,4 @@
-pyaws seems to be the best one out there.  I used it here (my source code)  It worked fine for me.
+I am developing a django application. In my forms. I have a checkbox in my form. My forms submits fine when the box is checked, but when the box is unchecked, the form fails to submit. The field I am using is Boolean.
+Here is my code:
+Does anyone have a solution?
 

@@ -1,9 +1,3 @@
-I am working with .h5 files with little experience.
-In a script I wrote I load in data from an .h5 file. The shape of the resulting array is: [3584, 3584, 75]. Here the values 3584 denotes the number of pixels, and 75 denotes the number of time frames. Loading the data and printing the shape takes 180 ms. I obtain this time using os.times().
-If I now want to look at the data at a specific time frame I use the following piece of code:
-data_1 = data[:, :, 1]
-
-The slicing takes up a lot of time (1.76 s). I understand that my 2D array is huge but at some point I would like to loop over time which will take very long as I'm performing this slice within the for loop.
-Is there a more effective/less time consuming way of slicing the time frames or handling this type of data?
-Thank you!
+Today you can also use the unipath package which was based on path.py: http://sluggo.scrapping.cc/python/unipath/
+I would recommend using this package as it offers a clean interface to common os.path utilities.
 

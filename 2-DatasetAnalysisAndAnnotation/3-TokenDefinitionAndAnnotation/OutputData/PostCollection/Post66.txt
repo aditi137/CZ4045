@@ -1,2 +1,2 @@
-I was never satisfied with David Mertz's articles at IBM on metaclsses so I recently wrote my own metaclass article.  Enjoy.
+I wanted something similar, but with the ability to specify how the values on duplicate keys were merged, so I hacked this out (but did not heavily test it).  Obviously this is not a single expression, but it is a single function call.
 

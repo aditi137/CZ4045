@@ -1,4 +1,4 @@
-If you can hook your authentication into the Django authentication scheme you'll be able to use request.user.
-I think this should just be a case of calling authenticate() and login() based on the contents of your Cookie.
-Edit: @Staale - I always use the locals() trick for my context so all my templates can see request and so request.user.  If you're not then I guess it wouldn't be so straightforward.
+You can use the str.split method.
+If you want to convert it to a tuple, just
+If you are looking to append to a list, try this:
 

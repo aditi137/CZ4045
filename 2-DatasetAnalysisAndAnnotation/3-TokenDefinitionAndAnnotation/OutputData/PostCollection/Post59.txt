@@ -1,2 +1,3 @@
-Python has tuples, which are like lists but of fixed size. A two-element tuple is (a, b); a three-element one is (a, b, c). However, (a) is just a in parentheses. To represent a one-element tuple, Python uses a slightly odd syntax of (a,). So there is only one dimension, and you have a bunch of elements in that one dimension.
+An option is np.einsum
+This results in a (L, N) sized array containing matrix products of all the A[i].T.dot(B[i])
 

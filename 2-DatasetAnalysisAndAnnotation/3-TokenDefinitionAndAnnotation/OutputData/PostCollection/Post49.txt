@@ -1,33 +1,7 @@
-I'm reading XML file using Etree module. Im using following code to print the value of <page> and <title> tags. My code working fine. But I want little change. If the <page id='...'>  attribute id is exists then print the value of tag. Is it possible? thanks 
-import xml.etree.cElementTree as etree
-from pprint import pprint
-tree = etree.parse('find_title.xml')
-for value in tree.getiterator(tag='title'):
-    print value.text
-for value in tree.getiterator(tag='page'):
-    pprint(value.attrib)
-
-Here is my xml File.
- <mediawiki>
-      <siteinfo>
-        <sitename>Wiki</sitename>
-        <namespaces>
-          <namespace key="-2" case="first-letter">Media</namespace>
-        </namespaces>
-      </siteinfo>
-    <page id="31239628" orglength="6822" newlength="4524" stub="0" categories="0" outlinks="1" urls="10">
-    <title>Title</title>
-    <categories></categories>
-    <links>15099779</links>
-    <urls>
-    </urls>
-    <text>
-
-    Books
-
-    </text>
-    </page>
-
-    </mediawiki>
-
+I don't have pexpect handy to test my answer to your question, but I have a suggestion that should work and, if not, may at least get you closer.  
+Consider this command:
+What is happening?  The entire quoted string is passed as a single argument to ssh, where it is "executed" on the remote.  While ssh isn't explicit about what that means, exactly, we know what execv(2) does: if execve(2) fails to execute its passed arguments, the execv function will invoke /bin/sh with the same arguments (in this case, our quoted string).  The shell then evaluates the quoted string as separate arguments, detects the HereDoc redirection, and executes per usual.  
+Using that information, and taking a quick look at the pexpect.pxssh documentation, it looks like you want:
+If that doesn't work, something is munging your data.  Five minutes with strace(1) will tell you what happened to it, and you can start pointing fingers.  ;-)
+HTH.  
 

@@ -1,7 +1,2 @@
-IIUC, you could use itertools.accumulate to generate a forward fill:
->>> from itertools import accumulate
->>> a = [None,1,2,3,None,4,None,None]
->>> list(accumulate(a, lambda x,y: y if y is not None else x))
-[None, 1, 2, 3, 3, 4, 4, 4]
-
+To import a module from a given filename, you can temporarily extend the path, and restore the system path in the finally block reference:
 

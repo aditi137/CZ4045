@@ -1,3 +1,4 @@
-I am working on a project that requires me to read a spreadsheet provided by the user and I need to build a system to check that the contents of the spreadsheet are valid. Specifically I want to validate that each column contains a specific datatype.
-I know that this could be done by iterating over every cell in the spreadsheet, but I was hoping there is a simpler way to do it.
+A general answer involves using a Manager object. Adapted from the docs:
+Output:
+Original answer: Python multiprocessing: How do I share a dict among multiple processes?
 

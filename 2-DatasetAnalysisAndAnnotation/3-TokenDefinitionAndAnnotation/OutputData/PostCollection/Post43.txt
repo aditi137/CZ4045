@@ -1,10 +1,5 @@
-Define a helper function and pass the object method and its arguments to that function via Pool.map. The helper function would look something like this:
-def helper(*args):
-    return args[0](*args[1:])
-
-And you would use it like this:
-pool = Pool()
-results = pool.map(helper, [obj.method, arg1, arg2])
-
-Note that the helper function must be directly importable from its containing module.
+I assume your purpose is to create a program that starts two threads, one (client thread) receives keyboard input and sends to the other (server thread), the server thread prints out everything it received.
+Based on my assumption, you first need to start a ServerThread listen to a port (it's not like what your 'ClientThread' did). Here's an example:
+And these are the output:
+You may check here for more details about Python socket: https://docs.python.org/2/library/socket.html?#example
 

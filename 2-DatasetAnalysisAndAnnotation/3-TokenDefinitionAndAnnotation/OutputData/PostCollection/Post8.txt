@@ -1,3 +1,2 @@
-In my Python script, I perform a few operations that need root privileges. I also create and write to files that I don't want to be owned exclusively by root but by the user who is running my script.
-Usually, I run my script using sudo. Is there a way to do the above?
+After the installation of motionless library, I try to run my code and the following error  message occurs. 
 

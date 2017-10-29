@@ -1,5 +1,4 @@
-I'm writing a console program with Python under Windows.
-The user need to login to use the program, when he input his password, I'd like they to be echoed as "*", while I can get what the user input.
-I found in the standard library a module called getpass, but it will not echo anything when you input(linux like).
-Thanks.
+In case your string always contains Phone: with the phone number following it at the end, you do not need the regex. Also, note that 1-800-MALL is also a valid phone number.
+I suggest this:
+Or, in case regex is still preferable, another solution:
 

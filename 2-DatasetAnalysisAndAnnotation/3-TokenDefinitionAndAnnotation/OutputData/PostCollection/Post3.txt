@@ -1,7 +1,3 @@
-I am just very curious. Django runs the following line:
-email_body = get_template("applicant/email_with_token.txt").render(Context())
-
-it runs it from form_valid() of a class-based view. New context is created based on a regular python dictionary. No parameters are passed, that come from a view, user, session, etc... Inside of the template there is {% load i18n %} and a bunch of context/variables.
-Still, Django recognizes the language of the current session and applies appropriate translations.
-So, where from does it know the session language?
+For oldest task you should probably use created_at rather than modified_at (the oldest task could have been modified recently, after all).
+We don't have any way in the API to specifically get the older task, or order by creation time or anything like that, so for now your workaround is in fact the only way to do it. You may be able to make it a little faster by using ?opt_fields=created_at in the task query to cut down on how much data you're loading.
 

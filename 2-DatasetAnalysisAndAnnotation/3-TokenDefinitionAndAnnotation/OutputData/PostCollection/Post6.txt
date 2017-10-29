@@ -1,4 +1,2 @@
-You can use list comprehension for achieving this:
-str_list = ['%s'%(x) for x in range(0, 5)]
-
+I am running this code below using multiprocessing to run ticker_list through a request and parsing program faster.  The following code works, but it is very slow.  I am not so sure that this is the correct usage of multiprocessing.  If there is a more efficient way to do this then please let me know.
 

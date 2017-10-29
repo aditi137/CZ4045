@@ -1,50 +1,10 @@
-Only 1 test file
-If doesn't have many test files, putting it in a top-level directory is nice (I think this is a pythonic (recommended) way):
-module/
-  lib/
-    __init__.py
-    module.py
-  test.py
-
-Many test files
-If has many test files, put it in a tests folder:
-module/
-  lib/
-    __init__.py
-    module.py
-  tests/
-    test_module.py
-    test_module2.py
-
-but if you put the tests in tests folder, test can't import ..lib in CLI because __main__  can't import relative modules, so instead we can use nose, or we can add a parent directory to the python import path, and for that I will create a
-env.py
-import sys
-import os
-
-# append module root directory to sys.path
-sys.path.append(
-    os.path.dirname(
-        os.path.dirname(
-            os.path.abspath(__file__)
-        )
-    )
-)
-
-in
-module/
-  tests/
-    test_module.py
-    env.py
-
-and import env before test import module
-test_module.py
-import unittest
-# append parent directory to import path
-import env
-# now we can import the lib module
-from lib import module
-
-if __name__ == '__main__':
-    unittest.main()
-
+i want know witch device connect to witch usb port in ubuntu ...
+for example when i connect bluetooth dongle to usb i wnat know that Bluetooth connected tu witch usb port ...
+when i run 
+tail -f /var/log/messages
+in can see usb port number like this :
+Jul 27 20:51:58 Smart-Installer kernel: [  711.363300] usb 1-1.2: New USB device found, idVendor=0a12, idProduct=0001
+  Jul 27 20:51:58 Smart-Installer kernel: [  711.363331] usb 1-1.2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+i want get usb 1-1.2 programmatically via python
+i know lsusb -t get me port but i want also device number and -t get me a few data
 

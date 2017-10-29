@@ -1,35 +1,6 @@
-You can use the pandas library for this. Doing so, you can leverage pandas' amazing handling of big CSV files (even in the hundreds of MB).
-Code:
-import pandas as pd
-
-csv_file = 'test_csv.csv'
-df = pd.read_csv(csv_file, header=None)
-print df
-print "-------------------------------------------"
-
-path = "C:/Abc/bcd/Def/Test/temp/test/GLNext/"
-df[0] = df[0].replace({path:""}, regex=True)
-
-print df
-# df.to_csv("truncated.csv") # Export to new file.
-
-Result:
-                                                   0   1    2   3
-0    C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.frag   0    0   0
-1    C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.vert   0    0   0
-2  C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.lin...  16   24   3
-3  C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.lin...  87  116  69
-4  C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.lin...  75   95  61
-5  C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.lin...   0    0 NaN
-6  C:/Abc/bcd/Def/Test/temp/test/GLNext/FILE0.lin...   0    0   0
--------------------------------------------
-                            0   1    2   3
-0                  FILE0.frag   0    0   0
-1                  FILE0.vert   0    0   0
-2      FILE0.link-link-0.frag  16   24   3
-3      FILE0.link-link-0.vert  87  116  69
-4  FILE0.link-link-0.vert.bin  75   95  61
-5           FILE0.link-link-0   0    0 NaN
-6           FILE0.link-link-6   0    0   0
-
+I apologize if this is a silly question. But I tried to google this and I couldn't find anything to point me in the right direction. I'd just like to understand what I need to do to 'set-up' cdt to 'understand' my python.h include.
+the erroneous statement is this:
+but I also tried
+And CDT responds with an error sign on the side stating:
+I am using Eclipse CDT Juno on Ubuntu 12.04. Any pointers would be great!
 

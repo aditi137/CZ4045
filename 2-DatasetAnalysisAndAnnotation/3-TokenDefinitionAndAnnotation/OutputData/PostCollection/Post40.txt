@@ -1,19 +1,4 @@
-O(n):  The Counter() method is best (if your objects are hashable):
-def compare(s, t):
-    return Counter(s) == Counter(t)
-
-O(n log n):  The sorted() method is next best (if your objects are orderable):
-def compare(s, t):
-    return sorted(s) == sorted(t)
-
-O(n * n): If the objects are neither hashable, nor orderable, you can use equality:
-def compare(s, t):
-    t = list(t)   # make a mutable copy
-    try:
-        for elem in s:
-            t.remove(elem)
-    except ValueError:
-        return False
-    return not t
-
+I'm trying to create a sqlite3 table using python. My code is given below:
+This code runs fine the first time I run it and my database is created. However, if I run it a second time, I get the following error:
+I have no idea what's going wrong. Can anybody help?
 

@@ -1,7 +1,4 @@
-I figured out how to make it work. From this:
-qry = "Insert into prints set print = '{0}'".format(printBin)
-
-To this:
-qry = "Insert into prints set print = '0x{0}'".format(printBin)
-
+I am trying to install numpy from a wheel package (that I have generated in my virtualenv) on a Redhat 6.5 with python version =2.6.6:
+I am getting the following error: 
+Any way to fix that? thanks :) 
 

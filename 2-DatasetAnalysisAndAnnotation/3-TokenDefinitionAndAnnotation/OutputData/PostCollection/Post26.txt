@@ -1,12 +1,6 @@
-I have two Python dictionaries, and I want to write a single expression that returns these two dictionaries, merged.  The update() method would be what I need, if it returned its result instead of modifying a dict in-place.
->>> x = {'a':1, 'b': 2}
->>> y = {'b':10, 'c': 11}
->>> z = x.update(y)
->>> print(z)
-None
->>> x
-{'a': 1, 'b': 10, 'c': 11}
-
-How can I get that final merged dict in z, not x?
-(To be extra-clear, the last-one-wins conflict-handling of dict.update() is what I'm looking for as well.)
+I think you can avoid a commit hook script in this case by using the svn:eol-style property as described in the SVNBook:
+End-of-Line Character Sequences
+Subversion Properties
+This way SVN can worry about your line endings for you.
+Good luck!
 

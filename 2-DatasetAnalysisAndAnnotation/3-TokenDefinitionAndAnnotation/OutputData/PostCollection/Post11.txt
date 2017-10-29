@@ -1,27 +1,10 @@
-I think what you are trying to achieve is something like the following:
-file1.py
-from file2 import my_list
-
-print(my_list)
-
-file2.py
-my_list = []
-
-class abc:
-    def __init__(self):
-        global my_list
-
-        my_list = [12,13,4] #values assigned
-
-
-my_abc_file2 = abc()
-
-Running file1.py would give:
-[12, 13, 4]
-
-As mentioned in the comments, file2.py really only needs to contain the following for it to work though:
-file2.py
-my_list = [12,13,4]
-
-Tested in Python 2.7
+We need a tool to work with 3D-Harmonics and we've come across https://github.com/SHTOOLS/SHTOOLS - which fits all of our needs, but could not be installed properly on our windows computers (as it's intended for linux\osx).
+When we tried to run pip install . in the directory SHTOOLS-3.3 (we use anaconda for managing packages and it includes pip), we at first got an error saying that we need a Fortran compiler (gfortran) - which we fixed by installing gcc with conda install -c r gcc. Afterwards, we got an error saying we need to install visual C++ compiler - which we downloaded as suggested from https://www.microsoft.com/en-gb/download/details.aspx?id=44266.
+Alas, running the command again, this time from the visual C++ 2008 command prompt, we still get a fatal error and are still stuck with installing the library.
+Some of the errors we get: 
+Followed by
+and 
+The full output of the installation attempt can be found here and here.
+We've tried to download the lib files of the FFTW3, LAPACK and BLAS libraries but couldn't build them properly.
+We would appreciate any help (suggesting a similar library that is compatible with windows \ helping with the install of SHTOOlS).
 

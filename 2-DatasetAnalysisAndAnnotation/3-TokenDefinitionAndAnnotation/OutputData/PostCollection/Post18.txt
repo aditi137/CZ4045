@@ -1,10 +1,4 @@
-Today you can also use the unipath package which was based on path.py: http://sluggo.scrapping.cc/python/unipath/
->>> from unipath import Path
->>> absolute_path = Path('mydir/myfile.txt').absolute()
-Path('C:\\example\\cwd\\mydir\\myfile.txt')
->>> str(absolute_path)
-C:\\example\\cwd\\mydir\\myfile.txt
->>>
-
-I would recommend using this package as it offers a clean interface to common os.path utilities.
+I am trying to read all the elements in a dictionary one by one. my dictionary is as given below "test".
+i want to do as given in below sample code.
+thank you 
 

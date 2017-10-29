@@ -1,20 +1,4 @@
-This answer is too late as a solution has already been accepted, but the simplest way to solve the  problem is to write the newly-constructed row directly to the output csv file without creating an intermediate list.
-You could write something like:
-import csv, math
-
-with open("mydata.csv", "rb") as f,\
-     open("newdata.csv", "wb") as g:
-        vectors = csv.reader(f, delimiter=";")
-        writer = csv.writer(g, delimiter=";")
-        for row in vectors:
-            # use destructuring
-            x, y, dX, dY, magnitude = map(float, row)
-
-            if dX > 0 and dY > 0:
-            #<snip>
-
-            # at this stage you can write directly to the output
-            # file.
-            writer.writerow([x, y, dX, dY, magnitude, angle])
-
+A common practice is to put the tests directory in the same parent directory as your module/package. So if your module was called foo.py your directory layout would look like:
+Of course there is no one way of doing it. You could also make a tests subdirectory and import the module using absolute import.
+Wherever you put your tests, I would recommend you use nose to run them. Nose searches through your directories for tests. This way, you can put tests wherever they make the most sense organizationally.
 

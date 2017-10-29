@@ -1,10 +1,3 @@
-As I commented above, this should not be used on untrusted sources. Also it may not me explicit enough to be Pythonic.
-One can also define a function to do that, but to access the right locals, it needs to do some frame handling
-def format_locals(string):
-    return string.format(**sys._getframe().f_back.f_locals)
-
-This kind of pattern is not nice and things like Pypy can't optmize this kind of code.
-I would use this code (unless you need Python 2.6 support so you must add the indexes):
-filename = 'data/avatars/{}.{}'.format(player_name, ext)
-
+Since your C# program runs the python script, I guess the easiest solution would be to redirect the standard input of the python process:
+At the python script side, you just need to use built-in function raw_input like below (please note the function has been renamed to raw_input in 3.x):
 

@@ -1,14 +1,5 @@
-I'm creating a telegram bot that searchs for words in a online dictionary, the problem comes when I need to create the command in Telegram for searching in that dictionary, at the momment I have this:
-from rae import Drae
-drae = Drae()
-
-  if text.startswith('/'):
-     if text =='/define':
-        drae.search(u' ')  # The problem is here, I don't know how to implement the command and the word who the client wants to search.
-        setEnabled(chat_id, True)
-
-
-I'm using this Telegram API in Python: https://github.com/yukuku/telebot
-And this API for the Dictionary: https://github.com/dialelo/rae-1
-
+For bash, This was already answered at Run all Python files in a directory
+You can run:
+If you're on Powershell, You can use:
+EDIT: Like Duncan said, This is a shorter solution on Powershell:
 
