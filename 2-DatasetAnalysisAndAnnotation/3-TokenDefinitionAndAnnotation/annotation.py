@@ -17,7 +17,7 @@ def tokeniseAndGetFrame(df):
     return new_DF
 
 def main():
-    df = pd.read_csv("OutputData\selectedPosts.csv", header=None, skiprows=1)
+    df = pd.read_csv("OutputData/selectedPosts.csv", header=None, skiprows=1)
 
     outputDF = tokeniseAndGetFrame(df)
 
