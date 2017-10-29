@@ -13,12 +13,15 @@ def main():
     #(?!term1|term2|term3)
 
     importDetector = 'import\s+[a-zA-Z0-9]+'
-    defDetector = 'def\s+[a-zA-Z0-9]+\(.*?\):'
+    functionDetector = '[a-zA-Z0-9]+\(.*?\):'
+    defDetector = 'def\s+' + functionDetector
     asignDetector = '[a-zA-Z0-9]+\s*[+\-]*=\s*[a-zA-Z0-9]+'
     
+    # THE ORDER IN THIS ARRAY IS IMPORTANT, THE FIRST MATCH IS THE SELECTED ONE
     regexExpressions = [
         importDetector,
         defDetector,
+        functionDetector,
         asignDetector,
         '[^\n\t ]+'
     ]
