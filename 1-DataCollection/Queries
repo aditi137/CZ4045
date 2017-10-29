@@ -1,13 +1,13 @@
 Queries for Stack Exchange Data Explorer:
 1.
-select top 500 *
+select top 1000 Id,PostTypeId,ParentId,Body,AnswerCount
 from Posts
 where PostTypeId = 1
 and AnswerCount > 0
 and Tags like '%python%'
 
 2.
-select *
+select Id,PostTypeId,ParentId,Body,AnswerCount
 from Posts
 where PostTypeId = 2
 and ParentId in (a list of ids from query 1)
