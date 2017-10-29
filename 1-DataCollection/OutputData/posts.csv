@@ -83,19 +83,8 @@ Make sure you are opening both files for binary read/write.
 5909,25502448,2,"In Python3:
 ",3
 5909,40957594,2,"A requests-based solution using HEAD instead of GET (also prints HTTP headers):
-#!/usr/bin/python
-# display size of a remote file without downloading
-from __future__ import print_function
-import sys
-import requests
-# number of bytes in a megabyte
-MBFACTOR = float(1 << 20)
-response = requests.head(sys.argv[1], allow_redirects=True)
-print(""\n"".join([('{:<40}: {}'.format(k, v)) for k, v in response.headers.items()]))
-size = response.headers.get('content-length', 0)
-print('{:<40}: {:.2f} MB'.format('FILE SIZE', int(size) / MBFACTOR))
 Usage
-",135
+",16
 5909,46440161,2,"For a python3 (tested on 3.5) approach I'd recommend:
 ",13
 5966,5966,1,"Basically, I've written an API to www.thetvdb.com in Python. The current code can be found here.
@@ -149,7 +138,8 @@ For example, if I have a function foo(x) that is supposed to raise an exception 
 ",51
 12592,12609,2,"Yes. You can do it. The doctest module documentation and Wikipedia has an example of it.
 ",19
-12592,33787471,2,"ellipsis flag # doctest: +ELLIPSIS is not required to use ... in Traceback doctest 
+12592,33787471,2,"
+ellipsis flag # doctest: +ELLIPSIS is not required to use ... in Traceback doctest 
 ",15
 12692,21149,2,"Keep a look out for ASP.NET MVC
 The IronRuby guys have got some internal builds of MVC to work with IronRuby, and IronPython 2 and IronRuby have a lot of code in common with the DLR.
@@ -263,35 +253,8 @@ However it does allow you to reference the 'label' whenever querying or specifyi
 21454,19040441,2,"Setting choices on the field will allow some validation on the Django end, but it won't define any form of an enumerated type on the database end.
 As others have mentioned, the solution is to specify db_type on a custom field.
 If you're using a SQL backend (e.g. MySQL), you can do this like so:
-from django.db import models
-class EnumField(models.Field):
-    def __init__(self, *args, **kwargs):
-        super(EnumField, self).__init__(*args, **kwargs)
-        assert self.choices, ""Need choices for enumeration""
-    def db_type(self, connection):
-        if not all(isinstance(col, basestring) for col, _ in self.choices):
-            raise ValueError(""MySQL ENUM values should be strings"")
-        return ""ENUM({})"".format(','.join(""'{}'"".format(col) 
-                                          for col, _ in self.choices))
-class IceCreamFlavor(EnumField, models.CharField):
-    def __init__(self, *args, **kwargs):
-        flavors = [('chocolate', 'Chocolate'),
-                   ('vanilla', 'Vanilla'),
-                  ]
-        super(IceCreamFlavor, self).__init__(*args, choices=flavors, **kwargs)
-class IceCream(models.Model):
-    price = models.DecimalField(max_digits=4, decimal_places=2)
-    flavor = IceCreamFlavor(max_length=20)
 Run syncdb, and inspect your table to see that the ENUM was created properly.
-mysql> SHOW COLUMNS IN icecream;
-+--------+-----------------------------+------+-----+---------+----------------+
-| Field  | Type                        | Null | Key | Default | Extra          |
-+--------+-----------------------------+------+-----+---------+----------------+
-| id     | int(11)                     | NO   | PRI | NULL    | auto_increment |
-| price  | decimal(4,2)                | NO   |     | NULL    |                |
-| flavor | enum('chocolate','vanilla') | NO   |     | NULL    |                |
-+--------+-----------------------------+------+-----+---------+----------------+
-",459
+",82
 21454,33932,2,"Using the choices parameter won't use the ENUM db type; it will just create a VARCHAR or INTEGER, depending on whether you use choices with a CharField or IntegerField.  Generally, this is just fine.  If it's important to you that the ENUM type is used at the database level, you have three options:
 Use ""./manage.py sql appname"" to see the SQL Django generates, manually modify it to use the ENUM type, and run it yourself.  If you create the table manually first, ""./manage.py syncdb"" won't mess with it.
 If you don't want to do this manually every time you generate your DB, put some custom SQL in appname/sql/modelname.sql to perform the appropriate ALTER TABLE command.
@@ -305,7 +268,8 @@ Recognize your application will only work on some databases.
 Puzzle through this documentation page:http://docs.djangoproject.com/en/dev/howto/custom-model-fields/#howto-custom-model-fields
 Good luck!
 ",38
-21454,1530858,2,,0
+21454,1530858,2,"
+",0
 31340,21608282,2,"One easy solution to the GIL is the multiprocessing module. It can be used as a drop in replacement to the threading module but uses multiple Interpreter processes instead of threads. Because of this there is a little more overhead than plain threading for simple things but it gives you the advantage of real parallelization if you need it.
 It also easily scales to multiple physical machines.
 If you need truly large scale parallelization than I would look further but if you just want to scale to all the cores of one computer or a few different ones without all the work that would go into implementing a more comprehensive framework, than this is for you.
@@ -385,7 +349,8 @@ The other data types I've tried (VARCHAR2, BLOB) do not cause this problem. Is t
 38435,38442,2,"My solution to this, that I hope can be bettered, is to use Oracle to explicitly convert the TIMESTAMP into a string:
 This works, but isn't portable. I'd like to use the same Python script against a SQL Server database, so an Oracle-specific solution (such as TO_CHAR) won't work.
 ",61
-38508,38516,2,,0
+38508,38516,2,"
+",0
 38508,38524,2,"Why not throw an exception if the operation wasn't successful?  Personally, I tend to be of the opinion that if you need to return more than one value from a function, you should reconsider if you're doing things the right way or use an object.
 But more directly to the point, if you throw an exception, you're forcing them to deal with the problem.  If you try to return a value that indicates failure, it's very well possible somebody could not check the value and end up with some potentially hard to debug errors.
 ",107
@@ -479,7 +444,8 @@ Lookups search the underlying mappings successively until a key is found.
 This can slow you down if you have a lot of lookups in your application:
 So about an order of magnitude slower for lookups. I'm a fan of Chainmap, but looks less practical where there may be many lookups.
 ",224
-38987,19950727,2,,0
+38987,19950727,2,"
+",0
 38987,20358548,2,"The problem I have with solutions listed to date is that, in the merged dictionary, the value for key ""b"" is 10 but, to my way of thinking, it should be 12.
 In that light, I present the following:
 Results:
@@ -564,7 +530,8 @@ Modern Python Dictionaries, A Confluence of Great Ideas - talk by Raymond Hettin
 38987,28753078,2,"Python 3.5 (PEP 448) allows a nicer syntax option:
 Or even 
 ",14
-38987,29177685,2,,0
+38987,29177685,2,"
+",0
 38987,31812635,2,"Simple solution using itertools that preserves order (latter dicts have precedence)
 And it's usage:
 ",18
@@ -572,7 +539,8 @@ And it's usage:
 Out:
 Docs: https://docs.python.org/3/library/collections.html#collections.ChainMap:
 ",14
-38987,33999337,2,"This should solve your problem.
+38987,33999337,2,"
+This should solve your problem.
 ",6
 38987,34899183,2,"Be pythonic. Use a comprehension:
 ",7
@@ -629,7 +597,8 @@ You could use a lambda instead.
 How can I get that final merged dict in z, not x?
 (To be extra-clear, the last-one-wins conflict-handling of dict.update() is what I'm looking for as well.)
 ",81
-38987,38989,2,"For items with keys in both dictionaries ('b'), you can control which one ends up in the output by putting that one last.
+38987,38989,2,"
+For items with keys in both dictionaries ('b'), you can control which one ends up in the output by putting that one last.
 ",28
 38987,38990,2,"In your case, what you can do is:
 This will, as you want it, put the final dict in z, and make the value for key b be properly overridden by the second (y) dict's value:
@@ -686,7 +655,8 @@ Results in:
 The deep merge that rcwesick gave also creates the same result.
 Yes, it will work to merge the sample dictionaries, but none of them are a generic mechanism to merge.  I'll update this later once I write a method that does a true merge.
 ",128
-38987,11825563,2,"Among such shady and dubious answers, this shining example is the one and only good way to merge dicts in Python, endorsed by dictator for life Guido van Rossum himself!  Someone else suggested half of this, but did not put it in a function.
+38987,11825563,2,"
+Among such shady and dubious answers, this shining example is the one and only good way to merge dicts in Python, endorsed by dictator for life Guido van Rossum himself!  Someone else suggested half of this, but did not put it in a function.
 gives:
 ",51
 38987,12926103,2,"Two dictionaries
@@ -1053,24 +1023,7 @@ K&R is the only programming language book you can read in one sitting and almost
 49307,65903,2,"If x and y are column vectors, you can do:
 (with row vectors, just use x and y).
 Here is an example run:
->> x=[1 ; 2; 3;]
-x =
-     1
-     2
-     3
->> y=[10 ; 20; 30;]
-y =
-    10
-    20
-    30
->> for i=[x';y']
-disp(['size of i = ' num2str(size(i)) ', i(1) = ' num2str(i(1)) ', i(2) = ' num2str(i(2))])
-end
-size of i = 2  1, i(1) = 1, i(2) = 10
-size of i = 2  1, i(1) = 2, i(2) = 20
-size of i = 2  1, i(1) = 3, i(2) = 30
->> 
-",183
+",30
 49307,49307,1,"Using the zip function, Python allows for loops to traverse multiple sequences in parallel.  
 for (x,y) in zip(List1, List2):
 Does MATLAB have an equivalent syntax? If not, what is the best way to iterate over two parallel arrays at the same time using MATLAB?
@@ -1122,7 +1075,8 @@ Seems obvious now...
 51502,51570,2,"Rather than focusing on making your existing structures more readable, you should focus on making more logical structures.  Make smaller blocks, try not to nest blocks excessively, make smaller functions, and try to think through your code flow more.
 If you come to a point where you can't quickly determine the structure of your code, you should probably consider refactoring and adding some comments.  Code flow should always be immediately apparent -- the more you have to think about it, the less maintainable your code becomes.
 ",97
-51502,3054853,2,"Need I say more? :)
+51502,3054853,2,"
+Need I say more? :)
 Seriously, PEP 8, 'Blank lines', ยง4 is the official way to do it.
 ",25
 51502,52111,2,"I would look in to understanding more details about Python syntax. Often times if a piece of code looks odd, there usually is a better way to write it. For example, in the above example:
@@ -1144,10 +1098,13 @@ And this, for some odd reason, makes me more able to read my own code. But I'm c
 ",239
 51520,51520,1,"Given a path such as ""mydir/myfile.txt"", how do I find the absolute filepath relative to the current working directory in Python? E.g. on Windows, I might end up with:
 ",36
-51520,43691204,2,,0
-51520,51523,2,"Also works if it is already an absolute path:
+51520,43691204,2,"
+",0
+51520,51523,2,"
+Also works if it is already an absolute path:
 ",10
-51520,51539,2,,0
+51520,51539,2,"
+",0
 51520,58417,2,"Better still, install the path.py module, it wraps all the os.path functions and other related functions into methods on an object that can be used wherever strings are used:
 ",32
 51520,15325066,2,"Today you can also use the unipath package which was based on path.py: http://sluggo.scrapping.cc/python/unipath/
@@ -1256,7 +1213,8 @@ This isn't ideal. for a start, its not realtime, inserts/updates will not be imm
 51553,51817,2,"One other thing that an RDBMS generally does for you is to provide concurrency by protecting you from simultaneous access by another process.  This is done by placing locks, and there's some overhead from that.
 If you're dealing with entirely static data that never changes, and especially if you're in a basically ""single user"" scenario, then using a relational database doesn't necessarily gain you much benefit.
 ",78
-58294,8848856,2,,0
+58294,8848856,2,"
+",0
 58294,2646313,2,"Using the address suggested in the source of http://whatismyip.com
 ",11
 58294,256358,2,"import socket
@@ -1398,7 +1356,8 @@ def btn_clicked(sender): # could easily be in a handlers.py file
     MessageBox(""Your name is '%s'"" % ()).show(modal=True)
 I'm not entirely sure yet if this is a super great approach, but I definitely think it's on the right path.  I don't have time to explore this idea more, but if someone took this up as a project, I would love them.
 ",560
-58711,336525,2,"It would be relatively easy to do in python with a bit of that metaclass python magic know how. Which I have. And a knowledge of PyGTK. Which I also have. Gets ideas?
+58711,336525,2,"
+It would be relatively easy to do in python with a bit of that metaclass python magic know how. Which I have. And a knowledge of PyGTK. Which I also have. Gets ideas?
 ",38
 61151,61151,1,"If you're writing a library, or an app, where do the unit test files go?  
 It's nice to separate the test files from the main app code, but it's awkward to put them into a ""tests"" subdirectory inside of the app root directory, because it makes it harder to import the modules that you'll be testing.  
@@ -1534,7 +1493,8 @@ http://code.google.com/p/import-file/
 ",36
 67631,129374,2,"The advantage of adding a path to sys.path (over using imp) is that it simplifies things when importing more than one module from a single package.  For example:
 ",32
-67631,68628,2,,0
+67631,68628,2,"
+",0
 67631,67708,2,"You can also do something like this and add the directory that the configuration file is sitting in to the Python load path, and then just do a normal import, assuming you know the name of the file in advance, in this case ""config"".
 Messy, but it works.
 ",56
@@ -1588,7 +1548,8 @@ That's it. I'm not joking - this is one line of code. File was sent. Let's check
 The documentation recommends you look into requests-toolbelt.
 Here's the pertinent page from their documentation.
 ",29
-68477,36078069,2,,0
+68477,36078069,2,"
+",0
 68477,68502,2,"Yes. You'd use the urllib2 module, and encode using the multipart/form-data content type. Here is some sample code to get you started -- it's a bit more than just file uploading, but you should be able to read through it and see how it works:
 ",52
 942148,945160,2,"Just wanted to post the solution I came up with.  The problem was in this line:
@@ -1613,7 +1574,8 @@ Thanks
 from the top of my password_reset_email.html template.
 Also note, ""uidb36=uid"" in the url script. Here's my full password_reset_email.html template, I hope it saves someone some time:
 ",68
-7825361,7825523,2,"Edit:  Updated for commment: ""Thanks can i print page_id and title at same time? Means 31239628 - Title""
+7825361,7825523,2,"
+Edit:  Updated for commment: ""Thanks can i print page_id and title at same time? Means 31239628 - Title""
 ",23
 7825361,7825769,2,"The element.get() method is used to retrieve option attribute values in a tag:
 ",16
@@ -1672,7 +1634,8 @@ Can I do this??
 edit:
 I want to access the variable in test.py in new.py to do some process and give them back to test.py. Isn't this possible?
 ",71
-7828867,7828867,1,"a & b should be considered equal, because they have exactly the same elements, only in different order.
+7828867,7828867,1,"
+a & b should be considered equal, because they have exactly the same elements, only in different order.
 The thing is, my actual lists will consist of objects (my class instances), not integers.
 ",41
 7828867,41433671,2,"If the list contains items that are not hashable (such as a list of objects) you might be able to use the Counter Class and the id() function such as:
@@ -1769,7 +1732,8 @@ However... in the question you link to, in doesn't work (at least not directly) 
 One answer does mention using in on a list comprehension, though I'm not sure why a generator expression wasn't used instead:
 But this is hardly much of an improvement over the other approaches, such as this one using any:
 ",104
-7829188,7829336,2,"The above is a terrible way to test whether an item exists in a collection. It returns True from the function, so if you need the test as part of some code you'd need to move this into a separate utility function, or add thingWasFound = False before the loop and set it to True in the if statement (and then break), either of which is several lines of boilerplate for what could be a simple expression.
+7829188,7829336,2,"
+The above is a terrible way to test whether an item exists in a collection. It returns True from the function, so if you need the test as part of some code you'd need to move this into a separate utility function, or add thingWasFound = False before the loop and set it to True in the if statement (and then break), either of which is several lines of boilerplate for what could be a simple expression.
 Plus, if you just use thingIAmLookingFor in list, this might execute more efficiently by doing fewer Python level operations (it'll need to do the same operations, but maybe in C, as list is a builtin type). But even more importantly, if list is actually bound to some other collection like a set or a dictionary thingIAmLookingFor in list will use the hash lookup mechanism such types support and be much more efficient, while using a for loop will force Python to go through every item in turn.
 Obligatory post-script: list is a terrible name for a variable that contains a list as it shadows the list builtin, which can confuse you or anyone who reads your code. You're much better off naming it something that tells you something about what it means.
 ",233
@@ -1781,47 +1745,14 @@ I am wondering if the if thing in list method is shorthand for the for i in list
 I would also like to which, if either, is more preferred.
 ",104
 7829200,7829200,1,"I am just installing TurboGears2 on Windows 7 running a virtual environment (python 2.7). I am not seeing the paster quickstart option when I run 
-paster --help
 Instead, here's that output:
-(VirtualEnv_1) C:\VirtualEnv_1\Scripts>paster --help
-Usage: paster-script.py [paster_options] COMMAND [command_options]
-Options:
-  --version         show program's version number and exit
-  --plugin=PLUGINS  Add a plugin to the list of commands (plugins are Egg
-                    specs; will also require() the Egg)
--h, --help        Show this help message
-Commands:
- create       Create the file layout for a Python distribution
- help         Display help
- make-config  Install a package and create a fresh config file/directory
- points       Show information about entry points
- post         Run a request for the described application
- request      Run a request for the described application
- serve        Serve the described application
- setup-app    Setup an application, given a config file
-TurboGears2:
- tginfo       Show TurboGears 2 related projects and their versions
 So, it's no surprise that when I run :
-(VirtualEnv_1) C:\VirtualEnv_1\Scripts>paster quickstart
 I get: 
-Command 'quickstart' not known (you may need to run setup.py egg_info)
-Known commands:
-  create       Create the file layout for a Python distribution
-  exe          Run #! executable files
-  help         Display help
-  make-config  Install a package and create a fresh config file/directory
-  points       Show information about entry points
-  post         Run a request for the described application
-  request      Run a request for the described application
-  serve        Serve the described application
-  setup-app    Setup an application, given a config file
-  tginfo       Show TurboGears 2 related projects and their versions
 My questions: Why is it missing, and how do I get it?
-",300
+",64
 7829200,7829286,2,"You get into this situation when you've installed the package required to run a TurboGears app (TurboGears2), but not the one required to develop a TurboGears app (tg.devtools).
 Running the following command while in your virtualenv should install the correct package:
-easy_install -i http://www.turbogears.org/2.1/downloads/current/index tg.devtools
-",55
+",49
 7829212,7829212,1,"The example in Simple wrapping of C code with cython describes nicely how to evaluate a function written in C on an array passed from numpy and return the result in a numpy array.
 How would one go about doing the same thing but returning a 2D array? I.e. I'd like to evaluate a C function on a grid defined by two numpy arrays, and return the result as a numpy 2D array.
 It would be something like this (using same functions as in the link above). Obviously one can't use double z[] now, but I'm not sure how to pass a 2D numpy array to C.
@@ -1899,7 +1830,8 @@ Right now, there are about 8000 files, and it takes quite some time to process e
 7833807,35569519,2,"we can use ffmpeg to get the duration of any video or audio files.
 To install ffmpeg follow this link
 ",21
-7833807,7842081,2,,0
+7833807,7842081,2,"
+",0
 7833807,7833963,2,"The duration is equal to the number of frames divided by the framerate (frames per second):
 Regarding @edwards' comment, here is some code to produce a 2-channel wave file:
 If you play the resultant file in an audio player, you'll find that is 40 seconds in duration. If you run the code above it also computes the duration to be 40 seconds. So I believe the number of frames is not influenced by the number of channels and the formula above is correct. 
@@ -1949,7 +1881,8 @@ I just want ('A',None) (None,'B') and ('C','D') using one regexp (No added pytho
 (\w*)(?::(\w*))? describes the structure you want, but it has a problem that it also matches empty string; thus we have to assure that there is at least one non-space character at the start (which will get matched by the greedy operators), and the lookahead at the start does it.
 Edit: wrong paste :)
 ",78
-7833919,7834326,2,"yields
+7833919,7834326,2,"
+yields
 ",1
 7834907,7835084,2,"The following snippet should do what you want:
 The regular expression there begins with (?s), which turns on the DOTALL option, meaning that . matches newlines as well as any other character.  The two instances of .*? are non-greedy matches of any charcter - i.e. they will find the shortest stretch of zero or more characters until the rest of the expression can be matched.
@@ -2169,7 +2102,8 @@ Only you can know which features are good, and which not. You have to find them 
 It is called list comprehension, and it is based on set builder notation.
 ex: 
 ",43
-7844118,7844141,2,,0
+7844118,7844141,2,"
+",0
 7844118,7844128,2,"You can use the str.split method.
 If you want to convert it to a tuple, just
 If you are looking to append to a list, try this:
@@ -2255,7 +2189,7 @@ Locking is not taken into account. The watch_directories() function itself doesn
 ",274
 7849117,7849117,1,"Ex, I need to catch remove and add files events on some directory on linux os. I found libs like inotify and python wrappers for them, but if I want to use clear python code should I watch for os.listdir(path) output every sec or are there some ways to accomplish such task?
 ",59
-7849145,7877517,2,"You already have the proper 'JoÃ£o', methinks. The difference between >>> 'Jo\xc3\xa3o' and >>> print 'Jo\xc3\xa3o' is that the former calls repr on the object, while the latter calls str (or probably unicode, in your case). It's just how the string is represented.
+7849145,7877517,2,"You already have the proper 'Jo達o', methinks. The difference between >>> 'Jo\xc3\xa3o' and >>> print 'Jo\xc3\xa3o' is that the former calls repr on the object, while the latter calls str (or probably unicode, in your case). It's just how the string is represented.
 Some examples might make this more clear:
 Notice how the second and third result are identical. The original ldap_username currently is an ASCII string. You can see this on the Python prompt: when it is displaying an ACSII object, it shows as 'ASCII string', while Unicode objects are shown as u'Unicode string' -- the key being the leading u.
 So, as your ldap_username reads as 'Jo\xc3\xa3o', and is an ASCII string, the following applies:
@@ -2271,7 +2205,7 @@ I confirmed my DB NLS_LANG using
 where 
 I've both tried (which return the same)
 where
-how to get the queries result back to the proper 'JoÃ£o' ?
+how to get the queries result back to the proper 'João' ?
 ",91
 7849169,7849169,1,"I am working with four tables:
 Unfortunatly I need to pass an onChange event to the form element of FileAlarm.alarm_type (which means the queryset in __init__ wont work) so I need to populate the choices= variable of ChoiceField. I'm just wondering how to do that since I only want alarms that are active and linked to the same products as the File which the FileAlarm is linked.
@@ -2474,7 +2408,8 @@ I suspect I am missing something fundamental on how NumPy works (this is the fir
 Many thanks in advance for your help and expertise!
 EDIT: The outcome I would like to get is:
 ",190
-8022337,8022415,2,"a[:,:,1] gives you G channel, I subsetted it by a[:,:,1] < 5 using it as index.  then assigned value 9 to that selected elements.
+8022337,8022415,2,"
+a[:,:,1] gives you G channel, I subsetted it by a[:,:,1] < 5 using it as index.  then assigned value 9 to that selected elements.
 ",39
 8022337,8022408,2,"there is no need to use where, you can directly index an array with the boolean array resulting from your comparison operator.
 you do not list the expected output in your question, so I am not sure this is what you want.
@@ -2624,7 +2559,8 @@ http://www.fastgraph.com/help/jpeg_header_format.html
 See this post for an example of python code that reads the binary jpeg header.
 Python: Check if uploaded file is jpg
 ",116
-15674026,15674727,2,,0
+15674026,15674727,2,"
+",0
 15674026,15674322,2,"i think you want to search for a list whose pattern got matched.. .
 output:
 ",16
@@ -2636,9 +2572,11 @@ But maybe you have confused me, by giving an example ""to-search list"" that hap
 In that case, you can make a function that does an exact match of the pattern against a list of the same length; and then use any to check whether any pattern-lengthed sublist matches. any is designed to be used with generator expressions, and it looks like this:
 There are more efficient ways to match, depending on the details of your pattern, that will be inspired by string search algorithms and regular expression engines. But that is getting into much more difficult material - the above should get you started.
 ",357
-15674026,15674195,2,"Or more code for easy to understand:
+15674026,15674195,2,"
+Or more code for easy to understand:
 ",8
-15674026,15674186,2,"How is y really defined. Obviously you can't have n in there as a placeholder? Could your use None perhaps?
+15674026,15674186,2,"
+How is y really defined. Obviously you can't have n in there as a placeholder? Could your use None perhaps?
 ",24
 15674026,15674026,1,"I'm trying to work out a function to find specific patterns in a list.  For example if we take the list 
 I want to then check if the pattern y shows up in the list x:
@@ -2652,10 +2590,8 @@ Of course, the use here may not merit installing and importing numpy, but it has
 For example input=55 the answer should be 10. If the input=2645 the answer should be 17
 The def sumD(num) function has to call itself. I'm not sure how to do this. 
 ",65
-15674037,15674057,2,"def sumD(num):
-    if num == 0: return 0
-    return (num % 10) + sumD(num // 10)
-",26
+15674037,15674057,2,"
+",0
 15674410,15676432,2,"You wanted the while loop to end when the path length reached the number of squares on the board- using and instead of or in your while loop it will end when either this expression:
 or this expression:
 evaluates to False. Using or, as long as one of those expressions is true, the loop would keep running. So your fixed code would be:
@@ -2719,7 +2655,8 @@ Since dictionaries are unsorted in Python, your tuples will be unsorted as well.
 if you need a list:
 If you want to print each record from dict than:
 ",20
-15674701,15674719,2,"Analyzing your code
+15674701,15674719,2,"
+Analyzing your code
 You can't index a dictionary. A dictionary is not a sequence like a list
 You don;t use parenthesis to index. It turns to be a function call
 To iterate a dictionary, you can either iterate the keys or the values. 
@@ -3032,7 +2969,8 @@ For the absolute character position you'd need something like
 ",18
 15684662,15684662,1,"I have a list which contains a series of numbers. This list of numbers corresponds to a line in a .dat file. How can I use the list say [0,1,2,3,4,5,6,9,4] and then print out the line in the .dat file which each number corresponds to.
 ",50
-15684662,15685001,2,,0
+15684662,15685001,2,"
+",0
 15684687,15684687,1,"I am working on inserting a local image into a table on my mysql server. I can insert data but when I download it, it isn't a valid jpg. 
 Here is a sample like what I am using. Am I doing something wrong when I format the data?
 The code completes as expected but the jpg is no good.
@@ -3356,7 +3294,8 @@ or
 or  
 I've studied BeautifulSoup documentation, but I can't figure out how to do it. Do you have any ideas?
 ",65
-15693735,15694498,2,"Output
+15693735,15694498,2,"
+Output
 ",1
 15693756,15693756,1,"How can I convert Extended ASCII characters such as: ""æ, ö or ç"" into non-extended ASCII characters (a,o,c) using python? The way it works should be that if it takes ""A, Æ ,Ä"" as input, It returns A for all of them.
 ",59
@@ -3649,7 +3588,8 @@ The islice(group, 1, None) call turns the groups into iterables where the first 
 The chain.from_iterable() call takes each islice() result and chains them together into a new iterable, which list() turns back into a list.
 Demo:
 ",101
-15705577,15705725,2,,0
+15705577,15705725,2,"
+",0
 15705577,15706171,2,"As requested, a numpy solution:
 (above is edited to incorporate @Jaime's solution, here is my original masking solution for posterity's sake)
 Interestingly, the mask seems to be faster:
@@ -3674,7 +3614,8 @@ This would filter out all the rows with max value in the group.
 ",28
 15705630,21709413,2,"Having tried the solution suggested by Zelazny on a relatively large DataFrame (~400k rows) I found it to be very slow.  Here is an alternative that I found to run orders of magnitude faster on my data set.
 ",42
-15705630,15705958,2,"To get the indices of the original DF you can do:
+15705630,15705958,2,"
+To get the indices of the original DF you can do:
 Note that if you have multiple max values per group, all will be returned.
 Update
 On a hail mary chance that this is what the OP is requesting:
@@ -3793,7 +3734,7 @@ I'm trying to make it look more clean with title() method.
 This one works fine. But when I have non-ascii letter in the name:
 the letter that follows this non-ascii remains in Upper-case. Even if I change the string:
 I still get the wrong result. 
-Why does it behave this way? How can I make this string become 'KrÃ¶ger'?
+Why does it behave this way? How can I make this string become 'Kröger'?
 ",94
 23503486,23616980,2,"I finally found a way to do what I want. God bless generators:
 ",15
@@ -3831,7 +3772,8 @@ Case 2: (by key descending)
 Case 3: (by value ascending)
 Case 4:  (by value descending)
 ",88
-23503725,23504182,2,,0
+23503725,23504182,2,"
+",0
 23503725,23503832,2,"See the documentation for sorted.
 Ascending by key:
 Descending by key:
@@ -3889,7 +3831,8 @@ but what if the nesting goes two, three, or more levels deep?
 I know the best approach is recursion, but this is a challenge wherein I have to do it without recursion.
 Please help!!
 ",100
-23507666,23507786,2,"Basically you iterate over the outer list and unpack the first level of any inner lists until there are no inner lists left
+23507666,23507786,2,"
+Basically you iterate over the outer list and unpack the first level of any inner lists until there are no inner lists left
 ",23
 23507666,23507904,2,"Here is one solution:
 Basically, it pops first element of input list. If it's Int, add into sum; if it's List, extend to the end of input list
@@ -4115,7 +4058,8 @@ This finds all <script> tags that do not have a src attribute.
 23516520,23516520,1,"The following is the a simple BeautifulSoup code which has the two internal JavaScript( dont blame about the JavaScript it is just for testing purpose).
 when I ran this code it remove only one <script>...</script> from the document(Dom tree) but it don't remove all other script tags. How can we remove all the <script>, <style>(internal and inline) tags which are existing in the document 
 ",86
-23516520,23544567,2,"another alternative, you can replace 'script' with ['script', 'style'] to get rid of styles as well.
+23516520,23544567,2,"
+another alternative, you can replace 'script' with ['script', 'style'] to get rid of styles as well.
 ",24
 23516527,23516595,2,"__EVENTVALIDATION is probably not static, you need to load the login page in python, get the __EVENTVALIDATION field and then do the login.
 Something like this should work:
@@ -4157,7 +4101,8 @@ It's easier to demonstrate what I want to do.
 I want the output to be 
 and I get (of course)
 ",49
-23516664,23516748,2,"yields
+23516664,23516748,2,"
+yields
 Alternatively, you could escape the text with saxutils.escape:
 yields
 ",12
@@ -4227,7 +4172,8 @@ except ZeroDivisionError:
 23516914,23519204,2,"You could use a masked array for D, like:
 and when you perform the calculations with the masked array only the non-masked values will be considered.
 ",29
-23518088,23518088,1,"Hi code newbie here,
+23518088,23518088,1,"
+Hi code newbie here,
 Basically what I need to do is read  data from a certain file. I then need to remove the characters such as ("" ; : . , \n ' )  but only if they are at the start or end of the word. Currently my program removes every instance of these characters. For example I want to be able to turn ""cars"" into cars but ca""rs would stay as ca""rs
 The next part of the program involves only selecting the words which have an alphanumeric character in every position.This part works perfectly.
 Any help with this would be greatly appreciated.
@@ -4367,7 +4313,8 @@ You could even get fancy and have your function take an indefinite amount of PDF
 Ok, I lied, I tried to squeeze this in before lunch.  The code above may not work out of the box, but it should point you in the general direction.  You should add error catching to check for when no arguments are passed (among other things).
 Hope it helps!
 ",323
-23522570,23522754,2,"maybe? 
+23522570,23522754,2,"
+maybe? 
 not sure what you are asking to be honest ...
 ",12
 23522570,23522570,1,"I have a working script that I am attempting to port over to a GUI.  I'm new to programming so a lot of this code may be hack-ish.  I'm open to suggestions on general practices and methods!  Below is my working text-based version of the function I'd like to port:
@@ -4402,7 +4349,8 @@ You can then get the minimum with min:
 You can get the index of the list this way:
 That is 90% of what you need to solve your issue.
 ",59
-23522781,23523061,2,"which gives
+23522781,23523061,2,"
+which gives
 ",2
 23522781,23522781,1,"I'm looking to see if I could grab a hand on how to code an issue, preferably within the language Python. What I'd like to do is from 5 separate lists with 5 values in each find what the smallest sum of values would be, where each column/row can only have a value used once or twice. 
 For example in the following example:
@@ -4410,7 +4358,8 @@ The desired outcome is to find the smallest total value where only one p, q, r, 
 For example, the most simple possibility could be: 98 + 75 + 66 + 58 + 49 = ... but it must be the lowest possible total value.
 I'm not sure whether this would be done with lists or arrays or what ever it may be. I really appreciate any help you can provide. 
 ",180
-23526204,23526340,2,"Something like this?
+23526204,23526340,2,"
+Something like this?
 Edit:
 Not what the poster wanted after all. I don't think it is possible to do what you want with your table structure, without using more than one query.
 ",38
@@ -4496,7 +4445,8 @@ I can do this in Excel with the following formula, but I can figure it out in Py
 =IF(IFERROR(FIND(""RT @"",B2)>0,""False""),""Retweet"",IF(IFERROR(FIND(""@"",B2)>0,""False""),""Mention"",""Tweet""))
 Existing Code
 ",203
-23526486,23526548,2,"Could something like this work for you instead? 
+23526486,23526548,2,"
+Could something like this work for you instead? 
 ",9
 23526486,23526486,1,"I'm getting this error on creating a string with arguments like ""abcd%s""%(e) but I'm getting e by scraping a web page. Can anyone please tell me what is the best way to avoid this error. 
 I found other similar questions but they were using %20 in the url for which they need to replace %20 with %%20 which solved their problem. But my case is different. I tried encoding e but still getting same error.
@@ -4611,264 +4561,9 @@ https://github.com/sphinx-doc/sphinx/issues/2046
 The problem is that sphinx is not able to import any of my modules, even though I have added my project to sys.path.
 My unit tests pass and can import my modules just fine. I'm kind of at my wit's end; I've tried all sorts of renaming and moving and reloading and reconfiguring without success and it is very frustrating to say the least.
 Here is my document structure:
-project
-├── collectionprocessor.py
-├── config.py
-├── createdb.py
-├── database
-│   ├── database.py
-│   └── __init__.py
-├── docs
-│   ├── _build
-│   ├── conf.py
-│   ├── generated
-│   ├── index.rst
-│   ├── Makefile
-│   ├── modules.rst
-│   ├── project.database.rst
-│   ├── project.document.rst
-│   ├── project.mixins.rst
-│   ├── project.parser.rst
-│   ├── project.rst
-│   ├── project.sequence.rst
-│   ├── project.tests.rst
-│   ├── _static
-│   └── _templates
-├── document
-│   ├── document.py
-│   ├── __init__.py
-│   ├── metadata.py
-│   ├── parsedparagraph.py
-│   ├── sentence.py
-│   ├── taggedword.py
-│   └── unit.py
-├── __init__.py
-├── logger.py
-├── mixins
-│   ├── comparebydict.py
-│   ├── __init__.py
-│   └── kwargstodict.py
-├── models.py
-├── parser
-│   ├── dependency.py
-│   ├── documentparser.py
-│   ├── __init__.py
-│   └── parseproducts.py
-├── README.md
-├── runtests.py
-├── sequence
-│   ├── __init__.py
-│   ├── sequenceprocessor.py
-│   └── sequence.py
-├── stringprocessor.py
-├── structureextractor.py
-├── tests
-│   ├── data
-│   ├── __init__.py
-│   ├── __pycache__
-│   ├── raw_parse.txt
-│   ├── testcollectionprocessor.py
-│   ├── testdocumentparser.py
-│   ├── testextractor.py
-│   ├── testlogger.py
-│   ├── testsequenceprocessor.py
-│   └── teststringprocessor.py
 Here is the relevant line in the sphinx config file:
 Here is the output of sphinx-build:
-[docs]─[$]>>> sphinx-build -b html ./ ./generated/
-Running Sphinx v1.2.2
-loading pickled environment... done
-building [html]: targets for 0 source files that are out of date
-updating environment: 0 added, 7 changed, 0 removed
-reading sources... [100%] project.tests                                                                                                             
-/home/plasma/prog/project/docs/project.rst:22: WARNING: autodoc: failed to import module u'project.collectionprocessor'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.collectionprocessor
-/home/plasma/prog/project/docs/project.rst:30: WARNING: autodoc: failed to import module u'project.config'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.config
-/home/plasma/prog/project/docs/project.rst:38: WARNING: autodoc: failed to import module u'project.createdb'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.createdb
-/home/plasma/prog/project/docs/project.rst:46: WARNING: autodoc: failed to import module u'project.logger'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.logger
-/home/plasma/prog/project/docs/project.rst:54: WARNING: autodoc: failed to import module u'project.models'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.models
-/home/plasma/prog/project/docs/project.rst:62: WARNING: autodoc: failed to import module u'project.runtests'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.runtests
-/home/plasma/prog/project/docs/project.rst:70: WARNING: autodoc: failed to import module u'project.stringprocessor'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.stringprocessor
-/home/plasma/prog/project/docs/project.rst:78: WARNING: autodoc: failed to import module u'project.structureextractor'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.structureextractor
-/home/plasma/prog/project/docs/project.rst:87: WARNING: autodoc: failed to import module u'project'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project
-/home/plasma/prog/project/docs/project.database.rst:10: WARNING: autodoc: failed to import module u'project.database.database'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.database.database
-/home/plasma/prog/project/docs/project.database.rst:19: WARNING: autodoc: failed to import module u'project.database'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.database
-/home/plasma/prog/project/docs/project.document.rst:10: WARNING: autodoc: failed to import module u'project.document.document'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.document.document
-/home/plasma/prog/project/docs/project.document.rst:18: WARNING: autodoc: failed to import module u'project.document.metadata'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.document.metadata
-/home/plasma/prog/project/docs/project.document.rst:26: WARNING: autodoc: failed to import module u'project.document.parsedparagraph'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.document.parsedparagraph
-/home/plasma/prog/project/docs/project.document.rst:34: WARNING: autodoc: failed to import module u'project.document.sentence'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.document.sentence
-/home/plasma/prog/project/docs/project.document.rst:42: WARNING: autodoc: failed to import module u'project.document.taggedword'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.document.taggedword
-/home/plasma/prog/project/docs/project.document.rst:50: WARNING: autodoc: failed to import module u'project.document.unit'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.document.unit
-/home/plasma/prog/project/docs/project.document.rst:59: WARNING: autodoc: failed to import module u'project.document'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.document
-/home/plasma/prog/project/docs/project.mixins.rst:10: WARNING: autodoc: failed to import module u'project.mixins.comparebydict'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.mixins.comparebydict
-/home/plasma/prog/project/docs/project.mixins.rst:18: WARNING: autodoc: failed to import module u'project.mixins.kwargstodict'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.mixins.kwargstodict
-/home/plasma/prog/project/docs/project.mixins.rst:27: WARNING: autodoc: failed to import module u'project.mixins'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.mixins
-/home/plasma/prog/project/docs/project.parser.rst:10: WARNING: autodoc: failed to import module u'project.parser.dependency'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.parser.dependency
-/home/plasma/prog/project/docs/project.parser.rst:18: WARNING: autodoc: failed to import module u'project.parser.documentparser'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.parser.documentparser
-/home/plasma/prog/project/docs/project.parser.rst:26: WARNING: autodoc: failed to import module u'project.parser.parseproducts'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.parser.parseproducts
-/home/plasma/prog/project/docs/project.parser.rst:35: WARNING: autodoc: failed to import module u'project.parser'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.parser
-/home/plasma/prog/project/docs/project.sequence.rst:10: WARNING: autodoc: failed to import module u'project.sequence.sequence'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.sequence.sequence
-/home/plasma/prog/project/docs/project.sequence.rst:18: WARNING: autodoc: failed to import module u'project.sequence.sequenceprocessor'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.sequence.sequenceprocessor
-/home/plasma/prog/project/docs/project.sequence.rst:27: WARNING: autodoc: failed to import module u'project.sequence'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.sequence
-/home/plasma/prog/project/docs/project.tests.rst:10: WARNING: autodoc: failed to import module u'project.tests.testcollectionprocessor'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.tests.testcollectionprocessor
-/home/plasma/prog/project/docs/project.tests.rst:18: WARNING: autodoc: failed to import module u'project.tests.testdocumentparser'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.tests.testdocumentparser
-/home/plasma/prog/project/docs/project.tests.rst:26: WARNING: autodoc: failed to import module u'project.tests.testextractor'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.tests.testextractor
-/home/plasma/prog/project/docs/project.tests.rst:34: WARNING: autodoc: failed to import module u'project.tests.testlogger'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.tests.testlogger
-/home/plasma/prog/project/docs/project.tests.rst:42: WARNING: autodoc: failed to import module u'project.tests.testsequenceprocessor'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.tests.testsequenceprocessor
-/home/plasma/prog/project/docs/project.tests.rst:50: WARNING: autodoc: failed to import module u'project.tests.teststringprocessor'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.tests.teststringprocessor
-/home/plasma/prog/project/docs/project.tests.rst:59: WARNING: autodoc: failed to import module u'project.tests'; the following exception was raised:
-Traceback (most recent call last):
-  File ""/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py"", line 335, in import_object
-    __import__(self.modname)
-ImportError: No module named project.tests
-looking for now-outdated files... none found
-pickling environment... done
-checking consistency... /home/plasma/prog/project/docs/modules.rst:: WARNING: document isn't included in any toctree
-done
-preparing documents... done
-writing output... [100%] project.tests                                                                                                              
-writing additional files... (1 module code pages) _modules/index genindex search
-copying static files... done
-copying extra files... done
-dumping search index... done
-dumping object inventory... done
-build succeeded, 36 warnings.
-",2087
+",140
 23531825,23554166,2,"I ended up restructuring my project so that the docs directory is at the same level as my project directory that contains all the files. This works when I use sys.path.insert(0, os.path.abspath(""../"")), and it's probably a bit nicer to look at.
 ",54
 23531825,32396276,2,"Iam a bit late for the party here is my solution:
@@ -4910,7 +4605,8 @@ i know lsusb -t get me port but i want also device number and -t get me a few da
 ",118
 24982969,25048696,2,"You can either use PyUSB (python-usb package in Ubuntu and Debian), or walk through /sys/bus/usb/devices yourself, all the info is there in plain text.
 ",29
-24982993,28203006,2,,0
+24982993,28203006,2,"
+",0
 24982993,24982993,1,"I am reading a file in Python line by line and I need to know which line is the last one while  reading,something like this:
 From the examples I found it involves seeks and complete file readouts to count lines,etc.Can I just detect that the current line is the last one? I tried to go and check for ""\n"" existence ,but in many cases the last lines is not followed by backslash N.
 Sorry if my question is redundant as I didn't find the answer on SO
@@ -4921,7 +4617,8 @@ Or simply:
 ",25
 24982993,24983191,2,"You could use the itertools pairwise recipe;
 ",8
-24982993,24983104,2,,0
+24982993,24983104,2,"
+",0
 24982993,24983057,2,"One thing you could try is to try to get the next line, and catch the exception if it arises, because AFAIK python iterators don't have inbuilt hasNext method.
 ",33
 31239302,31364280,2,"I had the same problem and tracked it down to a combination of CONN_MAX_AGE and CELERYD_MAX_TASKS_PER_CHILD. At that point it became obvious that it must be something to do with Celery not closing connections properly when a worker is replaced and from that I found this bug report: https://github.com/celery/celery/issues/2453
@@ -4950,7 +4647,8 @@ Result:
 ",36
 31239329,31283857,2,"So i tried something like this
 ",6
-31239329,31239470,2,"You can simply use this regex over each line and replace by empty string.See demo.
+31239329,31239470,2,"
+You can simply use this regex over each line and replace by empty string.See demo.
 https://regex101.com/r/cK4iV0/17
 ",19
 31239329,31239445,2,"What about something like,
@@ -5088,14 +4786,8 @@ Also this works:
 31243352,31243352,1,"My initial DataFrame looks as follows:
 I need to group it by 'A' and make a list of 'B' multiplied by 'quantity':
 Currently I'm using groupby() and then apply():
-def itemsToList(tdf, column):
-    collist = []
-    for row in tdf[column].iteritems():
-        collist = collist + tdf['quantity'][row[0]]*[row[1]]
-    return pd.Series({column: collist})
-gb = df.groupby('A').apply(itemsToList, 'B')
 I doubt it is an efficient way, so I'm looking for a good, ""pandaic"" method to achieve this.
-",132
+",64
 31243355,31243355,1,"I have some data file which is array of arrays...For example:
 This file has 2.8 MiB and type >i2.. File is fits and I know that its type is int16, but what does >i2 mean in Python?
 How I can convert this data file to float?
@@ -5467,7 +5159,8 @@ However, this is inefficient because it will calculate the lower Fibonacci numbe
 should be:
 As the string method .split() returns a list, whereas you are expecting it to replace the string with a list of its parts which doesn't happen.
 ",37
-31252265,31252265,1,"This code should read the output of df -h on an ubuntu 12.04 server, split the output of the command into a list, and then trim the '%' character off, so that the drive usage can be used as a comparator in an if statement. Then, if it's above 90%, it should email the server admins. 
+31252265,31252265,1,"
+This code should read the output of df -h on an ubuntu 12.04 server, split the output of the command into a list, and then trim the '%' character off, so that the drive usage can be used as a comparator in an if statement. Then, if it's above 90%, it should email the server admins. 
 However, drive_usage[x] = s2 triggers the 'str' object does not support item assignment. To my knowledge, this should not be triggering, as that line should be accessing a string in a list, not a character in a string. Any help or advice would be appreciated!
 ",123
 31252284,31252284,1,"I am learning Django and I'm still in the first tutorial. When I try to run:
@@ -5551,7 +5244,8 @@ I've also tried
 The 'assert()' is recommended because the .setField() method does not verify array dimensions like .addSample() does.
 See Pybrain dataset tutorial for more info.
 ",54
-31253148,31253148,1,"Starting using pybrain to get a Neural Network to work on my diffusion energy data. I don't know how to get a dataset working from my X and y values. X is 35 inputs and y is 1 ouput and there are 148 samples. With this code I get the error: ""ValueError: could not broadcast input array from shape (148,35) into shape (35)""
+31253148,31253148,1,"
+Starting using pybrain to get a Neural Network to work on my diffusion energy data. I don't know how to get a dataset working from my X and y values. X is 35 inputs and y is 1 ouput and there are 148 samples. With this code I get the error: ""ValueError: could not broadcast input array from shape (148,35) into shape (35)""
 Need to know how to properly prepare a dataset for pybrain.
 ",87
 31253156,31253676,2,"I'd suggest you start with your DataFrame like you have already got:
@@ -5620,9 +5314,11 @@ Here corrected code:
 31256159,31256231,2,"Here's some code that will do what you want in place, if you don't want it in place then just pass it list(my_list) instead of my_list.
 Also, if using python2, use xrange instead of range.
 ",45
-31256159,31256246,2,"You also only need to set start to a value if the first element is None:
+31256159,31256246,2,"
+You also only need to set start to a value if the first element is None:
 ",17
-31256159,31256466,2,"OUT:
+31256159,31256466,2,"
+OUT:
 ",2
 31256159,31256159,1,"Given
 I'd like
@@ -5876,16 +5572,19 @@ In here a and b are both iterated once.
 ",27
 31260814,31260886,2,"Why recursive? 
 ",3
-31260899,31260966,2,"You never change integer1, so if the condition is true, it is always true and it loops forever.
+31260899,31260966,2,"
+You never change integer1, so if the condition is true, it is always true and it loops forever.
 Assign to integer1 rather than replace1. Similarly for the second.
 ",33
-31260899,31260899,1,,0
+31260899,31260899,1,"
+",0
 31260899,31260959,2,"I think this what you expected:
 Since the value of integer1 is not changed in first while loop it will act as a infinite loop
 Instead of eval you could use int() since there are some harmful effect on using eval stick with int
 Modified:
 ",49
-31260915,31260915,1,"I am reading the feature data from the out.csv file and storing in the x variable and i am reading the target data from the out.csv file and storing in the y variable 
+31260915,31260915,1,"
+I am reading the feature data from the out.csv file and storing in the x variable and i am reading the target data from the out.csv file and storing in the y variable 
 after running this program i am getting the error called
 X has 1 samples, but y has 10.
 can any one provide me the solution for this error
@@ -5980,7 +5679,8 @@ The most interesting part is this one:
 31261448,31262473,2,"try this once:
 Try this:
 ",7
-31261448,31261448,1,"So here is the html for a website I am trying to use selenium on. It is a dropdown menu that lets you choose a class, and when it is selected, the website will go to that class. The url does not change, and all that changes is the spot of the selected=""selected"". How do I use selenium to change which one is selected? I want to open the menu first and somehow click on each class in order so that I can see the info on the classes. But, I don't want to use the name of the classes or their values, so that this process can be repeated for other classes.
+31261448,31261448,1,"
+So here is the html for a website I am trying to use selenium on. It is a dropdown menu that lets you choose a class, and when it is selected, the website will go to that class. The url does not change, and all that changes is the spot of the selected=""selected"". How do I use selenium to change which one is selected? I want to open the menu first and somehow click on each class in order so that I can see the info on the classes. But, I don't want to use the name of the classes or their values, so that this process can be repeated for other classes.
 ",128
 31261477,31262013,2,"I think what you are trying to achieve is something like the following:
 file1.py
@@ -6018,12 +5718,8 @@ pyinstaller: 2.1
 ",109
 31261528,31611824,2,"Hi hope you're still looking for an answer. Here is how I solved it:
 add a file called hook-psutil.py
-from PyInstaller.hooks.hookutils import (collect_data_files, collect_submodules)
-datas = [('./venv/lib/python2.7/site-packages/psutil/_psutil_linux.so', 'psutil'),
-         ('./venv/lib/python2.7/site-packages/psutil/_psutil_posix.so', 'psutil')]
-hiddenimports = collect_submodules('psutil')
 And then call pyinstaller --additional-hooks-dir=(the dir contain the above script) script.py
-",71
+",37
 31261543,31288272,2,"I found, the foreign key constraint in the column must be removed
 ",13
 31261543,31261543,1,"With SQLAlchemy, I want inherit a model with more than one primary keys, example:
@@ -6232,7 +5928,8 @@ Or, in case regex is still preferable, another solution:
 ",15
 31267030,31267216,2,"You could have your digit pattern to include optional minus sign and expect the group to be repeated 1 or 2 times.
 ",23
-31267030,31267158,2,"You can simply modify your regex to this.If there is always a possiblity of only   1 - use
+31267030,31267158,2,"
+You can simply modify your regex to this.If there is always a possiblity of only   1 - use
 ",18
 31267030,31267122,2,"Just put -, \d inside a char class.
 If the phonenumber startswith with a optional + then you may try this,
@@ -6624,15 +6321,11 @@ My project structure is the following:
 + src > main.py
 + docs (generated with sphinx-quickstart)
 Even after adding the path to the src folder in docs/conf.py:
-sys.path.insert(0, os.path.abspath('../src'))
 And generating the rst file for src/main.py (i.e. docs/src.rst and docs/modules.rst) with:
-$ sphinx-apidoc -fo docs src
 When I try to build the html webpages with:
-$ make clean
-$ make html
 It couldn't find both the src module and src/main.py:
 WARNING: autodoc: failed to import module u'src.main'; the following exception was raised
-",111
+",90
 38963631,38963810,2,"Try doing this for your path insertion instead:
 Also consider a better name for your directory than src.
 ",20
@@ -6796,12 +6489,8 @@ Any help on how to achieve this is appreciated.
 Output
 ",40
 38964528,38964528,1,"Strange error, and I don't understand where is the mistake. The traceback shows nothing relevant:
-  File ""/home/popovvasile/work/intiativa_new/local/lib/python2.7/site-packages/django/core/checks/urls.py"", line 27, in check_resolver
-    warnings.extend(check_pattern_startswith_slash(pattern))
-  File ""/home/popovvasile/work/intiativa_new/local/lib/python2.7/site-packages/django/core/checks/urls.py"", line 63, in check_pattern_startswith_slash
-    regex_pattern = pattern.regex.pattern
 It seems like something is wrong in the urls.py file:
-",60
+",30
 38964528,38964560,2,"There's a trailing tuple lurking somewhere between those lines; the url(r'^accounts/register/$'...) line:
 You intend to have that as a url pattern not a tuple:
 ",34
@@ -7129,7 +6818,8 @@ If you want to run additional code for the == 18 case, use a new if statement:
 Alternatively, fix your conditions to not overlap:
 or
 ",59
-38977008,38977059,2,"Both the if and elif branches are catching position if position == 18 (note the <= in the if statement), so the elif branch will never be executed.
+38977008,38977059,2,"
+Both the if and elif branches are catching position if position == 18 (note the <= in the if statement), so the elif branch will never be executed.
 ",33
 38977008,38977079,2,"Change
 by 
@@ -7164,7 +6854,8 @@ When clicking the button:
 When I run: 
 I'm presented with the following: 
 ",93
-38977169,38977374,2,,0
+38977169,38977374,2,"
+",0
 38977169,38977366,2,"Try xpath:
 ",3
 38977169,38977261,2,"You should try using xpath as below :-
@@ -7264,24 +6955,15 @@ Please check the snapshot for more details.
 38977472,38977472,1,"I have the following code:
 How can I let the main thread know that the TestWorker has finished (call on_work_done()), without blocking calls to do_something_else() as thread.join() would?
 ",39
-38977472,38978075,2,,0
-38977472,38980087,2,"OUT:
+38977472,38978075,2,"
+",0
+38977472,38980087,2,"
+OUT:
 ",2
 38977472,38978438,2,"You can give your thread instance an optional callback function to call when it's finished.
 Note I added a Lock to prevent concurrent printing (which does block).
 Output:
-Starting Thread-1
-Something else
-Something else
-Something else
-Something else
-Something else
-Something else
-Exiting Thread-1
-Something else
-work done
-Done
-",55
+",34
 38977525,38984338,2,"Some details of what you must do may depend on what you want to do with IDLE's Shell once you have it running.  I would like to know more about that.  But let us start simple and make the minimum changes to pyshell.main needed to make it run with other code.  
 Note that in 3.6, which I use below, PyShell.py is renamed pyshell.py. Also note that everything here amounts to using IDLE's private internals and is 'use at your own risk'.
 I presume you want to run Shell in the same process (and thread) as your tkinter code.  Change the signature to
@@ -7522,7 +7204,8 @@ The == compares the value of the two. The Is keyword checks for identity by comp
 Hope this explains it enough. 
 Hannes
 ",39
-38982776,38983968,2,,0
+38982776,38983968,2,"
+",0
 38982776,38982776,1,"I have a list of lists m which I need to modify
 I need that the sum of each row to be greater than A and the sum of each column to be lesser than B 
 I have something like this
@@ -7573,7 +7256,8 @@ Does it make sense to not use even Nginx, just running bare flask app on a port?
 ",96
 38986113,38986113,1,"I try to make Async ping process using subprocess.Popen , I try to understand how i implement it in this case 
 ",21
-38986113,39173449,2,"edited a bit class i have found also used threads instead of Async & await
+38986113,39173449,2,"
+edited a bit class i have found also used threads instead of Async & await
 Credit: http://blog.boa.nu/2012/10/python-threading-example-creating-pingerpy.html
 ",20
 38986117,38986117,1,"I was using Jupyter in Windows and just switched to Ubuntu. I found the colour of the code is very weird in the firefox browser. E.g. it highlights the variables in every other line.

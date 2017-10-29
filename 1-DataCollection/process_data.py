@@ -1,3 +1,4 @@
+import fnmatch
 import os
 import pandas
 import matplotlib.pyplot as plt
@@ -12,11 +13,10 @@ plt.style.use('ggplot')
 
 def convert_html_to_text(row):
     body = row['Body']
-    lis = body.split("</code></pre>")
-    lis = [item[0:item.find("<pre><code>")] if item.find("<pre><code>") != -1 else item
-           for item in lis]
-    body = ''.join(lis)
     bs_obj = BeautifulSoup(body, "lxml")
+    codeblocks = bs_obj.select('pre > code')
+    for codeblock in codeblocks:
+        codeblock.decompose()
     text = bs_obj.text
     text = re.sub(r'\n\n+', '\n', text)
     return text
@@ -72,7 +72,12 @@ posts.hist('Post length', range=(0, 1500))
 plt.xlabel('post length')
 plt.ylabel('number of posts')
 plt.savefig(os.path.join(outputSubdir, 'word_count_hist.png'))
-plt.show()
+# plt.show()
 
 posts.drop('Body', axis=1, inplace=True)
-posts.to_csv(os.path.join(outputSubdir, 'posts.csv'), index=False, encoding='utf-8')
+posts_path = [os.path.join(dirpath, f)
+    for dirpath, dirnames, files in os.walk("..")
+    for f in fnmatch.filter(files, 'posts.csv')]
+
+for post_path in posts_path:
+    posts.to_csv(post_path, index=False, encoding='utf-8')
