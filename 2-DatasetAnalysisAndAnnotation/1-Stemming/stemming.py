@@ -11,12 +11,24 @@ nltk.download('stopwords')
 
 # Functions
 
+
 def countSortAndSave(list, fileName):
     count = Counter(list)
     countDataFrame = pandas.DataFrame.from_dict(count, orient='index').reset_index()
     countDataFrame.columns = ['stem', 'count']
     countDataFrame.sort_values(by='count', ascending=False, inplace=True)
     countDataFrame.to_csv(fileName, index=False, encoding='utf-8')
+
+
+def includeStemOriginalWords(originalWords, filename):
+    stems = pandas.read_csv(filename, encoding='utf-8')
+    stems['original words'] = ""
+    stems = stems.fillna('nan')
+    for index, row in stems.iterrows():
+        stem = row['stem']
+        stems.loc[index, 'original words'] = ','.join(originalWords[stem])
+    stems.to_csv(filename, index=False, encoding='utf-8')
+
 
 def main():
     inputSubdir = 'InputData'
@@ -32,6 +44,7 @@ def main():
 
     wordsBeforeStem = []
     wordsAfterStem = []
+    stemOriginalWords = {}
 
     for post in posts:
         words = tokenizer.tokenize(post)
@@ -39,10 +52,16 @@ def main():
             if word not in stopWords and not bool(re.search(r'\d', word)):
                 lowerWord = word.lower()
                 wordsBeforeStem.append(lowerWord)
-                wordsAfterStem.append(stemmer.stem(lowerWord))
+                stemWord = stemmer.stem(lowerWord)
+                if stemWord in stemOriginalWords:
+                    stemOriginalWords[stemWord].add(lowerWord)
+                else:
+                    stemOriginalWords[stemWord] = {lowerWord}
+                wordsAfterStem.append(stemWord)
 
     countSortAndSave(wordsBeforeStem, os.path.join(outputSubdir, 'wordsBeforeStemming.csv'))
     countSortAndSave(wordsAfterStem, os.path.join(outputSubdir, 'wordsAfterStemming.csv'))
+    includeStemOriginalWords(stemOriginalWords, os.path.join(outputSubdir, 'wordsAfterStemming.csv'))
     print("Finished")
 
 main()
