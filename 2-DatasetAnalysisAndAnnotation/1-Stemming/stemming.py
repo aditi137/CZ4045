@@ -49,8 +49,8 @@ def main():
     for post in posts:
         words = tokenizer.tokenize(post)
         for word in words:
-            if word not in stopWords and not bool(re.search(r'\d', word)):
-                lowerWord = word.lower()
+            lowerWord = word.lower()
+            if lowerWord not in stopWords and not bool(re.search(r'\d', lowerWord)):
                 wordsBeforeStem.append(lowerWord)
                 stemWord = stemmer.stem(lowerWord)
                 if stemWord in stemOriginalWords:
