@@ -1,11 +1,10 @@
-
-I'll try to be brief. Well.. I always try to be brief, but my level of success is pretty much random.randint(0, never). So yeah.
-Lol. You even failed to be brief about announcing that you will try to be brief.
-First, we need to be clear about what "called into being" means. Presumably you want a new hammer every time self.tool = object happens. You don't want a new instance every time, for example, you access the tool attribute, or you'd always a get a new, presumably unbroken, hammer every time you check self.tool.broken.
-A couple approaches.
-One, give Tool a copy method that produces a new object that should equal the original object, but be a different instance. For example:
-Then in Student's init you say
-Option two, use a factory function.
-I can't think any way in Python that you can write the line self.tool = object and have object automagically make a copy, and I don't think you want to. One thing I like about Python is WYSIWYG. If you want magic use C++. I think it makes code hard to understand when you not only can't tell what a line of code is doing, you can't even tell it's doing anything special.
-Note you can get even fancier with a factory object. For example:
+This is not atomic but it works.
+os.path.islink(filename) and not os.path.exists(filename)
+Indeed by RTFM
+ (reading the fantastic manual) we see
+os.path.exists(path)
+Return True if path refers to an existing path. Returns False for  broken symbolic links.
+It also says:
+On some platforms, this function may return False if permission is not granted to execute os.stat() on the requested file, even if the path physically exists.
+So if you are worried about permissions, you should add other clauses.
 

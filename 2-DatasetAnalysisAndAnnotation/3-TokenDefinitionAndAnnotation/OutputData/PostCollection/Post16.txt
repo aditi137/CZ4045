@@ -1,7 +1,2 @@
-Given
-I'd like
-Currently I have brute forced it with:
-Finally, I'd like to get to
-by running this right to left. Currently I have
-I'm not fussy about inplace or create a new list, but right now this smells to me. I can't see a way to store a temporary 'last' value and use map/lambda, and nothing else is coming to mind.
+The size of the file is sent as the Content-Length header. Here is how to get it with urllib:
 

@@ -1,3 +1,4 @@
-Your code fails as you have already consumed the iterator on the first call, if you call none_context() in the with block the original code would work:
-You can see using your original code that if you add a None for each open then the code will work as expected:
+os.path
+You may try using realpath() to get what the symlink points to, then trying to determine if it's a valid file using is file.
+(I'm not able to try that out at the moment, so you'll have to play around with it and see what you get)
 

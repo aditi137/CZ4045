@@ -1,2 +1,9 @@
-Since you are recursing through subdirectories, use os.walk:
+I am developing a GPL-licensed application in Python and need to know if the GPL allows my program to use proprietary plug-ins. This is what the FSF has to say on the issue:
+If a program released under the GPL uses plug-ins, what are the requirements for the licenses of a plug-in?
+It depends on how the program invokes its plug-ins. If the program uses fork and exec to invoke plug-ins, then the plug-ins are separate programs, so the license for the main program makes no requirements for them.
+If the program dynamically links plug-ins, and they make function calls to each other and share data structures, we believe they form a single program, which must be treated as an extension of both the main program and the plug-ins. This means the plug-ins must be released under the GPL or a GPL-compatible free software license, and that the terms of the GPL must be followed when those plug-ins are distributed.
+If the program dynamically links plug-ins, but the communication between them is limited to invoking the ‘main’ function of the plug-in with some options and waiting for it to return, that is a borderline case. 
+The distinction between fork/exec and dynamic linking, besides being kind of artificial, doesn't carry over to interpreted languages: what about a Python/Perl/Ruby plugin, which gets loaded via import or execfile?
+(edit: I understand why the distinction between fork/exec and dynamic linking, but it seems like someone who wanted to comply with the GPL but go against the "spirit" --I don't-- could just use fork/exec and interprocess communication to do pretty much anything).
+The best solution would be to add an exception to my license to explicitly allow the use of proprietary plugins, but I am unable to do so since I'm using Qt/PyQt which is GPL.
 

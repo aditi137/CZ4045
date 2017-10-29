@@ -1,4 +1,6 @@
-This depends on the OS and the CPU architecture. On x86 (Intel compatible) the operating system might execute HLT instructions, making the CPU wait until something interesting happens, such as a hardware interrupt. This supposedly consumes very little power. Operating systems report the time spent doing this as "idle" and may even assign it to a fictional "idle" process.
-So, when in Windows task manager you see that the System Idle Process is consuming 90% CPU what it really means is that the CPU does not have an actual a program to run 90% of the time.
-Here's a good article on the subject: What does an idle CPU do?
+Building on Barry Wark's answer...
+NSBeep() from AppKit works fine, but also makes the terminal/app icon in the taskbar jump.
+A few extra lines with NSSound() avoids that and gives the opportunity to use another sound:
+Standard sound files can be found via commandline locate /System/Library/Sounds/*.aiff
+The file used by NSBeep() seems to be '/System/Library/Sounds/Funk.aiff'
 

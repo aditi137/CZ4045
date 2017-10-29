@@ -1,10 +1,6 @@
-i want know witch device connect to witch usb port in ubuntu ...
-for example when i connect bluetooth dongle to usb i wnat know that Bluetooth connected tu witch usb port ...
-when i run 
-tail -f /var/log/messages
-in can see usb port number like this :
-Jul 27 20:51:58 Smart-Installer kernel: [  711.363300] usb 1-1.2: New USB device found, idVendor=0a12, idProduct=0001
-  Jul 27 20:51:58 Smart-Installer kernel: [  711.363331] usb 1-1.2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
-i want get usb 1-1.2 programmatically via python
-i know lsusb -t get me port but i want also device number and -t get me a few data
+I find myself referencing this post a lot, and found that the documentation defines a slightly less hacky way to override default widgets. 
+(No need to override the ModelForm's __init__ method)
+However, you still need to wire your JS and CSS appropriately as Carl mentions.
+forms.py
+Reference Field Types to find the default form fields.
 

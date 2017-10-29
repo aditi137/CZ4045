@@ -1,7 +1,2 @@
-See the documentation for sorted.
-Ascending by key:
-Descending by key:
-Ascending by value:
-Descending by value:
-You could also use key=lambda x: x[1] instead of defining a get_key function if you wanted.
+For a python3 (tested on 3.5) approach I'd recommend:
 

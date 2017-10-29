@@ -1,4 +1,8 @@
-A general answer involves using a Manager object. Adapted from the docs:
-Output:
-Original answer: Python multiprocessing: How do I share a dict among multiple processes?
+** creates an intermediary dict, which means that the total number of copies
+is actually higher doing the dict(one, **two) form, but all that happens in C
+so it's still generally faster than going to itertools, unless there are a huge number of copies (or, probably, if the copies are very expensive). As always if you actually care about speed you should time your use case.
+Timing on Python 2.7.3 with an empty dict:
+With 10,000 (tiny) items:
+With 100,000 items:
+With 1,000,000 items:
 

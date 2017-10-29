@@ -1,4 +1,5 @@
-Abuse leading to a one-expression solution for Matthew's answer:
-You said you wanted one expression, so I abused lambda to bind a name, and tuples to override lambda's one-expression limit. Feel free to cringe.
-You could also do this of course if you don't care about copying it:
+Below is a basic threading sample. It will spawn 20 threads; each thread will output its thread number. Run it and observe the order in which they print.
+As you have hinted at Python threads are implemented through time-slicing. This is how they get the "parallel" effect. 
+In my example my Foo class extends thread, I then implement the run method, which is where the code that you would like to run in a thread goes. To start the thread you call start() on the thread object, which will automatically invoke the run method...
+Of course, this is just the very basics. You will eventually want to learn about semaphores, mutexes, and locks for thread synchronization and message passing.
 

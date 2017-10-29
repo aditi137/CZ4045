@@ -1,5 +1,3 @@
-I have this piece of inelegant code that's supposed to print out something that looks like this to the console:
-However, most of the time I get this:
-I'm not sure where the problem lies with my code because occasionally it works as expected and I get the right output (which drives me crazy).
-I'm using Enthought Canopy as my IDE.
+
+ellipsis flag # doctest: +ELLIPSIS is not required to use ... in Traceback doctest 
 

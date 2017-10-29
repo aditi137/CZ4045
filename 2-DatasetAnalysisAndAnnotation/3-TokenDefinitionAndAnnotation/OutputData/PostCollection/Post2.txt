@@ -1,2 +1,4 @@
-Shutil.copy/unicode wasn't the problem here; tyring to copy a non-existent file was.
+I would consider that using python on a new project is completely dependent on what problem you are trying to solve with python.  If you want someone to agree with you that you should use python, then show them how python's features apply specifically to that problem.
+In the case of web development with python, talk about WSGI and other web libraries and frameworks you could use that would make your life easier.  One note for python is that most of the frameworks for python web development can be plugged right into any current project. With ruby on rails, you're practically working in a DSL that anyone who uses your project will have to learn.  If they know python, then they can figure out what you are doing with django, etc in a day.
+I'm only talking about web development because it appears that's what you are going to be working on seeing ruby, python and PHP in the same list.  The real message that's important is applying to whatever it is you like about python directly to some problem you are trying to solve.
 

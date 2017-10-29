@@ -1,2 +1,8 @@
-In Python 3, you can use collections.ChainMap which groups multiple dicts or other mappings together to create a single, updateable view:
+I have reproduced what you are seeing:
+Outputs this:
+What am I doing wrong here? Is os.stat().st_size not returning the correct size?
+Edit:
+OK, I figured out what the problem was:
+this outputs:
+Make sure you are opening both files for binary read/write.
 

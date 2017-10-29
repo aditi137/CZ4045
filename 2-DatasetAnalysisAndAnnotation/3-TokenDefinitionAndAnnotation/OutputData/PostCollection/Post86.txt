@@ -1,9 +1,6 @@
-I am using Boto in Python to connect to Amazon MWS. I have successfully connected using their scripts but am having trouble parsing the response as I don't fully understand the documentation, and there are little to no examples on the internet. I am new to Python.
-Here is how I get my response from MWS:
-The first product gives a response of this:
-My Issue is trying to get the details from the ItemAttributes:
-At this point I believe it is a dictionary object.
-As I am new to this language I can't figure out how to get all the information that is located in the () such as Brand, Studio, etc.
-Boto has some built in functions such as Response and ResponseFactory, but I am lost again as I keep hitting a wall trying to get info such as Brand, etc..
-Thank you again for any help you can give in this.
+How can I use the nifty JavaScript date and time widgets that the default admin uses with my custom view?
+I have looked through the Django forms documentation, and it briefly mentions django.contrib.admin.widgets, but I don't know how to use it?
+Here is my template that I want it applied on.
+Also, I think it should be noted that I haven't really written a view up myself for this form, I am using a generic view. Here is the entry from the url.py:
+And I am relevantly new to the whole Django/MVC/MTV thing, so please go easy...
 

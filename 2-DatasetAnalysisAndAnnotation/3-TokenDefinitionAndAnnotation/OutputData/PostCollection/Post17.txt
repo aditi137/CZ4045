@@ -1,6 +1,4 @@
-You want to use itertools.groupby() with a dash of itertools.islice() and itertools.chain:
-The groupby() call groups the input list into chunks where the first item is the same (itemgetter(0) is the grouping key). 
-The islice(group, 1, None) call turns the groups into iterables where the first element will be skipped.
-The chain.from_iterable() call takes each islice() result and chains them together into a new iterable, which list() turns back into a list.
-Demo:
+Using the returned-urllib-object method info(), you can get various information on the retrived document. Example of grabbing the current Google logo:
+It's a dict, so to get the size of the file, you do urllibobject.info()['Content-Length']
+And to get the size of the local file (for comparison), you can use the os.stat() command:
 

@@ -1,3 +1,2 @@
-You could use a dict? Something like this:  
-I didn't map out all the moves, but you get the gist
+A the top of your models.py file, add this line after you do your imports:
 

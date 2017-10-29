@@ -1,3 +1,20 @@
-You could actually pull this off, but it would require using metaclasses, which are deep magic (there be dragons). If you want an intro to metaclasses, there's a series of articles from IBM which manage to introduce the ideas without melting your brain.
-The source code from an ORM like SQLObject might help, too, since it uses this same kind of declarative syntax.
+Yes, because of the Global Interpreter Lock (GIL) there can only run one thread at a time. Here are some links with some insights about this:
+http://www.artima.com/weblogs/viewpost.jsp?thread=214235
+http://smoothspan.wordpress.com/2007/09/14/guido-is-right-to-leave-the-gil-in-python-not-for-multicore-but-for-utility-computing/
+From the last link an interesting quote:
+Let me explain what all that means. 
+  Threads run inside the same virtual
+  machine, and hence run on the same
+  physical machine.  Processes can run
+  on the same physical machine or in
+  another physical machine.  If you
+  architect your application around
+  threads, you’ve done nothing to access
+  multiple machines.  So, you can scale
+  to as many cores are on the single
+  machine (which will be quite a few
+  over time), but to really reach web
+  scales, you’ll need to solve the
+  multiple machine problem anyway.
+If you want to use multi core, pyprocessing defines an process based API to do real parallelization. The PEP also includes some interesting benchmarks.
 

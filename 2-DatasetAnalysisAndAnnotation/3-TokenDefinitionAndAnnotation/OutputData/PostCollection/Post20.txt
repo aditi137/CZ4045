@@ -1,3 +1,2 @@
-You could use a masked array for D, like:
-and when you perform the calculations with the masked array only the non-masked values will be considered.
+In Python3:
 

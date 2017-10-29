@@ -1,2 +1,2 @@
-The only way I can think of that's guaranteed to give it to you is to hit a service like http://whatismyip.com/ to get it.
+Can you give an example? According to the lxml validation docs, lxml can handle DTD validation (specified in the XML doc or externally in code) and system catalogs, which covers most cases I can think of.
 

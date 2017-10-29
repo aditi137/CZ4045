@@ -1,4 +1,2 @@
-I wish to check if in a text file of points (x,y,z, etc) where is an header (True) or not (False). I wish to know if there is a built-in function in Python or a better method respect my own function.
-i wrote this function 
-example
+Returning a tuple is the usual way to do this in Python.
 

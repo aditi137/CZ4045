@@ -1,2 +1,2 @@
-I have a use case where I have to send_email to user in my views. Now the user who submitted the form will not receive an HTTP response until the email has been sent . I do not want to make the user wait on the send_mail. So i want to send the mail asynchronously without caring of the email error.  I am using using celery for sending mail async but i have read that it may be a overkill for simpler tasks like this. How can i achieve the above task without using celery
+I finally managed to get this widget working on the dev server, only to have it break on deployment.  I finally decided it wasn't worth shoehorning into my site, and wrote my own widget.  It's not as flexible, but it will probably work well for many: http://www.copiesofcopies.org/webl/?p=81
 

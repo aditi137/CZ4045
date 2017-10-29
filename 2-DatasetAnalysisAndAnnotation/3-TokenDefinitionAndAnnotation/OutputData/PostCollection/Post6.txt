@@ -1,2 +1,5 @@
-I am running this code below using multiprocessing to run ticker_list through a request and parsing program faster.  The following code works, but it is very slow.  I am not so sure that this is the correct usage of multiprocessing.  If there is a more efficient way to do this then please let me know.
+Give them a snippet of code in each (no more than a page) that performs some cool function that they will like. (e.g show outliers in a data set).
+Show them each page. One in PHP, Ruby and Python.
+Ask them which they find easiest to understand/read.
+Tell them thats why you want to use Python. It's easier to read if you've not written it, more manageable, less buggy and quicker to build features because it is the most elegant (pythonic)
 

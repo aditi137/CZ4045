@@ -1,4 +1,6 @@
-I'm trying to create a sqlite3 table using python. My code is given below:
-This code runs fine the first time I run it and my database is created. However, if I run it a second time, I get the following error:
-I have no idea what's going wrong. Can anybody help?
+I'd like to have a python program alert me when it has completed its task by making a beep noise.  Currently,  I use import os and then use a command line speech program to say "Process complete."  I much rather it be a simple "bell."
+I know that there's a function that can be used in Cocoa apps, NSBeep, but I don't think that has much anything to do with this.
+I've also tried print(\a) but that didn't work.
+I'm using a Mac, if you couldn't tell by my Cocoa comment, so that may help.
+Thanks!
 

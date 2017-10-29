@@ -1,6 +1,6 @@
-I guess anther way, possibly faster, to achieve this is 
-1) Use dict comprehension to get desired dict (i.e., taking 2nd col of each array)
-2) Then use pd.DataFrame to create an instance directly from the dict without loop over each col and concat.
-Assuming your mat looks like this (you can ignore this since your mat is loaded from file):
-Then you can do:
+OK, what you need is classobj from new module. That would allow you to construct exception classes dynamically (classobj takes a string as an argument for the class name). 
+this gives you:
+remember that you can always get the class name through:
+So, after some string mangling and concatenation, you should be able to obtain appropriate exception class name and construct a class object using that name and then raise that exception.
+P.S. - you can also raise strings, but this is deprecated.
 

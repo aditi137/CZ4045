@@ -1,4 +1,5 @@
-I should have warned you more thouroghly: wxPython Phoenix is the future of wxPython (because, in contrast to classic it supports Python 3, too). That said, this does not mean everything is nice and shiny. My personal advice is to keep on going with classic (or in other words: what works now in classic, will most probably also work in Phoenix). In Phoenix, you will stumble into bugs like this more often.
-Luckily, in this special case, there has already been something else done:
-<wx.TextCtrl>.AutoComplete(â€¦) does accept a list of strings. This already works in 2.9.0/classic. See documentation for wx.TextEntry/AutoComplete.
+Can I mention testing for hardlinks without python? /bin/test has the FILE1 -ef FILE2 condition that is true when files share an inode.
+Therefore, something like find . -type f -exec test \{} -ef /path/to/file \; -print works for hard link testing to a specific file.
+Which brings me to reading man test and the mentions of -L and -h which both work on one file and return true if that file is a symbolic link, however that doesn't tell you if the target is missing.
+I did find that head -0 FILE1 would return an exit code of 0 if the file can be opened and a 1 if it cannot, which in the case of a symbolic link to a regular file works as a test for whether it's target can be read.
 

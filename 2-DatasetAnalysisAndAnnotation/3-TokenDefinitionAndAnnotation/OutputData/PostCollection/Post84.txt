@@ -1,3 +1,2 @@
-Runs in 0.7 secs. Faster than most solutions mentioned, though bit clumsy.
-The solution printed is:
+Return a tuple.
 

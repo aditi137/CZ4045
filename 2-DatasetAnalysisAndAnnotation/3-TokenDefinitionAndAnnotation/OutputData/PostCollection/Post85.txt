@@ -1,7 +1,2 @@
-Take advantage of algebra:
-Knowing that, you only have to bother generating the values:
-If you need to filter things out by some criteria, you can easily write a filter function:
-If you wanted to shorten things a bit, you could re-write your function so that it returns the valid pair, or None otherwise.
-Or, just create a generator and iterate over that:
-If you want to allow zero padded numbers in b then you can use this filter:
+My head code for 1.4 version(some new and some removed)
 

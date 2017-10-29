@@ -1,6 +1,4 @@
-As pointed out by 0MQ founder Pieter Hintjens in this answer, the PUSH-PULL mechanism is not a load balancer, but rather a simple round robin distributor. That's a typo in the docs that is still there.
-That said, for the load balancing pattern you need to add a broker in the middle of your architecture. As pointed out by Jason in the comments, this is well explained in the official guide. There are also examples in Python.
-The main idea is to have the workers sending a small "READY" message to the broker whenever they are free to receive more jobs. The broker in turns, keep "pointers" to free workers in a queue. When he receives a new job request from a client he also propagates the request to the first free worker in the queue, which gets popped out from the queue. As you can see in the picture above, the broker exploits ROUTER sockets in order to avoid a blocking behavior and to get proper load balancing. A small additional detail is that the broker does not poll the clients if there are not free workers in the queue.
-This is the simplest way I am aware of for implementing a load balancing pattern with ZeroMQ. It is not exactly like "polling" for new jobs in the queue, but I think this is what you need. Also please beware that this is really the simplest way, that is, it is not reliable at all and it does not scale well as is. If you also need reliability, I suggest you to thoroughly read Chapter 4 of the official guide.
-As a side note, maybe you should seriously consider Celery for this task. I am really in love with ZeroMQ, however this is exactly the kind of thing that Celery is very good at, and in my opinion it is not so difficult to learn, as someone may think.
+Yep, I ended up overriding the /admin/jsi18n/ url.
+Here's what I added in my urls.py.  Make sure it's above the /admin/ url
+And here is the i18n_javascript function I created.
 

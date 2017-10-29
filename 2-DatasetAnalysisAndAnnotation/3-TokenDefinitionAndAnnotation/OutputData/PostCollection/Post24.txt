@@ -1,4 +1,5 @@
-I am trying to install numpy from a wheel package (that I have generated in my virtualenv) on a Redhat 6.5 with python version =2.6.6:
-I am getting the following error: 
-Any way to fix that? thanks :) 
+Bartosz/To clarify "This worked okay, but there was no easy way of checking if x[3][24] was supposed to exist or not"
+x['some show'][3][24] would return season 3, episode 24 of "some show". If there was no season 3, I want the pseudo-dict to raise tvdb_seasonnotfound, if "some show" doesn't exist, then raise tvdb_shownotfound
+The current system of a series of classes, each with a __getitem__ - Show checks if self.seasons.has_key(requested_season_number), the Season class checks if self.episodes.has_key(requested_episode_number) and so on.
+It works, but it there seems to be a lot of repeated code (each class is basically the same, but raises a different error)
 

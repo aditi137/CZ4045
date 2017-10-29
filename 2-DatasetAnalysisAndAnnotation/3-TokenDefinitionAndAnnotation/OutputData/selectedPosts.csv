@@ -1,516 +1,432 @@
 ,post
-0,"So, thanks to @MikeMcKerns' answer, I found how to get the job done with the pathos lib. I needed to get rid of all pymongo cursors, which (being generators) could not be pickled by dill; doing that solved the problem and I managed to run my code in parallel.
-"
-1,"Shutil.copy/unicode wasn't the problem here; tyring to copy a non-existent file was.
-"
-2,"For oldest task you should probably use created_at rather than modified_at (the oldest task could have been modified recently, after all).
-We don't have any way in the API to specifically get the older task, or order by creation time or anything like that, so for now your workaround is in fact the only way to do it. You may be able to make it a little faster by using ?opt_fields=created_at in the task query to cut down on how much data you're loading.
-"
-3,"One-liner using re.sub function.
-"
-4,"EDIT
-This is my code:
-It's working as it should within python, so I compiled it to .exe using Pyinstaller.
-I managed to have an exe file now but I'm struggling with the import of pyperclip.
-the exe works except for that last command. I tried -p dir and also --hidden-import pyperclip.
-I ran it with -d and the debug I get is:
-I'm not sure how to proceed right now :\ any input?
-"
-5,"I am running this code below using multiprocessing to run ticker_list through a request and parsing program faster.  The following code works, but it is very slow.  I am not so sure that this is the correct usage of multiprocessing.  If there is a more efficient way to do this then please let me know.
-"
-6,"Using Django 1.7 and Celery on Heroku with Postgres and RabbitMQ.
-I recently set the CONN_MAX_AGE setting in Django to 60 or so so I could start pooling database connections. This worked fine until I discovered a problem where if for any reason a database connection was killed, Celery would continue using the bad database connection, consuming tasks but immediately throwing the following error within each task:
-I would like to keep pooling database connections, but this has happened a few times now and I obviously can't allow Celery to randomly fail. How can I get Django (or Celery) to force a new database connection only when this error is hit?
-(Alternatively, another idea I had was to force the Celery worker to run with a modified settings.py that sets CONN_MAX_AGE=0 only for Celery... but that feels very much like the wrong way to do it.)
-Please note that this StackOverflow question seems to solve the problem on Rails, but I haven't found an equivalent for Django:
-  On Heroku, Cedar, with Unicorn: Getting ActiveRecord::StatementInvalid: PGError: SSL SYSCALL error: EOF detected
-"
-7,"After the installation of motionless library, I try to run my code and the following error  message occurs. 
-"
-8,"I have a Player class with a score attribute:
-This score increases/decreases as the player succeeds/fails to do objectives. Now I need to tell the player his rank out of the total amount of players with something like
-First I thought of having a list of all the players, and whenever anything happens to a player:
-I check if his score increased or decreased
-find him in the list
-move him until his score is in the correct place
-But this would be extremely slow. There can be hundreds of thousands of players, and a player can reset his own score to 0 which would mean that I'd have to move everyone after him in the stack. Even finding the player would be O(n).
-What I'm looking for is a high performance solution. RAM usage isn't quite as important, although common sense should be used. How could I improve the system to be a lot faster?
-Updated info: I'm storing a player's data into a MySQL database with SQLAlchemy everytime he leaves the gameserver, and I load it everytime he joins the server. These are handled through 'player_join' and 'player_leave' events:
-Also, the player's score is updated upon 'player_kill' event:
-"
-9,"I am developing a django application. In my forms. I have a checkbox in my form. My forms submits fine when the box is checked, but when the box is unchecked, the form fails to submit. The field I am using is Boolean.
-Here is my code:
-Does anyone have a solution?
-"
-10,"We need a tool to work with 3D-Harmonics and we've come across https://github.com/SHTOOLS/SHTOOLS - which fits all of our needs, but could not be installed properly on our windows computers (as it's intended for linux\osx).
-When we tried to run pip install . in the directory SHTOOLS-3.3 (we use anaconda for managing packages and it includes pip), we at first got an error saying that we need a Fortran compiler (gfortran) - which we fixed by installing gcc with conda install -c r gcc. Afterwards, we got an error saying we need to install visual C++ compiler - which we downloaded as suggested from https://www.microsoft.com/en-gb/download/details.aspx?id=44266.
-Alas, running the command again, this time from the visual C++ 2008 command prompt, we still get a fatal error and are still stuck with installing the library.
-Some of the errors we get: 
-Followed by
-and 
-The full output of the installation attempt can be found here and here.
-We've tried to download the lib files of the FFTW3, LAPACK and BLAS libraries but couldn't build them properly.
-We would appreciate any help (suggesting a similar library that is compatible with windows \ helping with the install of SHTOOlS).
-"
-11,"Focus on the shorter time needed for development/prototype and possibly easier maintenance (none of this may apply against Ruby).
-"
-12,"that would work:
-otherwise, you can set x and y in ABC (by doing self.x = ...) and then access them by c.x
-"
-13,"Converting a list to a set requires that every item in the list be visited once, O(n). Inserting an element into a set is O(1), so the overall time complexity would be O(n).
-Space required for the new set is less than or equal to the length of the list, so that is also O(n).
-Here's a good reference for Python data structures.
-"
-14,"Using your example, the following would show you the value of y
-But trying to print y after your function call will fail with the not defined error as the variable is defined only inside you function, i.e. it is local to that function. This is often referred to as the scope of a variable.
-As soon as the function returns, y ceases to exist.
-"
-15,"Given
-I'd like
-Currently I have brute forced it with:
-Finally, I'd like to get to
-by running this right to left. Currently I have
-I'm not fussy about inplace or create a new list, but right now this smells to me. I can't see a way to store a temporary 'last' value and use map/lambda, and nothing else is coming to mind.
-"
-16,"You want to use itertools.groupby() with a dash of itertools.islice() and itertools.chain:
-The groupby() call groups the input list into chunks where the first item is the same (itemgetter(0) is the grouping key). 
-The islice(group, 1, None) call turns the groups into iterables where the first element will be skipped.
-The chain.from_iterable() call takes each islice() result and chains them together into a new iterable, which list() turns back into a list.
-Demo:
-"
-17,"I am trying to read all the elements in a dictionary one by one. my dictionary is as given below ""test"".
-i want to do as given in below sample code.
-thank you 
-"
-18,"In Python 3, you can use collections.ChainMap which groups multiple dicts or other mappings together to create a single, updateable view:
-"
-19,"You could use a masked array for D, like:
-and when you perform the calculations with the masked array only the non-masked values will be considered.
-"
-20,"I apologize if this is a silly question. But I tried to google this and I couldn't find anything to point me in the right direction. I'd just like to understand what I need to do to 'set-up' cdt to 'understand' my python.h include.
-the erroneous statement is this:
-but I also tried
-And CDT responds with an error sign on the side stating:
-I am using Eclipse CDT Juno on Ubuntu 12.04. Any pointers would be great!
-"
-21,"See the documentation for sorted.
-Ascending by key:
-Descending by key:
-Ascending by value:
-Descending by value:
-You could also use key=lambda x: x[1] instead of defining a get_key function if you wanted.
-"
-22,"From http://docs.python-requests.org/en/latest/user/quickstart/#post-a-multipart-encoded-file
-Requests makes it very simple to upload Multipart-encoded files:
-That's it. I'm not joking - this is one line of code. File was sent. Let's check:
-"
-23,"I am trying to install numpy from a wheel package (that I have generated in my virtualenv) on a Redhat 6.5 with python version =2.6.6:
-I am getting the following error: 
-Any way to fix that? thanks :) 
-"
-24,"Edit 3: I replaced __file__ with sys.argv[0], when I need to know the location of my script/executable. This is not exactly the same, but in my case it seems to run fine (at least on executable version...). Now everything is working fine, in one-file mode, with use of accepted answer's function to access resource files!
-Edit 2: as shown in accepted answer's comments, problem is coming from path resolution in my script; I try to use __file__ to get the location of the script, so that I can access to its resource files. This does not work once packaged, as __file__ will return filename from Python.dll to the script, so quite always no path and just a file name. So I have to find another trick to make access to resource files; a work-around for the moment is to move current directory to the executable path.
-By the way, this means that the ConfigParser should report problem when accessing the file, and not that a section is missing.
-I'll update this question with the way I resolved this path resolution question.
-I've got problems with pyinstaller, and as it's the first time I'm using it, it's sure that I've done something wrong.
-So, here's the problem: pyisntaller runs smoothly on a script I wrote, and generates some stuff in dist folder. Ok, so now I want to execute it to see if all went well, and here's what I get:
-My first idea was that the logging.conf file was missing, so I added it (and some other resource files) in the p_tool.spec file, but this is not better.
-Python version: 2.6.6, under WinXP. I'm using pyinstaller as I will need it to package files for a Solaris workstation.
-So, anyone did have this problem? The only topic related is the following question: PyInstaller Problem, really close to my problem, but hopelessly it got no answer.
-Edit3: details about logging removed, as not really related to the problem.
-"
-25,"I think you can avoid a commit hook script in this case by using the svn:eol-style property as described in the SVNBook:
-End-of-Line Character Sequences
-Subversion Properties
-This way SVN can worry about your line endings for you.
-Good luck!
-"
-26,"With standard PyDev
-It seems that this option is only available in Eclipse's Java Editor.
-The Java editor allows you to create ""profiles"" for the code formatter, while PyDev's options for the code formatter are very limited.
-However,
-You can hack this. PythonTidy.py is an awesome script that cleans up Python code to make it follow PEP8 conventions, and that can be tweaked with your own settings. 
-PythonTidy (code cleanup & formatting)
-Get here (homepage) the source for PythonTidy. 
-You will see inside the file, at the beginning of the code and just after the comments, that many settings are defined. 
-The first one of these is COL_LIMIT with its default value set to 72. Now you can use PythonTidy to format your code the way you want.
-Integration with PyDev
-Now you have to make this work with PyDev's formatting. This blog post will explain it really better than me, but still I'll sum up the steps :
-Write a Jython interface betwenn PyDev's editor (PyEdit) and PythonTidy. This blog's author already wrote a wrapper script in the public domain available in the above link or here in case the link goes 404.
-Save this file anywhere you want, with the name pyedit_pythontidy.py, along with the PythonTidy.py file.
-Configure PyDev to use this script as its Code Formatter. You can do this in Preferences > PyDev > Scripting PyDev
-Note #1: I really recommend reading the original blog post to have a better understanding
-Note #2: The wrapper script author did not implement Code Block formatting, so this means you can only format a full file. This should not be that hard to implement, up to you.
-Note #3: All credits goes to bear330 for the PyDev integration part.
-"
-27,"I guess anther way, possibly faster, to achieve this is 
-1) Use dict comprehension to get desired dict (i.e., taking 2nd col of each array)
-2) Then use pd.DataFrame to create an instance directly from the dict without loop over each col and concat.
-Assuming your mat looks like this (you can ignore this since your mat is loaded from file):
-Then you can do:
-"
-28,"You can use the str.split method.
-If you want to convert it to a tuple, just
-If you are looking to append to a list, try this:
-"
-29,"The only way I can think of that's guaranteed to give it to you is to hit a service like http://whatismyip.com/ to get it.
-"
-30,"Postgres is doing a lot more than it looks like (maintaining data consistency for a start!)
-If the values don't have to be 100% spot on, or if the table is updated rarely, but you are running this calculation often, you might want to look into Materialized Views to speed it up.
-(Note, I have not used materialized views in Postgres, they look at little hacky, but might suite your situation).
-Materialized Views
-Also consider the overhead of actually connecting to the server and the round trip required to send the request to the server and back.
-I'd consider 200ms for something like this to be pretty good, A quick test on my oracle server, the same table structure with about 500k rows and no indexes, takes about 1 - 1.5 seconds, which is almost all just oracle sucking the data off disk.
-The real question is, is 200ms fast enough?
--------------- More --------------------
-I was interested in solving this using materialized views, since I've never really played with them. This is in oracle.
-First I created a MV which refreshes every minute.
-While its refreshing, there is no rows returned
-Once it refreshes, its MUCH faster than doing the raw query
-If we insert into the base table, the result is not immediately viewable view the MV.
-But wait a minute or so, and the MV will update behind the scenes, and the result is returned fast as you could want.
-This isn't ideal. for a start, its not realtime, inserts/updates will not be immediately visible. Also, you've got a query running to update the MV whether you need it or not (this can be tune to whatever time frame, or on demand). But, this does show how much faster an MV can make it seem to the end user, if you can live with values which aren't quite upto the second accurate.
-"
-31,"Updated solution and workaround for SplitDateTime with required=False:
-forms.py
-form.html
-urls.py
-"
-32,"The error message in the question does not come from the subprocess. It was generated before the subprocess execution. You cannot capture that error using stderr option.
-Make sure there's ding program in the path.
-"
-33,"GObjects don't have to be widgets. For example, your application class can be a GObject which defines signals that other widgets connect to.
-Also, I don't think you understood the Shotwell design document correctly. It looks to me like their signalling system is 100% GObject signalling system, just with particular guarantees about the order in which signals are handled. As they say in their design document, such things are possible in plain GObject, but Vala makes it easier to code it their way.
-"
-34,"I have this piece of inelegant code that's supposed to print out something that looks like this to the console:
-However, most of the time I get this:
-I'm not sure where the problem lies with my code because occasionally it works as expected and I get the right output (which drives me crazy).
-I'm using Enthought Canopy as my IDE.
-"
-35,"I installed lxml on a mac and trying to use it in my code and I get errors importing tostring and tounicode. Python cannot see it at all. Any ideas what I am doing wrong?
-Here is the code that is causing problems - 
-I get an unresolved import error 
-Also my IDE (eclipse) is able to see the init.py file for lxml.etree module. Here is what it sees ---
-Thanks for any help.
-EDIT:
-The only log I see is 
-    Unresolved import: tostring
-    Unresolved import: tounicode
-And when I add the following line before the import of tostring it works no errors --
-    import etree from lxml
-Also to give you some more background on what I am trying to do. I got the readability code from here (https://github.com/buriy/python-readability) and trying to use it in my project. 
-EDIT2: I fixed the problem but still do not understand why. I wanted to use the code from the readability project directly without installing the package using easy_install. The idea was step into the code so that I understand what its doing. But when I copy the code into my project I get the above mentioned error in the readability code. If I install the package using easy_install then all I can simply import the class exported by readability and use it.
-So can some one tell me what the difference is between using the code directly and the package installed? What is a .egg file? How to create one?
-"
-36,"Use the group method on the match object:
-"
-37,"In case your string always contains Phone: with the phone number following it at the end, you do not need the regex. Also, note that 1-800-MALL is also a valid phone number.
-I suggest this:
-Or, in case regex is still preferable, another solution:
-"
-38,"Here's another example that was tested, and will match search & replace patterns:
-Example use:
-"
-39,"I'm trying to create a sqlite3 table using python. My code is given below:
-This code runs fine the first time I run it and my database is created. However, if I run it a second time, I get the following error:
-I have no idea what's going wrong. Can anybody help?
-"
-40,"I don't have any python interpreter here, but it should be something similar to this:
-Note: this will work for this classification, but if you want to retrieve usernames i.e. @USERNAME you will have to tweak this a little more.
-"
-41,"I am having some trouble attempting to manipulate a CSV file and appending the results to a new column.
-Essentially I have a csv file (delimited ;) with 5 columns currently (of Cartesian coords [X, Y] and components [dX, dY], and magnitude/ length). I wish to add the result of some equations, which differ depending on the value of my Cartesian components, to a 6th column in this csv file (the angle).
-Thus far my code is this (the maths is correct [hopefully], it's just the appending that I'm having trouble with):
-So essentially, I want to add the angle variable to a 6th column, for the correct line of my csv file.
-I tried to create a new list and append (e.g.):
-However, as you may have guessed I ended up with a line like this:
-Thanks for your help in advance.
-"
-42,"I assume your purpose is to create a program that starts two threads, one (client thread) receives keyboard input and sends to the other (server thread), the server thread prints out everything it received.
-Based on my assumption, you first need to start a ServerThread listen to a port (it's not like what your 'ClientThread' did). Here's an example:
-And these are the output:
-You may check here for more details about Python socket: https://docs.python.org/2/library/socket.html?#example
-"
-43,"
-Also works if it is already an absolute path:
-"
-44,"This depends on the OS and the CPU architecture. On x86 (Intel compatible) the operating system might execute HLT instructions, making the CPU wait until something interesting happens, such as a hardware interrupt. This supposedly consumes very little power. Operating systems report the time spent doing this as ""idle"" and may even assign it to a fictional ""idle"" process.
-So, when in Windows task manager you see that the System Idle Process is consuming 90% CPU what it really means is that the CPU does not have an actual a program to run 90% of the time.
-Here's a good article on the subject: What does an idle CPU do?
-"
-45,"I have a data.frame looking similar to this (except much longer and with way more colornames):
-I want the data.frame to look like this:
-I tried the following:
-In my longer data.frame I typically get the error: 
-ValueError: cannot reindex from a duplicate axis
-Can anyone help?
-Thanks very much in advance!
-"
-46,"I should have warned you more thouroghly: wxPython Phoenix is the future of wxPython (because, in contrast to classic it supports Python 3, too). That said, this does not mean everything is nice and shiny. My personal advice is to keep on going with classic (or in other words: what works now in classic, will most probably also work in Phoenix). In Phoenix, you will stumble into bugs like this more often.
-Luckily, in this special case, there has already been something else done:
-<wx.TextCtrl>.AutoComplete(â€¦) does accept a list of strings. This already works in 2.9.0/classic. See documentation for wx.TextEntry/AutoComplete.
-"
-47,"You can get the names from elements with market_listing_item_name class name located in div elements having market_listing_row class:
-Here is the contents of the output.dat file after running the script:
-"
-48,"I don't have pexpect handy to test my answer to your question, but I have a suggestion that should work and, if not, may at least get you closer.  
-Consider this command:
-What is happening?  The entire quoted string is passed as a single argument to ssh, where it is ""executed"" on the remote.  While ssh isn't explicit about what that means, exactly, we know what execv(2) does: if execve(2) fails to execute its passed arguments, the execv function will invoke /bin/sh with the same arguments (in this case, our quoted string).  The shell then evaluates the quoted string as separate arguments, detects the HereDoc redirection, and executes per usual.  
-Using that information, and taking a quick look at the pexpect.pxssh documentation, it looks like you want:
-If that doesn't work, something is munging your data.  Five minutes with strace(1) will tell you what happened to it, and you can start pointing fingers.  ;-)
-HTH.  
-"
-49,"Your code fails as you have already consumed the iterator on the first call, if you call none_context() in the with block the original code would work:
-You can see using your original code that if you add a None for each open then the code will work as expected:
-"
-50,"Since your C# program runs the python script, I guess the easiest solution would be to redirect the standard input of the python process:
-At the python script side, you just need to use built-in function raw_input like below (please note the function has been renamed to raw_input in 3.x):
-"
-51,"
-I'll try to be brief. Well.. I always try to be brief, but my level of success is pretty much random.randint(0, never). So yeah.
-Lol. You even failed to be brief about announcing that you will try to be brief.
-First, we need to be clear about what ""called into being"" means. Presumably you want a new hammer every time self.tool = object happens. You don't want a new instance every time, for example, you access the tool attribute, or you'd always a get a new, presumably unbroken, hammer every time you check self.tool.broken.
-A couple approaches.
-One, give Tool a copy method that produces a new object that should equal the original object, but be a different instance. For example:
-Then in Student's init you say
-Option two, use a factory function.
-I can't think any way in Python that you can write the line self.tool = object and have object automagically make a copy, and I don't think you want to. One thing I like about Python is WYSIWYG. If you want magic use C++. I think it makes code hard to understand when you not only can't tell what a line of code is doing, you can't even tell it's doing anything special.
-Note you can get even fancier with a factory object. For example:
-"
-52,"You might want to use pyserial, which  uses the kernel interfaces (I don't know what PyBBIO does). It provides automatic input buffering - so you don't need an extra process. If you do want to have more processes use multiprocessing. A simpler alternative is threading, which saves you the communication part. For multiprocessing with network support use Ipython's cluster
-"
-53,"Spacy gives you all of that with just using en_nlp = spacy.load('en'); doc=en_nlp(sentence). The documentation gives you details about how to access each of the elements.
-An example is given below:
-Sentences can be obtained by using doc.sents:
-Noun chunks are given by doc.noun_chunks:
-Named entity is given by doc.ents:
-Tokenization: You can iterate over the doc to get tokens. token.orth_ gives str of the token.
-POS is given by token.tag_:
-Lemmatization:
-Dependency parsing. You can traverse the parse tree by using token.dep_ token.rights or token.lefts. You can write a function to print dependencies:
-For more details please consult the spacy documentation.
-"
-54,"Given a set of points describing some trajectory in the 2D plane, I would like to provide a smooth representation of this trajectory with local high order interpolation. 
-For instance, say we define a circle in 2D with 11 points in the figure below. I would like to add points in between each consecutive pair of points in order or produce a smooth trace. Adding points on every segment is easy enough, but it produces slope discontinuities typical for a ""local linear interpolation"". Of course it is not an interpolation in the classical sense, because
-the function can have multiple y values for a given x 
-simply adding more points on the trajectory would be fine (no continuous representation is needed).
-so I'm not sure what would be the proper vocabulary for this.
-The code to produce this figure can be found below. The linear interpolation is performed with the lin_refine_implicit function. I'm looking for a higher order solution to produce a smooth trace and I was wondering if there is a way of achieving it with classical functions in Scipy? I have tried to use various 1D interpolations from scipy.interpolate without much success (again because of multiple y values for a given x).
-The end goals is to use this method to provide a smooth GPS trajectory from discrete measurements, so I would think this should have a classical solution somewhere.
-"
-55,"I'm curious about the benefits and tradeoffs of using numpy ufuncs vs. the built-in operators vs. the 'function' versions of the built-in operators.
-I'm curious about all ufuncs.  Maybe there are times when some are more useful than others.  However, I'll use < for my examples just for simplicity.
-There are several ways to 'filter' a numpy array by a single number to get a boolean array.  Each form gives the same results, but is there a preferred time/place to use one over the other?  This example I'm comparing an array against a single number, so all 3 will work.
-Consider all examples using the following array:
-'<' operator
-operator.lt
-numpy.less
-Note that all of them achieve pretty much the equivalent performance and exactly the same results.  I'm guessing that all of these calls actually end up in the same function anyway since < and operator.lt both map to __lt__ on a numpy array, which is probably implemented using numpy.less or the equivalent?
-So, which is more 'idiomatic' and 'preferred'?
-"
-56,"All I'm trying to make is a program that loops through a word or phrase character-by-character like this:
-I wrote this:
-and the output is exactly what I want:
-But, if there is a repeated letter, it'll remove both at once, like this:
-How can I make it just remove the one letter, without removing both? Can't think of a solution
-"
-57,"I like doxygen to create documentation of C or PHP code. I have an upcoming Python project and I think I remember that Python doesn't have /* .. */ comments and also has its own self-documentation facility which seems to be the pythonic way to document.
-Can I just use doxygen? Anything particular to be aware of?
-I have done some coding in Python but so far only on small projects where I was to lazy to document at all (yeah, I know ... but let's just pretend that's OK for now).
-"
-58,"An option is np.einsum
-This results in a (L, N) sized array containing matrix products of all the A[i].T.dot(B[i])
-"
-59,"You could use a dict? Something like this:  
-I didn't map out all the moves, but you get the gist
-"
-60,"Today you can also use the unipath package which was based on path.py: http://sluggo.scrapping.cc/python/unipath/
-I would recommend using this package as it offers a clean interface to common os.path utilities.
-"
-61,"
-could we call it from cPython
-No, netTcpBinding is interoperable only with WCF clients. 
-From here:
-The default configuration for the NetTcpBinding is faster than the
-  configuration provided by the WSHttpBinding, but it is intended only
-  for WCF-to-WCF communication. 
-From comments:
-does wsHttpBinding work or only basicHttpBinding work?
-Short answer is no, basicHttpBinding is the only binding (except for the web bindings) which support interoperability with non-wcf clients. Even then you may have difficulty consuming it from non-windows.
-Long answer is that the reason this is the case is because basicHttpBinding supports communication over SOAP 1.1, which is a relatively simple protocol, and most vendors have implemented it in very similar ways. Therefore, these different implementations tend to be interoperable. However, wsHttpBinding is Microsoft's attempt to support the SOAP 1.2 protocol and WS-* web service extensions, which is a much larger and more complex set of standards. So there is a much larger scope for interpretation between the various vendors, leading normally to non-interoperability between implementations. It is theoretically possible, therefore, to call an endpoint exposed over wsHttpBinding from a non-wcf (or even non-windows) client, but you would have to overcome all the niggles.
-A much better approach would be to move away from SOAP completely if possible, and just use HTTP/POX or HTTP/REST services. 
-"
-62,"I am developing a plugin in qgis. I have one interface (MMMM.py) with several buttons and one of them opens a new interface (ABC.py) where I introduce values. My objective is to read these values in the main interface (the first one). So I have a script to each interface but when I import the variables, I have several errors. I have troubles to import these variables.
-second script named ABC.py
-first (main) script named MMMM.py
-I tried some ways to import the values x and y to main interface but I have always errors. I am working in qgis.
-What I am doing wrong?
-"
-63,"If you have installed pylint into your virtualenv, editing the project-file like this should fix it
-See: https://github.com/biermeester/Pylinter#project-settings and 
-https://github.com/biermeester/Pylinter/issues/4
-"
-64,"I've written a Python package that includes a bsddb database of pre-computed values for one of the more time-consuming computations.  For simplicity, my setup script installs the database file in the same directory as the code which accesses the database (on Unix, something like /usr/lib/python2.5/site-packages/mypackage/).
-How do I store the final location of the database file so my code can access it?  Right now, I'm using a hack based on the __file__ variable in the module which accesses the database:
-dbname = os.path.join(os.path.dirname(__file__), ""database.dat"")
-It works, but it seems... hackish.  Is there a better way to do this?  I'd like to have the setup script just grab the final installation location from the distutils module and stuff it into a ""dbconfig.py"" file that gets installed alongside the code that accesses the database.
-"
-65,"I wanted something similar, but with the ability to specify how the values on duplicate keys were merged, so I hacked this out (but did not heavily test it).  Obviously this is not a single expression, but it is a single function call.
-"
-66,"
-You can simply use this regex over each line and replace by empty string.See demo.
-https://regex101.com/r/cK4iV0/17
-"
-67,"I'm trying to implement an OAuth2 authentication server and for the client part i wanted to send a json request to the server (from a Django view) and i found several libraries to do that tho' the most common are httplib2 and urllib2 i was wondering which is the difference between them and which is the best library for this purpose.
-Thanks in advance.
-Edit:
-After searching, i found an extremely useful library called Requests and i use this one since then. (http://docs.python-requests.org/en/latest/)
-"
-68,"I have a xml file ""sample.xml"" as:
-and respective dtd as ""sample.dtd"":
-I want ""sample.xml"" to get validated against ""sample.dtd"" by making use of python script. How will i achieve this? kindly help.
-"
-69,"Abuse leading to a one-expression solution for Matthew's answer:
-You said you wanted one expression, so I abused lambda to bind a name, and tuples to override lambda's one-expression limit. Feel free to cringe.
-You could also do this of course if you don't care about copying it:
-"
-70,"A common practice is to put the tests directory in the same parent directory as your module/package. So if your module was called foo.py your directory layout would look like:
-Of course there is no one way of doing it. You could also make a tests subdirectory and import the module using absolute import.
-Wherever you put your tests, I would recommend you use nose to run them. Nose searches through your directories for tests. This way, you can put tests wherever they make the most sense organizationally.
-"
-71,"You could actually pull this off, but it would require using metaclasses, which are deep magic (there be dragons). If you want an intro to metaclasses, there's a series of articles from IBM which manage to introduce the ideas without melting your brain.
-The source code from an ORM like SQLObject might help, too, since it uses this same kind of declarative syntax.
-"
-72,"Since you are recursing through subdirectories, use os.walk:
-"
-73,"The growing complexity of this answer over time, and the many hacks required, probably ought to caution you against doing this at all. It's relying on undocumented internal implementation details of the admin, is likely to break again in future versions of Django, and is no easier to implement than just finding another JS calendar widget and using that.
-That said, here's what you have to do if you're determined to make this work:
-Define your own ModelForm subclass for your model (best to put it in forms.py in your app), and tell it to use the AdminDateWidget / AdminTimeWidget / AdminSplitDateTime (replace 'mydate' etc with the proper field names from your model):
-Change your URLconf to pass 'form_class': ProductForm instead of 'model': Product to the generic create_object view (that'll mean ""from my_app.forms import ProductForm"" instead of ""from my_app.models import Product"", of course).
-In the head of your template, include {{ form.media }} to output the links to the Javascript files.
-And the hacky part: the admin date/time widgets presume that the i18n JS stuff has been loaded, and also require core.js, but don't provide either one automatically.  So in your template above {{ form.media }} you'll need:
-You may also wish to use the following admin CSS (thanks Alex for mentioning this):
-This implies that Django's admin media (ADMIN_MEDIA_PREFIX) is at /media/admin/ - you can change that for your setup.  Ideally you'd use a context processor to pass this values to your template instead of hardcoding it, but that's beyond the scope of this question.
-This also requires that the URL /my_admin/jsi18n/ be manually wired up to the django.views.i18n.javascript_catalog view (or null_javascript_catalog if you aren't using I18N).  You have to do this yourself instead of going through the admin application so it's accessible regardless of whether you're logged into the admin (thanks Jeremy for pointing this out).  Sample code for your URLconf:
-Lastly, if you are using Django 1.2 or later, you need some additional code in your template to help the widgets find their media:
-Thanks lupefiasco for this addition.
-"
-74,"There is no need to write a context processor for the user object if you already have the ""django.core.context_processors.auth"" in TEMPLATE_CONTEXT_PROCESSORS and if you're using RequestContext in your views. 
-if you are using django 1.4 or latest the module has been moved to django.contrib.auth.context_processors.auth
-"
-75,"You can sort the dataFrame by count and then remove duplicates. I think it's easier:
-"
-76,"Have a look at BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/
-You can request a website and then read the HTML source code from it:
-If you want to read JavaScript, look into Headless Browsers.
-"
-77,"This is by the way a terrible idea, since you already have begun using gitpython, and I have never tried working with that, but I just really want to let you know, that you can do it without cloning it in local, without using gitpython.
-Simply run the git command, in a shell, using subprocess..
-running bash commands in python
-edit: added some demonstration code, of reading stdout and writing stdin.
-some of this is stolen from here:
-http://eyalarubas.com/python-subproc-nonblock.html
-The rest is a small demo..
-first two prerequisites
-shell.py
-nbstreamreader.py:
-then the actual code:
-"
-78,"
-Basically you iterate over the outer list and unpack the first level of any inner lists until there are no inner lists left
-"
-79,"For bash, This was already answered at Run all Python files in a directory
-You can run:
-If you're on Powershell, You can use:
-EDIT: Like Duncan said, This is a shorter solution on Powershell:
-"
-80,"Add an optional quantifier ? to the value part so that it is matched zero or one time
-Changes made
-Moved the = to a non capturing group (?:..)
-(?:=(?P<val>.+))? Matched zero or one time. This is ensured by the ?. That is it checks if =value can be matched (capturing only the value part). If not None is captured.
-"
-81,"I wish to check if in a text file of points (x,y,z, etc) where is an header (True) or not (False). I wish to know if there is a built-in function in Python or a better method respect my own function.
-i wrote this function 
-example
-"
-82,"How about this. 
-"
-83,"Runs in 0.7 secs. Faster than most solutions mentioned, though bit clumsy.
-The solution printed is:
-"
-84,"Take advantage of algebra:
-Knowing that, you only have to bother generating the values:
-If you need to filter things out by some criteria, you can easily write a filter function:
-If you wanted to shorten things a bit, you could re-write your function so that it returns the valid pair, or None otherwise.
-Or, just create a generator and iterate over that:
-If you want to allow zero padded numbers in b then you can use this filter:
-"
-85,"I am using Boto in Python to connect to Amazon MWS. I have successfully connected using their scripts but am having trouble parsing the response as I don't fully understand the documentation, and there are little to no examples on the internet. I am new to Python.
-Here is how I get my response from MWS:
-The first product gives a response of this:
-My Issue is trying to get the details from the ItemAttributes:
-At this point I believe it is a dictionary object.
-As I am new to this language I can't figure out how to get all the information that is located in the () such as Brand, Studio, etc.
-Boto has some built in functions such as Response and ResponseFactory, but I am lost again as I keep hitting a wall trying to get info such as Brand, etc..
-Thank you again for any help you can give in this.
-"
-86,"Hello I am new to Python. I have over 5000 .csv.gz files to be loaded on vertica data base. The server disconnects after 10 minutes, thus all 5000 files cannot be copied without re-setting the server connection.
-I have two basic problems here:
-How can I keep track of copy commands successfully executed?
-How can I re-set the connection and restart from last failed command?
-The code I am using is:
-"
-87,"I can test the rank of a matrix using np.linalg.matrix_rank(A) . But how can I test if all the rows of A are orthogonal efficiently?
-I could take all pairs of rows and compute the inner product between them but is there a better way?
-My matrix has fewer rows than columns and the rows are not unit vectors.
-"
-88,"To import a module from a given filename, you can temporarily extend the path, and restore the system path in the finally block reference:
-"
-89,"One way to fix it is to modify the helper function to:
-"
-90,"As pointed out by 0MQ founder Pieter Hintjens in this answer, the PUSH-PULL mechanism is not a load balancer, but rather a simple round robin distributor. That's a typo in the docs that is still there.
-That said, for the load balancing pattern you need to add a broker in the middle of your architecture. As pointed out by Jason in the comments, this is well explained in the official guide. There are also examples in Python.
-The main idea is to have the workers sending a small ""READY"" message to the broker whenever they are free to receive more jobs. The broker in turns, keep ""pointers"" to free workers in a queue. When he receives a new job request from a client he also propagates the request to the first free worker in the queue, which gets popped out from the queue. As you can see in the picture above, the broker exploits ROUTER sockets in order to avoid a blocking behavior and to get proper load balancing. A small additional detail is that the broker does not poll the clients if there are not free workers in the queue.
-This is the simplest way I am aware of for implementing a load balancing pattern with ZeroMQ. It is not exactly like ""polling"" for new jobs in the queue, but I think this is what you need. Also please beware that this is really the simplest way, that is, it is not reliable at all and it does not scale well as is. If you also need reliability, I suggest you to thoroughly read Chapter 4 of the official guide.
-As a side note, maybe you should seriously consider Celery for this task. I am really in love with ZeroMQ, however this is exactly the kind of thing that Celery is very good at, and in my opinion it is not so difficult to learn, as someone may think.
-"
-91,"This is based off of Oblivion's answer but I edited it so it worked for me.
-I made a new listbox class that was based off of the original one but had a new function that I got from Oblivion's code. I then call that function and it makes the listbox an appropriate size.
-"
-92,"i want know witch device connect to witch usb port in ubuntu ...
-for example when i connect bluetooth dongle to usb i wnat know that Bluetooth connected tu witch usb port ...
-when i run 
-tail -f /var/log/messages
-in can see usb port number like this :
-Jul 27 20:51:58 Smart-Installer kernel: [  711.363300] usb 1-1.2: New USB device found, idVendor=0a12, idProduct=0001
-  Jul 27 20:51:58 Smart-Installer kernel: [  711.363331] usb 1-1.2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
-i want get usb 1-1.2 programmatically via python
-i know lsusb -t get me port but i want also device number and -t get me a few data
-"
-93,"You're using Python 2. In Python 2, input takes your input and tries to evaluate it. You want to use raw_input.
-"
-94,"Assuming both Latitude and Longitude are Integers:
-Try This.
-Your mistake is that you are not concatenating the strings properly.
-"
-95,"If you want to use Django's ORM without using the full Django suite, then you need to configure it before you run.
-You can create a django settings file and point the DJANGO_SETTINGS_MODULE environment variable to it, or you can call settings.configure.
-The documentation explains this here. It's pretty straightforward:
-Note that if you're only interested in default settings, you probably don't actually need to pass any settings in there.
-"
-96,"I have a use case where I have to send_email to user in my views. Now the user who submitted the form will not receive an HTTP response until the email has been sent . I do not want to make the user wait on the send_mail. So i want to send the mail asynchronously without caring of the email error.  I am using using celery for sending mail async but i have read that it may be a overkill for simpler tasks like this. How can i achieve the above task without using celery
-"
-97,"You're over-thinking this and confusing yourself. This appears to be a representation of a directed graph: it looks like edges is a list of Edges, and each Edge has a headNodeId and a tailNodeId. Each of those IDs refers to a Node in the nodes list.
-So all that's happening when you say nodes[ edges[-1].headNodeId ] is ""give me the item from 'nodes' whose index is the head node ID of the last item in 'edges'"". Then, the code is simply calling addInEdge on that Node.
-A much more verbose version of this would be:
-"
-98,"I'm testing a web application using Django-nose to monitor the code coverage. At first it worked perfectly well, but when trying to generate HTML it fails with the error:
-Imput error: No module named copy_reg
-It happened after a few times (until then in worked). I tried it on a computer with newly installed django, django-nose and coverage and the very same code works fine. Re-installing django and django-nose didn't help.
-Any suggestions? Should I re-install any library or something?
-Thank you in advance!
-"
-99,"A general answer involves using a Manager object. Adapted from the docs:
-Output:
-Original answer: Python multiprocessing: How do I share a dict among multiple processes?
+0,"When asked to create system XYZ and you ask to do it in Python over PHP or Ruby, what are the main features you can mention when they require you to explain it?
+"
+1,"I would consider that using python on a new project is completely dependent on what problem you are trying to solve with python.  If you want someone to agree with you that you should use python, then show them how python's features apply specifically to that problem.
+In the case of web development with python, talk about WSGI and other web libraries and frameworks you could use that would make your life easier.  One note for python is that most of the frameworks for python web development can be plugged right into any current project. With ruby on rails, you're practically working in a DSL that anyone who uses your project will have to learn.  If they know python, then they can figure out what you are doing with django, etc in a day.
+I'm only talking about web development because it appears that's what you are going to be working on seeing ruby, python and PHP in the same list.  The real message that's important is applying to whatever it is you like about python directly to some problem you are trying to solve.
+"
+2,"I agree with mreggen. Tell them by working in Python you can get things done faster. Getting things done faster possibly means money saved by the client. In the least it means that you are working with a language you a more comfortable in, meaning faster development, debugging, and refactoring time. There will be less time spent looking up documentation on what function to use to find the length of a string, etc. 
+"
+3,"It's one of the preferred languages over at Google - It's several years ahead of Ruby in terms of ""maturity"" (what ever that really means - but managers like that). Since it's prefered by Google you can also run it on the Google App Engine.
+Mircosoft is also embracing Python, and will have a v2.0 of IronPython coming out shortly. They are working on a Ruby implementation as well, but the Python version is way ahead, and is actually ""ready for primetime"". That give you the possibility for easy integration with .NET code, as well as being able to write client side RIAs in Python when Silverlight 2 ships.
+"
+4,"The best sell of Python I've ever seen was by a manager in our group who had a young daughter.  He used a quote attributed to Einstein:
+If you can't explain something to a six-year-old, you really don't understand it yourself.
+The next few slides of his presentation demonstrated how he was able to teach his young daughter some basic Python in less than 30 minutes, with examples of the code she wrote and an explanation of what it did.
+He ended the presentation with a picture of his daughter and her quote ""Programming is fun!""
+I would focus on Python's user friendliness and wealth of libraries and frameworks.  There are also a lot of little libraries that you might not get in other languages, and would have to write yourself (i.e. How a C++ developer writes Python).
+Good luck!
+"
+5,"Give them a snippet of code in each (no more than a page) that performs some cool function that they will like. (e.g show outliers in a data set).
+Show them each page. One in PHP, Ruby and Python.
+Ask them which they find easiest to understand/read.
+Tell them thats why you want to use Python. It's easier to read if you've not written it, more manageable, less buggy and quicker to build features because it is the most elegant (pythonic)
+"
+6,"Though All 3 languages are versatile and used worldwide by programmers, Python still have some advantages over the other two. Like From my personal experience :-
+Non-programmers love it (most of 'em choose Python as their first computer language,check this infographic php vs python vs ruby here)
+Multiple frameworks (You can automate your system tasks, can develop apps for web and windows/mac/android OSes)
+Making OpenCV apps easily than MATLAB 
+Testing done easy (you can work on Selenium for all kind of web testing)
+OOPS concepts are followed by most languages now , so how come Python can stay behind! Inheritance, Abstraction and Encapsulation are followed by Python as well.
+Python as of now is divided into two versions popularly that are not much different in terms of performance but features. Python2.x and Python 3.x both have same syntax ,except for some statements like :-
+print ""..."" in Python2.x and print() in Python3.x
+raw_input() in Python2.x and input() in Python3.x (for getting user input)
+In the end, client only cares about money and Python helps you save a lot as compared to PHP and Ruby , because instead of hiring experienced programmers , you can make a newbie learn and use Python expertly.
+"
+7,"This is one of those cases that really boil down to personal preference or situational details. If you're more comfortable and experienced with Python, then say so. Are they asking you to justify it because they're more comfortable with one of the other environments? After you're done, will the system be passed off to someone else for long-term maintenance?
+If they ask you to use a technology or language that you're not as familiar with, then make sure they know up-front that it's going to take you longer.
+"
+8,"Focus on the shorter time needed for development/prototype and possibly easier maintenance (none of this may apply against Ruby).
+"
+9,"The problem for me wasn't in Apache set up, but in understanding how mod_apache actually uses the .py files. Module-level statements (including those in a if __name__=='__main__' section) are not executed--I assumed that the stdout from running the script at the commandline would be what the server would output, but that's not how it works.
+Instead, I wrote a module-level function called index(), and had it return as a string the HTML of the page. It's also possible to have other module-level functions (e.g., otherFunction()) that can be accessed as further segments in the URI (e.g., testScript/otherFunction for the file testScript.py.)
+Obviously, this makes more sense than my original stdout conception. Better capability of actually using Python as a scripting language and not a humongous markup language.
+"
+10,"Are you running Python on UNIX or Windows?
+An alternative to mod_python and FastCGI is mod_wsgi. You can find out more at modwsgi
+I have built and installed this on Solaris without problems. I had previously tried mod_python but ran into problems with shared libraries as part of the build. There are good install docs available.
+"
+11,"I tried to follow a couple of googled up tutorials on setting up mod_python, but failed every time. Do you have a good, step-by step, rock-solid howto?
+My dev box is OS X, production - Centos.
+"
+12,"Yes, mod_python is pretty confusing to set up.  Here's how I did it.
+In httpd.conf:
+and in your application directory:
+Repeat the configuration for each python program you wish to have running under mod_python.
+"
+13,"There are two main ways of running Python on Apache. The simplest would be to use CGI and write normal Python scripts while the second is using a web framework like Django or Pylons.
+Using CGI is straightforward. Make sure your Apache config file has a cgi-bin set up. If not, follow their documentation (http://httpd.apache.org/docs/2.0/howto/cgi.html). At that point all you need to do is place your Python scripts in the cgi-bin directory and the standard output will become the HTTP response. Refer to Python's documentation for further info (https://docs.python.org/library/cgi.html).
+If you want to use a web framework you'll need to setup mod_python or FastCGI. These steps are dependent on which framework you want to use. Django provides clear instructions on how to setup mod_python and Django with Apache (http://www.djangoproject.com/documentation/modpython/)
+"
+14,"I'm downloading an entire directory from a web server. It works OK, but I can't figure how to get the file size before download to compare if it was updated on the server or not. Can this be done as if I was downloading the file from a FTP server?
+@Jon: thank for your quick answer. It works, but the filesize on the web server is slightly less than the filesize of the downloaded file. 
+Examples:
+It has anything to do with the CR/LF conversion?
+"
+15,"The size of the file is sent as the Content-Length header. Here is how to get it with urllib:
+"
+16,"Using the returned-urllib-object method info(), you can get various information on the retrived document. Example of grabbing the current Google logo:
+It's a dict, so to get the size of the file, you do urllibobject.info()['Content-Length']
+And to get the size of the local file (for comparison), you can use the os.stat() command:
+"
+17,"Also if the server you are connecting to supports it, look at Etags and the If-Modified-Since and If-None-Match headers.
+Using these will take advantage of the webserver's caching rules and will return a 304 Not Modified status code if the content hasn't changed.
+"
+18,"I have reproduced what you are seeing:
+Outputs this:
+What am I doing wrong here? Is os.stat().st_size not returning the correct size?
+Edit:
+OK, I figured out what the problem was:
+this outputs:
+Make sure you are opening both files for binary read/write.
+"
+19,"In Python3:
+"
+20,"A requests-based solution using HEAD instead of GET (also prints HTTP headers):
+Usage
+"
+21,"For a python3 (tested on 3.5) approach I'd recommend:
+"
+22,"Basically, I've written an API to www.thetvdb.com in Python. The current code can be found here.
+It grabs data from the API as requested, and has to store the data somehow, and make it available by doing:
+What is the ""best"" way to abstract this data within the Tvdb() class?
+I originally used a extended Dict() that automatically created sub-dicts (so you could do x[1][2][3][4] = ""something"" without having to do if x[1].has_key(2): x[1][2] = [] and so on)
+Then I just stored the data by doing self.data[show_id][season_number][episode_number][attribute_name] = ""something""
+This worked okay, but there was no easy way of checking if x[3][24] was supposed to exist or not (so I couldn't raise the season_not_found exception).
+Currently it's using four classes: ShowContainer, Show, Season and Episode. Each one is a very basic dict, which I can easily add extra functionality in (the search() function on Show() for example). Each has a __setitem__, __getitem_ and has_key.
+This works mostly fine, I can check in Shows if it has that season in it's self.data dict, if not, raise season_not_found. I can also check in Season() if it has that episode and so on.
+The problem now is it's presenting itself as a dict, but doesn't have all the functionality, and because I'm overriding the __getitem__ and __setitem__ functions, it's easy to accidentally recursively call __getitem__ (so I'm not sure if extending the Dict class will cause problems).
+The other slight problem is adding data into the dict is a lot more work than the old Dict method (which was self.data[seas_no][ep_no]['attribute'] = 'something'). See _setItem and _setData. It's not too bad, since it's currently only a read-only API interface (so the users of the API should only ever retrieve data, not add more), but it's hardly... Elegant.
+I think the series-of-classes system is probably the best way, but does anyone have a better idea for storing the data? And would extending the ShowContainer/etc classes with Dict cause problems?
+"
+23,"Bartosz/To clarify ""This worked okay, but there was no easy way of checking if x[3][24] was supposed to exist or not""
+x['some show'][3][24] would return season 3, episode 24 of ""some show"". If there was no season 3, I want the pseudo-dict to raise tvdb_seasonnotfound, if ""some show"" doesn't exist, then raise tvdb_shownotfound
+The current system of a series of classes, each with a __getitem__ - Show checks if self.seasons.has_key(requested_season_number), the Season class checks if self.episodes.has_key(requested_episode_number) and so on.
+It works, but it there seems to be a lot of repeated code (each class is basically the same, but raises a different error)
+"
+24,"I don't get this part here:
+This worked okay, but there was no easy way of checking if x[3][24] was supposed to exist or not (so I couldn't raise the season_not_found exception)
+There is a way to do it - called in:
+what seems to be the problem with that?
+"
+25,"I have done something similar in the past and used an in-memory XML document as a quick and dirty hierachical database for storage. You can store each show/season/episode as an element (nested appropriately) and attributes of these things as xml attributes on the elements. Then you can use XQuery to get info back out.
+NOTE: I'm not a Python guy so I don't know what your xml support is like.
+NOTE 2: You'll want to profile this because it'll be bigger and slower than the solution you've already got. Likely enough if you are doing some high-volume processing then XML is probably not going to be your friend.
+"
+26,"Why not use SQLite? There is good support in Python and you can write SQL queries to get the data out. Here is the Python docs for sqlite3
+If you don't want to use SQLite you could do an array of dicts.
+That way you add metadata to any record and search it very easily
+"
+27,"OK, what you need is classobj from new module. That would allow you to construct exception classes dynamically (classobj takes a string as an argument for the class name). 
+this gives you:
+remember that you can always get the class name through:
+So, after some string mangling and concatenation, you should be able to obtain appropriate exception class name and construct a class object using that name and then raise that exception.
+P.S. - you can also raise strings, but this is deprecated.
+"
+28,"Is there a way, when I parse an XML document using lxml, to validate that document against its DTD using an external catalog file?   I need to be able to work the fixed attributes defined in a documentâ€™s DTD.
+"
+29,"Can you give an example? According to the lxml validation docs, lxml can handle DTD validation (specified in the XML doc or externally in code) and system catalogs, which covers most cases I can think of.
+"
+30,"It seems that lxml does not expose this libxml2 feature, grepping the source only turns up some #defines for the error handling:
+From the catalog implementation in libxml2 page it seems possible that the 'transparent' handling through installation in /etc/xml/catalog may still work in lxml, but if you need more than that you can always abandon lxml and use the default python bindings, which do expose the catalog functions.
+"
+31,"You can add the catalog to the XML_CATALOG_FILES environment variable:
+See this thread. Note that entries in XML_CATALOG_FILES are space-separated URLs. You can use Python's pathname2url and urljoin (with file:) to generate the URL from a pathname.
+"
+32,"Is it possible to write a doctest unit test that will check that an exception is raised?
+For example, if I have a function foo(x) that is supposed to raise an exception if x<0, how would I write the doctest for that? 
+"
+33,"Yes. You can do it. The doctest module documentation and Wikipedia has an example of it.
+"
+34,"
+ellipsis flag # doctest: +ELLIPSIS is not required to use ... in Traceback doctest 
+"
+35,"Keep a look out for ASP.NET MVC
+The IronRuby guys have got some internal builds of MVC to work with IronRuby, and IronPython 2 and IronRuby have a lot of code in common with the DLR.
+I'm not sure if they'll support IronPython/IronRuby when MVC is released, but it's definitely worth keeping your eye on anyway - The old ASP.NET forms-based development model is old, busted, and the sooner it goes away the better.
+"
+36,"Check out the Dynamic Languages in ASP.NET page on Codeplex. This has the newest IronPython bits. It doesn't give you any Visual Studio integration, other than the sample website project, but that's coming.
+"
+37,"The current version of ASP.NET integration for IronPython is not very up-to-date and is more of a ""proof-of-concept."" I don't think I'd build a production website based on it.
+Edit:: I have a very high level of expectation for how things like this should work, and might setting the bar a little high.  Maybe you should take what's in ""ASP.NET Futures"", write a test application for it and see how it works for you.  If you're successful, I'd like to hear about it.  Otherwise, I think there should be a newer CTP of this in the next six months.
+(I'm a developer on IronPython and IronRuby.)
+Edit 2: Since I originally posted this, a newer version has been released.
+"
+38,"Has anyone built a website with IronPython and ASP.NET.  What were your experiences and is the combination ready for prime-time?
+"
+39,"I'd like to have a python program alert me when it has completed its task by making a beep noise.  Currently,  I use import os and then use a command line speech program to say ""Process complete.""  I much rather it be a simple ""bell.""
+I know that there's a function that can be used in Cocoa apps, NSBeep, but I don't think that has much anything to do with this.
+I've also tried print(\a) but that didn't work.
+I'm using a Mac, if you couldn't tell by my Cocoa comment, so that may help.
+Thanks!
+"
+40,"Have you tried :
+That works for me here on Mac OS 10.5
+Actually, I think your original attempt works also with a little modification:
+(You just need the single quotes around the character sequence).
+"
+41,"I had to turn off the ""Silence terminal bell"" option in my active Terminal Profile in iTerm for print('\a') to work. It seemed to work fine by default in Terminal.
+You can also use the Mac module Carbon.Snd to play the system beep:
+The Carbon modules don't have any documentation, so I had to use help(Carbon.Snd) to see what functions were available. It seems to be a direct interface onto Carbon, so the docs on Apple Developer Connection probably help.
+"
+42,"If you have PyObjC (the Python - Objective-C bridge) installed or are running on OS X 10.5's system python (which ships with PyObjC), you can do
+to play the system alert.
+"
+43,"I tried the mixer from the pygame module, and it works fine. First install the module:
+Then in the program, write this:
+With pygame you have a lot of customization options, which you may additionally experiment with.
+"
+44,"Building on Barry Wark's answer...
+NSBeep() from AppKit works fine, but also makes the terminal/app icon in the taskbar jump.
+A few extra lines with NSSound() avoids that and gives the opportunity to use another sound:
+Standard sound files can be found via commandline locate /System/Library/Sounds/*.aiff
+The file used by NSBeep() seems to be '/System/Library/Sounds/Funk.aiff'
+"
+45,"If I call os.stat() on a broken symlink, python throws an OSError exception. This makes it useful for finding them. However, there are a few other reasons that os.stat() might throw a similar exception. Is there a more precise way of detecting broken symlinks with Python under Linux?
+"
+46,"Can I mention testing for hardlinks without python? /bin/test has the FILE1 -ef FILE2 condition that is true when files share an inode.
+Therefore, something like find . -type f -exec test \{} -ef /path/to/file \; -print works for hard link testing to a specific file.
+Which brings me to reading man test and the mentions of -L and -h which both work on one file and return true if that file is a symbolic link, however that doesn't tell you if the target is missing.
+I did find that head -0 FILE1 would return an exit code of 0 if the file can be opened and a 1 if it cannot, which in the case of a symbolic link to a regular file works as a test for whether it's target can be read.
+"
+47,"I'm not a python guy but it looks like os.readlink()?  The logic I would use in perl is to use readlink() to find the target and the use stat() to test to see if the target exists.
+Edit: I banged out some perl that demos readlink.  I believe perl's stat and readlink and python's os.stat() and os.readlink()are both wrappers for the system calls, so this should translate reasonable well as proof of concept code:
+"
+48,"os.lstat() may be helpful. If lstat() succeeds and stat() fails, then it's probably a broken link.
+"
+49,"os.path
+You may try using realpath() to get what the symlink points to, then trying to determine if it's a valid file using is file.
+(I'm not able to try that out at the moment, so you'll have to play around with it and see what you get)
+"
+50,"A common Python saying is that it's easier to ask forgiveness than permission.  While I'm not a fan of this statement in real life, it does apply in a lot of cases.  Usually you want to avoid code that chains two system calls on the same file, because you never know what will happen to the file in between your two calls in your code.
+A typical mistake is to write something like:
+The second call (os.unlink) may fail if something else deleted it after your if test, raise an Exception, and stop the rest of your function from executing.  (You might think this doesn't happen in real life, but we just fished another bug like that out of our codebase last week - and it was the kind of bug that left a few programmers scratching their head and claiming 'Heisenbug' for the last few months)
+So, in your particular case, I would probably do:
+The annoyance here is that stat returns the same error code for a symlink that just isn't there and a broken symlink.
+So, I guess you have no choice than to break the atomicity, and do something like
+"
+51,"This is not atomic but it works.
+os.path.islink(filename) and not os.path.exists(filename)
+Indeed by RTFM
+ (reading the fantastic manual) we see
+os.path.exists(path)
+Return True if path refers to an existing path. Returns False for  broken symbolic links.
+It also says:
+On some platforms, this function may return False if permission is not granted to execute os.stat() on the requested file, even if the path physically exists.
+So if you are worried about permissions, you should add other clauses.
+"
+52,"I had a similar problem: how to catch broken symlinks, even when they occur in some parent dir?  I also wanted to log all of them (in an application dealing with a fairly large number of files), but without too many repeats.
+Here is what I came up with, including unit tests.
+fileutil.py:
+Unit tests:
+"
+53,"I've got two models: Message and Attachment. Each attachment is attached to a specific message, using a ForeignKey on the Attachment model. Both models have an auto_now DateTimeField called updated. I'm trying to make it so that when any attachment is saved, it also sets the updated field on the associated message to now. Here's my code:
+Will this work, and if you can explain it to me, why? If not, how would I accomplish this?
+"
+54,"Proper version to work is: (attention to last line self.message.save())
+"
+55,"You would also need to then save the message.  Then it that should work.
+"
+56,"DateTime fields with auto_now are automatically updated upon calling save(), so you do not need to update them manually. Django will do this work for you.
+"
+57,"How do I go about specifying and using an ENUM in a Django model?
+"
+58,"There're currently two github projects based on adding these, though I've not looked into exactly how they're implemented:
+Django-EnumField:
+Provides an enumeration Django model field (using IntegerField) with reusable enums and transition validation. 
+Django-EnumFields:
+This package lets you use real Python (PEP435-style) enums with Django.
+I don't think either use DB enum types, but they are in the works for first one.
+"
+59,"A the top of your models.py file, add this line after you do your imports:
+"
+60,"From the Django documentation:
+And you define a charfield in your model :
+You can do the same with integer fields if you don't like to have letters
+in your db.
+In that case, rewrite your choices:
+"
+61,"http://www.b-list.org/weblog/2007/nov/02/handle-choices-right-way/
+This is another nice and easy way of implementing enums although it doesn't really save enums in the database.
+However it does allow you to reference the 'label' whenever querying or specifying defaults as opposed to the top-rated answer where you have to use the 'value' (which may be a number).
+"
+62,"Setting choices on the field will allow some validation on the Django end, but it won't define any form of an enumerated type on the database end.
+As others have mentioned, the solution is to specify db_type on a custom field.
+If you're using a SQL backend (e.g. MySQL), you can do this like so:
+Run syncdb, and inspect your table to see that the ENUM was created properly.
+"
+63,"Using the choices parameter won't use the ENUM db type; it will just create a VARCHAR or INTEGER, depending on whether you use choices with a CharField or IntegerField.  Generally, this is just fine.  If it's important to you that the ENUM type is used at the database level, you have three options:
+Use ""./manage.py sql appname"" to see the SQL Django generates, manually modify it to use the ENUM type, and run it yourself.  If you create the table manually first, ""./manage.py syncdb"" won't mess with it.
+If you don't want to do this manually every time you generate your DB, put some custom SQL in appname/sql/modelname.sql to perform the appropriate ALTER TABLE command.
+Create a custom field type and define the db_type method appropriately.
+With any of these options, it would be your responsibility to deal with the implications for cross-database portability.  In option 2, you could use database-backend-specific custom SQL to ensure your ALTER TABLE is only run on MySQL.  In option 3, your db_type method would need to check the database engine and set the db column type to a type that actually exists in that database.
+UPDATE: Since the migrations framework was added in Django 1.7, options 1 and 2 above are entirely obsolete. Option 3 was always the best option anyway. The new version of options 1/2 would involve a complex custom migration using SeparateDatabaseAndState -- but really you want option 3.
+"
+64,"If you really want to use your databases ENUM type:
+Use Django 1.x
+Recognize your application will only work on some databases.
+Puzzle through this documentation page:http://docs.djangoproject.com/en/dev/howto/custom-model-fields/#howto-custom-model-fields
+Good luck!
+"
+65,"One easy solution to the GIL is the multiprocessing module. It can be used as a drop in replacement to the threading module but uses multiple Interpreter processes instead of threads. Because of this there is a little more overhead than plain threading for simple things but it gives you the advantage of real parallelization if you need it.
+It also easily scales to multiple physical machines.
+If you need truly large scale parallelization than I would look further but if you just want to scale to all the cores of one computer or a few different ones without all the work that would go into implementing a more comprehensive framework, than this is for you.
+"
+66,"I've been trying to wrap my head around how threads work in Python, and it's hard to find good information on how they operate. I may just be missing a link or something, but it seems like the official documentation isn't very thorough on the subject, and I haven't been able to find a good write-up.
+From what I can tell, only one thread can be running at once, and the active thread switches every 10 instructions or so?
+Where is there a good explanation, or can you provide one? It would also be very nice to be aware of common problems that you run into while using threads with Python.
+"
+67,"Use threads in python if the individual workers are doing I/O bound operations. If you are trying to scale across multiple cores on a machine either find a good IPC framework for python or pick a different language.
+"
+68,"Python's a fairly easy language to thread in, but there are caveats.  The biggest thing you need to know about is the Global Interpreter Lock.  This allows only one thread to access the interpreter.  This means two things:  1)  you rarely ever find yourself using a lock statement in python and 2) if you want to take advantage of multi-processor systems, you have to use separate processes.  EDIT:  I should also point out that you can put some of the code in C/C++ if you want to get around the GIL as well.
+Thus, you need to re-consider why you want to use threads.  If you want to parallelize your app to take advantage of dual-core architecture, you need to consider breaking your app up into multiple processes.
+If you want to improve responsiveness, you should CONSIDER using threads.  There are other alternatives though, namely microthreading.  There are also some frameworks that you should look into:
+stackless python
+greenlets
+gevent
+monocle
+"
+69,"Below is a basic threading sample. It will spawn 20 threads; each thread will output its thread number. Run it and observe the order in which they print.
+As you have hinted at Python threads are implemented through time-slicing. This is how they get the ""parallel"" effect. 
+In my example my Foo class extends thread, I then implement the run method, which is where the code that you would like to run in a thread goes. To start the thread you call start() on the thread object, which will automatically invoke the run method...
+Of course, this is just the very basics. You will eventually want to learn about semaphores, mutexes, and locks for thread synchronization and message passing.
+"
+70,"Try to remember that the GIL is set to poll around every so often in order to do show the appearance of multiple tasks. This setting can be fine tuned, but I offer the suggestion that there should be work that the threads are doing or lots of context switches are going to cause problems.
+I would go so far as to suggest multiple parents on processors and try to keep like jobs on the same core(s).
+"
+71,"Yes, because of the Global Interpreter Lock (GIL) there can only run one thread at a time. Here are some links with some insights about this:
+http://www.artima.com/weblogs/viewpost.jsp?thread=214235
+http://smoothspan.wordpress.com/2007/09/14/guido-is-right-to-leave-the-gil-in-python-not-for-multicore-but-for-utility-computing/
+From the last link an interesting quote:
+Let me explain what all that means. 
+  Threads run inside the same virtual
+  machine, and hence run on the same
+  physical machine.  Processes can run
+  on the same physical machine or in
+  another physical machine.  If you
+  architect your application around
+  threads, you’ve done nothing to access
+  multiple machines.  So, you can scale
+  to as many cores are on the single
+  machine (which will be quite a few
+  over time), but to really reach web
+  scales, you’ll need to solve the
+  multiple machine problem anyway.
+If you want to use multi core, pyprocessing defines an process based API to do real parallelization. The PEP also includes some interesting benchmarks.
+"
+72,"I am developing a GPL-licensed application in Python and need to know if the GPL allows my program to use proprietary plug-ins. This is what the FSF has to say on the issue:
+If a program released under the GPL uses plug-ins, what are the requirements for the licenses of a plug-in?
+It depends on how the program invokes its plug-ins. If the program uses fork and exec to invoke plug-ins, then the plug-ins are separate programs, so the license for the main program makes no requirements for them.
+If the program dynamically links plug-ins, and they make function calls to each other and share data structures, we believe they form a single program, which must be treated as an extension of both the main program and the plug-ins. This means the plug-ins must be released under the GPL or a GPL-compatible free software license, and that the terms of the GPL must be followed when those plug-ins are distributed.
+If the program dynamically links plug-ins, but the communication between them is limited to invoking the ‘main’ function of the plug-in with some options and waiting for it to return, that is a borderline case. 
+The distinction between fork/exec and dynamic linking, besides being kind of artificial, doesn't carry over to interpreted languages: what about a Python/Perl/Ruby plugin, which gets loaded via import or execfile?
+(edit: I understand why the distinction between fork/exec and dynamic linking, but it seems like someone who wanted to comply with the GPL but go against the ""spirit"" --I don't-- could just use fork/exec and interprocess communication to do pretty much anything).
+The best solution would be to add an exception to my license to explicitly allow the use of proprietary plugins, but I am unable to do so since I'm using Qt/PyQt which is GPL.
+"
+73,"@Daniel The distinction between fork/exec and dynamic linking, besides being kind of artificial, doesn't carry over to interpreted languages: what about a Python/Perl/Ruby plugin, which gets loaded via import or execfile?
+I'm not sure that the distinction is artificial. After a dynamic load the plugin code shares an execution context with the GPLed code. After a fork/exec it does not.
+In anycase I would guess that importing causes the new code to run in the same execution context as the GPLed bit, and you should treat it like the dynamic link case. No?
+"
+74,"How much info are you sharing between the Plugins and the main program? If you are doing anything more than just executing them and waiting for the results (sharing no data between the program and the plugin in the process) then you could most likely get away with them being proprietary, otherwise they would probably need to be GPL'd.
+"
+75,"
+he distinction between fork/exec and dynamic linking, besides being kind of artificial,
+I don't think its artificial at all.  Basically they are just making the division based upon the level of integration.  If the program has ""plugins"" which are essentially fire and forget with no API level integration, then the resulting work is unlikely to be considered a derived work.  Generally speaking a plugin which is merely forked/exec'ed would fit this criteria, though there may be cases where it does not.  This case especially applies if the ""plugin"" code would work independently of your code as well.
+If, on the other hand, the code is deeply dependent upon the GPL'ed work, such as extensively calling APIs, or tight data structure integration, then things are more likely to be considered a derived work.  Ie, the ""plugin"" cannot exist on its own without the GPL product, and a product with this plugin installed is essentially a derived work of the GPLed product.
+So to make it a little more clear, the same principles could apply to your interpreted code.  If the interpreted code relies heavily upon your APIs (or vice-versa) then it would be considered a derived work.  If it is just a script that executes on its own with extremely little integration, then it may not.
+Does that make more sense?
+"
+76,"I believe this is a bug in the Oracle ODBC driver. Basically, the Oracle ODBC driver does not support the TIMESTAMP WITH (LOCAL) TIME ZONE data types, only the TIMESTAMP data type. As you have discovered, one workaround is in fact to use the TO_CHAR method.
+In your example you are not actually reading the time zone information. If you have control of the table you could convert it to a straight TIMESTAMP column. If you don't have control over the table, another solution may be to create a view that converts from TIMESTAMP WITH TIME ZONE to TIMESTAMP via a string - sorry, I don't know if there is a way to convert directly from TIMESTAMP WITH TIME ZONE to TIMESTAMP.
+"
+77,"Given an Oracle table created using the following:
+Using the Python ODBC module from its Win32 extensions (from the win32all package), I tried the following:
+When I run this, I get the following:
+The other data types I've tried (VARCHAR2, BLOB) do not cause this problem. Is there a way of retrieving timestamps?
+"
+78,"My solution to this, that I hope can be bettered, is to use Oracle to explicitly convert the TIMESTAMP into a string:
+This works, but isn't portable. I'd like to use the same Python script against a SQL Server database, so an Oracle-specific solution (such as TO_CHAR) won't work.
+"
+79,"Why not throw an exception if the operation wasn't successful?  Personally, I tend to be of the opinion that if you need to return more than one value from a function, you should reconsider if you're doing things the right way or use an object.
+But more directly to the point, if you throw an exception, you're forcing them to deal with the problem.  If you try to return a value that indicates failure, it's very well possible somebody could not check the value and end up with some potentially hard to debug errors.
+"
+80,"Throwing an exception for failure is one good way to proceed, and if you're returning a lot of different values, you can return a tuple.  For the specific case you're citing, I often take an intermediate approach: return the modified string on success, and return None on failure.  I'm enough of an unreconstructed C programmer to want to return a NULL pointer to char on failure.
+If I were writing a routine to be used as part of a larger library and consumed by other developers, I'd throw an exception on failure.  When I'm eating my own dogfood, I'll probably return different types and test on return.
+"
+81,"Returning a tuple is the usual way to do this in Python.
+"
+82,"I have a function where I need to do something to a string.  I need the function to return a boolean indicating whether or not the operation succeeded, and I also need to return the modified string.  
+In C#, I would use an out parameter for the string, but there is no equivalent in Python.  I'm still very new to Python and the only thing I can think of is to return a tuple with the boolean and modified string.
+Related question: Is it pythonic for a function to return multiple values?
+"
+83,"Return a tuple.
+"
+84,"My head code for 1.4 version(some new and some removed)
+"
+85,"How can I use the nifty JavaScript date and time widgets that the default admin uses with my custom view?
+I have looked through the Django forms documentation, and it briefly mentions django.contrib.admin.widgets, but I don't know how to use it?
+Here is my template that I want it applied on.
+Also, I think it should be noted that I haven't really written a view up myself for this form, I am using a generic view. Here is the entry from the url.py:
+And I am relevantly new to the whole Django/MVC/MTV thing, so please go easy...
+"
+86,"In Django 10.
+myproject/urls.py:
+at the beginning of urlpatterns
+In my template.html:
+"
+87,"What about just assigning a class to your widget and then binding that class to the JQuery datepicker?
+Django forms.py:
+And some JavaScript for the template:
+"
+88,"(I'm trying to comment on people suggesting to roll their own Calendar widget, but either I don't see the comment button, or I don't have enough rep.)
+What happened to DRY? I think it would be best to re-use the admin widget, but perhaps it should be separated from admin, and easier to use. Thanks for this information anyways.
+"
+89,"As the solution is hackish, I think using your own date/time widget with some JavaScript is more feasible.
+"
+90,"Yep, I ended up overriding the /admin/jsi18n/ url.
+Here's what I added in my urls.py.  Make sure it's above the /admin/ url
+And here is the i18n_javascript function I created.
+"
+91,"Complementing the answer by Carl Meyer, I would like to comment that you need to put that header in some valid block (inside the header) within your template.
+"
+92,"I find myself referencing this post a lot, and found that the documentation defines a slightly less hacky way to override default widgets. 
+(No need to override the ModelForm's __init__ method)
+However, you still need to wire your JS and CSS appropriately as Carl mentions.
+forms.py
+Reference Field Types to find the default form fields.
+"
+93,"Updated solution and workaround for SplitDateTime with required=False:
+forms.py
+form.html
+urls.py
+"
+94,"The growing complexity of this answer over time, and the many hacks required, probably ought to caution you against doing this at all. It's relying on undocumented internal implementation details of the admin, is likely to break again in future versions of Django, and is no easier to implement than just finding another JS calendar widget and using that.
+That said, here's what you have to do if you're determined to make this work:
+Define your own ModelForm subclass for your model (best to put it in forms.py in your app), and tell it to use the AdminDateWidget / AdminTimeWidget / AdminSplitDateTime (replace 'mydate' etc with the proper field names from your model):
+Change your URLconf to pass 'form_class': ProductForm instead of 'model': Product to the generic create_object view (that'll mean ""from my_app.forms import ProductForm"" instead of ""from my_app.models import Product"", of course).
+In the head of your template, include {{ form.media }} to output the links to the Javascript files.
+And the hacky part: the admin date/time widgets presume that the i18n JS stuff has been loaded, and also require core.js, but don't provide either one automatically.  So in your template above {{ form.media }} you'll need:
+You may also wish to use the following admin CSS (thanks Alex for mentioning this):
+This implies that Django's admin media (ADMIN_MEDIA_PREFIX) is at /media/admin/ - you can change that for your setup.  Ideally you'd use a context processor to pass this values to your template instead of hardcoding it, but that's beyond the scope of this question.
+This also requires that the URL /my_admin/jsi18n/ be manually wired up to the django.views.i18n.javascript_catalog view (or null_javascript_catalog if you aren't using I18N).  You have to do this yourself instead of going through the admin application so it's accessible regardless of whether you're logged into the admin (thanks Jeremy for pointing this out).  Sample code for your URLconf:
+Lastly, if you are using Django 1.2 or later, you need some additional code in your template to help the widgets find their media:
+Thanks lupefiasco for this addition.
+"
+95,"The below will also work as a last resort if the above failed
+Same as 
+put this in your forms.py from django.forms.extras.widgets import SelectDateWidget
+"
+96,"I finally managed to get this widget working on the dev server, only to have it break on deployment.  I finally decided it wasn't worth shoehorning into my site, and wrote my own widget.  It's not as flexible, but it will probably work well for many: http://www.copiesofcopies.org/webl/?p=81
+"
+97,"Starting in Django 1.2 RC1, if you're using the Django admin date picker widge trick, the following has to be added to your template, or you'll see the calendar icon url being referenced through ""/missing-admin-media-prefix/"".
+"
+98,"You can use toolz.merge([x, y]) for this.
+"
+99,"** creates an intermediary dict, which means that the total number of copies
+is actually higher doing the dict(one, **two) form, but all that happens in C
+so it's still generally faster than going to itertools, unless there are a huge number of copies (or, probably, if the copies are very expensive). As always if you actually care about speed you should time your use case.
+Timing on Python 2.7.3 with an empty dict:
+With 10,000 (tiny) items:
+With 100,000 items:
+With 1,000,000 items:
 "

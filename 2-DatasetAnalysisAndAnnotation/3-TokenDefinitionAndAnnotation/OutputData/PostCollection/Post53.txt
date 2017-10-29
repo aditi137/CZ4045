@@ -1,2 +1,5 @@
-You might want to use pyserial, which  uses the kernel interfaces (I don't know what PyBBIO does). It provides automatic input buffering - so you don't need an extra process. If you do want to have more processes use multiprocessing. A simpler alternative is threading, which saves you the communication part. For multiprocessing with network support use Ipython's cluster
+I had a similar problem: how to catch broken symlinks, even when they occur in some parent dir?  I also wanted to log all of them (in an application dealing with a fairly large number of files), but without too many repeats.
+Here is what I came up with, including unit tests.
+fileutil.py:
+Unit tests:
 

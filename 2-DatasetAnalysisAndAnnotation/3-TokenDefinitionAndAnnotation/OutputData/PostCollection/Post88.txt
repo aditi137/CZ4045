@@ -1,4 +1,4 @@
-I can test the rank of a matrix using np.linalg.matrix_rank(A) . But how can I test if all the rows of A are orthogonal efficiently?
-I could take all pairs of rows and compute the inner product between them but is there a better way?
-My matrix has fewer rows than columns and the rows are not unit vectors.
+What about just assigning a class to your widget and then binding that class to the JQuery datepicker?
+Django forms.py:
+And some JavaScript for the template:
 

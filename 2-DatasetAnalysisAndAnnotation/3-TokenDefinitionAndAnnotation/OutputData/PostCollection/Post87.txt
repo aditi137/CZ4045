@@ -1,6 +1,5 @@
-Hello I am new to Python. I have over 5000 .csv.gz files to be loaded on vertica data base. The server disconnects after 10 minutes, thus all 5000 files cannot be copied without re-setting the server connection.
-I have two basic problems here:
-How can I keep track of copy commands successfully executed?
-How can I re-set the connection and restart from last failed command?
-The code I am using is:
+In Django 10.
+myproject/urls.py:
+at the beginning of urlpatterns
+In my template.html:
 

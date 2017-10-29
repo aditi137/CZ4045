@@ -1,4 +1,2 @@
-You're over-thinking this and confusing yourself. This appears to be a representation of a directed graph: it looks like edges is a list of Edges, and each Edge has a headNodeId and a tailNodeId. Each of those IDs refers to a Node in the nodes list.
-So all that's happening when you say nodes[ edges[-1].headNodeId ] is "give me the item from 'nodes' whose index is the head node ID of the last item in 'edges'". Then, the code is simply calling addInEdge on that Node.
-A much more verbose version of this would be:
+Starting in Django 1.2 RC1, if you're using the Django admin date picker widge trick, the following has to be added to your template, or you'll see the calendar icon url being referenced through "/missing-admin-media-prefix/".
 

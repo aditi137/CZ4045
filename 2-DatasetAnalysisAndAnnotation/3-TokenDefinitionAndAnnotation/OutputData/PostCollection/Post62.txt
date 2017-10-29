@@ -1,13 +1,4 @@
-
-could we call it from cPython
-No, netTcpBinding is interoperable only with WCF clients. 
-From here:
-The default configuration for the NetTcpBinding is faster than the
-  configuration provided by the WSHttpBinding, but it is intended only
-  for WCF-to-WCF communication. 
-From comments:
-does wsHttpBinding work or only basicHttpBinding work?
-Short answer is no, basicHttpBinding is the only binding (except for the web bindings) which support interoperability with non-wcf clients. Even then you may have difficulty consuming it from non-windows.
-Long answer is that the reason this is the case is because basicHttpBinding supports communication over SOAP 1.1, which is a relatively simple protocol, and most vendors have implemented it in very similar ways. Therefore, these different implementations tend to be interoperable. However, wsHttpBinding is Microsoft's attempt to support the SOAP 1.2 protocol and WS-* web service extensions, which is a much larger and more complex set of standards. So there is a much larger scope for interpretation between the various vendors, leading normally to non-interoperability between implementations. It is theoretically possible, therefore, to call an endpoint exposed over wsHttpBinding from a non-wcf (or even non-windows) client, but you would have to overcome all the niggles.
-A much better approach would be to move away from SOAP completely if possible, and just use HTTP/POX or HTTP/REST services. 
+http://www.b-list.org/weblog/2007/nov/02/handle-choices-right-way/
+This is another nice and easy way of implementing enums although it doesn't really save enums in the database.
+However it does allow you to reference the 'label' whenever querying or specifying defaults as opposed to the top-rated answer where you have to use the 'value' (which may be a number).
 

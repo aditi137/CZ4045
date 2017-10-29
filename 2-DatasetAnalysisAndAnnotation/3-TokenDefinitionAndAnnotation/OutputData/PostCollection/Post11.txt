@@ -1,10 +1,4 @@
-We need a tool to work with 3D-Harmonics and we've come across https://github.com/SHTOOLS/SHTOOLS - which fits all of our needs, but could not be installed properly on our windows computers (as it's intended for linux\osx).
-When we tried to run pip install . in the directory SHTOOLS-3.3 (we use anaconda for managing packages and it includes pip), we at first got an error saying that we need a Fortran compiler (gfortran) - which we fixed by installing gcc with conda install -c r gcc. Afterwards, we got an error saying we need to install visual C++ compiler - which we downloaded as suggested from https://www.microsoft.com/en-gb/download/details.aspx?id=44266.
-Alas, running the command again, this time from the visual C++ 2008 command prompt, we still get a fatal error and are still stuck with installing the library.
-Some of the errors we get: 
-Followed by
-and 
-The full output of the installation attempt can be found here and here.
-We've tried to download the lib files of the FFTW3, LAPACK and BLAS libraries but couldn't build them properly.
-We would appreciate any help (suggesting a similar library that is compatible with windows \ helping with the install of SHTOOlS).
+Are you running Python on UNIX or Windows?
+An alternative to mod_python and FastCGI is mod_wsgi. You can find out more at modwsgi
+I have built and installed this on Solaris without problems. I had previously tried mod_python but ran into problems with shared libraries as part of the build. There are good install docs available.
 

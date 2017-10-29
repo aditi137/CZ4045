@@ -1,2 +1,5 @@
-You're using Python 2. In Python 2, input takes your input and tries to evaluate it. You want to use raw_input.
+Updated solution and workaround for SplitDateTime with required=False:
+forms.py
+form.html
+urls.py
 

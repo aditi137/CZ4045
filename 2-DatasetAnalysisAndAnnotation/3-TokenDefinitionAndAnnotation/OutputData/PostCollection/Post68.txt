@@ -1,5 +1,2 @@
-I'm trying to implement an OAuth2 authentication server and for the client part i wanted to send a json request to the server (from a Django view) and i found several libraries to do that tho' the most common are httplib2 and urllib2 i was wondering which is the difference between them and which is the best library for this purpose.
-Thanks in advance.
-Edit:
-After searching, i found an extremely useful library called Requests and i use this one since then. (http://docs.python-requests.org/en/latest/)
+Use threads in python if the individual workers are doing I/O bound operations. If you are trying to scale across multiple cores on a machine either find a good IPC framework for python or pick a different language.
 

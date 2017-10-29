@@ -1,8 +1,2 @@
-I have a data.frame looking similar to this (except much longer and with way more colornames):
-I want the data.frame to look like this:
-I tried the following:
-In my longer data.frame I typically get the error: 
-ValueError: cannot reindex from a duplicate axis
-Can anyone help?
-Thanks very much in advance!
+If I call os.stat() on a broken symlink, python throws an OSError exception. This makes it useful for finding them. However, there are a few other reasons that os.stat() might throw a similar exception. Is there a more precise way of detecting broken symlinks with Python under Linux?
 

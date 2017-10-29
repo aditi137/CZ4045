@@ -1,6 +1,5 @@
-I am developing a plugin in qgis. I have one interface (MMMM.py) with several buttons and one of them opens a new interface (ABC.py) where I introduce values. My objective is to read these values in the main interface (the first one). So I have a script to each interface but when I import the variables, I have several errors. I have troubles to import these variables.
-second script named ABC.py
-first (main) script named MMMM.py
-I tried some ways to import the values x and y to main interface but I have always errors. I am working in qgis.
-What I am doing wrong?
+Setting choices on the field will allow some validation on the Django end, but it won't define any form of an enumerated type on the database end.
+As others have mentioned, the solution is to specify db_type on a custom field.
+If you're using a SQL backend (e.g. MySQL), you can do this like so:
+Run syncdb, and inspect your table to see that the ENUM was created properly.
 

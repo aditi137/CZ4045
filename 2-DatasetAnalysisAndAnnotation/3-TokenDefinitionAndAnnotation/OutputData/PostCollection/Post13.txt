@@ -1,3 +1,5 @@
-that would work:
-otherwise, you can set x and y in ABC (by doing self.x = ...) and then access them by c.x
+Yes, mod_python is pretty confusing to set up.  Here's how I did it.
+In httpd.conf:
+and in your application directory:
+Repeat the configuration for each python program you wish to have running under mod_python.
 

@@ -1,3 +1,2 @@
-There is no need to write a context processor for the user object if you already have the "django.core.context_processors.auth" in TEMPLATE_CONTEXT_PROCESSORS and if you're using RequestContext in your views. 
-if you are using django 1.4 or latest the module has been moved to django.contrib.auth.context_processors.auth
+How much info are you sharing between the Plugins and the main program? If you are doing anything more than just executing them and waiting for the results (sharing no data between the program and the plugin in the process) then you could most likely get away with them being proprietary, otherwise they would probably need to be GPL'd.
 

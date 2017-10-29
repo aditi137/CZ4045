@@ -1,4 +1,5 @@
-In case your string always contains Phone: with the phone number following it at the end, you do not need the regex. Also, note that 1-800-MALL is also a valid phone number.
-I suggest this:
-Or, in case regex is still preferable, another solution:
+The current version of ASP.NET integration for IronPython is not very up-to-date and is more of a "proof-of-concept." I don't think I'd build a production website based on it.
+Edit:: I have a very high level of expectation for how things like this should work, and might setting the bar a little high.  Maybe you should take what's in "ASP.NET Futures", write a test application for it and see how it works for you.  If you're successful, I'd like to hear about it.  Otherwise, I think there should be a newer CTP of this in the next six months.
+(I'm a developer on IronPython and IronRuby.)
+Edit 2: Since I originally posted this, a newer version has been released.
 

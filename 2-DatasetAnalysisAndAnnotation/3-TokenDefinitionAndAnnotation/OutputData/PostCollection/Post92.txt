@@ -1,3 +1,2 @@
-This is based off of Oblivion's answer but I edited it so it worked for me.
-I made a new listbox class that was based off of the original one but had a new function that I got from Oblivion's code. I then call that function and it makes the listbox an appropriate size.
+Complementing the answer by Carl Meyer, I would like to comment that you need to put that header in some valid block (inside the header) within your template.
 

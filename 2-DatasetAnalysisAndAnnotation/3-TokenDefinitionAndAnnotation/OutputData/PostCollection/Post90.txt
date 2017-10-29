@@ -1,2 +1,2 @@
-One way to fix it is to modify the helper function to:
+As the solution is hackish, I think using your own date/time widget with some JavaScript is more feasible.
 

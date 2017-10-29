@@ -1,7 +1,11 @@
-Using Django 1.7 and Celery on Heroku with Postgres and RabbitMQ.
-I recently set the CONN_MAX_AGE setting in Django to 60 or so so I could start pooling database connections. This worked fine until I discovered a problem where if for any reason a database connection was killed, Celery would continue using the bad database connection, consuming tasks but immediately throwing the following error within each task:
-I would like to keep pooling database connections, but this has happened a few times now and I obviously can't allow Celery to randomly fail. How can I get Django (or Celery) to force a new database connection only when this error is hit?
-(Alternatively, another idea I had was to force the Celery worker to run with a modified settings.py that sets CONN_MAX_AGE=0 only for Celery... but that feels very much like the wrong way to do it.)
-Please note that this StackOverflow question seems to solve the problem on Rails, but I haven't found an equivalent for Django:
-  On Heroku, Cedar, with Unicorn: Getting ActiveRecord::StatementInvalid: PGError: SSL SYSCALL error: EOF detected
+Though All 3 languages are versatile and used worldwide by programmers, Python still have some advantages over the other two. Like From my personal experience :-
+Non-programmers love it (most of 'em choose Python as their first computer language,check this infographic php vs python vs ruby here)
+Multiple frameworks (You can automate your system tasks, can develop apps for web and windows/mac/android OSes)
+Making OpenCV apps easily than MATLAB 
+Testing done easy (you can work on Selenium for all kind of web testing)
+OOPS concepts are followed by most languages now , so how come Python can stay behind! Inheritance, Abstraction and Encapsulation are followed by Python as well.
+Python as of now is divided into two versions popularly that are not much different in terms of performance but features. Python2.x and Python 3.x both have same syntax ,except for some statements like :-
+print "..." in Python2.x and print() in Python3.x
+raw_input() in Python2.x and input() in Python3.x (for getting user input)
+In the end, client only cares about money and Python helps you save a lot as compared to PHP and Ruby , because instead of hiring experienced programmers , you can make a newbie learn and use Python expertly.
 

@@ -1,4 +1,2 @@
-You can use the str.split method.
-If you want to convert it to a tuple, just
-If you are looking to append to a list, try this:
+Is there a way, when I parse an XML document using lxml, to validate that document against its DTD using an external catalog file?   I need to be able to work the fixed attributes defined in a documentâ€™s DTD.
 

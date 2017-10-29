@@ -1,3 +1,2 @@
-For oldest task you should probably use created_at rather than modified_at (the oldest task could have been modified recently, after all).
-We don't have any way in the API to specifically get the older task, or order by creation time or anything like that, so for now your workaround is in fact the only way to do it. You may be able to make it a little faster by using ?opt_fields=created_at in the task query to cut down on how much data you're loading.
+I agree with mreggen. Tell them by working in Python you can get things done faster. Getting things done faster possibly means money saved by the client. In the least it means that you are working with a language you a more comfortable in, meaning faster development, debugging, and refactoring time. There will be less time spent looking up documentation on what function to use to find the length of a string, etc. 
 

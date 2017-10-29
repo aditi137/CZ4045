@@ -1,4 +1,8 @@
-I have a xml file "sample.xml" as:
-and respective dtd as "sample.dtd":
-I want "sample.xml" to get validated against "sample.dtd" by making use of python script. How will i achieve this? kindly help.
+Python's a fairly easy language to thread in, but there are caveats.  The biggest thing you need to know about is the Global Interpreter Lock.  This allows only one thread to access the interpreter.  This means two things:  1)  you rarely ever find yourself using a lock statement in python and 2) if you want to take advantage of multi-processor systems, you have to use separate processes.  EDIT:  I should also point out that you can put some of the code in C/C++ if you want to get around the GIL as well.
+Thus, you need to re-consider why you want to use threads.  If you want to parallelize your app to take advantage of dual-core architecture, you need to consider breaking your app up into multiple processes.
+If you want to improve responsiveness, you should CONSIDER using threads.  There are other alternatives though, namely microthreading.  There are also some frameworks that you should look into:
+stackless python
+greenlets
+gevent
+monocle
 

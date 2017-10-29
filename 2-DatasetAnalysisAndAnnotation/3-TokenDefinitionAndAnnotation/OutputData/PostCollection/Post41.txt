@@ -1,3 +1,5 @@
-I don't have any python interpreter here, but it should be something similar to this:
-Note: this will work for this classification, but if you want to retrieve usernames i.e. @USERNAME you will have to tweak this a little more.
+Have you tried :
+That works for me here on Mac OS 10.5
+Actually, I think your original attempt works also with a little modification:
+(You just need the single quotes around the character sequence).
 

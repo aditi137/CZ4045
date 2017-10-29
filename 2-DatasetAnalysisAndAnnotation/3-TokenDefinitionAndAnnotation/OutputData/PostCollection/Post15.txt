@@ -1,4 +1,5 @@
-Using your example, the following would show you the value of y
-But trying to print y after your function call will fail with the not defined error as the variable is defined only inside you function, i.e. it is local to that function. This is often referred to as the scope of a variable.
-As soon as the function returns, y ceases to exist.
+I'm downloading an entire directory from a web server. It works OK, but I can't figure how to get the file size before download to compare if it was updated on the server or not. Can this be done as if I was downloading the file from a FTP server?
+@Jon: thank for your quick answer. It works, but the filesize on the web server is slightly less than the filesize of the downloaded file. 
+Examples:
+It has anything to do with the CR/LF conversion?
 

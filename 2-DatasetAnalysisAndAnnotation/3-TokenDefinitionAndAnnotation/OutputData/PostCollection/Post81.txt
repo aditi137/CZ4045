@@ -1,5 +1,3 @@
-Add an optional quantifier ? to the value part so that it is matched zero or one time
-Changes made
-Moved the = to a non capturing group (?:..)
-(?:=(?P<val>.+))? Matched zero or one time. This is ensured by the ?. That is it checks if =value can be matched (capturing only the value part). If not None is captured.
+Throwing an exception for failure is one good way to proceed, and if you're returning a lot of different values, you can return a tuple.  For the specific case you're citing, I often take an intermediate approach: return the modified string on success, and return None on failure.  I'm enough of an unreconstructed C programmer to want to return a NULL pointer to char on failure.
+If I were writing a routine to be used as part of a larger library and consumed by other developers, I'd throw an exception on failure.  When I'm eating my own dogfood, I'll probably return different types and test on return.
 

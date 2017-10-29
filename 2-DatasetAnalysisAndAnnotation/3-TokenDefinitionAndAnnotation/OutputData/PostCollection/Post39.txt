@@ -1,3 +1,2 @@
-Here's another example that was tested, and will match search & replace patterns:
-Example use:
+Has anyone built a website with IronPython and ASP.NET.  What were your experiences and is the combination ready for prime-time?
 

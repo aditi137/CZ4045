@@ -1,4 +1,4 @@
-I am developing a django application. In my forms. I have a checkbox in my form. My forms submits fine when the box is checked, but when the box is unchecked, the form fails to submit. The field I am using is Boolean.
-Here is my code:
-Does anyone have a solution?
+The problem for me wasn't in Apache set up, but in understanding how mod_apache actually uses the .py files. Module-level statements (including those in a if __name__=='__main__' section) are not executed--I assumed that the stdout from running the script at the commandline would be what the server would output, but that's not how it works.
+Instead, I wrote a module-level function called index(), and had it return as a string the HTML of the page. It's also possible to have other module-level functions (e.g., otherFunction()) that can be accessed as further segments in the URI (e.g., testScript/otherFunction for the file testScript.py.)
+Obviously, this makes more sense than my original stdout conception. Better capability of actually using Python as a scripting language and not a humongous markup language.
 

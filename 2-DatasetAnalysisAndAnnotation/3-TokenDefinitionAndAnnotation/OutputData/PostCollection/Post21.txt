@@ -1,6 +1,3 @@
-I apologize if this is a silly question. But I tried to google this and I couldn't find anything to point me in the right direction. I'd just like to understand what I need to do to 'set-up' cdt to 'understand' my python.h include.
-the erroneous statement is this:
-but I also tried
-And CDT responds with an error sign on the side stating:
-I am using Eclipse CDT Juno on Ubuntu 12.04. Any pointers would be great!
+A requests-based solution using HEAD instead of GET (also prints HTTP headers):
+Usage
 

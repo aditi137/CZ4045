@@ -1,7 +1,2 @@
-I don't have pexpect handy to test my answer to your question, but I have a suggestion that should work and, if not, may at least get you closer.  
-Consider this command:
-What is happening?  The entire quoted string is passed as a single argument to ssh, where it is "executed" on the remote.  While ssh isn't explicit about what that means, exactly, we know what execv(2) does: if execve(2) fails to execute its passed arguments, the execv function will invoke /bin/sh with the same arguments (in this case, our quoted string).  The shell then evaluates the quoted string as separate arguments, detects the HereDoc redirection, and executes per usual.  
-Using that information, and taking a quick look at the pexpect.pxssh documentation, it looks like you want:
-If that doesn't work, something is munging your data.  Five minutes with strace(1) will tell you what happened to it, and you can start pointing fingers.  ;-)
-HTH.  
+os.lstat() may be helpful. If lstat() succeeds and stat() fails, then it's probably a broken link.
 

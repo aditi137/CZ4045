@@ -1,3 +1,4 @@
-
-Also works if it is already an absolute path:
+I tried the mixer from the pygame module, and it works fine. First install the module:
+Then in the program, write this:
+With pygame you have a lot of customization options, which you may additionally experiment with.
 
