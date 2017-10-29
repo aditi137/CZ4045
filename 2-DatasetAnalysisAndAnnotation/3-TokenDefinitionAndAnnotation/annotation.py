@@ -24,6 +24,11 @@ def main():
     print("Now writing to csv...")
     outputSubdir = 'OutputData'
     outputDF.to_csv(os.path.join(outputSubdir, 'annotatedPosts.csv'), encoding='utf-8')
+
+    outputDF[:25].to_csv(os.path.join(outputSubdir, 'annotatedPosts1.csv'), encoding='utf-8')
+    outputDF[25:50].to_csv(os.path.join(outputSubdir, 'annotatedPosts2.csv'), encoding='utf-8')
+    outputDF[50:75].to_csv(os.path.join(outputSubdir, 'annotatedPosts3.csv'), encoding='utf-8')
+    outputDF[75:100].to_csv(os.path.join(outputSubdir, 'annotatedPosts4.csv'), encoding='utf-8')
     print("Finished")
     
 
