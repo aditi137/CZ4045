@@ -1,4 +1,3 @@
-import fnmatch
 import os
 import pandas
 import matplotlib.pyplot as plt
@@ -72,12 +71,9 @@ posts.hist('Post length', range=(0, 1500))
 plt.xlabel('post length')
 plt.ylabel('number of posts')
 plt.savefig(os.path.join(outputSubdir, 'word_count_hist.png'))
-# plt.show()
+plt.show()
 
 posts.drop('Body', axis=1, inplace=True)
-posts_path = [os.path.join(dirpath, f)
-    for dirpath, dirnames, files in os.walk("..")
-    for f in fnmatch.filter(files, 'posts.csv')]
+posts.to_csv(os.path.join(outputSubdir, 'posts.csv'), index=False, encoding='utf-8')
 
-for post_path in posts_path:
-    posts.to_csv(post_path, index=False, encoding='utf-8')
+
