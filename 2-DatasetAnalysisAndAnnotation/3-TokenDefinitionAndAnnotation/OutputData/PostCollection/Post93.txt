@@ -1,6 +1,1 @@
-I find myself referencing this post a lot, and found that the documentation defines a slightly less hacky way to override default widgets. 
-(No need to override the ModelForm's __init__ method)
-However, you still need to wire your JS and CSS appropriately as Carl mentions.
-forms.py
-Reference Field Types to find the default form fields.
-
+I don't know if it's in there, but there's a python distribution called Enthought that might have what you're looking for.  It was designed specifically for data analysis has over 60 additional libraries.

@@ -1,6 +1,1 @@
-Building on Barry Wark's answer...
-NSBeep() from AppKit works fine, but also makes the terminal/app icon in the taskbar jump.
-A few extra lines with NSSound() avoids that and gives the opportunity to use another sound:
-Standard sound files can be found via commandline locate /System/Library/Sounds/*.aiff
-The file used by NSBeep() seems to be '/System/Library/Sounds/Funk.aiff'
-
+The wb in open('test.mp3','wb') opens a file (and erases any existing file) in binary mode so you can save data with it instead of just text.

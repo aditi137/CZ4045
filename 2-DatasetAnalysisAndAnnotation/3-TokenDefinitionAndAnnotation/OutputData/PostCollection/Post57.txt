@@ -1,2 +1,1 @@
-DateTime fields with auto_now are automatically updated upon calling save(), so you do not need to update them manually. Django will do this work for you.
-
+You might also like using the processing module (http://pypi.python.org/pypi/processing). It has lot's of functionality for writing parallel systems with the same API as the threading module...

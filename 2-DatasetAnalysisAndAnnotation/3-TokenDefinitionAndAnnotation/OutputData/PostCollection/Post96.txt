@@ -1,4 +1,2 @@
-The below will also work as a last resort if the above failed
-Same as 
-put this in your forms.py from django.forms.extras.widgets import SelectDateWidget
-
+Here is the whois client re-implemented in Python:
+http://code.activestate.com/recipes/577364-whois-client/

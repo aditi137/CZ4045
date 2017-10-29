@@ -1,2 +1,1 @@
-Yes. You can do it. The doctest module documentation and Wikipedia has an example of it.
-
+You can get the progress feedback with urlretrieve as well:

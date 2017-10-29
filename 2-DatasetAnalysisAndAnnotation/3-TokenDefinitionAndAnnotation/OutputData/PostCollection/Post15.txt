@@ -1,5 +1,1 @@
-I'm downloading an entire directory from a web server. It works OK, but I can't figure how to get the file size before download to compare if it was updated on the server or not. Can this be done as if I was downloading the file from a FTP server?
-@Jon: thank for your quick answer. It works, but the filesize on the web server is slightly less than the filesize of the downloaded file. 
-Examples:
-It has anything to do with the CR/LF conversion?
-
+time.mktime should return the number of seconds since the epoch. Since I'm giving it a time at midnight and the epoch is at midnight, shouldn't the result be evenly divisible by the number of seconds in a day?

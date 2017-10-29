@@ -1,6 +1,2 @@
-OK, what you need is classobj from new module. That would allow you to construct exception classes dynamically (classobj takes a string as an argument for the class name). 
-this gives you:
-remember that you can always get the class name through:
-So, after some string mangling and concatenation, you should be able to obtain appropriate exception class name and construct a class object using that name and then raise that exception.
-P.S. - you can also raise strings, but this is deprecated.
-
+Formatting in Python is done via the string formatting (%) operator:
+/Edit: There's also strftime.

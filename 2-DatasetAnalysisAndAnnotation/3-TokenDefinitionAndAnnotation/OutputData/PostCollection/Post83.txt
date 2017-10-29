@@ -1,4 +1,1 @@
-I have a function where I need to do something to a string.  I need the function to return a boolean indicating whether or not the operation succeeded, and I also need to return the modified string.  
-In C#, I would use an out parameter for the string, but there is no equivalent in Python.  I'm still very new to Python and the only thing I can think of is to return a tuple with the boolean and modified string.
-Related question: Is it pythonic for a function to return multiple values?
-
+With Jython you can have both. It's only at Python 2.2, but still very useful if you need an embedded interpreter that has access to the Java runtime.

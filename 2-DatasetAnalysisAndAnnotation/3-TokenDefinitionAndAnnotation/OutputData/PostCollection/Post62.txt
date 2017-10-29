@@ -1,4 +1,2 @@
-http://www.b-list.org/weblog/2007/nov/02/handle-choices-right-way/
-This is another nice and easy way of implementing enums although it doesn't really save enums in the database.
-However it does allow you to reference the 'label' whenever querying or specifying defaults as opposed to the top-rated answer where you have to use the 'value' (which may be a number).
-
+You may get both added and removed lines with git log, like:
+From this, you can write a similar script to the one you did using this info. In python:

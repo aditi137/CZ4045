@@ -1,7 +1,4 @@
-
-he distinction between fork/exec and dynamic linking, besides being kind of artificial,
-I don't think its artificial at all.  Basically they are just making the division based upon the level of integration.  If the program has "plugins" which are essentially fire and forget with no API level integration, then the resulting work is unlikely to be considered a derived work.  Generally speaking a plugin which is merely forked/exec'ed would fit this criteria, though there may be cases where it does not.  This case especially applies if the "plugin" code would work independently of your code as well.
-If, on the other hand, the code is deeply dependent upon the GPL'ed work, such as extensively calling APIs, or tight data structure integration, then things are more likely to be considered a derived work.  Ie, the "plugin" cannot exist on its own without the GPL product, and a product with this plugin installed is essentially a derived work of the GPLed product.
-So to make it a little more clear, the same principles could apply to your interpreted code.  If the interpreted code relies heavily upon your APIs (or vice-versa) then it would be considered a derived work.  If it is just a script that executes on its own with extremely little integration, then it may not.
-Does that make more sense?
-
+If I'm not mistaken the zip function you use in python creates a pair of the items found in list1 and list2. Basically it still is a for loop with the addition that it will retrieve the data from the two seperate lists for you, instead that you have to do it yourself.
+So maybe your best option is to use a standard for loop like this:
+or whatever you have to do with the data.
+If you really are talking about parallel computing then you should take a look at the Parallel Computing Toolbox for matlab, and more specifically at parfor

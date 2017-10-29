@@ -1,2 +1,3 @@
-Complementing the answer by Carl Meyer, I would like to comment that you need to put that header in some valid block (inside the header) within your template.
-
+Have a look at http://www.aemdesign.com/downloadfsqp.htm.
+There you will find C code which provides the same functionality as fmincon. (However, using a different algorithm. You can read the manual if you are interested in the details.)
+It's open source but not under GPL.

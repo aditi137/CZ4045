@@ -1,5 +1,2 @@
-Yes, mod_python is pretty confusing to set up.  Here's how I did it.
-In httpd.conf:
-and in your application directory:
-Repeat the configuration for each python program you wish to have running under mod_python.
-
+Interesting. I don't know, but I did try this:
+which is what you expected. My guess? Maybe some time correction was done since the epoch. This could be only a few seconds, something like a leap year. I think I heard something like this before, but can't remember exactly how and when it is done...

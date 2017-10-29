@@ -1,6 +1,3 @@
-How can I use the nifty JavaScript date and time widgets that the default admin uses with my custom view?
-I have looked through the Django forms documentation, and it briefly mentions django.contrib.admin.widgets, but I don't know how to use it?
-Here is my template that I want it applied on.
-Also, I think it should be noted that I haven't really written a view up myself for this form, I am using a generic view. Here is the entry from the url.py:
-And I am relevantly new to the whole Django/MVC/MTV thing, so please go easy...
-
+Apart from what Eli Courtwright said:
+I find iterators in Python more concise. You can use for i in something, and it works with pretty much everything. Yeah, Java has gotten better since 1.5, but for example you can iterate through a string in python with this same construct.
+Introspection: In python you can get at runtime information about an object or a module about its symbols, methods, or even its docstrings. You can also instantiate them dynamically. Java has some of this, but usually in Java it takes half a page of code to get an instance of a class, whereas in Python it is about 3 lines. And as far as I know the docstrings thing is not available in Java

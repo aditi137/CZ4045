@@ -1,3 +1,2 @@
-I'm not a python guy but it looks like os.readlink()?  The logic I would use in perl is to use readlink() to find the target and the use stat() to test to see if the target exists.
-Edit: I banged out some perl that demos readlink.  I believe perl's stat and readlink and python's os.stat() and os.readlink()are both wrappers for the system calls, so this should translate reasonable well as proof of concept code:
-
+I agree with Corey, urllib2 is more complete than urllib and should likely be the module used if you want to do more complex things, but to make the answers more complete, urllib is a simpler module if you want just the basics:
+Will work fine. Or, if you don't want to deal with the "response" object you can call read() directly:

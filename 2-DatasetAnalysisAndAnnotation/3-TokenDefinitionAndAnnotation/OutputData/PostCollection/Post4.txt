@@ -1,3 +1,3 @@
-It's one of the preferred languages over at Google - It's several years ahead of Ruby in terms of "maturity" (what ever that really means - but managers like that). Since it's prefered by Google you can also run it on the Google App Engine.
-Mircosoft is also embracing Python, and will have a v2.0 of IronPython coming out shortly. They are working on a Ruby implementation as well, but the Python version is way ahead, and is actually "ready for primetime". That give you the possibility for easy integration with .NET code, as well as being able to write client side RIAs in Python when Silverlight 2 ships.
-
+The latest Sun Java VM actually have multiple GC algorithms which you can tweak.  The Java VM specifications intentionally omitted specifying actual GC behaviour to allow different (and multiple) GC algorithms for different VMs.
+For example, for all the people who dislike the "stop-the-world" approach of the default Sun Java VM GC behaviour, there are VM such as IBM's WebSphere Real Time which allows real-time application to run on Java.
+Since the Java VM spec is publicly available, there is (theoretically) nothing stopping anyone from implementing a Java VM that uses CPython's GC algorithm.

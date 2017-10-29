@@ -1,2 +1,1 @@
-Check out the Dynamic Languages in ASP.NET page on Codeplex. This has the newest IronPython bits. It doesn't give you any Visual Studio integration, other than the sample website project, but that's coming.
-
+use wget module:

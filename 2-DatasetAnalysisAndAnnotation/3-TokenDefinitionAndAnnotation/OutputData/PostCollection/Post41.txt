@@ -1,5 +1,5 @@
-Have you tried :
-That works for me here on Mac OS 10.5
-Actually, I think your original attempt works also with a little modification:
-(You just need the single quotes around the character sequence).
-
+If you have wget installed, you can use parallel_sync.
+pip install parallel_sync
+Doc:
+https://pythonhosted.org/parallel_sync/pages/examples.html
+This is pretty powerful. It can download files in parallel, retry upon failure , and it can even download files on a remote machine.

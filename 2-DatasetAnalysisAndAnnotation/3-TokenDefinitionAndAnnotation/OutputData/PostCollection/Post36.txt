@@ -1,4 +1,2 @@
-Keep a look out for ASP.NET MVC
-The IronRuby guys have got some internal builds of MVC to work with IronRuby, and IronPython 2 and IronRuby have a lot of code in common with the DLR.
-I'm not sure if they'll support IronPython/IronRuby when MVC is released, but it's definitely worth keeping your eye on anyway - The old ASP.NET forms-based development model is old, busted, and the sooner it goes away the better.
-
+This may be a little late, But I saw pabloG's code and couldn't help adding a os.system('cls') to make it look AWESOME! Check it out : 
+If running in an environment other than Windows, you will have to use something other then 'cls'. In MAC OS X and Linux it should be 'clear'.

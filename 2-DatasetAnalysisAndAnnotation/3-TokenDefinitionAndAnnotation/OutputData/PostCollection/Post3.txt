@@ -1,2 +1,1 @@
-I agree with mreggen. Tell them by working in Python you can get things done faster. Getting things done faster possibly means money saved by the client. In the least it means that you are working with a language you a more comfortable in, meaning faster development, debugging, and refactoring time. There will be less time spent looking up documentation on what function to use to find the length of a string, etc. 
-
+I think the article "Java theory and practice: A brief history of garbage collection" from IBM should help explain some of the questions you have.

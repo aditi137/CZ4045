@@ -1,7 +1,2 @@
-A common Python saying is that it's easier to ask forgiveness than permission.  While I'm not a fan of this statement in real life, it does apply in a lot of cases.  Usually you want to avoid code that chains two system calls on the same file, because you never know what will happen to the file in between your two calls in your code.
-A typical mistake is to write something like:
-The second call (os.unlink) may fail if something else deleted it after your if test, raise an Exception, and stop the rest of your function from executing.  (You might think this doesn't happen in real life, but we just fished another bug like that out of our codebase last week - and it was the kind of bug that left a few programmers scratching their head and claiming 'Heisenbug' for the last few months)
-So, in your particular case, I would probably do:
-The annoyance here is that stat returns the same error code for a symlink that just isn't there and a broken symlink.
-So, I guess you have no choice than to break the atomicity, and do something like
-
+In Python 2, use urllib2 which comes with the standard library.
+This is the most basic way to use the library, minus any error handling.  You can also do more complex stuff such as changing headers.  The documentation can be found here.

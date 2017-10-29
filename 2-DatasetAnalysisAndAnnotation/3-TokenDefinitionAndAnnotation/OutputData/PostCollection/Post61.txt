@@ -1,6 +1,1 @@
-From the Django documentation:
-And you define a charfield in your model :
-You can do the same with integer fields if you don't like to have letters
-in your db.
-In that case, rewrite your choices:
-
+You might also consider gitstats, which generates this graph as an html file.

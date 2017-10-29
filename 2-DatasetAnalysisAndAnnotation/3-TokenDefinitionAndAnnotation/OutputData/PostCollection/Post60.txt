@@ -1,2 +1,1 @@
-A the top of your models.py file, add this line after you do your imports:
-
+http://github.com/ITikhonov/git-loc worked right out of the box for me.

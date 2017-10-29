@@ -1,5 +1,2 @@
-I had a similar problem: how to catch broken symlinks, even when they occur in some parent dir?  I also wanted to log all of them (in an application dealing with a fairly large number of files), but without too many repeats.
-Here is what I came up with, including unit tests.
-fileutil.py:
-Unit tests:
-
+Have a look at the process management functions in the os module. There are function for starting new processes in many different ways, both synchronously and asynchronously.
+I should note also that Windows doesn't provide functionality that is exactly like fork() on other systems. To do multiprocessing on Windows, you will need to use the threading module.

@@ -1,4 +1,1 @@
-One easy solution to the GIL is the multiprocessing module. It can be used as a drop in replacement to the threading module but uses multiple Interpreter processes instead of threads. Because of this there is a little more overhead than plain threading for simple things but it gives you the advantage of real parallelization if you need it.
-It also easily scales to multiple physical machines.
-If you need truly large scale parallelization than I would look further but if you just want to scale to all the cores of one computer or a few different ones without all the work that would go into implementing a more comprehensive framework, than this is for you.
-
+If you want some hand-on examples, PyPy's Getting Started document has a section titled "Trying out the translator".

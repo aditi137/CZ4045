@@ -1,7 +1,1 @@
-There're currently two github projects based on adding these, though I've not looked into exactly how they're implemented:
-Django-EnumField:
-Provides an enumeration Django model field (using IntegerField) with reusable enums and transition validation. 
-Django-EnumFields:
-This package lets you use real Python (PEP435-style) enums with Django.
-I don't think either use DB enum types, but they are in the works for first one.
-
+Possibly a version of spawn() for python? http://en.wikipedia.org/wiki/Spawn_(operating_system)

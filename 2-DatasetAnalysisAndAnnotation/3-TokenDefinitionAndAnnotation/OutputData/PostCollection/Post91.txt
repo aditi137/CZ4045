@@ -1,4 +1,5 @@
-Yep, I ended up overriding the /admin/jsi18n/ url.
-Here's what I added in my urls.py.  Make sure it's above the /admin/ url
-And here is the i18n_javascript function I created.
-
+Python optimization software:
+OpenOpt http://openopt.org (this one is numpy-based as you wish, with automatic differentiation by FuncDesigner)
+Pyomo https://software.sandia.gov/trac/coopr/wiki/Package/pyomo
+CVXOPT http://abel.ee.ucla.edu/cvxopt/
+NLPy http://nlpy.sourceforge.net/

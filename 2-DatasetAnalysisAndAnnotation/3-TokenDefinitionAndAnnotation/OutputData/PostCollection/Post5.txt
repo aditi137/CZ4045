@@ -1,7 +1,2 @@
-The best sell of Python I've ever seen was by a manager in our group who had a young daughter.  He used a quote attributed to Einstein:
-If you can't explain something to a six-year-old, you really don't understand it yourself.
-The next few slides of his presentation demonstrated how he was able to teach his young daughter some basic Python in less than 30 minutes, with examples of the code she wrote and an explanation of what it did.
-He ended the presentation with a picture of his daughter and her quote "Programming is fun!"
-I would focus on Python's user friendliness and wealth of libraries and frameworks.  There are also a lot of little libraries that you might not get in other languages, and would have to write yourself (i.e. How a C++ developer writes Python).
-Good luck!
-
+Reference counting is particularly difficult to do efficiently in a multi-threaded environment. I don't know how you'd even start to do it without getting into hardware assisted transactions or similar (currently) unusual atomic instructions.
+Reference counting is easy to implement. JVMs have had a lot of money sunk into competing implementations, so it shouldn't be surprising that they implement very good solutions to very difficult problems. However, it's becoming increasingly easy to target your favourite language at the JVM.

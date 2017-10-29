@@ -1,11 +1,2 @@
-Though All 3 languages are versatile and used worldwide by programmers, Python still have some advantages over the other two. Like From my personal experience :-
-Non-programmers love it (most of 'em choose Python as their first computer language,check this infographic php vs python vs ruby here)
-Multiple frameworks (You can automate your system tasks, can develop apps for web and windows/mac/android OSes)
-Making OpenCV apps easily than MATLAB 
-Testing done easy (you can work on Selenium for all kind of web testing)
-OOPS concepts are followed by most languages now , so how come Python can stay behind! Inheritance, Abstraction and Encapsulation are followed by Python as well.
-Python as of now is divided into two versions popularly that are not much different in terms of performance but features. Python2.x and Python 3.x both have same syntax ,except for some statements like :-
-print "..." in Python2.x and print() in Python3.x
-raw_input() in Python2.x and input() in Python3.x (for getting user input)
-In the end, client only cares about money and Python helps you save a lot as compared to PHP and Ruby , because instead of hiring experienced programmers , you can make a newbie learn and use Python expertly.
-
+Late in the game, but I think one significant rationale for RC in python is its simplicity. See this email by Alex Martelli, for example.
+(I could not find a link outside google cache, the email date from 13th october 2005 on python list).

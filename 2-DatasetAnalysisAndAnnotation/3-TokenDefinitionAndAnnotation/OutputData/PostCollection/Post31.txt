@@ -1,3 +1,2 @@
-It seems that lxml does not expose this libxml2 feature, grepping the source only turns up some #defines for the error handling:
-From the catalog implementation in libxml2 page it seems possible that the 'transparent' handling through installation in /etc/xml/catalog may still work in lxml, but if you need more than that you can always abandon lxml and use the default python bindings, which do expose the catalog functions.
-
+If you have a value that includes a decimal, but the decimal value is negligible (ie: 100.0) and try to int that, you will get an error.  It seems silly, but calling float first fixes this.
+str(int(float([variable])))

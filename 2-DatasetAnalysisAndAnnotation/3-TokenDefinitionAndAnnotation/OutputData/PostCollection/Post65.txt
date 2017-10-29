@@ -1,6 +1,1 @@
-If you really want to use your databases ENUM type:
-Use Django 1.x
-Recognize your application will only work on some databases.
-Puzzle through this documentation page:http://docs.djangoproject.com/en/dev/howto/custom-model-fields/#howto-custom-model-fields
-Good luck!
-
+I've been having a hard time trying to understand PyPy's translation.  It looks like something absolutely revolutionary from simply reading the description, however I'm hard-pressed to find good documentation on actually translating a real world piece of code to something such as LLVM.  Does such a thing exist?  The official PyPy documentation on it just skims over the functionality, rather than providing anything I can try out myself.

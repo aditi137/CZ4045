@@ -1,5 +1,1 @@
-Can I mention testing for hardlinks without python? /bin/test has the FILE1 -ef FILE2 condition that is true when files share an inode.
-Therefore, something like find . -type f -exec test \{} -ef /path/to/file \; -print works for hard link testing to a specific file.
-Which brings me to reading man test and the mentions of -L and -h which both work on one file and return true if that file is a symbolic link, however that doesn't tell you if the target is missing.
-I did find that head -0 FILE1 would return an exit code of 0 if the file can be opened and a 1 if it cannot, which in the case of a symbolic link to a regular file works as a test for whether it's target can be read.
-
+Simple yet Python 2 & Python 3 compatible way:

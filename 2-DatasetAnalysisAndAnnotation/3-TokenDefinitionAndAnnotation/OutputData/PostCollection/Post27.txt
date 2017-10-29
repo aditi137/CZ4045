@@ -1,4 +1,2 @@
-Why not use SQLite? There is good support in Python and you can write SQL queries to get the data out. Here is the Python docs for sqlite3
-If you don't want to use SQLite you could do an array of dicts.
-That way you add metadata to any record and search it very easily
-
+You can use C style string formatting:
+See here, especially: https://web.archive.org/web/20120415173443/http://diveintopython3.ep.io/strings.html

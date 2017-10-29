@@ -1,8 +1,3 @@
-Python's a fairly easy language to thread in, but there are caveats.  The biggest thing you need to know about is the Global Interpreter Lock.  This allows only one thread to access the interpreter.  This means two things:  1)  you rarely ever find yourself using a lock statement in python and 2) if you want to take advantage of multi-processor systems, you have to use separate processes.  EDIT:  I should also point out that you can put some of the code in C/C++ if you want to get around the GIL as well.
-Thus, you need to re-consider why you want to use threads.  If you want to parallelize your app to take advantage of dual-core architecture, you need to consider breaking your app up into multiple processes.
-If you want to improve responsiveness, you should CONSIDER using threads.  There are other alternatives though, namely microthreading.  There are also some frameworks that you should look into:
-stackless python
-greenlets
-gevent
-monocle
-
+This document seems to go into quite a bit of detail (and I think a complete description is out of scope for a stackoverflow answer):
+http://codespeak.net/pypy/dist/pypy/doc/translation.html
+The general idea of translating from one language to another isn't particularly revolutionary, but it has only recently been gaining popularity / applicability in "real-world" applications.  GWT does this with Java (generating Javascript) and there is a library for translating Haskell into various other languages as well (called YHC)

@@ -1,2 +1,1 @@
-Use threads in python if the individual workers are doing I/O bound operations. If you are trying to scale across multiple cores on a machine either find a good IPC framework for python or pick a different language.
-
+Are you looking for Python specific translation, or just the general "how do you compile some code to bytecode"? If the latter is your case, check the LLVM tutorial. I especially find chapter two, which teaches you to write a compiler for your own language, interesting.

@@ -1,2 +1,3 @@
-os.lstat() may be helpful. If lstat() succeeds and stat() fails, then it's probably a broken link.
-
+One more, using urlretrieve:
+(for Python 3+ use 'import urllib.request' and urllib.request.urlretrieve)
+Yet another one, with a "progressbar"

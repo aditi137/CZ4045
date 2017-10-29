@@ -1,4 +1,2 @@
-@Daniel The distinction between fork/exec and dynamic linking, besides being kind of artificial, doesn't carry over to interpreted languages: what about a Python/Perl/Ruby plugin, which gets loaded via import or execfile?
-I'm not sure that the distinction is artificial. After a dynamic load the plugin code shares an execution context with the GPLed code. After a fork/exec it does not.
-In anycase I would guess that importing causes the new code to run in the same execution context as the GPLed bit, and you should treat it like the dynamic link case. No?
-
+Tested only in octave... (no matlab license). Variations of arrayfun() exist, check the documentation.
+Yields...

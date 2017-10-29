@@ -1,5 +1,7 @@
-Bartosz/To clarify "This worked okay, but there was no easy way of checking if x[3][24] was supposed to exist or not"
-x['some show'][3][24] would return season 3, episode 24 of "some show". If there was no season 3, I want the pseudo-dict to raise tvdb_seasonnotfound, if "some show" doesn't exist, then raise tvdb_shownotfound
-The current system of a series of classes, each with a __getitem__ - Show checks if self.seasons.has_key(requested_season_number), the Season class checks if self.episodes.has_key(requested_episode_number) and so on.
-It works, but it there seems to be a lot of repeated code (each class is basically the same, but raises a different error)
-
+From Wikipedia on UTF-8: 
+UTF-8 (8-bit UCS/Unicode Transformation Format) is a variable-length character encoding for Unicode. It is able to represent any character in the Unicode standard, yet the initial encoding of byte codes and character assignments for UTF-8 is backwards compatible with ASCII. For these reasons, it is steadily becoming the preferred encoding for e-mail, web pages[1], and other places where characters are stored or streamed.
+So, it's anywhere between one and four bytes depending on which character you wish to represent within the realm of Unicode.
+From Wikipedia on Unicode:
+In computing, Unicode is an industry standard allowing computers to consistently represent and manipulate text expressed in most of the world's writing systems. 
+So it's able to represent most (but not all) of the world's writing systems. 
+I hope this helps :)

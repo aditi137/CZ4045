@@ -1,8 +1,4 @@
-** creates an intermediary dict, which means that the total number of copies
-is actually higher doing the dict(one, **two) form, but all that happens in C
-so it's still generally faster than going to itertools, unless there are a huge number of copies (or, probably, if the copies are very expensive). As always if you actually care about speed you should time your use case.
-Timing on Python 2.7.3 with an empty dict:
-With 10,000 (tiny) items:
-With 100,000 items:
-With 1,000,000 items:
-
+I don't know if gwhois does something special with the server output; however, you can plainly connect to the whois server on port whois (43), send your query, read all the data in the reply and parse them. To make life a little easier, you could use the telnetlib.Telnet class (even if the whois protocol is much simpler than the telnet protocol) instead of plain sockets.
+The tricky parts:
+which whois server will you ask? RIPE, ARIN, APNIC, LACNIC, AFRINIC, JPNIC, VERIO etc LACNIC could be a useful fallback, since they tend to reply with useful data to requests outside of their domain.
+what are the exact options and arguments for each whois server? some offer help, others don't. In general, plain domain names work without any special options.

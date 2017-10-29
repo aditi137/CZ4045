@@ -1,4 +1,7 @@
-I've been trying to wrap my head around how threads work in Python, and it's hard to find good information on how they operate. I may just be missing a link or something, but it seems like the official documentation isn't very thorough on the subject, and I haven't been able to find a good write-up.
-From what I can tell, only one thread can be running at once, and the active thread switches every 10 instructions or so?
-Where is there a good explanation, or can you provide one? It would also be very nice to be aware of common problems that you run into while using threads with Python.
-
+PyPy translator is in general, not intended for more public use. We use it for translating
+our own python interpreter (including JIT and GCs, both written in RPython, this restricted
+subset of Python). The idea is that with good JIT and GC, you'll be able to speedups even
+without knowing or using PyPy's translation toolchain (and more importantly, without
+restricting yourself to RPython).
+Cheers,
+fijal

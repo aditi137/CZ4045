@@ -1,7 +1,4 @@
-Using the choices parameter won't use the ENUM db type; it will just create a VARCHAR or INTEGER, depending on whether you use choices with a CharField or IntegerField.  Generally, this is just fine.  If it's important to you that the ENUM type is used at the database level, you have three options:
-Use "./manage.py sql appname" to see the SQL Django generates, manually modify it to use the ENUM type, and run it yourself.  If you create the table manually first, "./manage.py syncdb" won't mess with it.
-If you don't want to do this manually every time you generate your DB, put some custom SQL in appname/sql/modelname.sql to perform the appropriate ALTER TABLE command.
-Create a custom field type and define the db_type method appropriately.
-With any of these options, it would be your responsibility to deal with the implications for cross-database portability.  In option 2, you could use database-backend-specific custom SQL to ensure your ALTER TABLE is only run on MySQL.  In option 3, your db_type method would need to check the database engine and set the db column type to a type that actually exists in that database.
-UPDATE: Since the migrations framework was added in Django 1.7, options 1 and 2 above are entirely obsolete. Option 3 was always the best option anyway. The new version of options 1/2 would involve a complex custom migration using SeparateDatabaseAndState -- but really you want option 3.
-
+Basically I want to get the number of lines-of-code in the repository after each commit.
+The only (really crappy) ways I have found is to use git filter-branch to run wc -l *, and a script that runs git reset --hard on each commit, then runs wc -l
+To make it a bit clearer, when the tool is run, it would output the lines of code of the very first commit, then the second and so on. This is what I want the tool to output (as an example):
+I've played around with the ruby 'git' library, but the closest I found was using the .lines() method on a diff, which seems like it should give the added lines (but does not: it returns 0 when you delete lines for example)

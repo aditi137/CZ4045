@@ -1,4 +1,6 @@
-I had to turn off the "Silence terminal bell" option in my active Terminal Profile in iTerm for print('\a') to work. It seemed to work fine by default in Terminal.
-You can also use the Mac module Carbon.Snd to play the system beep:
-The Carbon modules don't have any documentation, so I had to use help(Carbon.Snd) to see what functions were available. It seems to be a direct interface onto Carbon, so the docs on Apple Developer Connection probably help.
-
+In 2012, use the python requests library
+You can run pip install requests to get it.
+Requests has many advantages over the alternatives because the API is much simpler. This is especially true if you have to do authentication. urllib and urllib2 are pretty unintuitive and painful in this case.
+2015-12-30
+People have expressed admiration for the progress bar. It's cool, sure. There are several off-the-shelf solutions now, including tqdm:
+This is essentially the implementation @kvance described 30 months ago.

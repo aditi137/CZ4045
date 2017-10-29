@@ -1,3 +1,1 @@
-You can add the catalog to the XML_CATALOG_FILES environment variable:
-See this thread. Note that entries in XML_CATALOG_FILES are space-separated URLs. You can use Python's pathname2url and urljoin (with file:) to generate the URL from a pathname.
-
+You can use following to achieve desired functionality
