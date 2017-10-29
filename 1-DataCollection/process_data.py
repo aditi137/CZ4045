@@ -87,9 +87,10 @@ posts = pandas.concat([questions, answers]).sort_values('ParentId')[
 
 posts_length = posts.groupby('Post length').count()[['Id']]
 posts_length.columns = ['Number of posts']
-posts_length.to_csv(os.path.join(outputSubdir, 'word_count.csv'), encoding='utf-8')
+posts_length = posts_length.reset_index()
+posts_length.to_csv(os.path.join(outputSubdir, 'word_count.csv'), encoding='utf-8', index=False)
 
-posts.hist('Post length', bins=range(0, 1500, 10))
+posts.hist('Post length', bins=range(0, posts_length['Post length'].max()+1, 20), edgecolor='black')
 plt.xlabel('post length')
 plt.ylabel('number of posts')
 plt.savefig(os.path.join(outputSubdir, 'word_count_hist.png'))
