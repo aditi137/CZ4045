@@ -1,14 +1,1 @@
-,0
-0,One
-1,more
-2,","
-3,using
-4,"urlretrieve:
-(for Python 3+ use 'import urllib.request' and urllib.request.urlretrieve)"
-5,Yet
-6,another
-7,one
-8,","
-9,with
-10,a
-11,"""progressbar"""
+One,more,",",using,urlretrieve,:,(,for,Python,3,+,use,',import urllib,.,request,',and,urllib.request.urlretrieve,),Yet,another,one,",",with,a,"""",progressbar,""""

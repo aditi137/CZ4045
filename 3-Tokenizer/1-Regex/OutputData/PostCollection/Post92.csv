@@ -1,16 +1,1 @@
-,0
-0,Have
-1,a
-2,look
-3,at
-4,"http://www.aemdesign.com/downloadfsqp.htm.
-There you will find C code which provides the same functionality as fmincon. (However, using a different algorithm. You can read the manual if you are interested in the details.)"
-5,It
-6,'s
-7,open
-8,source
-9,but
-10,not
-11,under
-12,GPL
-13,.
+Have,a,look,at,http://www.aemdesign.com/downloadfsqp.htm.,There,you,will,find,C,code,which,provides,the,same,functionality,as,fmincon,.,(,However,",",using,a,different,algorithm,.,You,can,read,the,manual,if,you,are,interested,in,the,details,.,),It's,open,source,but,not,under,GPL,.
