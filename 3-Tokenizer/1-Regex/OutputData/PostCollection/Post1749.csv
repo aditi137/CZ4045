@@ -1,9 +1,0 @@
-,0
-0,"System: Ubuntu 14
-IDE: PyCharm Community Edition 3.1.1
-Python: 2.7.6 
-Algorithm with recurrent call: 
-Test:
-Value in test is intended. Around value 26175 test sometimes pass but sometimes it is terminated with message:
-Process finished with exit code 139
-I understand that test result somehow depends from hardware resources but I'm looking for more precise answer from stackoverflow seniors :)"

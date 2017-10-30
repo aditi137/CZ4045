@@ -1,5 +1,0 @@
-,0
-0,"Solved: I was missing mysql_config --cflags mysql_config --libs while creating the shared library _IMysqlConnection.so
-g++ -shared CMysqlConnection_wrap.o CMysqlConnection.o -o _CMysqlConnection.so mysql_config --cflags mysql_config --libs
-Above command linked mysql library to the shared library _IMysqlConnection.so and it worked fine.
-Thanks Ugo for your help :-)"
