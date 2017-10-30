@@ -1,11 +1,1 @@
-,0,1,2,3
-0,,,,Proper
-1,,,,version
-2,,,,to
-3,,,,work
-4,,,,is:
-5,,,,(attention
-6,,,,to
-7,,,,last
-8,,,,line
-9,,,,self.message.save())
+Use,the,python,multiprocessing,module,which,will,work,everywhere,.,Here,is,a,IBM,developerWords,article,that,shows,how,to,convert,from,os,.fork(),to,the,multiprocessing,module,.

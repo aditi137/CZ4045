@@ -74,10 +74,19 @@ def main():
         
     for i, post in enumerate(posts):
         words = tokenizer.tokenize(post)
+
+        selectedWords = []
+
+        for row in words:    
+            for column in row:
+                if len(column) > 0:
+                    selectedWords.append(column)
+                    break
     
         filename = 'Post' + str(i + 1) + '.csv'
-        df = pandas.DataFrame(words)
-        df.to_csv(os.path.join(postsSubdir, filename), encoding='utf-8')
+        df = pandas.DataFrame(selectedWords)
+        cleanDf = df.transpose().dropna(axis=1)
+        cleanDf.to_csv(os.path.join(postsSubdir, filename), encoding='utf-8', index=False, header=None)
 
     createmanuallyAnnotatedPostsForDiff(tokenizer)
 

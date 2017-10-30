@@ -1,14 +1,1 @@
-,0,1,2,3
-0,,,,A
-1,,,,requests-based
-2,,,,solution
-3,,,,using
-4,,,,HEAD
-5,,,,instead
-6,,,,of
-7,,,,GET
-8,,,,(also
-9,,,,prints
-10,,,,HTTP
-11,,,,headers):
-12,,,,Usage
+so,what,is,a,"""Unicode",string,"""",in,Python,?,Python,'knows',that,your,string,is,Unicode,.,Hence,if,you,do,regex,on,it,",",it,will,know,which,is,character,and,which,is,not,etc,",",which,is,really,helpful,.,If,you,did,a,strlen,it,will,also,give,the,correct,result,.,As,an,example,if,you,did,string,count,on,Hello,",",you,will,get,5,(even,if,it,'s,Unicode,).,But,if,you,did,a,string,count,of,a,foreign,word,and,that,string,was,not,a,Unicode,string,than,you,will,have,much,larger,result,.,Pythong,uses,the,information,form,the,Unicode,Character,Database,to,identify,each,character,in,the,Unicode,String,.,Hope,that,helps,.

@@ -1,13 +1,1 @@
-,0,1,2,3
-0,,,,Updated
-1,,,,solution
-2,,,,and
-3,,,,workaround
-4,,,,for
-5,,,,SplitDateTime
-6,,,,with
-7,,,required=False,
-8,,,,:
-9,,,,forms.py
-10,,,,form.html
-11,,,,urls.py
+For,numerical,optimization,in,Python,you,may,take,a,look,at,OpenOpt,solvers,:,http,://openopt.org/NLP,http,://openopt.org/Problems
