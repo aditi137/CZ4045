@@ -1,0 +1,85 @@
+,0
+0,The
+1,answer
+2,was
+3,given
+4,right
+5,there
+6,in
+7,the
+8,PEP
+9,[ed:
+10,this
+11,passage
+12,has
+13,been
+14,edited
+15,out
+16,in
+17,2013
+18,].
+19,I
+20,"quote:
+The most popular way of indenting Python is with spaces only.
+What other underlying reason do you need?
+To put it less bluntly: Consider also the scope of the PEP as stated in the very first paragraph:
+This document gives coding conventions for the Python code comprising the standard library in the main Python distribution.
+The intention is to make all code that goes in the official python distribution consistently formatted (I hope we can agree that this is universally a Good Thingâ„¢)"
+21,.
+22,Since
+23,the
+24,decision
+25,between
+26,spaces
+27,and
+28,tabs
+29,for
+30,an
+31,individual
+32,programmer
+33,is
+34,a
+35,)
+36,really
+37,a
+38,matter
+39,of
+40,taste
+41,and
+42,b
+43,)
+44,easily
+45,dealt
+46,with
+47,by
+48,technical
+49,means
+50,"(editors,"
+51,conversion
+52,scripts
+53,","
+54,etc
+55,".),"
+56,there
+57,is
+58,a
+59,clear
+60,way
+61,to
+62,end
+63,all
+64,"discussion: choose one.
+Guido was the one to choose. He didn't even have to give a reason, but he still did by referring to empirical data.
+For all other purposes you can either take this PEP as a recommendation, or you can ignore it -- your choice, or your team's, or your team leaders.
+But if I may give you one advice: don't mix'em ;-)"
+65,[ed:
+66,Mixing
+67,tabs
+68,and
+69,spaces
+70,is
+71,no
+72,longer
+73,an
+74,option
+75,.]

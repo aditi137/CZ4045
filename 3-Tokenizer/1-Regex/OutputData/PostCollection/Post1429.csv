@@ -1,0 +1,29 @@
+,0
+0,Yes
+1,","
+2,there
+3,is
+4,a
+5,good
+6,reason
+7,not
+8,to
+9,start
+10,all
+11,your
+12,Python
+13,programs
+14,like
+15,that
+16,.
+17,First
+18,of
+19,"all: 
+sys.stdout.encoding is None if Python doesn't know what encoding the stdout supports. This, in most cases, is because it doesn't really support any encoding at all. In your case it's because the stdout is a file, and not a terminal. But it could be set to None because Python also fails to detect the encoding of the terminal.
+Second of all: You set the environment variable and then start a new process with the smae command again. That's pretty ugly.
+So, unless you plan to be the only one using your programs, you shouldn't start them like that. But if you do plan to be the only using your program, then go ahead. 
+More in-depth explanation
+A better generic solution under Python 2 is to treat stdout as what it is: An 8-bit interface. And that means that anything you print to to stdout should be 8-bit. You get the error when you are trying to print Unicode data, because print will then try to encode the Unicode data to the encoding of stdout, and if it's None it will assume ASCII, and fail, unless you set PYTHONIOENCODING.
+But by printing encoded data, you don't have this problem. The following works perfectly even when the output is piped:
+(However, this will fail Under Python 3, because under Python 3, stdout is no longer 8-bit IO, you are supposed to give it Unicode data, and it will encode by itself. If you give it binary data, it will print the representation. Therefore on Python 3 you don't have this problem in the first place)"
+20,.

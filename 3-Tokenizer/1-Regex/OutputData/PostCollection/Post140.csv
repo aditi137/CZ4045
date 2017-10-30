@@ -1,0 +1,23 @@
+,0
+0,Environment
+1,.TickCount
+2,seems
+3,to
+4,work
+5,well
+6,if
+7,you
+8,need
+9,something
+10,quick
+11,.
+12,int
+13,start = Environment
+14,.TickCount
+15,...DoSomething()
+16,int
+17,elapsedtime = Environment
+18,.TickCount
+19,-
+20,start
+21,Jon

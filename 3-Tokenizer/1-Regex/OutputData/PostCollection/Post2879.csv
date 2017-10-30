@@ -1,0 +1,12 @@
+,0
+0,I
+1,think
+2,what
+3,you
+4,want
+5,is
+6,the
+7,"following:
+If it is python 2, for legibility you could:
+By this way you will be able to ""extract"" each value associated with the key and force that every row is a record of form (k, v)"
+8,.

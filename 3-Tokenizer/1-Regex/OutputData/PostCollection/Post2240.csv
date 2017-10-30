@@ -1,0 +1,10 @@
+,0
+0,You
+1,can
+2,"either:
+Whatever the reason you ask this (other writers will tell you it is usually a better idea to use optparse or argparse, ... like they are doing in the stdlib [timeit or json])"
+3,","
+4,it
+5,is
+6,possible
+7,.

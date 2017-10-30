@@ -1,0 +1,26 @@
+,0
+0,For
+1,reference
+2,","
+3,a
+4,straight
+5,forward
+6,list
+7,comprehension
+8,(loop)
+9,"answer:
+basically the same speed as the filter approach:
+But this is a toy example, so timings aren't meaningful.
+If a wasn't already an array, these list approaches would be faster than the array ones, due to the overhead of creating arrays.
+There are some numpy set operations, but they work with 1d arrays.  We can get around that by converting 2d arrays to 1d structured.
+There is a version of this using np.void, but it's easier to remember and play with this 'i,i' dtype.
+So this works:
+but it is much slower than the iterations:
+As discussed in other recent union questions, np.in1d uses several strategies.  One is based on broadcasting and where.  The other uses unique, concatenation, sorting and differences.
+A broadcasting solution (yes, it's messy)"
+10,-
+11,but
+12,faster
+13,than
+14,in1d
+15,.

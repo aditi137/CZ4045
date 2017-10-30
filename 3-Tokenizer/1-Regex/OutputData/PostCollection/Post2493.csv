@@ -1,0 +1,29 @@
+,0
+0,I
+1,am
+2,trying
+3,to
+4,do
+5,something
+6,similar
+7,to
+8,GridSearch
+9,in
+10,"sklearn: I want to get a list of three models, where all parameters are fixed except for C corresponding to the 1, 10, and 100 in each model. I have the following two functions. 
+I then build a model and specify a dictionary of parameters. 
+And generate the models using the functions I just defined. 
+However, the outcome is the same model (using the last parameter, i.e. 100)"
+11,being
+12,repeated
+13,3
+14,times
+15,.
+16,It
+17,seems
+18,there
+19,is
+20,some
+21,aliasing
+22,going
+23,on
+24,.

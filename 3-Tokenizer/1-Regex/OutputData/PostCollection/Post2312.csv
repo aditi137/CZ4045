@@ -1,0 +1,45 @@
+,0
+0,I
+1,'ve
+2,noticed
+3,weird
+4,behavior
+5,with
+6,zmq
+7,".PUB,"
+8,it
+9,requires
+10,to
+11,have
+12,while
+13,loop
+14,to
+15,send
+16,message
+17,.
+18,"Example:
+Imagine I have a sub waiting for a pub:
+And I want to send a message from pub:
+This message won't reach the sub for some reason. You can fix this by adding while or for loop before  sending a message publisher.send(''.join(sys.argv[1])"
+19,)
+20,Why
+21,is
+22,that
+23,?
+24,Do
+25,I
+26,always
+27,have
+28,to
+29,have
+30,a
+31,loop
+32,with
+33,publisher
+34,to
+35,distribute
+36,messages
+37,to
+38,multiple
+39,workers
+40,?

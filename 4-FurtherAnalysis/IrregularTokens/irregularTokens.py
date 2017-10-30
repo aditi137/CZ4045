@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import math
 import nltk
 from nltk.corpus import words
 
@@ -33,8 +34,8 @@ def getIrregularTokenCounts(word_counts):
 def main():
     inputDir = 'InputData'
     outputDir = 'OutputData'
-    
-    tokenized_result = pd.read_csv(os.path.join(inputDir, 'tokenizedPosts.csv'), encoding='utf-8')['Tokens']
+
+    tokenized_result = pd.read_csv(os.path.join(inputDir, 'allTokenizedPosts.csv'), encoding='utf-8')['Tokens']
     
     wordCounts = getSortedWordCounts(tokenized_result)
     irrWordCounts = getIrregularTokenCounts(wordCounts)

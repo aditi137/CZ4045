@@ -1,0 +1,16 @@
+,0
+0,add
+1,WSGIPassAuthorization
+2,On
+3,:
+4,Then
+5,just
+6,read
+7,environ
+8,['REMOTE_USER']:
+9,More
+10,information
+11,at
+12,mod_wsgi
+13,documentation
+14,.

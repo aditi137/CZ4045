@@ -1,0 +1,27 @@
+,0
+0,Try
+1,using
+2,an
+3,tuple
+4,"(var1,"
+5,var2
+6,)
+7,or
+8,"(var,)"
+9,instead
+10,of
+11,a
+12,list
+13,"[var1, var2]"
+14,","
+15,or
+16,convert
+17,the
+18,lists
+19,to
+20,tuples
+21,before
+22,sending
+23,printing
+24,tuple
+25,([var]).

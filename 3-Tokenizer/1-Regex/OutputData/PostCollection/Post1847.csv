@@ -1,0 +1,122 @@
+,0
+0,Assume
+1,that
+2,I
+3,have
+4,few
+5,modules
+6,on
+7,my
+8,GAE
+9,project
+10,(say
+11,A
+12,","
+13,B
+14,","
+15,C
+16,).
+17,They
+18,shares
+19,the
+20,users
+21,database
+22,and
+23,sessions
+24,.
+25,For
+26,example: module A will manage the login/logout actions (through cookies)
+27,","
+28,module
+29,B
+30,",C"
+31,will
+32,handle
+33,other
+34,actions
+35,.
+36,FYI
+37,","
+38,those
+39,modules
+40,are
+41,developed
+42,in
+43,both
+44,PHP
+45,and
+46,Python
+47,.
+48,Now
+49,","
+50,I
+51,do
+52,not
+53,want
+54,to
+55,make
+56,user
+57,&
+58,session
+59,verification
+60,codes
+61,on
+62,all
+63,3
+64,modules
+65,.
+66,Is
+67,there
+68,anyway
+69,for
+70,me
+71,to
+72,put
+73,a
+74,middleware
+75,that
+76,run
+77,before
+78,all
+79,3
+80,modules
+81,for
+82,each
+83,request
+84,.
+85,Such
+86,as
+87,"X: it will add header for each request to set the user id and some user's information if the user has logged in.
+I.E: after I can implement my above idea. Each request will run through 1 in below 3 cases:
+X, A
+X, B
+X, C
+What do you say?
+Thanks
+Update 1: more information
+The middleware, I mean the request middle ware.
+If X is a middleware then it will be run before the request is passed to the app (or module)"
+88,","
+89,it
+90,will
+91,change
+92,the
+93,request
+94,only
+95,such
+96,"as:
+Do some authentication actions  
+Add some headers:
+X-User-Id: for authorized user id
+X-User-Scopes: for scopes of authorized user
+etc ...
+And of course, it is independent to the inside module's language (PHP or Python or Java or ...)"
+97,The
+98,X
+99,middleware
+100,should
+101,be
+102,configured
+103,at
+104,app
+105,.yaml.

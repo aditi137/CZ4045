@@ -1,0 +1,16 @@
+,0
+0,Using
+1,the
+2,following
+3,"code:
+printformatted(""1,Some summary"")"
+4,gives
+5,me
+6,the
+7,error
+8,"ValueError: need more than 1 value to unpack, whereas printformatted([""1,Some summary""])"
+9,does
+10,not
+11,.
+12,Why
+13,?

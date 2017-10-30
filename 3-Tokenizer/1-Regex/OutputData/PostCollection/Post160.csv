@@ -1,0 +1,18 @@
+,0
+0,Some
+1,experimentation
+2,and
+3,I
+4,figured
+5,this
+6,one
+7,"out:
+def methodA(arg, **kwargs)"
+8,:
+9,methodB
+10,"(""argvalue"","
+11,**kwargs)
+12,Seems
+13,obvious
+14,now
+15,...

@@ -1,0 +1,43 @@
+,0
+0,"Re: httplib=False
+You are already using requests library to make web calls. It has gevent flavour called grequests:
+https://github.com/kennethreitz/grequests
+Overall I don't immediately see much reason to prefer one style of threading to the other, if your pool is so small. Of course real threads are relatively heavy (start with 8MB stack)"
+1,","
+2,but
+3,you
+4,have
+5,to
+6,take
+7,that
+8,into
+9,proportion
+10,to
+11,the
+12,size
+13,of
+14,your
+15,job
+16,.
+17,My
+18,take
+19,","
+20,try
+21,both
+22,"(done),"
+23,verify
+24,you
+25,are
+26,doing
+27,both
+28,right
+29,(to
+30,do
+31,)
+32,and
+33,let
+34,numbers
+35,do
+36,the
+37,talking
+38,.

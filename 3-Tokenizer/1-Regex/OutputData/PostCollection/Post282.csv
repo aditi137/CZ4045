@@ -1,0 +1,26 @@
+,0
+0,Using
+1,Django
+2,on
+3,apache
+4,with
+5,mod_python
+6,","
+7,I
+8,host
+9,multiple
+10,(unrelated)
+11,django
+12,sites
+13,simply
+14,with
+15,the
+16,following
+17,apache
+18,"config:
+No need for multiple apache instances or proxy servers. Using a different PythonInterpreter directive for each site (the name you enter is arbitrary)"
+19,keeps
+20,the
+21,namespaces
+22,separate
+23,.

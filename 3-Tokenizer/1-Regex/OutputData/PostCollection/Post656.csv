@@ -1,0 +1,38 @@
+,0
+0,You
+1,could
+2,use
+3,a
+4,list
+5,comprehension
+6,like
+7,"this:
+However, it looks like you're trying to reinvent a dictionary for some reason. If it doesn't have to be ordered, just use a dictionary:
+If it does need to be ordered, you can use collections.OrderedDict rather than dict:
+With a dictionary, if you need it back in the format you have in your question, just call items()"
+8,on
+9,the
+10,dictionary
+11,.
+12,Additionally
+13,","
+14,to
+15,convert
+16,a
+17,list
+18,like
+19,in
+20,your
+21,question
+22,into
+23,some
+24,kind
+25,of
+26,dictionary
+27,","
+28,just
+29,pass
+30,it
+31,into
+32,it
+33,:

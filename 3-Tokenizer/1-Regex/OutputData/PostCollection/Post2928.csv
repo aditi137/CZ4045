@@ -1,0 +1,75 @@
+,0
+0,I
+1,am
+2,trying
+3,to
+4,format
+5,the
+6,results
+7,of
+8,a
+9,query
+10,such
+11,that
+12,results
+13,are
+14,printed
+15,on
+16,their
+17,respective
+18,lines
+19,.
+20,For
+21,example
+22,","
+23,I
+24,am
+25,querying
+26,stores
+27,by
+28,store
+29,number
+30,and
+31,obtaining
+32,the
+33,location
+34,from
+35,a
+36,JSON
+37,file
+38,","
+39,but
+40,when
+41,printing
+42,","
+43,the
+44,store
+45,number
+46,and
+47,location
+48,are
+49,printing
+50,on
+51,separate
+52,"lines:
+Code Snippet: (Searching for stores 35 and 96)"
+53,Current
+54,"Output:
+Store: 35
+{'location': Iowa}
+Store: 96
+{'location': Minnesota}
+Desired output (or something similar)"
+55,:
+56,Store
+57,:
+58,35
+59,","
+60,'location':
+61,Iowa
+62,Store
+63,:
+64,96
+65,","
+66,'location':
+67,Minnesota

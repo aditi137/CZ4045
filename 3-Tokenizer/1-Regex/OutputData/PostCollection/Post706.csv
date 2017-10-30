@@ -1,0 +1,26 @@
+,0
+0,Python
+1,'s
+2,dict
+3,syntax
+4,is
+5,very
+6,simple
+7,.
+8,It
+9,'s
+10,just
+11,key
+12,-value
+13,pairs
+14,inside
+15,a
+16,pair
+17,of
+18,curly
+19,braces
+20,","
+21,like
+22,"this:
+Following your update, it looks like you don't want a dict at all but zip()"
+23,:

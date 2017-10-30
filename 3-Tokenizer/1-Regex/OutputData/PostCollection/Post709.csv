@@ -1,0 +1,38 @@
+,0
+0,I
+1,have
+2,a
+3,CSV
+4,file
+5,"with: 
+area ID
+area name
+URL of a KML file with the area boundaries: http://link.to/area_ID.kml
+How can I load in the KML to a column in the CSV in order to upload it to Fusion Tables?
+I'm working in Python. The KML is also available as JSON if that helps. 
+I know that I need to add it as a geometry column in the Fusion Table: I just literally don't understand how to get it into the CSV file so that I can then upload it to Fusion Tables. 
+Thanks for your help. 
+UPDATE: I've tried to write the KML as a string to the column in the CSV (<Polygon>....</Polygon>)"
+6,","
+7,but
+8,Fusion
+9,Tables
+10,is
+11,refusing
+12,to
+13,import it
+14,","
+15,with
+16,a
+17,502
+18,error
+19,-
+20,perhaps
+21,because
+22,the
+23,file
+24,is
+25,now
+26,very
+27,large
+28,.
