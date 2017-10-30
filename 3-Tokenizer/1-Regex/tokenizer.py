@@ -44,15 +44,17 @@ def main():
     urlDetector = 'http[^\s()[\]]*'
     etcDetector = 'etc\.*'
     utcDetector = '(utc|UTC)\s*[+\-]\s*\d'
-    word = '[\w\@&]+'
-    wordApostropheDetector = word + "('" + word + ')+'
-    wordDotDetector = word + '(\.' + word + ')+'
-    wordSlashDetector = word + '(-' + word + ')+'
+    word = '[\w$&@]+' 
+    wordMidLettersDetector = word + '([^\w\s,/[\]]*' + word + ')*'
     arrayDetector = '\[((\s*[\w]+\s*)(,\s*[\w]+\s*)*)?\]'
     anything = '[^\s]'
     ellipsisDetector = '\.{3,}'
     mrDetector = 'M(r|s|Mrs)\.'
     arrowDetector = '(<+-+)|(-+>+)'
+    mathDetector = '\d(\s*[-+*%/]\s*\d)+'
+    versionDetector = '(\d[-./])*\d+[-+*]([\s,.:]|$)+'
+    forExampleDetector = 'i\.e\.'
+
 
     # THE ORDER IN THIS ARRAY IS IMPORTANT, THE FIRST MATCH IS THE SELECTED ONE
     regexExpressions = [
@@ -60,16 +62,17 @@ def main():
         defDetector,
         functionDetector,
         ##asignDetector,
-        ##arrayDetector,
+        arrayDetector,
         urlDetector,
         utcDetector,
         etcDetector,
         ellipsisDetector,
         mrDetector,
         arrowDetector,
-        wordDotDetector,
-        wordApostropheDetector,
-        wordSlashDetector,
+        #mathDetector,
+        #versionDetector, #We need to match the version without matching the next stop character (coma, dot...) This does not seem possible
+        forExampleDetector,
+        wordMidLettersDetector,
         word,
         anything
     ]
