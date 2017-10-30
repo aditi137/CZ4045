@@ -21,7 +21,7 @@ def createmanuallyAnnotatedPostsForDiff(tokenizer):
     posts = posts.append(cleanRead('annotatedPosts1.csv'), ignore_index=True)
     posts = posts.append(cleanRead('annotatedPosts2.csv'), ignore_index=True)
     posts = posts.append(cleanRead('annotatedPosts3.csv'), ignore_index=True)
-    #posts = posts.append(cleanRead('annotatedPosts4.csv'))
+    posts = posts.append(cleanRead('annotatedPosts4.csv'), ignore_index=True)
 
     posts.drop(posts.columns[0], axis=1, inplace=True)
         
