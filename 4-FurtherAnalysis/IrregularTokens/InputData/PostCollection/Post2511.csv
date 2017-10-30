@@ -1,0 +1,1 @@
+This,code,creates,sublists,inside,my_list,",",and,prints,out,each,sublist,every,iteration,.,So,your,output,might,be,something,like,this,:,but,my_list,would,store,all,the,sublists,",",like,this,:,[,"[0, 4, 8]",",","[3, 1, 5]",",",...,",","[9, 2, 5]",]

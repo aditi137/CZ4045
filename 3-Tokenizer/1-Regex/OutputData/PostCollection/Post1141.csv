@@ -1,0 +1,1 @@
+Parse,the,IP,into,an,int,",",and,use,bitwise,operators,to,get,it,.,Another,way,would,be,to,use,a,library,like,ipaddr-py,.,I'd,personally,prefer,the,library,.

@@ -1,0 +1,1 @@
+For,something,as,complicated,",",I,really,think,you,should,avoid,calculating,the,integral,yourself,",",especially,if,you,don't,have,experience,with,complex,integration,",",and,use,a,well,tested,existing,implementation,.,Meijer,G-function,is,implemented,in,mpmath,and,possibly,in,Sympy,.

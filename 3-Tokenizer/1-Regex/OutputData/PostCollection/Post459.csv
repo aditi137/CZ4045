@@ -1,0 +1,1 @@
+Just,in,response,to,Torsten,",",I,wasn't,able,to,call,addressof(),on,a,regular,python,object,.,Furthermore,",",id(a),!,=,addressof(a),.,This,is,in,CPython,",",don't,know,about,anything,else,.

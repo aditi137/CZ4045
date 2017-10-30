@@ -1,0 +1,1 @@
+I,have,written,code,that,separates,the,characters,at,',even,',and,',odd,',indices,",",and,I,would,like,to,modify,it,so,that,it,separates,characters,by,upper,/,lower,case,.,I,can't,figure,out,how,to,do,this,for,a,string,such,as,"""",AbBZxYp,"""",.,I,have,tried,using,.,lower,and,.,upper,but,I,think,I'm,using,them,incorrectly,.

@@ -86,12 +86,16 @@ def main():
     print regex
     tokenizer = RegexpTokenizer(regex)
 
-    posts = pandas.read_csv(os.path.join(inputSubdir, 'selectedPosts.csv'), encoding='utf-8')['post']
-
+    #posts = pandas.read_csv(os.path.join(inputSubdir, 'selectedPosts.csv'), encoding='utf-8')['post']
+    #postsSubdir = outputSubdir + '/SelectedPostsCollection'
+    posts = pandas.read_csv(os.path.join(inputSubdir, 'posts.csv'), encoding='utf-8')['Text']
     postsSubdir = outputSubdir + '/PostCollection'
+    
     if not os.path.exists(postsSubdir):
         os.makedirs(postsSubdir)
-        
+
+    allWords = []
+    print("Generating individual tokenized posts...")
     for i, post in enumerate(posts):
         words = tokenizer.tokenize(post)
 
@@ -102,12 +106,18 @@ def main():
                 if len(column) > 0:
                     selectedWords.append(column)
                     break
+        allWords += selectedWords
     
         filename = 'Post' + str(i + 1) + '.csv'
         df = pandas.DataFrame(selectedWords)
         cleanDf = df.transpose().dropna(axis=1)
         cleanDf.to_csv(os.path.join(postsSubdir, filename), encoding='utf-8', index=False, header=None)
 
+    print("Generating combined tokenized posts...")
+    combinedDF = pandas.DataFrame(allWords)
+    combinedDF.columns = ['Tokens']
+    combinedDF.to_csv(os.path.join(outputSubdir, "allTokenizedPosts.csv"), encoding='utf-8', index=False)
+    
     createmanuallyAnnotatedPostsForDiff(tokenizer)
 
     print "Finished"

@@ -1,0 +1,1 @@
+I,have,a,numpy,array,",",for,example,:,and,I,also,have,a,set,I,want,to,find,the,index,of,vectors,that,exist,in,set,b,",",here,is,but,I,use,a,for,loop,to,implement,this,",",is,there,a,convinient,way,to,do,this,job,avoiding,for,loop,?,The,for,loop,method,I,used,:

@@ -1,0 +1,1 @@
+As,@zacherates,says,",",you,really,don't,want,to,display,a,stacktrace,to,your,users,.,The,easiest,approach,to,this,problem,is,what,Django,does,by,default,if,you,have,yourself,and,your,developers,listed,in,the,ADMINS,setting,with,email,addresses,;,it,sends,an,email,to,everyone,in,that,list,with,the,full,stack,trace,(,and,more,),everytime,there,is,a,500,error,with,DEBUG,=,False,.

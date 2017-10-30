@@ -1,0 +1,1 @@
+The,idea,is,to,convert,the,list,of,lists,to,lists,of,tuples,",",which,are,hashable,and,are,",",thus,",",candidates,of,making,sets,themselves,:,And,one,more,touch,:,ADDED,In,python,2.7,the,final,touch,is,simpler,:

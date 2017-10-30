@@ -1,0 +1,1 @@
+The,problem,got,resolved,once,I,called,commit(),as,follows,connMSSQL.commit(),immediately,after,curMSSQL.execute(qryINS),line

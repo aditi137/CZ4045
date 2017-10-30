@@ -1,0 +1,1 @@
+Turns,out,it,was,the,fact,that,in,the,MySQL,schema,for,some,reason,deleted,was,defined,as,a,BIT,type,.,All,type,combinations,in,SQLAlchemy,failed,.,I,had,to,change,the,schema,to,make,it,into,a,TINYINT(1)

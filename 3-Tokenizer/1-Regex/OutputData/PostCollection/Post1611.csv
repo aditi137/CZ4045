@@ -1,0 +1,1 @@
+I'm,currently,doing,a,"""",Spell,Checker,"""",problem,.,I,have,already,created,a,list,that,holds,the,dictionary,.,Now,I'm,trying,to,see,if,word,is,in,the,list,.,I'm,new,to,using,classes,with,Python,so,I,am,probably,missing,something,tiny,.,Recent,error,has,been,"""",TypeError,:,',list,',object,cannot,be,interpreted,as,an,integer,"""",Here,is,an,excerpt,of,code,.

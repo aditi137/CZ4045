@@ -1,0 +1,1 @@
+I,wrote,a,function,which,take,into,account,eclipse,debugger,and,unittest,.,It,return,the,folder,of,the,first,script,you,launch,.,You,can,optionally,specify,the,__file__,var,",",but,the,main,thing,is,that,you,don't,have,to,share,this,variable,across,all,your,calling,hierarchy,.,Maybe,you,can,handle,others,stack,particular,cases,I,didn't,see,",",but,for,me,it's,ok,.

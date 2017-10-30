@@ -1,0 +1,1 @@
+I,have,an,array,of,bytes,in,python,",",which,looks,like,this,:,I,have,to,remove,each,nth,byte,(,A,",",B,",",C,in,the,example,),.,Array,length,can,be,many,thousands,.,Typical,chunk,size,can,be,128,or,few,thounds,.,This,is,my,current,solution,:,I,am,looking,for,other,solutions,",",which,could,be,more,elegant,.,Python,3.x,only,solutions,are,fine,.

@@ -1,0 +1,1 @@
+You'll,want,to,promote,the,QGraphicsView,to,your,own,class,that,subclasses,QGraphicsView,.,To,learn,how,to,promote,widgtes,in,Qt,Designer,",",see,this,SO,post,:,How,do,I,use,promote,to,in,Qt,Designer,in,pyqt4,?,In,your,subclass,",",you,can,override,the,paintEvent,method,is,usual,.

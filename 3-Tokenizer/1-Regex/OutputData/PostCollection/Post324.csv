@@ -1,0 +1,1 @@
+An,additional,benefit,for,Jython,",",at,least,for,some,",",is,it,lacks,the,GIL,(,the,Global,Interpreter,Lock,),and,uses,Java's,native,threads,.,This,means,that,you,can,run,pure,Python,code,in,parallel,",",something,not,possible,with,the,GIL,.

@@ -1,0 +1,1 @@
+As,@DSM,points,out,",",in,general,there,could,be,many,rows,with,name,',World,',",",so,somewhere,down,the,line,we'll,need,to,pick,one,.,One,way,to,do,this,which,seems,kind,of,nice,could,be,to,use,where,(,and,then,max,),:,Note,:,if,there,is,no,row,with,name,',World,',this,will,return,NaN,.

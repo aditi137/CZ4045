@@ -1,0 +1,1 @@
+You,can,use,df,as,a,cross-platform,way,.,It,is,a,part,of,GNU,core,utilities,.,These,are,the,core,utilities,which,are,expected,to,exist,on,every,operating,system,.,However,",",they,are,not,installed,on,Windows,by,default,(,Here,",",GetGnuWin32,comes,in,handy,),.,df,is,a,command-line,utility,",",therefore,a,wrapper,required,for,scripting,purposes,.,For,example,:

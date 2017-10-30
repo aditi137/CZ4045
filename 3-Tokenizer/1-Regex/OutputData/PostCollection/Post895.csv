@@ -1,0 +1,1 @@
+You're,using,the,%,operator,incorrectly,.,You,might,be,looking,for,something,like,this,:,Notice,that,the,substitution,variables,x,",",y,",",z,are,all,in,parentheses,",",which,means,they,are,a,single,tuple,passed,to,the,%,operator,.,In,your,code,",",notice,how,you,have,four,parameters,to,the,write(),function,(,I've,put,each,parameter,on,a,separate,line,to,make,it,easier,to,see,),:

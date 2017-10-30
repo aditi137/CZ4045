@@ -1,0 +1,1 @@
+You,can,convert,Booleans,to,integers,as,follows,:,Depending,on,the,nature,of,your,text,in,Column,A,",",you,can,do,a,few,things,:,a,),Split,on,the,space,and,take,the,second,part,(,either,string,or,int,depending,on,your,needs,),.,b,),Use,regex,to,extract,any,digits,(,\,d,*,),from,the,end,of,the,string,.

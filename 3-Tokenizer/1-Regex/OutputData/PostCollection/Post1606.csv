@@ -1,0 +1,1 @@
+Log,the,messages,using,\,n,to,separate,the,lines,",",as,you've,already,considered,",",then,write,a,custom,Formatter,subclass,which,splits,the,message,into,separate,lines,",",inserts,the,appropriate,whitespace,prefix,for,the,subsequent,lines,and,joins,them,back,together,again,.

@@ -1,0 +1,1 @@
+self.tags,+,[,',tag,',],creates,a,new,object,.,And,then,it,is,assigned,to,self.tags,.,self.tags.append,works,with,the,same,tags,object,from,the,class,.,So,all,the,objects,share,the,same,tags,object,and,append,to,it,.

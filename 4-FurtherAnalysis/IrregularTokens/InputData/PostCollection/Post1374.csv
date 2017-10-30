@@ -1,0 +1,1 @@
+Suppose,I,have,a,list,of,suits,of,cards,as,follows,:,suits,=,[,"""",h,"""",",","""",c,"""",",","""",d,"""",",","""",s,"""",],and,I,want,to,add,a,type,of,card,to,each,suit,",",so,that,my,result,is,something,like,aces,=,[,"""",ah,"""",",","""",ac,"""",",","""",ad,"""",",","""",as,"""",],is,there,an,easy,way,to,do,this,without,recreating,an,entirely,new,list,and,using,a,for,loop,?

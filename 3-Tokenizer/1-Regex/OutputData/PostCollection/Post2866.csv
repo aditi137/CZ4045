@@ -1,0 +1,1 @@
+Try,"pandas.Series(data=None, index=None, dtype=None, name=None, copy=False, fastpath=False)",after,reading,your,data,as,data,frame,with,read_csv,.,Pandas,documentation,Another,possibility,is,to,use,iloc,function,",",when,you,deal,with,a,row,",",not,a,column,.,See,here,:,Convert,pandas,data,frame,to,series

@@ -1,0 +1,1 @@
+I,was,looking,through,a,pygame,tutorial,and,encountered,the,following,part,of,a,script,:,The,last,line,set,the,center,of,the,rect,at,(,200.150,),I,looked,through,the,pygame,documentation,and,there,is,no,center,attribute,in,the,Rect,class,.,But,the,script,works,...,why,?

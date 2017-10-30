@@ -1,0 +1,1 @@
+I'm,creating,a,program,to,determine,a,minimum,",",maximum,",",and,percentiles,of,winds,at,certain,heights,.,The,file,is,split,into,5,columns,.,My,code,thus,far,looks,like,this,:,plt.show(),As,you,can,see,it's,plotting,each,min,and,max,at,the,specific,altitude,with,just,a,dot,.,How,can,I,adjust,that,so,it,makes,it,a,line,instead,.

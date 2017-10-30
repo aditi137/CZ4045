@@ -1,0 +1,1 @@
+I'm,saving,date,in,UTC,.,I,wan't,to,change,that,date,to,automatic,user,timezone,.,my,settings,my,template,I,tried,django-tz-detect,https://github.com/adamcharnock/django-tz-detect,but,I,can't,implement,that,correctly,.,Please,suggest,a,good,way,to,solve,this,issue,.

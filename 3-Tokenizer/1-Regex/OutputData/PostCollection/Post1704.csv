@@ -1,0 +1,1 @@
+The,below,code,has,an,error,in,function,U=set(p.enum,(,),),which,a,type,error,of,unhashable,type,:,',set,',actually,if,you,can,see,the,class,method,enum,am,returning,',L,',which,is,list,of,sets,and,the,U,in,function,should,be,a,set,so,can,you,please,help,me,to,resolve,the,issue,or,How,can,I,convert,list,of,sets,to,set,of,sets,?

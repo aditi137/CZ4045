@@ -1,0 +1,1 @@
+It's,fairly,straightforward,if,you,use,a,little,subquery,:,Note,the,use,of,the,OR,not,exists,clause,to,handle,the,case,when,there,are,no,entries,with,flag=true,.

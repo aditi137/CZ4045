@@ -1,0 +1,1 @@
+You,need,to,make,a,new,dictionary,from,your,defaultdict,.,The,children,in,your,example,code,is,just,a,list,of,strings,",",so,I,don't,know,where,the,"""",size,"""",of,each,one,comes,from,so,just,changed,it,into,a,list,of,dicts,(,which,don't,have,a,an,entry,for,a,"""",size,"""",key,),.,Output,:

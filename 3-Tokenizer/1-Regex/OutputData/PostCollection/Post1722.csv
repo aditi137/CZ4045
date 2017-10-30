@@ -1,0 +1,1 @@
+When,you,call,reactor.stop,at,the,end,of,connectionMade,",",you,immediately,shut,down,the,whole,process,before,any,data,is,sent,.,Remove,it,and,you,should,be,fine,.

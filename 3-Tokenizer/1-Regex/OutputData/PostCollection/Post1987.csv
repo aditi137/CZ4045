@@ -1,0 +1,1 @@
+By,default,the,QueryDict,will,return,a,single,item,from,the,list,when,doing,a,getitem,call,(,or,access,by,square,brackets,",",such,as,you,do,in,request.data,[,',material,',],),You,can,instead,use,the,getlist,method,to,return,all,values,for,the,key,:,https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.QueryDict.getlist

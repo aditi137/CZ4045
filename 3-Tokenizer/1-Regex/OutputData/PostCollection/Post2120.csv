@@ -1,0 +1,1 @@
+I'm,trying,to,create,a,form,that,will,receive,empty,strings,in,some,of,its,values,.,This,form,is,not,backed,by,a,model,object,.,I've,defined,it,thus,:,Except,when,I,try,to,run,a,test,:,I,get,the,following,exception,:,According,to,the,docs,this,should,be,ok,.,Am,I,missing,something,?

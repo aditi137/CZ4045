@@ -1,0 +1,1 @@
+You,can,convert,each,new,username,to,lower,case,and,compare,it,to,a,lower,case,version,of,the,user,list,(,created,using,a,list,comprehension,),.,You,may,want,to,store,your,usernames,in,lowercase,when,they,are,first,created,to,avoid,creating,a,lower,case,version,from,the,user,list,.

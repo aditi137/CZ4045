@@ -1,0 +1,1 @@
+The,implementation,is,in,the,PyString_Format,that,is,called,by,the,string_mod,function,in,Objects,/,stringobject.c,.,The,latter,in,turn,is,a,slot,method,stored,in,PyString_Type->tp_as_number->nb_remainder,.,The,functions,PyOS_*snprintf,are,not,really,related,to,the,implementation,of,str.__mod__,.

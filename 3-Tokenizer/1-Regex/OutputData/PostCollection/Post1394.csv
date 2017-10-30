@@ -1,0 +1,1 @@
+The,xlwt,module,doesn't,support,the,xlsx,format,.,The,xlsx,file,format,is,completely,different,from,the,xls,format,supported,by,xlwt,.,As,an,alternative,have,a,look,at,XlsxWriter,which,is,a,Python,module,for,creating,xlsx,files,.,It,supports,a,lot,of,Excel,features,.,Have,a,look,at,the,documentation,or,start,with,the,examples,.

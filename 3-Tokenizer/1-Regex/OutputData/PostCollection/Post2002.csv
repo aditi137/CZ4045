@@ -1,0 +1,1 @@
+np.hstack((np.zeros(8),",",np.ones(8),),),.,astype(int),for,np.array,output,",",or,"map( int, np.hstack((np.zeros(8)",",",np.ones(8),),),),for,list,output

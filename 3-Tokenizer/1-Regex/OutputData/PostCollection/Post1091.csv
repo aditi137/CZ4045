@@ -1,0 +1,1 @@
+If,you,are,working,in,the,same,directory,",",that,is,",",b.py,is,in,the,same,folder,as,a.py,",",I,am,unable,to,reproduce,this,problem,(,and,do,not,know,why,this,problem,occurs,),",",but,it,would,be,helpful,if,you,post,what,os.getcwd(),returns,for,b.py,.,If,that's,not,the,case,",",add,this,on,top,of,b.py,OR,if,they,are,in,the,same,path,","

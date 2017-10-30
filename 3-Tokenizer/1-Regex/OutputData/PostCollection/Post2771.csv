@@ -1,0 +1,1 @@
+I,have,a,written,a,DLL,in,which,I'm,getting,one,of,the,paths,:,Something,is,being,done,in,the,code,to,get,this,path,.,And,now,",",the,python,script,that,I,have,written,to,retrieve,this,path,from,the,DLL,is,as,shown,:,But,the,value,that,I'm,able,to,see,is,just,the,first,character,of,the,path,instead,of,the,whole,string,.,Can,anybody,help,me,with,this,problem,?

@@ -1,0 +1,1 @@
+It's,because,you,stopped,the,asr,with,asr.pause(True),.,You,only,need,to,write,this,asr.pause(False),just,before,your,time.sleep,.,You,can,also,use,standard,boxes,in,choregraphe,.

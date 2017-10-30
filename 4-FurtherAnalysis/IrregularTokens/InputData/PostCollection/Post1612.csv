@@ -1,0 +1,1 @@
+This,is,how,you,would,iterate,over,a,list,:,and,this,is,a,simpler,way,to,do,what,I,think,you,are,trying,to,do,.,Note,that,it,doesn't,require,an,explicit,loop,:,range,is,a,built-in,function,that,creates,a,list,(,in,python,2,),and,an,iterable,in,python,3,.,If,in,doubt,",",use,the,built-in,help,:,Python,2,range,Python,3,range

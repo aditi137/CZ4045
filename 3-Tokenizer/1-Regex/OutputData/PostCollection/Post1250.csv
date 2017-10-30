@@ -1,0 +1,1 @@
+Just,a,style,question,:,Is,there,a,build-in,method,to,get,the,combinations,under,the,assertion,of,commutative,property,and,excluding,elements,paired,with,itself,?,Doesn't,seem,very,Python,.,I,know,of,itertools.product,which,is,the,Cartesian,product,.,I,could,convert,it,to,a,set,which,would,exclude,the,identity-pairings,but,it's,still,the,non-commutative,product,.

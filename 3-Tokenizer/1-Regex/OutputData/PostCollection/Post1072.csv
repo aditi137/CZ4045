@@ -1,0 +1,1 @@
+The,problem,is,the,name,of,your,script,file,:,netrc.py,which,is,the,same,as,the,module,name,.,Rename,it,.,Providing,filename,to,netrc.netrc(),causes,only,to,use,the,specific,netrc,file,in,place,of,the,default,~,\,.,netrc,.

@@ -1,0 +1,1 @@
+I,have,labeled,an,binary,image,However,when,I,check,the,number,of,labels,",",I,get,535,elements,.,As,a,solution,for,this,I,thought,about,using,measure.regionprops,in,order,to,remove,the,labels,with,a,small,pixel,area,.,How,would,you,guys,approach,this,?,I,have,tried,the,following,",",but,for,one,reason,or,another,the,new,array,is,no,longer,seen,as,a,correct,label,element,.

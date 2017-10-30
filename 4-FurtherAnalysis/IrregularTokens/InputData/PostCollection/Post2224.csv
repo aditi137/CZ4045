@@ -1,0 +1,1 @@
+If,I,slice,a,2d,array,with,a,set,of,coordinates,then,my,slice,has,the,shape,that,I,would,expect,But,if,I,repeat,this,with,a,3d,array,then,the,shape,is,now,Is,there,a,reason,that,these,are,different,?,Separating,the,indices,returns,the,shape,that,I,would,expect,Why,would,these,views,have,different,shapes,?

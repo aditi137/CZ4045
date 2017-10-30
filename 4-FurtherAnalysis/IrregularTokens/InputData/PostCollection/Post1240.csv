@@ -1,0 +1,1 @@
+To,check,for,an,exact,match,you,would,use,num,=,=,line,.,But,line,has,an,end-of-line,character,\,n,or,\,r\n,which,will,not,be,in,num,since,raw_input,strips,the,trailing,newline,.,So,it,may,be,convenient,to,remove,all,whitespace,at,the,end,of,line,with

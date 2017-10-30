@@ -1,0 +1,1 @@
+It,seems,that,your,goal,is,not,to,decouple,the,database,from,the,MQ,",",but,rather,from,the,workers,.,As,such,",",you,can,create,another,queue,that,receives,completion,notifications,",",and,have,another,single,worker,that,picks,up,the,notifications,and,updates,the,database,appropriately,.

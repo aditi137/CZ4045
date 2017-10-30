@@ -1,0 +1,1 @@
+Well,",",I,figured,it,out,.,Turns,out,that,the,metafunc.parametrize,function,accepts,"""",ids,"""",as,a,parameter,.,All,I,had,to,do,was,define,the,__repr__,of,the,objects,I,was,looking,to,name,",",and,expanded,the,list,comprehension,so,I,could,return,two,things,from,the,same,loop,.

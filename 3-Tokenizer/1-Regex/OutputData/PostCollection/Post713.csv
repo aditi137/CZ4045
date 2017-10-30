@@ -1,0 +1,1 @@
+It,sounds,like,you,want,something,like,an,object-relational,mapper,.,I,am,the,primary,author,of,one,Ming,",",but,there,exist,several,others,for,Python,as,well,.,In,Ming,",",you,might,do,the,following,to,set,up,your,mapping,:,Then,you,can,query,for,some,particular,page,via,:,The,various,ODMs,I,know,of,for,MongoDB,in,Python,are,listed,below,.,Ming,MongoKit,MongoEngine

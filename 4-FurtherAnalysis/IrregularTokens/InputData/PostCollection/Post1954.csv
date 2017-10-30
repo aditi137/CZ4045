@@ -1,0 +1,1 @@
+This,works,for,me,:,1,),Access,your,session,",",in,the,same,way,you,did,session.create_all,",",do,session.drop_all,.,2,),Delete,the,migration,files,generated,by,alembic,.,3,),Run,session.create_all,and,initial,migration,generation,again,.

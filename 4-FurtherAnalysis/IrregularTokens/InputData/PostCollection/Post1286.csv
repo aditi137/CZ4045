@@ -1,0 +1,1 @@
+You,use,tuple,unpacking,:,Python,can,unpack,nested,sequences,into,separate,variables,",",as,long,as,you,create,the,same,nesting,structure,on,the,left-hand-side,.,The,looping,will,not,work,because,you,are,trying,to,unpack,2-value,tuples,per,loop,iteration,",",where,the,iteration,would,only,yield,only,1,value,.,This,works,across,python,versions,.,Demonstration,:

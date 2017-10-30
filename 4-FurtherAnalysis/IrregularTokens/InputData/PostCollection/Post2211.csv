@@ -1,0 +1,1 @@
+There,is,probably,a,mismatch,between,the,python,version,you,are,using,",",and,the,one,used,to,compile,boost::python,and,graph-tool,.,For,example,",",you,might,be,using,the,system's,python,",",whereas,graph-tool,/,python,were,compiled,with,a,version,installed,via,homebrew,.

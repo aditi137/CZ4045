@@ -1,0 +1,1 @@
+I,am,checking,consecutive,indices,of,a,list,and,I,want,to,execute,same,piece,of,code,in,case,if,the,consecutive,elements,are,not,equal,or,if,the,list,index,is,out,of,range,.,Here's,what,I'm,trying,Is,there,a,way,to,do,this,elegantly,without,having,to,repeat,the,same,code,in,the,except,block,somehow,?

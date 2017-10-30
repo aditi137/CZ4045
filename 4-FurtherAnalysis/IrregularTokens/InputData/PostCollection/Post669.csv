@@ -1,0 +1,1 @@
+If,it,has,no,__file__,attribute,then,that,means,that,it's,probably,built,into,the,Python,library,itself,(,or,some,other,executable,),",",and,does,not,exist,independently,on,disk,.

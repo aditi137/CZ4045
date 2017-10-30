@@ -1,0 +1,1 @@
+ZipFile,not,only,supports,read,but,also,open,",",which,returns,a,file-like,object,.,So,",",you,could,do,something,like,this,:

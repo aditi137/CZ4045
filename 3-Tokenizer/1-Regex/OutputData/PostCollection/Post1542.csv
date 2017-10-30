@@ -1,0 +1,1 @@
+django-cache-machine,caches,count,queries,apart,from,regular,model,queries,.,You,have,different,methods,described,in,the,documentation,to,workaround,this,:,http://cache-machine.readthedocs.org/en/latest/#count-queries,The,tricky,part,is,to,know,that,new,entries,don't,appear,because,of,this,",",but,I,hope,your,problem,is,solved,with,this,.

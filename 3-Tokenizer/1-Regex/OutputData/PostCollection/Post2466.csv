@@ -1,0 +1,1 @@
+Fyi,",",instead,of,executing,self.logger.info(msg),directly,",",i,just,wrapped,it,around,the,following,code,which,opens,filehandler,and,closes,it,each,time,im,writing,to,a,log,.,.,rewrite,self.logger.info(msg),to,self.write_to_log(msg),where,:

@@ -1,0 +1,1 @@
+I'm,using,boto,to,connect,dynamodb,in,python,.,I'm,not,seeing,any,proper,tutorials,for,querying,dynamodb,.,"""",What,i,need,is,that,i,need,to,fetch,the,content,of,the,table,where,given,name,is,present,in,firstname,or,last,name,where,first,name,and,last,name,are,the,two,fields,using,dynamodb,""""

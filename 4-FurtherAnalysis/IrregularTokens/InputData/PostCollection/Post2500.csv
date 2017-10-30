@@ -1,0 +1,1 @@
+The,numpy.where(),version,is,fast,enough,",",you,can,speedup,it,a,little,by,method3(),.,If,the,>,condition,can,change,to,>,=,",",you,can,also,use,method4(),.,the,%,timeit,result,:

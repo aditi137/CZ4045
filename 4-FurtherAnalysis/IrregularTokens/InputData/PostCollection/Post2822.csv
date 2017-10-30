@@ -1,0 +1,1 @@
+From,the,discussions,get,to,know,that,you,are,treating,with,list,of,tuple,instead,of,dict,.,So,list.pop,always,expect,a,integer,that's,why,you,getting,an,error,.,And,dict,expect,it's,key,.,So,here,you,have,to,convert,the,input,like,dict,or,pop,up,from,list,with,using,it's,index,.

@@ -1,0 +1,1 @@
+Others,have,answered,re,:,time.time(),vs,.,time.clock(),.,However,",",if,you're,timing,the,execution,of,a,block,of,code,for,benchmarking,/,profiling,purposes,",",you,should,take,a,look,at,the,timeit,module,.

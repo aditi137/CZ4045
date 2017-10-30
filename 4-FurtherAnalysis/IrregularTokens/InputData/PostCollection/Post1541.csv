@@ -1,0 +1,1 @@
+I,installed,cache-machine,for,my,Django,1.6,project,as,described,here,:,http://cache-machine.readthedocs.org/en/latest/,Now,in,django's,admin,",",I,cannot,see,new,entries,anymore,.,Cache,invalidation,does,not,work,.,I,can,see,that,the,entry,is,beeing,generated,in,the,DB,",",but,it,does,not,show,up,in,admin's,list-view,.,What,am,I,doing,wrong,?,Thx,in,advance,!

@@ -1,0 +1,1 @@
+You,can,utilise,itertools.cycle,to,repeat,one,of,the,iterables,",",eg,:,Note,that,while,cycle,will,repeat,its,elements,indefinitely,",",izip,stops,on,the,shortest,iterable,(,list1,),.

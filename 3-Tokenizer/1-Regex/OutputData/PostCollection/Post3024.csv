@@ -1,0 +1,1 @@
+Is,there,any,way,to,create,an,iterator,to,repeat,elements,in,a,list,certain,times,?,For,example,",",a,list,is,given,:,Is,there,a,way,to,create,a,iterator,in,form,of,"itertools.repeatlist(color, 7)",that,can,produce,the,following,list,?

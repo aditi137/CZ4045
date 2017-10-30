@@ -31,12 +31,26 @@ def getIrregularTokenCounts(word_counts):
 
     return irregular_word_counts
 
+'''
+def readInPosts(inputSubdir):
+    tokenized_result = []
+    postsSubdir = inputSubdir + '/PostCollection'
+
+    for i in range (1,3057):
+        print "Reading in tokenized post " + str(i) + " out of 3057"
+        current_post = pd.read_csv(os.path.join(postsSubdir, 'Post'+ str(i) +'.csv'), encoding='utf-8', header=None)
+        tokenized_result += current_post.values.tolist()
+
+    return tokenized_result
+'''
+
 def main():
     inputDir = 'InputData'
     outputDir = 'OutputData'
 
+    #tokenized_result = readInPosts(inputDir)
+
     tokenized_result = pd.read_csv(os.path.join(inputDir, 'allTokenizedPosts.csv'), encoding='utf-8')['Tokens']
-    
     wordCounts = getSortedWordCounts(tokenized_result)
     irrWordCounts = getIrregularTokenCounts(wordCounts)
 

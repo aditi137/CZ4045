@@ -1,0 +1,1 @@
+As,suspected,",",this,problem,is,about,URLs,in,Django,.,The,problem,occurred,because,I,declared,the,following,urlpattern,in,an,app,urls.py,:,I,solved,the,problem,by,changing,the,code,to,:,And,adding,the,following,code,at,the,project's,main,urls.py,:

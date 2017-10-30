@@ -1,0 +1,1 @@
+I,am,taking,zip,file,as,input,which,contains,multiple,files,and,folders,",",I,am,extracting,it,and,then,I,want,to,change,the,last,modified,time,of,each,content,in,zip,to,some,new,date,and,time,set,by,user,.,I,am,using,os.utime(),to,change,the,date,and,time,",",but,changes,get,reflected,only,to,the,files,and,not,to,the,folders,inside,zip,.,I,am,using,Python,2.7,as,platform

@@ -1,0 +1,1 @@
+The,way,in,Python,to,do,it,would,be,:,or,",",in,Python,3.6,:,However,",",this,is,wrong,!,It,will,fail,if,k,and,v,have,spaces,",",and,it,can,be,a,security,hazard,(,imagine,if,k,=,',;,rm,-,rf,/,;,),.,The,right,way,to,spawn,subprocesses,is,with,this,:

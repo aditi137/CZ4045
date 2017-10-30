@@ -1,0 +1,1 @@
+The,most,straightforward,approach,would,be,to,use,the,key,parameter,of,the,sorted,built-in,function,:,The,key,function,is,called,once,per,item,in,the,list,to,be,sorted,.,Still,this,is,inefficient,since,count,takes,linear,time,.

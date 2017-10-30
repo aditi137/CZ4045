@@ -1,0 +1,1 @@
+I'm,trying,to,implement,convolutional,neural,network,in,Python,.,However,",",when,I,use,signal.convolve,or,np.convolve,",",it,can,not,do,convolution,on,X,",","Y(X is 3d, Y is 2d)",.,X,are,training,minibatches,.,Y,are,filters,.,I,don't,want,to,do,for,loop,for,every,training,vector,like,:,So,",",is,there,any,function,I,can,use,to,do,convolution,efficiently,?

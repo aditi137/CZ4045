@@ -1,0 +1,1 @@
+To,answer,my,own,question,:,Quoting,the,actual,command,when,passing,the,parameters,as,a,list,doesn't,work,correctly,(,command,is,first,item,of,list,),so,to,solve,the,issue,I,turned,the,list,into,a,space,separated,string,and,passed,that,into,subprocess,instead,.,Better,solutions,still,welcomed,.

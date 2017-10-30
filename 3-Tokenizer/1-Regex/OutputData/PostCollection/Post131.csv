@@ -1,0 +1,1 @@
+See,the,wearkref,module,docs,for,more,details,.,You,can,also,use,weakref.proxy,to,create,an,object,that,proxies,o,.,Will,throw,ReferenceError,if,used,when,the,referent,is,no,longer,referenced,.

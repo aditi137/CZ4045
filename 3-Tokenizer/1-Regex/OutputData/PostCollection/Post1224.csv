@@ -1,0 +1,1 @@
+I,have,this,dataframe,in,pandas,:,I,want,to,select,an,element,based,on,its,string,value,in,"""",name,"""",column,and,then,get,the,value,as,a,string,.,To,select,the,element,:,The,problem,is,that,it,doesn't,give,a,simple,string,but,a,series,.,Casting,to,a,string,won't,help,-,-,how,can,I,just,get,the,string,"""",World,"""",out,of,this,?,Is,this,the,only,way,?,thanks,.

@@ -1,0 +1,1 @@
+The,issue,with,me,was,that,I,installed,python,",",cx_oracle,as,root,but,Oracle,client,installation,was,done,by,"""",oracle,"""",user,.,I,got,my,own,oracle,installation,and,that,fixed,the,issue,.,Later,I,ran,into,PyUnicodeUCS4_DecodeUTF16,issues,with,Python,and,for,that,I,had,to,install,python,with,â€”enable-unicode=ucs4,option

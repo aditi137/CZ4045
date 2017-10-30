@@ -1,0 +1,1 @@
+I,made,a,few,changes,to,your,code,.,First,I,used,get(),to,fetch,the,parameters,so,you,don't,need,to,use,the,if,in,request.GET,.,Next,I,made,use,of,chaining,QuerySet,filters,.,Finally,",",I,have,it,returning,both,q1,and,q2,to,the,template,.,It,doesn't,make,sense,to,only,return,a,query,when,you,can,enter,both,.

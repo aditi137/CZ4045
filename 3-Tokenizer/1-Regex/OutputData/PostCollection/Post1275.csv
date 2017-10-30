@@ -1,0 +1,1 @@
+You,can,check,whether,the,cursor,is,null,easily,:,Otherwise,the,usual,thing,in,Python,is,to,"""",ask,for,forgiveness,not,permission,"""",:,use,your,database,connection,and,if,it,has,timed,out,catch,the,exception,and,handle,it,(,otherwise,you,might,just,find,that,it,times,out,between,your,test,and,the,point,where,you,use,it,),.

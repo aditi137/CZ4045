@@ -1,0 +1,1 @@
+Your,question,sets,the,proxy,URL,to,http://user:password@http://newyork.wonderproxy.com:11001,which,isn't,valid,.,If,you,changed,http_proxy_server,to,newyork.wonderproxy.com,then,your,first,solution,might,work,better,.

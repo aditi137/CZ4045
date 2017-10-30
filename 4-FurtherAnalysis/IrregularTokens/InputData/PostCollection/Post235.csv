@@ -1,0 +1,1 @@
+Suppose,the,following,:,How,do,I,get,a,value,(,any,value,),out,of,s,without,doing,s.pop(),?,I,want,to,leave,the,item,in,the,set,until,I,am,sure,I,can,remove,it,-,something,I,can,only,be,sure,of,after,an,asynchronous,call,to,another,host,.,Quick,and,dirty,:,But,do,you,know,of,a,better,way,?,Ideally,in,constant,time,.

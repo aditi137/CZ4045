@@ -1,0 +1,1 @@
+Copying,a,file,is,a,relatively,straightforward,operation,as,shown,by,the,examples,below,",",but,you,should,instead,use,the,shutil,stdlib,module,for,that,.,If,you,want,to,copy,by,filename,you,could,do,something,like,this,:

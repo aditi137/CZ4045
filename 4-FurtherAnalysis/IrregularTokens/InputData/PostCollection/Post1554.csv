@@ -1,0 +1,1 @@
+When,I,run,a,python,script,that,uses,multiprocessing,I,find,it,hard,to,get,it,to,stop,cleanly,when,it,receives,Ctrl-C,.,Ctrl-C,has,to,be,pressed,multiple,times,and,all,sorts,of,error,messages,appear,on,the,screen,.,How,can,you,make,a,python,script,that,uses,multiprocessing,and,quits,cleanly,when,it,receives,a,Ctrl-C,?,Take,this,script,for,example

@@ -1,0 +1,1 @@
+Tweaking,PYTHONPATH,is,generally,not,a,very,good,idea,.,A,better,way,is,to,make,your,current,directory,behave,like,a,module,",",by,adding,a,file,named,__init__.py,",",which,can,be,empty,.,Then,the,python,interpretter,allows,you,to,import files,from,that,directory,.

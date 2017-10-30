@@ -1,0 +1,1 @@
+By,using,prefetch_related,",",you,can,walk,the,one-to-many,relationship,and,fetch,all,of,the,photos,in,two,queries,.,One,for,all,of,the,answers,",",and,another,for,all,of,the,photos,which,are,related,to,the,answers,.

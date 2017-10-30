@@ -1,0 +1,1 @@
+I,have,been,writing,a,proof-of-concept,type,program,that,sends,a,screenshot,over,the,network,",",and,for,some,reason,",",the,dataRecieved,method,isn't,being,called,after,data,is,sent,.,Here,is,my,code,SERVER,CLIENT

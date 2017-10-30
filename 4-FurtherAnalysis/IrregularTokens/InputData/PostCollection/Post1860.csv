@@ -1,0 +1,1 @@
+The,following,code,does,not,assume,that,you,have,only,two,rows,for,each,month,.,The,idea,is,that,do,the,group-wise,calculation,first,",",and,then,populate,some,NaN,using,.,reindex(),and,fill,those,NaNs,using,backward,fill,as,we've,got,the,value,for,the,very,last,entry,of,each,month,.,For,the,follow-ups,question,:

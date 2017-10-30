@@ -1,0 +1,1 @@
+The,individual,items,that,you,put,into,a,set,can't,be,mutable,",",because,if,they,changed,",",the,effective,hash,would,change,and,thus,the,ability,to,check,for,inclusion,would,break,down,.,Instead,",",you,need,to,put,immutable,objects,into,a,set,-,e.g,.,frozensets,.,If,you,change,the,return,statement,from,your,enum,method,to,...,...,then,it,should,work,.

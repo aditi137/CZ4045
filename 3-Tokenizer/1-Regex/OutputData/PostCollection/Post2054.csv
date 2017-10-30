@@ -1,0 +1,1 @@
+This,seems,like,a,really,simple,question,but,I,can't,find,a,good,answer,anywhere,.,How,might,I,multiply,(,in,place,),select,columns,(,perhaps,selected,by,a,list,),by,a,scalar,using,numpy,?,E.g,.,Multiply,columns,0,and,2,by,4,Currently,I,am,doing,this,in,multiple,steps,but,I,feel,like,there,must,be,a,better,way,especially,if,the,list,gets,larger,.,Current,way,:

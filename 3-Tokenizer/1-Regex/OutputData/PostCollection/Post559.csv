@@ -1,0 +1,1 @@
+The,most,obvious,(,and,I,would,argue,most,readable,),answer,is,to,not,use,a,list,comprehension,or,generator,expression,",",but,rather,a,real,generator,:,It,takes,more,horizontal,space,",",but,it's,much,easier,to,see,what,it,does,at,a,glance,",",and,you,end,up,not,repeating,yourself,.

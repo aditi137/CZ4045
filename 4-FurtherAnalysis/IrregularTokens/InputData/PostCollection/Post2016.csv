@@ -1,0 +1,1 @@
+File,size,depends,on,what,is,on,the,picture,.,PNG,compresses,the,data,",",so,the,blank,image,would,be,way,smaller,than,a,photo,(,with,the,same,resolution,),.,You,may,use,an,iterative,approach,:,filp,one,pixel,",",save,to,file,",",check,size,.,Then,flip,another,one,.,Faster,:,use,bisection,.

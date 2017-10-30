@@ -1,0 +1,1 @@
+tf.get_variable(),won't,work,to,get,an,operation,.,Therefore,",",I,would,define,a,new,variable,storing,"tf.maximum(1,2)",to,retrieve,it,later,:,Note,that,you,need,to,define,b,using,tf.get_variable(),in,order,to,retrieve,it,later,.

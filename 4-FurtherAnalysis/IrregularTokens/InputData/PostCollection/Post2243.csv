@@ -1,0 +1,1 @@
+A,quick,and,dirty,way,to,do,this,would,be,:,Then,you,can,run,myscript.py,hello,or,myscript.py,goodbye,",",and,when,you,add,other,global,/,top,level,functions,they,will,work,immediately,.,A,better,way,to,do,this,though,would,be,to,use,something,like,argparse,and,maybe,even,https://docs.python.org/dev/library/argparse.html#sub-commands

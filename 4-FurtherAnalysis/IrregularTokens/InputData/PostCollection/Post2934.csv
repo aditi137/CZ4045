@@ -1,0 +1,1 @@
+By,my,lights,the,easiest,thing,to,do,would,be,to,pass,the,spi,object,to,the,helper,function,as,a,parameter,:,Once,it's,passed,in,",",you,can,call,methods,on,it,in,the,body,of,the,function,.,I,removed,your,variable,assignment,because,it,seemed,redundant,.

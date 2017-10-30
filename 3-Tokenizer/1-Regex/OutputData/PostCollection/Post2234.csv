@@ -1,0 +1,1 @@
+*,In,my,application,",",I,have,two,panels,.,.,class,One,represents,the,sidebar,panel,which,contains,buttons,.,Class,Two,represents,the,main,panel,which,contains,the,listbox,.,How,do,I,call,a,function,via,a,button,(,in,this,case,to,delete,items,from,a,listbox,),whose,parent,belongs,to,another,class,(,Two,),?,*

@@ -1,0 +1,1 @@
+Always,use,b,mode,when,reading,and,writing,pickles,(,"open(f, 'wb')",for,writing,",","open(f, 'rb')",for,reading,),.,To,"""",fix,"""",the,file,you,already,have,",",convert,its,newlines,using,dos2unix,.

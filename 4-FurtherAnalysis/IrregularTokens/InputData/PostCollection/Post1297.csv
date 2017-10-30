@@ -1,0 +1,1 @@
+First,of,all,",",you,are,storing,the,return,value,of,grid,or,pack,",",which,is,always,None,",",instead,of,the,reference,to,the,widgets,.,Besides,",",you,shouldn't,use,both,geometry,managers,at,the,same,time,(,if,you,are,new,to,Tkinter,",",I'd,suggest,grid,instead,of,pack,),.,To,update,the,text,of,the,widget,",",you,have,to,use,config,with,the,text,keyword,or,budget,[,',text,',],:

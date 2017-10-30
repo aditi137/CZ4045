@@ -1,0 +1,1 @@
+If,you,don't,want,a,list,as,a,return,value,",",then,your,for,loop,is,the,best,way,.,Alternatively,",",you,could,use,one,of,python's,best,features,",",list,comprehensions,",",and,simply,not,assign,it,to,any,variable,.,List,comprehensions,are,usually,faster,.

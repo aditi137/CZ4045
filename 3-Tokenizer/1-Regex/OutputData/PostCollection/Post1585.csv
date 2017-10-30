@@ -1,0 +1,1 @@
+I,have,a,numpy,array,.,How,do,I,shuffle,the,rows,?,I,tried,numpy.random.shuffle(),but,it,was,returning,None,probably,due,to,absence,of,commas

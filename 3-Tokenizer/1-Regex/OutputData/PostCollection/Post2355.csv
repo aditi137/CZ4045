@@ -1,0 +1,1 @@
+The,pattern,I,use,for,this,problem,is,to,pivot,the,table,so,you,only,have,the,date,as,an,index,.,This,will,allow,the,resample,function,to,work,.,You,can,then,stack,the,dataframe,and,reset,the,index,to,put,the,field,id,back,as,a,column,.

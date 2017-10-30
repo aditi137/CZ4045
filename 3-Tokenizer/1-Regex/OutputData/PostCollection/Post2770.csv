@@ -1,0 +1,1 @@
+To,find,which,standard,modules,the,most,recent,version,of,skulpt,supports,and,which,it,doesn't,",",get,a,copy,of,the,source,code,:,And,",",look,through,the,src,/,lib,directory,.,Every,successfully,implemented,module,will,be,a,directory,in,/,src,/,lib,.,os,is,not,one,of,those,directories,.,Module,os,is,not,implemented,in,skulpt,.

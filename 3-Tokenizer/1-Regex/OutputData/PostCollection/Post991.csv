@@ -1,0 +1,1 @@
+Very,simple,solution,I,can,think,of,is,md5,digest,.,Open,an,URL,using,urllib,and,fetch,the,lines,and,convert,to,string,.,Create,a,md5,digest,of,the,values,and,store,it,in,a,file,.,Next,time,do,the,same,and,check,the,result,from,the,file,.,You,need,to,use,urllib,and,hashlib,modules,.

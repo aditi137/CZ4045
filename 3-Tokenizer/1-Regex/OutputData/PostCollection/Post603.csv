@@ -1,0 +1,1 @@
+Here,is,my,class,:,When,I,use,it,from,the,mongo,shell,",",everything,seems,fine,:,db.Presentation.find({id:2}),but,when,I,am,using,MongoAlchemy,",",p,=,query.filter(Presentation.id==2),.,first()

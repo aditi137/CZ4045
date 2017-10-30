@@ -1,0 +1,1 @@
+AppEngine,can,now,write,to,a,local,"""",ephemeral,"""",disk,storage,when,using,Managed-VM,which,is,not,supported,when,using,the,sandbox,method,as,specified,on,this,documentation,:,https://cloud.google.com/appengine/docs/managed-vms/tutorial/step3

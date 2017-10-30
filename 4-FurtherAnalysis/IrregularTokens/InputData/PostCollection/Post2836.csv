@@ -1,0 +1,1 @@
+I,fixed,it.The,thing,was,that,the,height,was,too,big.I,changed,:,"textBox.place(x=16,y=16,height=684,width=650)",to,"textBox.place(x=16,y=16,height=580)",and,everything,went,fine.Just,as,expected,.

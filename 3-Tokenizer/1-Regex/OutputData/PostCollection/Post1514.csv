@@ -1,0 +1,1 @@
+The,piece,that,seems,to,be,missing,from,the,docs,is,how,to,pass,the,API,key,.,Through,a,bit,of,testing,and,the,script,mentioned,above,",",I,found,the,X-API-Key,header,.,That,means,you,can,create,tickets,without,using,a,script,",",you,can,use,curl,as,easily,as,:,This,will,only,work,if,it,is,run,from,the,IP,address,you,specified,when,you,created,the,API,key,.

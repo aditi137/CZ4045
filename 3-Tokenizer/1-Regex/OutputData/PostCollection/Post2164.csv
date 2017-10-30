@@ -1,0 +1,1 @@
+does,something,like,this,pseudo,code,:,The,module,inputs,is,cached,in,sys.modules,.,If,you,do,a,reload(inputs),",",the,cached,module,is,reloaded,",",but,the,assignment,process,which,loads,the,data,from,the,imported,module,to,the,local,name,space,is,not,repeated,.,You,have,to,do,so,by,hand,",",as,the,other,answer,already,states,.

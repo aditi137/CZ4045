@@ -1,0 +1,1 @@
+I,have,2,time,values,which,have,the,type,datetime.time,.,I,want,to,find,their,difference,.,The,obvious,thing,to,do,is,t1,-,t2,",",but,this,doesn't,work,.,It,works,for,objects,of,type,datetime.datetime,but,not,for,datetime.time,.,So,what,is,the,best,way,to,do,this,?

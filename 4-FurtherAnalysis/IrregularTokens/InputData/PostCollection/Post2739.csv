@@ -1,0 +1,1 @@
+You,should,first,introduce,a,model,admin,for,your,Report,model,",",then,override,the,has_add_permission,function,of,your,ReportAdmin,.,You,can,also,remove,/,disable,the,+,button,using,javascript,in,the,page,",",but,be,aware,that,the,user,can,cause,damage,if,he,knows,the,add,url,",",or,disables,javascript,.

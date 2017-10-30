@@ -1,0 +1,1 @@
+You,could,use,iter,twice,:,"iter(q.get, 'END')",returns,an,iterator,which,can,iterate,over,the,values,in,the,queue,until,',END,',is,returned,by,q.get(),.,Then,you,could,use,the,grouper,recipe,to,group,the,iterator,into,chunks,of,10,items,.,yields

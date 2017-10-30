@@ -1,0 +1,1 @@
+Yes,.,You,can,wrap,an,import statement,in,a,try-except,block,.,It,is,commonly,used,for,backwards-compatability,cruft,.,For,instance,",",by,importing,a,fall-back,module,as,the,desired,module,.,That,way,the,rest,of,the,code,can,be,oblivious,to,which,module,is,actually,in,use,.

@@ -1,0 +1,1 @@
+You,need,to,increase,postgres,',caches,to,the,point,where,the,whole,working,set,fits,into,memory,before,you,can,expect,to,see,perfomance,comparable,to,doing,it,in-memory,with,a,program,.

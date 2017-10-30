@@ -1,0 +1,1 @@
+I,have,a,file,that,I,want,to,include,in,Python,but,the,included,file,is,fairly,long,and,it'd,be,much,neater,to,be,able,to,split,them,into,several,files,but,then,I,have,to,use,several,include,statements,.,Is,there,some,way,to,group,together,several,files,and,include,them,all,at,once,?

@@ -1,0 +1,1 @@
+In,pandas,",",how,can,I,convert,a,column,of,a,DataFrame,into,dtype,object,?,Or,better,yet,",",into,a,factor,?,(,For,those,who,speak,R,",",in,Python,",",how,do,I,as.factor(),?,),Also,",",what's,the,difference,between,pandas.Factor,and,pandas.Categorical,?

@@ -1,0 +1,1 @@
+I,have,a,dataframe,with,many,many,columns,.,I,want,to,reduce,this,dataframe,to,one,with,only,the,columns,I,require,.,Instead,of,using,for,all,the,columns,that,I,don't,need,",",is,there,a,way,to,select,the,ones,I,do,and,create,a,new,dataframe,?,I,have,tried,:

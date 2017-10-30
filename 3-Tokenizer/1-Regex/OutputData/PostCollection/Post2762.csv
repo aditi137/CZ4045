@@ -1,0 +1,1 @@
+I,have,texts,like,I,want,to,remove,only,the,text,with,braces,and,angular,brackets,and,extract,in,between,data,.,I,tried,but,since,closing,braces,are,at,the,end,of,text,",",whole,text,is,getting,deleted,when,re.sub,is,used,.,How,to,take,the,only,data,in,between,multiple,braces,(,angular,or,flower,brackets,)

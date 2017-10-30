@@ -1,0 +1,1 @@
+I'd,suggest,to,use,np.loadtxt,to,read,the,file,as,ndarray,and,perform,np.min,with,a,given,axis,:,Here's,a,little,illustration,:

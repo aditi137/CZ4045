@@ -1,0 +1,1 @@
+Starting,from,python,2.6,you,can,also,use,NamedTemporaryFile,with,the,delete,=,option,set,to,False,.,This,way,the,temporary,file,will,be,accessible,",",even,after,you,close,it,.,Note,that,on,Windows,(,NT,and,later,),you,cannot,access,the,file,a,second,time,while,it,is,still,open,.,You,have,to,close,it,before,you,can,copy,it,.,This,is,not,true,on,Unix,systems,.

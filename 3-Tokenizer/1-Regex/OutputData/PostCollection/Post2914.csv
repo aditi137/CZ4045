@@ -1,0 +1,1 @@
+In,the,following,code,",",How,does,the,template,details.html,knows,that,album,is,passed,to,it,by,views.py,although,we,have,never,returned,or,defined,any,context_object_name,in,DetailsView,class,in,views.py,.,Please,explain,how,are,the,various,things,getting,connected,here,.,details.html,views.py,urls.py,Thanks,in,advance,!,!

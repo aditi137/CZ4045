@@ -1,0 +1,1 @@
+by,here,",",Total,Emp,",",which,just,show,Employee.empCount,remains,0,.,this,inherits,and,defines,the,Employee,",",and,adds,self.empcount,.,Which,as,a,result,",",adds,1,to,empCount,.,emp1,and,emp2,is,separate,object,and,affected,by,init,individually,",",which,makes,empCount,1,.

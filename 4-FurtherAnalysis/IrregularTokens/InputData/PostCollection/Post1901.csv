@@ -1,0 +1,1 @@
+I'm,using,a,seaborn,jointplot,for,scatterplotting,purposes,",",but,I,can't,seem,to,get,a,simple,diagonal,line,going,across,...,I'm,getting,a,AttributeError,:,',JointGrid,',object,has,no,attribute,',get_xlim,',.,Does,anyone,know,a,workaround,using,Seaborn,?,Here's,my,code,(,also,the,title,doesn't,show,up,!,what,gives,),:,thanks,in,advance,everyone,.

@@ -1,0 +1,1 @@
+I,have,defined,a,recursive,function,that,takes,a,number,",",n,",",and,returns,a,list,of,lists,of,the,numbers,that,sum,to,that,number,(,partitions,),:,I,was,wondering,how,to,make,the,function,return,the,number,of,partitions,for,number,n,.,For,example,",",P(6),would,return,10,.

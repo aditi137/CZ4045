@@ -1,0 +1,1 @@
+I'm,trying,to,plot,some,data,using,pyplot,",",and,then,',zoom,in,',by,using,xlim(),the,x,axis,.,However,",",the,new,plot,doesn't,rescale,the,y,axis,when,I,do,this,-,am,I,doing,something,wrong,?,Example,-,in,this,code,",",the,plot,y-axis,range,still,takes,a,maximum,of,20,",",rather,than,10,.,:

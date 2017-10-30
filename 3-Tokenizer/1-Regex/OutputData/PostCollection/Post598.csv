@@ -1,0 +1,1 @@
+You,want,to,override,the,__init__,method,like,you,did,with,the,save,method,",",and,call,self.get_thumbs(),before,you,call,"super(Photo, self)",.,"init(*args, **kwargs)",Alternately,",",you,could,look,at,other,peoples,solution,to,this,problem,sorl.thumbnail,",",django-imagekit,",",or,easy-thumbnails,(,which,is,sort,of,like,a,combination,of,the,two,)

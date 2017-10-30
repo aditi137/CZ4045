@@ -1,0 +1,1 @@
+If,you,need,to,special-case,these,types,",",use,the,name,of,the,class,instead,:,Both,EmailField,and,URLField,are,Charfield,subclasses,",",just,with,a,maximum,length,pre-set,and,a,dedicated,validator,.

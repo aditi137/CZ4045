@@ -1,0 +1,1 @@
+How,does,string,formats,',%,',operator,is,implemented,in,CPython,2.7,?,Can't,find,any,reference,in,the,Python,documentation,.,Well,",",I,fact,I,found,the,topic,:,String,conversion,and,formatting,",",for,PyOS_snprintfand,PyOS_vsnprintf,.,But,not,sure,it,match,my,question,.,See,also,my,question,Optional,keys,in,string,formats,using,',%,',operator,?

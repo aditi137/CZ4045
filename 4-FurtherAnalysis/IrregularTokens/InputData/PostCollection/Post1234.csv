@@ -1,0 +1,1 @@
+In,os,there's,a,function,os.path.islink(PATH),which,checks,if,PATH,is,symlink,.,But,if,fails,when,PATH,is,a,symlink,to,some,directory,.,Instead,-,-,python,thinks,it,is,directory,(,os.path.isdir(PATH),),.,So,how,do,I,check,if,a,dir,is,link,?,Edit,:,Here's,what,bash,thinks,:,and,here's,what,python,thinks,:

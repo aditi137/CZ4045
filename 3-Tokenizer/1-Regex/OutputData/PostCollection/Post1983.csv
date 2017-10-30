@@ -1,0 +1,1 @@
+I'm,trying,to,create,a,search,form,where,a,user,can,choose,from,a,few,options,to,filter,the,search,.,I'm,getting,this,error,:,sortedByScore(),argument,after,*,must,be,a,sequence,",",not,Q,views.py,:,code,for,my,custom,manager,sortedByScore,:

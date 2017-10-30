@@ -1,0 +1,1 @@
+Don't,use,regular,expressions,just,because,they,are,there,.,As,Vincent,points,out,",",that,assumes,all,words,are,seperated,by,whitespace,.,Is,probably,a,better,options,.,Although,whether,that,is,neccesary,depends,on,details,not,provided,in,your,post,.,EDIT,If,you,don't,even,care,about,word,boundaries,",",there,is,even,less,reason,to,be,using,a,regular,expression,.

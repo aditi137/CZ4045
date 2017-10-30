@@ -1,0 +1,1 @@
+I,was,wondering,if,there,is,an,easy,way,to,create,a,grid,of,checkboxes,using,Tkinter,.,I,am,trying,to,make,a,grid,of,10,rows,and,columns,(,so,100,checkboxes,),so,that,only,two,checkboxes,can,be,selected,per,row,.,Edit,:,I'm,using,python,2.7,with,spyder,What,I,have,so,far,:,I'm,trying,to,use,state='Disabled,',to,grey,out,a,row,once,two,checkboxes,have,been,selected,.

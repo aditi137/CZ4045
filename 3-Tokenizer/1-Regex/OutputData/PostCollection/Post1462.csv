@@ -1,0 +1,1 @@
+You,are,passing,the,tuple,(,"""",Your,health,:,"""",",",self.a,",",),as,the,first,argument,to,render,.,I'm,assuming,there,should,be,a,string,instead,.,There,are,several,ways,to,format,a,string,with,a,variable,",",one,approach,is,this,:

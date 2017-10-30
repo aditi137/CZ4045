@@ -1,0 +1,1 @@
+You,can,use,the,astype,method,to,cast,a,Series,(,one,column,),:,Or,the,entire,DataFrame,:,Update,Since,version,0.15,",",you,can,use,the,category,datatype,in,a,Series,/,column,:,Note,:,pd.Factor,was,been,deprecated,and,has,been,removed,in,favor,of,pd.Categorical,.

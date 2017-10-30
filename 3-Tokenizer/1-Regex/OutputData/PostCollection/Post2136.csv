@@ -1,0 +1,1 @@
+Some,thoughts,:,Consider,using,a,set,for,the,words,.,Adding,another,word,only,really,adds,it,when,its,not,in,there,already,.,Open,the,file,with,',r,',to,indicate,read-only,mode,.,Sorting,is,really,easy,(,also,for,sets,),",",just,use,sorted(),.,Something,like,this,works,:

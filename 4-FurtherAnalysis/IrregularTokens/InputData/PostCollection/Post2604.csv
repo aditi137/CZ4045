@@ -1,0 +1,1 @@
+The,boxplot,is,drawn,on,a,categorical,axis,and,won't,coexist,nicely,with,the,density,axis,of,the,histogram,",",but,it's,possible,to,do,it,with,a,twin,x,axis,plot,:

@@ -1,0 +1,1 @@
+Use,tempfile.mkstemp(),which,will,create,a,standard,temp,file,on,disk,which,will,persist,until,removed,:,EDIT,tempfile.TemporaryFile(),will,be,destroyed,as,soon,as,it's,closed,",",which,is,why,your,code,above,is,failing,.

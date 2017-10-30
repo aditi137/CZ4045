@@ -1,0 +1,1 @@
+This,is,how,the,code,is,This,works,fine,on,Linux,systems,but,not,on,Windows,.,Its,showing,EOFError,.,I,have,to,use,rb,mode,to,make,it,work,on,Windows,.,.,now,this,isn't,working,on,Linux,.,Why,this,is,happening,",",and,how,to,fix,it,?

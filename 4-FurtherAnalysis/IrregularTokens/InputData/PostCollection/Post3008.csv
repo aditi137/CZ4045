@@ -1,0 +1,1 @@
+having,a,dataframe,",",I,want,to,update,subset,of,columns,with,a,series,of,same,length,as,number,of,columns,being,updated,:,it,fails,",",however,",",I,am,able,to,do,the,same,thing,using,list,:,could,you,please,help,me,to,understand,",",why,updating,with,series,fails,?,do,I,have,to,perform,some,particular,reshaping,?

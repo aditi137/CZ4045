@@ -1,0 +1,1 @@
+I've,a,dictionary,(,dict,type,),which,I,would,store,in,a,gtk.ListStore,.,Is,there,a,way,to,do,this,?,(,Which,column,type,is,good,for,that,?,),or,do,I,have,to,add,as,many,columns,in,the,gtk.ListStore,as,there,are,elements,in,the,dictionary,?,Thanks

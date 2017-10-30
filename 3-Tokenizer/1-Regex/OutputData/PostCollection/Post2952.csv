@@ -1,0 +1,1 @@
+I'm,trying,to,load,my,csv,in,QTableView,and,when,I,click,on,the,button,it,gives,this,errorFile,Zap,Lunchies.py,",",line,61,",",in,on_show_clicked,self.loadCsv(self.fileName),AttributeError,:,',admin,',object,has,no,attribute,',fileName,',This,is,my,code,currently,If,anyone,can,help,that,would,be,much,appreciated,.,And,the,csv,file,is,called,"""",data.csv,""""

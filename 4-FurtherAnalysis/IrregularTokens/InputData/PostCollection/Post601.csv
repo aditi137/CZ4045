@@ -1,0 +1,1 @@
+Use,the,skipkeys,option,for,JSONEncoder(),so,that,it,skips,items,that,it,can't,encode,.,Alternatively,",",create,a,default,method,for,your,JsonedData,object,.,See,the,docs,.

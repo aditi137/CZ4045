@@ -1,0 +1,1 @@
+If,new,does,not,depend,on,self,",",use,a,classmethod,:,Or,",",if,new,does,depend,on,self,",",use,type(self),to,determine,self's,class,:

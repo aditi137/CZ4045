@@ -1,0 +1,1 @@
+I,have,the,same,problem,.,If,you,call,os.path.abspath(),on,your,relative,path,you'll,see,that,the,absolute,path,is,wrong,.,The,only,workaround,I,found,was,to,change,the,relative,path,to,absolute,to,the,test,file,path,by,using,__file__,and,then,moving,up,one,level,to,exclude,the,file,name,:

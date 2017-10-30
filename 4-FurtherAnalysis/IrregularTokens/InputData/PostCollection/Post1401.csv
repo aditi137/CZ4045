@@ -1,0 +1,1 @@
+If,sys.stdout.isatty(),is,false,(,the,output,is,redirected,to,a,file,/,pipe,),then,configure,PYTHONIOENCODING,envvar,outside,your,script,.,Always,print,Unicode,",",don't,hardcode,the,character,encoding,of,your,environment,inside,your,script,:

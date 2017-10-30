@@ -1,0 +1,1 @@
+According,to,the,last,paragraph,on,this,page,in,the,Flask-WhooshAlchemy,docs,",",query,terms,are,treated,like,an,AND,by,default,.,So,change,your,search,to,be,If,you,are,still,having,issues,with,it,",",perhaps,you,have,to,do,as,per,Whoosh's,docs,on,making,a,term,from,literal,text,.

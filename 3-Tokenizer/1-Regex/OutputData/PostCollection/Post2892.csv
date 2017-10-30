@@ -1,0 +1,1 @@
+You,need,to,make,a,nested,dict,out,of,your,current,one,",",and,use,json.dumps,.,Not,sure,how,sorteddict,works,",",but,:,should,work,.,Additionally,",",you,say,that,you,want,something,json,encoded,",",but,your,example,is,not,valid,json,.,So,I,will,assume,that,you,actually,want,legitimate,json,.,Here's,some,example,code,:

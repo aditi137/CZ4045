@@ -1,0 +1,1 @@
+Answered,by,Martijn,Pieters,.,Thank,you,.,It,is,because,statement,vs,expression,.,And,because,.,join(),does,not,mutate,(,is,a,pure,function,),",",so,it,needs,to,be,assigned,to,a,variable,.,Question,:,What,is,the,reason,for,this,oddity,?,Goal,:,This,following,method,works,:,However,the,following,does,NOT,work,:,or,The,results,are,the,same,in,both,Python2,and,Python3,.

@@ -1,0 +1,1 @@
+In,Ruby,:,Update,:,Here,is,a,slightly,different,way,:,a,=,(,0...100).entries.sort_by{rand,},[,0...5,],EDIT,:,and,In,Ruby,1.9,you,can,do,this,:

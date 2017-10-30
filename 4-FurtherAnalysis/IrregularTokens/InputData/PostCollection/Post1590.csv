@@ -1,0 +1,1 @@
+I,am,using,the,QR,code,(,Django,),library,and,when,I,do,{,%,qrcode_from_text,"""",{,%,url,',foo,',%,},"""","""",l,"""",%,},",",the,inner,tag,gives,error,.,Is,there,any,way,to,do,such,nested,django,template,tags,?,Thanks,.

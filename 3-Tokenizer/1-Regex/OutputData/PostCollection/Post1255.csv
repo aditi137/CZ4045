@@ -1,0 +1,1 @@
+I,have,2,input,files,",",input.txt,and,datainput.txt,.,I,check,if,the,2nd,column,of,input.txt,matches,the,1st,column,of,datainput.txt,",",and,if,they,match,",",then,I,put,it's,orthodb_id,at,the,end,relevant,row,in,the,output,file,.,input.txt,:,datainput.txt,:,code.py,:,This,is,the,output,I,get,with,my,code,:

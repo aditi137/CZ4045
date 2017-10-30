@@ -1,0 +1,1 @@
+This,is,probably,overkill,for,such,a,simple,task,",",but,if,you,plan,to,do,more,than,that,",",then,it's,saner,to,start,from,these,tools,(,mechanize,",",BeautifulSoup,),because,they,are,much,easier,to,use,than,the,alternatives,(,urllib,to,get,content,and,regexen,or,some,other,parser,to,parse,html,),Links,:,BeautifulSoup,mechanize

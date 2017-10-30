@@ -1,0 +1,1 @@
+In,hadoop,streaming,",",you,can,only,run,1,map,and,1,reduce,job,at,a,time,(,at,present,),.,You,can,essentially,run,2,mappers,(,or,any,number,of,mappers,),in,1,job,by,piping,the,output,of,first,map,function,to,the,second,map,function,.,However,for,multiple,reducers,",",as,Ned,Rockson,said,",",you'll,have,2,independent,jobs,by,using,identity,mapper,in,the,second,job

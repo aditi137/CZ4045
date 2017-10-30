@@ -1,0 +1,1 @@
+With,your,property,you,have,created,an,infinite,recursion,.,self.username,in,the,return,statement,calls,the,property,method,again,",",and,againâ,€,¦,Remove,the,whole,property,from,your,code,and,it,will,work,.,Python,does,not,need,explicid,accessors,.

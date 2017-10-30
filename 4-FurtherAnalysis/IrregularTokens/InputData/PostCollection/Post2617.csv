@@ -1,0 +1,1 @@
+This,is,not,a,bug,.,x,[1],[,:,],[0],is,not,a,multiple,index,(,"""",give,me,the,elements,where,first,dimension,is,1,",",second,is,any,",",third,is,0,"""",),.,Instead,",",you,are,indexing,three,times,",",three,objects,.,To,use,multiple,index,",",you,want,to,do,it,in,a,single,slice,:

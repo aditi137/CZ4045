@@ -1,0 +1,1 @@
+I,am,writing,a,Python,script,that,will,take,an,IP,address,in,CIDR,format,(,ie,.,1.1.1.0,/,32,or,10.0.0.1,/,24,),and,split,the,IP,into,three,parts,:,the,first,three,octets,(,1.1.1,),",",the,last,octet,(,0,),and,the,Subnet,mask,(,32,),.,The,IP,will,be,of,variable,length,so,I,don't,know,if,I,can,use,some,sort,of,string,character,counter,.,Any,ideas,?,Thanks

@@ -1,0 +1,1 @@
+This,should,work,on,all,distributions,in,and,out,of,virtual,environment,due,to,it's,"""",low-tech,"""",nature,.,The,os,module,always,resides,in,the,parent,directory,of,',site-packages,',To,change,dir,to,the,site-packages,dir,I,use,the,following,alias,(,on,*,nix,systems,),:

@@ -1,0 +1,1 @@
+.,encode('utf-8'),makes,binary,out,of,the,string,.,You,have,to,use,.,decode('utf-8'),See,:,http://blog.notdot.net/2010/07/Getting-unicode-right-in-Python,and,also,http://docs.python.org/2/howto/unicode.html

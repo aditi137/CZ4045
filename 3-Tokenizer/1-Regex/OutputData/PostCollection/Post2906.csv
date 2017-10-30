@@ -1,0 +1,1 @@
+In,your,project's,settings.py,",",just,add,this,at,beginning,.,Then,you,can,use,django,orm,",",remember,to,delete,the,middleware,you,don't,need,in,django,settings,.

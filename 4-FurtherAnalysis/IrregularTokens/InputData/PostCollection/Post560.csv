@@ -1,0 +1,1 @@
+If,the,calculations,are,already,nicely,bundled,into,functions,",",how,about,using,filter,and,map,?,You,can,use,itertools.imap,if,the,list,is,very,large,.

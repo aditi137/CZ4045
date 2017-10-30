@@ -1,0 +1,1 @@
+The,problem,is,in,different,behaviour,between,python2,and,python3,:,To,fix,this,you,can,edit,xlrd,/,sheet.py,around,line,1543,:,Change,to,So,behaviour,will,be,like,in,python2

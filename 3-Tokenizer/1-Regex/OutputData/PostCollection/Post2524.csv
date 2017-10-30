@@ -1,0 +1,1 @@
+I,think,your,best,bet,would,be,to,install,fabric,and,rsync_project,on,',bastion,',and,use,fabrics,"""",run,"""",to,call,rsync_project,on,bastion,.,Another,option,would,be,to,use,"""",get,"""",to,receive,a,copy,from,bastion,and,run,rsync_project,locally,.,But,this,approach,will,not,match,your,picture,.
