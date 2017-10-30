@@ -1,2 +1,3 @@
-I figured out how to do it.
-One way I found is to send mail through html.
+str() in python on an integer will not print any decimal places.
+If you have a float that you want to ignore the decimal part, then you can use str(int(floatValue)).
+Perhaps the following code will demonstrate:

@@ -1,1 +1,1 @@
-I want to create a ToolBarToolBase object without adding it visibly to the toolbar. I've tried instantiating ToolBarToolBase, but I'm using wxPython version 2.8.12.1 (I can't upgrade, I'm doing this for work) so I don't think it's fully implemented. Is there any way to do this?
+I think the article "Java theory and practice: A brief history of garbage collection" from IBM should help explain some of the questions you have.

@@ -1,3 +1,2 @@
-Say I have the following methods:
-In methodA I wish to call methodB, passing on the kwargs. However, it seems that if I define methodA as follows, the second argument will be passed on as positional rather than named variable arguments.
-How do I make sure that the **kwargs in methodA gets passed as **kwargs to methodB?
+Formatting in Python is done via the string formatting (%) operator:
+/Edit: There's also strftime.

@@ -1,2 +1,1 @@
-No idea how to mess with alembic, but for the database, you can just log into the SQL console and use DROP DATABASE foo.
-Or were you wanting to clear out all the data, but leave the tables there?  If so, Truncating all tables in a postgres database has some good answers.
+Python stores Unicode as UTF-16. str() will return the UTF-8 representation of the UTF-16 string.

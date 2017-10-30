@@ -1,2 +1,1 @@
-This prints
-For this work, you need to know the length of the longest string (59 in the example above).
+You might also like using the processing module (http://pypi.python.org/pypi/processing). It has lot's of functionality for writing parallel systems with the same API as the threading module...

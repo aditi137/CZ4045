@@ -1,3 +1,1 @@
-So, if I input a word "tkinter" then it'll give me the letter frequency. However, if I input "t k i n t e r " it'll give me totally different data. How do I remove the whitespace from any input, and then how do I append key, value/float(len(user_input))*100, '%' in a Tkinter Label?
-I found how to replace whitespace, and with suggestions from helpful commentors, can successfully add text to a label that displays the data with the corresponding key. However, I have another question on how to remove the previous label each time you click the button?
-code:
+GNU Octave is another MATLAB clone that might have what you need.

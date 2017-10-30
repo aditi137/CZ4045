@@ -1,2 +1,1 @@
-Formatting in Python is done via the string formatting (%) operator:
-/Edit: There's also strftime.
+Are you looking for Python specific translation, or just the general "how do you compile some code to bytecode"? If the latter is your case, check the LLVM tutorial. I especially find chapter two, which teaches you to write a compiler for your own language, interesting.

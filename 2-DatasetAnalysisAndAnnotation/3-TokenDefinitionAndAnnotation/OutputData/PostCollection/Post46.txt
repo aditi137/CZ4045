@@ -1,2 +1,4 @@
-I'm not really an old hand at Python, but here's an XPath solution using libxml2.
-With result...
+I wrote the following, which works in vanilla Python 2 or Python 3.
+Notes:
+Supports a "progress bar" callback.
+Download is a 4 MB test .zip from my website.

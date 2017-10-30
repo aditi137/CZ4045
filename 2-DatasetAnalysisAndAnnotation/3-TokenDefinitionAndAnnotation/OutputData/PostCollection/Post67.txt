@@ -1,3 +1,7 @@
-add WSGIPassAuthorization On:
-Then just read environ['REMOTE_USER']:
-More information at mod_wsgi documentation.
+PyPy translator is in general, not intended for more public use. We use it for translating
+our own python interpreter (including JIT and GCs, both written in RPython, this restricted
+subset of Python). The idea is that with good JIT and GC, you'll be able to speedups even
+without knowing or using PyPy's translation toolchain (and more importantly, without
+restricting yourself to RPython).
+Cheers,
+fijal

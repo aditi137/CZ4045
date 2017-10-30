@@ -1,1 +1,6 @@
-Carefully looking into the iterators and how they are involved in those dot product reductions, we could translate all of those into one np.einsum implementation like so -
+One key difference in Python is significant whitespace.  This puts a lot of people off - me too for a long time - but once you get going it seems natural and makes much more sense  than ;s everywhere.
+From a personal perspective, Python has the following benefits over Java:
+No Checked Exceptions
+Optional Arguments
+Much less boilerplate and less verbose generally
+Other than those, this page on the Python Wiki is a good place to look with lots of links to interesting articles.

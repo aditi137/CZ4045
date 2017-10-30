@@ -1,2 +1,2 @@
-I've installed Ninja IDE on two Windows machines, a Windows 7 machine with only standard Python 3 installed where it gives me that error you mentioned.
-And a Windows XP machine on which I had pythonxy which comes with PyQt in a convenient easy to use installer thus it worked without any further troubles.
+I agree with Corey, urllib2 is more complete than urllib and should likely be the module used if you want to do more complex things, but to make the answers more complete, urllib is a simpler module if you want just the basics:
+Will work fine. Or, if you don't want to deal with the "response" object you can call read() directly:

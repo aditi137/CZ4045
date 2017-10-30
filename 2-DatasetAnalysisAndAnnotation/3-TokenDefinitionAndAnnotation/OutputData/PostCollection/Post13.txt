@@ -1,3 +1,2 @@
-How can I get the HTML source in a variable using the Selenium module with Python?
-I wanted to do something like this:
-How can I do this? I don't know how to access the HTML source.
+Interesting. I don't know, but I did try this:
+which is what you expected. My guess? Maybe some time correction was done since the epoch. This could be only a few seconds, something like a leap year. I think I heard something like this before, but can't remember exactly how and when it is done...

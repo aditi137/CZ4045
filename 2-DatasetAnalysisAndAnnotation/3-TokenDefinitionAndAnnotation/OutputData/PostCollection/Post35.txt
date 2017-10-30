@@ -1,6 +1,1 @@
-Using Pandas data frame group by feature and I want to group by column c_b and calculate unique count for column c_a and column c_c. My expected results are,
-Expected results,
-Met with strange error about unhashable type, does anyone have any ideas? Thanks.
-Input file,
-Source code,
-Error message,
+Source code can be:

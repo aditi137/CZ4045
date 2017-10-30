@@ -1,5 +1,4 @@
 import nltk
-import random
 import pandas
 import math
 import os
@@ -23,7 +22,7 @@ def main():
         else:
             filtered_posts.append(post)
 
-    selectedPosts = random.sample(filtered_posts, 100)
+    selectedPosts = filtered_posts[:100]
 
     df = pandas.DataFrame(selectedPosts)
     df.columns = ['post']

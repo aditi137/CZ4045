@@ -1,5 +1,2 @@
-I believe you want to print each character of the input string twice, in order. The issue with your attempt is your use of return. You only want to return the final string, not just a single repetition of one character from inside the loop. So you want your return statement to be somehow outside the for-loop.
-Since this sounds like a homework problem, try to figure out how to do that above before continuing below.
-Still stuck?
-Print each character in a string twice, in order:
-Without using a for-loop:
+It looks like something absolutely revolutionary from simply reading the description,
+As far as I know, PyPy is novel in the sense that it is the first system expressly designed for implementing languages.  Other tools exist to help with much of the very front end, such as parser generators, or for the very back end, such as code generation, but not much existed for connecting the two.

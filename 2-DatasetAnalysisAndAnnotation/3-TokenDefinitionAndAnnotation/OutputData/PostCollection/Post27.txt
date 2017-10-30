@@ -1,3 +1,2 @@
-Normally on the linux front, if the usb dongle is of the right type, you will see something like /dev/usbserial or similar device. Maybe check dmesg after plugging the cable.
-(on linux you can run find /dev | grep usb to list all usb related devices)
-Just a side note, I've seen the beaglebone has an ethernet port, why not just using a network socket? It's all easier than reinventing a protocol on usb.
+You can use C style string formatting:
+See here, especially: https://web.archive.org/web/20120415173443/http://diveintopython3.ep.io/strings.html

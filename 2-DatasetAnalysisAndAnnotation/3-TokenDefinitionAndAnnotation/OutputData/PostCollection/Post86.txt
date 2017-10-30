@@ -1,9 +1,3 @@
-Following Flask tutorial, running Win 7, Python 2.7.3, virtualenv, and I am stuck in Step 3: Creating The Database http://flask.pocoo.org/docs/tutorial/dbinit/#tutorial-dbinit
-Such a schema can be created by piping the schema.sql file into the sqlite3 command as follows:
-How to run this command, because CMD < venv > returns:
-"sqlite3" is not recognized as internal or external command, operable program or batch file.
-Is this step necessary?
-Folder Project, 2 files schema.sql and flaskr.py.
-schema.sql
-flaskr.py
-< venv > python
+Apart from what Eli Courtwright said:
+I find iterators in Python more concise. You can use for i in something, and it works with pretty much everything. Yeah, Java has gotten better since 1.5, but for example you can iterate through a string in python with this same construct.
+Introspection: In python you can get at runtime information about an object or a module about its symbols, methods, or even its docstrings. You can also instantiate them dynamically. Java has some of this, but usually in Java it takes half a page of code to get an instance of a class, whereas in Python it is about 3 lines. And as far as I know the docstrings thing is not available in Java

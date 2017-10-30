@@ -1,5 +1,3 @@
-What would be the best way to implement a simple crash / error reporting mechanism? 
-Details: my app is cross-platform (mac/windows/linux) and written in Python, so I just need something that will send me a small amount of text, e.g. just a timestamp and a traceback (which I already generate and show in my error dialog). 
-It would be fine if it could simply email it, but I can't think of a way to do this without including a username and password for the smtp server in the application...
-Should I implement a simple web service on  the server side and have my app send it an HTTP request with the info? Any better ideas?
-Thanks!
+One big disadvantage of Java's tracing GC is that from time to time it will  "stop the world" and freeze the application for a relatively long time to do a full GC. If the heap is big and the the object tree complex, it will freeze for a few seconds. Also each full GC visits the whole object tree over and over again, something that is probably quite inefficient. Another drawback of the way Java does GC is that you have to tell the jvm what heap size you want (if the default is not good enough); the JVM derives from that value several thresholds that will trigger the GC process when there is too much garbage stacking up in the heap.
+I presume that this is actually the main cause of the jerky feeling of Android (based on Java), even on the most expensive cellphones, in comparison with the smoothness of iOS (based on ObjectiveC, and using RC). 
+I'd love to see a jvm option to enable RC memory management, and maybe keeping GC only to run as a last resort when there is no more memory left.

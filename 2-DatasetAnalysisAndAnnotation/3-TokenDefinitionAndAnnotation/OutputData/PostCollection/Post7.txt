@@ -1,3 +1,2 @@
-First off, convert the set to a NumPy array -
-Then, based on this post, you would have three approaches. Let's use the second approach for efficiency -
-Sample run -
+Late in the game, but I think one significant rationale for RC in python is its simplicity. See this email by Alex Martelli, for example.
+(I could not find a link outside google cache, the email date from 13th october 2005 on python list).

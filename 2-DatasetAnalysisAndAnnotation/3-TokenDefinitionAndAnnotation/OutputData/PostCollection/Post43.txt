@@ -1,7 +1,4 @@
-Here's an example using your provided 10x10 grid. It should give you the basic idea of how to implement this. 
-Just make sure you keep a reference to every Checkbutton (boxes in the example) as well as every IntVar (boxVars in the example).
-Here's why:
--Checkbuttons are needed to call config(state = DISABLED/NORMAL).
--IntVars are needed to determine the value of each Checkbutton.
-Aside from those crucial elements its basically just some 2D array processing.
-Here's my example code (now based off of your provided code).
+I have a small utility that I use to download a MP3 from a website on a schedule and then builds/updates a podcast XML file which I've obviously added to iTunes.
+The text processing that creates/updates the XML file is written in Python. I use wget inside a Windows .bat file to download the actual MP3 however. I would prefer to have the entire utility written in Python though.
+I struggled though to find a way to actually down load the file in Python, thus why I resorted to wget.
+So, how do I download the file using Python?

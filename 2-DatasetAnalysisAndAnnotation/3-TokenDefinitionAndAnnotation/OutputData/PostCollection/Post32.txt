@@ -1,1 +1,1 @@
-Compare the difference to a timedelta that you create:
+You can use following to achieve desired functionality

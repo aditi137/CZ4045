@@ -1,8 +1,3 @@
-So, as far as I understand, the ManyToManyField in the Section class doesn't actually save any DocumentType data in the Section database table, rather it saves the relationship to DocumentType.
-Therefore if I want to access the document_type of a section I have to look up the Section objects via the DocumentType object, and vice versa.
-For instance:
-or:
-or:
-Although this:
-raises ValueError: invalid literal for int() with base 10: 'WAN' because there is no data under the section_document_type m2m field, only the relationship.  So this is still the case:
-Further info here.
+I need to find out how to format numbers as strings. My code is here:
+Hours and minutes are integers, and seconds is a float.  the str() function will convert all of these numbers to the tenths (0.1) place.  So instead of my string outputting "5:30:59.07 pm", it would display something like "5.0:30.0:59.1 pm".
+Bottom line, what library / function do I need to do this for me?

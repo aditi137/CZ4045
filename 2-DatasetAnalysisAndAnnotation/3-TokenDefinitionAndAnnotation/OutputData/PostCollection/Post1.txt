@@ -1,5 +1,4 @@
-I have two lists of sports players. One is structured simply:
-The second is a list of lists structured:
-I ultimately want to search the contents of the second list and pull the info if there is a matching name from the first list.
-I need to swap 'Lastname, Firstname' to 'Firstname Lastname' to match list 2's formatting for simplification.
-Any help would be great. Thanks!
+Python uses the reference count method to handle object life time. So an object that has no more use will be immediately destroyed.
+But, in Java, the GC(garbage collector) destroys objects which are no longer used at a specific time.
+Why does Java choose this strategy and what is the benefit from this?
+Is this better than the Python approach?

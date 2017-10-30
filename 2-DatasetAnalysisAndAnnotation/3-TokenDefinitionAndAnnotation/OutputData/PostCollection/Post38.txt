@@ -1,4 +1,1 @@
-For Python 2
-For Python 3
-For filter and map, you need wrap them with list()
-The recommendation now is that you replace your usage of map and filter with generators expressions or list comprehensions:
+Wrote wget library in pure Python just for this purpose. It is pumped up urlretrieve with these features as of version 2.0.

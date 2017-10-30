@@ -1,2 +1,1 @@
-Not exactly sure what is going on unless you provide all the details. 
-However, remember that the real concurrency is bounded by the actual number of hardware threads. If the number of processes launched is much larger than the actual number of hardware threads, at some point the context-switching overhead will be more than the benefit of having more concurrent processes.
+Simple yet Python 2 & Python 3 compatible way:

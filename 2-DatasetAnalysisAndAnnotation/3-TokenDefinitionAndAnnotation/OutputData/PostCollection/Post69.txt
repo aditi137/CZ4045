@@ -1,2 +1,3 @@
-I am trying to make NAO understand the words in the vocabulary and return the same when read from its memory. Below is the code. But somehow the getdata() from memory object returns empty. 
-Any help is highly appreciated.
+This document seems to go into quite a bit of detail (and I think a complete description is out of scope for a stackoverflow answer):
+http://codespeak.net/pypy/dist/pypy/doc/translation.html
+The general idea of translating from one language to another isn't particularly revolutionary, but it has only recently been gaining popularity / applicability in "real-world" applications.  GWT does this with Java (generating Javascript) and there is a library for translating Haskell into various other languages as well (called YHC)

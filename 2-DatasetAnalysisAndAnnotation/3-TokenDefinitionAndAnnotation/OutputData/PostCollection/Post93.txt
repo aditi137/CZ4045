@@ -1,3 +1,1 @@
-As per documentation boto3
-"The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value."
-or you can use DescribeTable:
+I don't know if it's in there, but there's a python distribution called Enthought that might have what you're looking for.  It was designed specifically for data analysis has over 60 additional libraries.

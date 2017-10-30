@@ -1,2 +1,2 @@
-From the post here: Encrypt string in Python
-using http://code.google.com/p/keyczar/
+A plugin for GSview for viewing encrypted PDFs is here.
+If this works for you, you may be able to look at the source.

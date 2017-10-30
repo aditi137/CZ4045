@@ -1,1 +1,1 @@
-Like this:
+time.mktime should return the number of seconds since the epoch. Since I'm giving it a time at midnight and the epoch is at midnight, shouldn't the result be evenly divisible by the number of seconds in a day?

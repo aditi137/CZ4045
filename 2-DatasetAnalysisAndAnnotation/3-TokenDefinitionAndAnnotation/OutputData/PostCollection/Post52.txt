@@ -1,3 +1,2 @@
-You can't directly call a function in a script with arguments to the script, you have to handle the command line arguments yourself and then call the function:
-Of course you might want to extend this in several ways: to only process the first argument (this example processes all of them), to lowercase the argument so that HELLO and BYE also work, or maybe to display some help if no arguments are given.
-As @bufh mentioned, if your command line arguments are going to get much more complicated than this then you might want to look into a library that handles it for you, such as argparse.
+The Threading example from Eli will run the thread, but not do any of the work after that line.  
+I'm going to look into the processing module and the subprocess module.  I think the com method I'm running needs to be in another process, not just in another thread.

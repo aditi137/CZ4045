@@ -1,1 +1,2 @@
-A Counter is basically a dict. So you can set your key via the normal dict syntax:
+Use the python multiprocessing module which will work everywhere.
+Here is a IBM developerWords article that shows how to convert from os.fork() to the multiprocessing module.

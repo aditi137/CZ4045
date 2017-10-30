@@ -1,3 +1,2 @@
-This is a handy trick for unit tests and the like, when you need to do a pixel-to-pixel comparison with a saved plot.
-One way is to use fig.canvas.tostring_rgb and then numpy.fromstring with the approriate dtype.  There are other ways as well, but this is the one I tend to use.
-E.g.
+Have a look at the process management functions in the os module. There are function for starting new processes in many different ways, both synchronously and asynchronously.
+I should note also that Windows doesn't provide functionality that is exactly like fork() on other systems. To do multiprocessing on Windows, you will need to use the threading module.

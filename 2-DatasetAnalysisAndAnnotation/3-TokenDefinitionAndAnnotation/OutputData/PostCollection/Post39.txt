@@ -1,9 +1,6 @@
-The http://127.0.0.1:8000/song/299d8fe1-7d9f-434a-ba64-94fb7a16b1a6/gives me the desired page based on the uuid of the song and works fine.
-(It's the second url.)
-Here is the urls.py
-The third url,
-the one the arrow is pointing at, gives me a 404 error, with the message "No Song matches the given query."
-I'm guessing there's an error with the regex, but I can't figure it out.
-EDIT
-Here are the views for both the song and song info:
-views.py
+Following are the most commonly used calls for downloading files in python:
+urllib.urlretrieve ('url_to_file', file_name)
+urllib2.urlopen('url_to_file')
+requests.get(url)
+wget.download('url', file_name)
+Note: urlopen and urlretrieve are found to perform relatively bad with downloading large files (size > 500 MB). requests.get stores the file in-memory until download is complete.

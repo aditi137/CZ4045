@@ -1,3 +1,3 @@
-(I wrote this before I saw matzeri's response. I still may try extending python to run code from the C library, but getting the C code I've already written to work would be vastly preferable.)
-I have no idea what's going on with Cygwin's gdb, but after getting over my frustration I answered my alternative question. Turns out you can indeed call a C function from python. Extending Python with C or C++
-I'll try it tomorrow and I see caveats, but if python.org has a section on it, I'm betting it can be done.
+The latest Sun Java VM actually have multiple GC algorithms which you can tweak.  The Java VM specifications intentionally omitted specifying actual GC behaviour to allow different (and multiple) GC algorithms for different VMs.
+For example, for all the people who dislike the "stop-the-world" approach of the default Sun Java VM GC behaviour, there are VM such as IBM's WebSphere Real Time which allows real-time application to run on Java.
+Since the Java VM spec is publicly available, there is (theoretically) nothing stopping anyone from implementing a Java VM that uses CPython's GC algorithm.

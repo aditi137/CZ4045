@@ -1,2 +1,1 @@
-matplotlib has become a mature and widely used graphing package.
-As for your interaction with a web browser, you may have to use another package in conjunction. I suggest CherryPy because it is simple.
+You can get the progress feedback with urlretrieve as well:

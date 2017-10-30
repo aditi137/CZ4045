@@ -1,1 +1,2 @@
-Given a path such as "mydir/myfile.txt", how do I find the absolute filepath relative to the current working directory in Python? E.g. on Windows, I might end up with:
+This may be a little late, But I saw pabloG's code and couldn't help adding a os.system('cls') to make it look AWESOME! Check it out : 
+If running in an environment other than Windows, you will have to use something other then 'cls'. In MAC OS X and Linux it should be 'clear'.

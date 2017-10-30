@@ -1,3 +1,1 @@
-the net object is expecting a list of images as input, you supply only one image.
-Try
-Note the square brackets ([]) around im_proc converting it into a list containing a single image.
+http://github.com/ITikhonov/git-loc worked right out of the box for me.
