@@ -1,0 +1,40 @@
+,0
+0,Look
+1,at
+2,"this:
+http://code.google.com/p/pywhois/
+pywhois - Python module for retrieving WHOIS information of domains
+Goal:
+- Create a simple importable Python module which will produce parsed WHOIS data for a given domain.
+- Able to extract data for all the popular TLDs (com, org, net, ...)"
+3,-
+4,Query
+5,a
+6,WHOIS
+7,server
+8,directly
+9,instead
+10,of
+11,going
+12,through
+13,an
+14,intermediate
+15,web
+16,service
+17,like
+18,many
+19,others
+20,do
+21,.
+22,-
+23,Works
+24,with
+25,Python
+26,2
+27,.4+
+28,and
+29,no
+30,external
+31,dependencies
+32,Example
+33,:

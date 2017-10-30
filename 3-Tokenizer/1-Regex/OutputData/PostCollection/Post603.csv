@@ -1,0 +1,16 @@
+,0
+0,Here
+1,is
+2,my
+3,"class:
+When I use it from the mongo shell, everything seems fine:
+db.Presentation.find({id:2})"
+4,but
+5,when
+6,I
+7,am
+8,using
+9,MongoAlchemy
+10,","
+11,p = query
+12,.filter(Presentation.id==2).first()

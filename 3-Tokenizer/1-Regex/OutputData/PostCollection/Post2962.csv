@@ -1,0 +1,45 @@
+,0
+0,The
+1,reason
+2,why
+3,it
+4,'s
+5,only
+6,the
+7,last
+8,file
+9,that
+10,could
+11,be
+12,copied
+13,(if
+14,it
+15,was
+16,)
+17,is
+18,because
+19,in
+20,this
+21,"line:
+you are referencing rowDict outside of the first for-loop. So at that execution moment, it contains the last value of this loop.
+If I understand correctly what you are trying to do you could try something like this (untested code)"
+22,:
+23,So
+24,instead
+25,"of:
+Constructing a dictionary with all the values in your CSV file 
+Somehow check for every file in your source directory that it is included in your dictionary (which is what I interpreted you were trying to do)"
+26,And
+27,move
+28,it
+29,if
+30,it
+31,does
+32,.
+33,You
+34,"could:
+For every file extracted from your CSV, check that it exists in your source directory. 
+If it does, you move it to the destination directory.
+Is that what you were trying to doÂ ?
+[And if the filename stays the same, you only need to specify the destination directory for the second argument of shutil.move()"
+35,]

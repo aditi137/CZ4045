@@ -1,0 +1,19 @@
+,0
+0,Here
+1,'s
+2,a
+3,really
+4,useful
+5,pair
+6,of
+7,patterns
+8,for
+9,this
+10,kind
+11,of
+12,"stuff:
+If you use both of these tricks consistently, you can transparently handle cases where your maya queries have returned None instead of a list
+As an aside, you can mimic the default maya behaviour (where passing no arguments uses the current selection)"
+13,like
+14,this
+15,:

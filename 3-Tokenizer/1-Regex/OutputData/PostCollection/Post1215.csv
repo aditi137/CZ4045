@@ -1,0 +1,55 @@
+,0
+0,Yep
+1,","
+2,this
+3,is
+4,because
+5,you
+6,are
+7,not
+8,waiting
+9,for
+10,threads
+11,to
+12,finish
+13,their
+14,job
+15,","
+16,so
+17,the
+18,main
+19,thread
+20,just
+21,exits
+22,.
+23,Try
+24,"this:
+EDIT Ha, I don't think I'm right here, because you didn't mark your threads as daemons. It should work even without joining. But have a look at this code:
+It will always reach print ""test"" line no matter what. So in your code it should always reach print ""+%s start"" % (self.getName()"
+25,)
+26,no
+27,matter
+28,what
+29,.
+30,Are
+31,you
+32,sure
+33,it
+34,doesn
+35,'t
+36,work
+37,?
+38,:)
+39,If
+40,it
+41,doesn
+42,"'t,"
+43,then
+44,there
+45,are
+46,only
+47,two
+48,"possibilities:
+There is a blocking operation and/or exception in your __init__ method. But then it would not reach final print;
+concurrent variable is 0 for some reason (which is not consistent with the final print)"
+49,.

@@ -1,0 +1,56 @@
+,0
+0,I
+1,'m
+2,a
+3,little
+4,confused
+5,regarding
+6,a
+7,Python
+8,exercise
+9,that
+10,requires
+11,a
+12,case
+13,insensitive
+14,input
+15,.
+16,This
+17,part
+18,of
+19,the
+20,excercise
+21,that
+22,confuses
+23,"me:
+Make sure your comparison is case insensitive. If 'John' has been used, 'JOHN' should not be accepted.
+Here is my code:
+My problem is that I'm trying to get my code to reject ""Username_2"" because of the capital ""U"" but I have no idea how to do this. I'm reading through Python Crash Course by Eric Matthes and am currently on chapter 5 but I don't recall being taught how to reject case insensitive inputs yet.
+I know of the upper()"
+24,","
+25,lower
+26,"(),"
+27,and
+28,title
+29,()
+30,string
+31,methods
+32,and
+33,I
+34,tried
+35,using
+36,:
+37,before
+38,my
+39,for
+40,loop
+41,","
+42,but
+43,this
+44,just
+45,results
+46,in
+47,a
+48,syntax
+49,error
+50,.

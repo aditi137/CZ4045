@@ -1,0 +1,59 @@
+,0
+0,Given
+1,you
+2,want
+3,to
+4,establish
+5,"http://example.com/sitemap.xml as your sitemap URL do that.
+Add this line to init.py to register URL pattern http://example.com/sitemap.xml as route sitemap
+register view code for route sitemap and render response with your custom jinja2 template  sitemap.jinja2. The file extension `jinja2' will trigger usage of jinja2 renderer.
+This will fix your errors resulting from trying to name your templates like URLs. But that mixed up renderer conventions shown below.
+*.pt triggers Chameleon renderer
+*.jinja2 triggers Jinja2 renderer
+*.mako triggers Mako renderer
+*.xml triggers XML renderer (that raised your first error)"
+6,Now
+7,it
+8,is
+9,still
+10,up
+11,to
+12,you
+13,to
+14,create
+15,XML
+16,based
+17,on
+18,sitemaps
+19,protocol
+20,.
+21,But
+22,your
+23,code
+24,looks
+25,promising
+26,.
+27,You
+28,pass
+29,your
+30,resource
+31,tree
+32,to
+33,the
+34,XML
+35,template
+36,.
+37,Every
+38,resource
+39,usually
+40,has
+41,access
+42,to
+43,their
+44,properties
+45,like
+46,URL
+47,or
+48,last_changed
+49,stuff
+50,.

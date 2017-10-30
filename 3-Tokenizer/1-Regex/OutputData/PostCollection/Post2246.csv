@@ -1,0 +1,24 @@
+,0
+0,from
+1,django
+2,.conf.urls.static
+3,import static
+4,urlpatterns
+5,=
+6,[
+7,url
+8,"(r'^admin/',"
+9,include
+10,"(admin.site.urls)),"
+11,url
+12,"(r'',"
+13,include
+14,"('blog.urls')),"
+15,urlpatterns += static
+16,"(settings.STATIC_URL,"
+17,document_root=settings
+18,.STATIC_ROOT)
+19,urlpatterns += static
+20,"(settings.MEDIA_URL,"
+21,document_root=settings
+22,.MEDIA_ROOT)

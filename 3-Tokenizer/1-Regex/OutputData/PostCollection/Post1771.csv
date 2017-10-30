@@ -1,0 +1,66 @@
+,0
+0,"IDE: PyCharm Community Edition 3.1.1
+Python: 2.7.6  
+I using DDT for test parameterization http://ddt.readthedocs.org/en/latest/example.html
+I want to choose and run parameterized test method from test class in PyCharm -> see example:
+When I navigate to the first test method test_print_value in code and hit ctrl+Shift+F10 (or use Run Unittest test_print... option from context menu)"
+1,then
+2,test
+3,is
+4,executed
+5,.
+6,When
+7,I
+8,try
+9,the
+10,same
+11,with
+12,parameterized
+13,test
+14,I
+15,get
+16,"error:
+And output contains:
+However when I run all tests in class (by navigating to test class name in code and using mentioned run test option)"
+17,all
+18,parameterized
+19,and
+20,non
+21,parameterized
+22,tests
+23,are
+24,executed
+25,together
+26,without
+27,errors
+28,.
+29,The
+30,problem
+31,is
+32,how
+33,to
+34,independently
+35,run
+36,prameterized
+37,method
+38,from
+39,the
+40,test
+41,class
+42,-
+43,workaround
+44,is
+45,putting
+46,one
+47,parameterized
+48,test
+49,per
+50,test
+51,class
+52,but
+53,it
+54,is
+55,rather
+56,messy
+57,solution
+58,.

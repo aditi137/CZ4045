@@ -1,0 +1,21 @@
+,0
+0,It
+1,looks
+2,like
+3,NumPy
+4,underwent
+5,some
+6,reorganisation
+7,in
+8,recent
+9,years
+10,.
+11,"http://www.scipy.org/Numpy_Example_List_With_Doc#fft
+FFT is now numpy.fft, and real_fft()"
+12,seems
+13,to
+14,be
+15,renamed
+16,into
+17,rfft
+18,()

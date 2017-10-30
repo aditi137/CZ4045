@@ -1,0 +1,22 @@
+,0
+0,You
+1,must
+2,tell
+3,numpy
+4,to
+5,return
+6,the
+7,values
+8,as
+9,integers
+10,To
+11,print
+12,out
+13,zerosThenOnes
+14,like
+15,this
+16,"[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1]"
+17,Use
+18,:
+19,Numpy
+20,Zeros

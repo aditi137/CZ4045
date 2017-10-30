@@ -1,0 +1,77 @@
+,0
+0,I
+1,have
+2,the
+3,following
+4,"problem: I have a defaultdict called word_count containing words and the number how often they occur. I get this by counting the reply of the Google Speech API. However, this API gives me back things like '\303\266' for the German letter 'รถ'.
+Now I want to go through this dict, test if one of these things shown above is there and replace it with the right thing like this:
+Filling the defaultdict:
+So far it works fine, I can print the dict and it gets me the words with the number.
+Now replacing the key:
+Now this does not work, I guess because I cannot pop(key)"
+5,as
+6,it
+7,expects
+8,an
+9,integer
+10,.
+11,How
+12,else
+13,would
+14,I
+15,do
+16,this
+17,?
+18,I
+19,tried
+20,several
+21,approaches
+22,","
+23,but
+24,nothing
+25,seems
+26,to
+27,work
+28,here
+29,.
+30,Any
+31,help
+32,would
+33,be
+34,greatly
+35,appreciated
+36,!
+37,Solution
+38,:
+39,Turns
+40,out
+41,this
+42,was
+43,my
+44,fault
+45,","
+46,as
+47,I
+48,sorted
+49,the
+50,dict
+51,and
+52,thereby
+53,turned
+54,it
+55,to
+56,a
+57,list
+58,of
+59,tuples
+60,.
+61,Thanks
+62,to
+63,everyone
+64,who
+65,helped
+66,me
+67,figure
+68,this
+69,out
+70,!

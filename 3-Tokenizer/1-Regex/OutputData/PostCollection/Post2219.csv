@@ -1,0 +1,16 @@
+,0
+0,Based
+1,partially
+2,on
+3,this
+4,"answer:
+You need to run nltk.download()"
+5,beforehand
+6,and
+7,download
+8,punkt
+9,in
+10,the
+11,Models
+12,tab
+13,.

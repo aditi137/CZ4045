@@ -1,0 +1,35 @@
+,0
+0,You
+1,'re
+2,using
+3,the
+4,%
+5,operator
+6,incorrectly
+7,.
+8,You
+9,might
+10,be
+11,looking
+12,for
+13,something
+14,like
+15,"this:
+Notice that the substitution variables x, y, z are all in parentheses, which means they are a single tuple passed to the % operator.
+In your code, notice how you have four parameters to the write()"
+16,function
+17,(I've
+18,put
+19,each
+20,parameter
+21,on
+22,a
+23,separate
+24,line
+25,to
+26,make
+27,it
+28,easier
+29,to
+30,see
+31,):

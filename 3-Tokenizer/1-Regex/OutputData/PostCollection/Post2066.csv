@@ -1,0 +1,15 @@
+,0
+0,You
+1,can
+2,use
+3,regex
+4,to
+5,split
+6,on
+7,anything
+8,which
+9,is
+10,not
+11,a
+12,digit
+13,\D:

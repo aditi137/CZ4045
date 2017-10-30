@@ -1,0 +1,49 @@
+,0
+0,What
+1,I
+2,want
+3,Inclusion
+4,Templatetag
+5,which
+6,returns
+7,number
+8,of
+9,uses
+10,and
+11,don
+12,'t
+13,break
+14,when
+15,using
+16,template
+17,inheritance
+18,.
+19,I
+20,tried
+21,to
+22,storage
+23,counter
+24,in
+25,context
+26,","
+27,but
+28,it
+29,does
+30,not
+31,work
+32,as
+33,I
+34,intended
+35,.
+36,base
+37,.html
+38,page
+39,.html
+40,rendered
+41,"result:
+What I tried
+And result:
+And what worked
+Added middleware which added counter to request
+and changed template tag
+Thanks to @SardorbekImomaliev for his suggestion! :)"

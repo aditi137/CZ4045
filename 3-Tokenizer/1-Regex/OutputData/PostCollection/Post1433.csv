@@ -1,0 +1,46 @@
+,0
+0,I
+1,use
+2,the
+3,code
+4,to
+5,strip
+6,a
+7,line
+8,of
+9,text
+10,from
+11,"punctuation:
+The problem is that words like doesn't turn to doesnt so now I want to remove the punctuation only between words but can't seem to figure out a way to do so. How
+should I go about this?
+Edit: I thought about using the strip()"
+12,function
+13,but
+14,that
+15,will
+16,only
+17,take
+18,effect
+19,on
+20,the
+21,right
+22,and
+23,left
+24,trailing
+25,of
+26,the
+27,whole
+28,sentence
+29,.
+30,For
+31,example
+32,:
+33,Should
+34,become
+35,:
+36,Instead
+37,of
+38,the
+39,current
+40,output
+41,:

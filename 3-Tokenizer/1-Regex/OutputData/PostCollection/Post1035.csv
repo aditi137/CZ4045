@@ -1,0 +1,27 @@
+,0
+0,You
+1,want
+2,to
+3,loop
+4,over
+5,the
+6,/movies/a_movie
+7,tags
+8,instead
+9,","
+10,but
+11,only
+12,those
+13,that
+14,have
+15,a
+16,studio
+17,"child:
+If you wanted to just print out the child elements of the a_movie element as XML, I'd just loop over the element (looping over the child elements)"
+18,and
+19,use
+20,ElementTree
+21,.tostring()
+22,on
+23,each
+24,:

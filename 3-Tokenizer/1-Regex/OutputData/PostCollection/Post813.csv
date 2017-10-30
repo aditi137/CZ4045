@@ -1,0 +1,19 @@
+,0
+0,If
+1,new
+2,does
+3,not
+4,depend
+5,on
+6,self
+7,","
+8,use
+9,a
+10,"classmethod:
+Or, if new does depend on self, use type(self)"
+11,to
+12,determine
+13,self
+14,'s
+15,class
+16,:
