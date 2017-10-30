@@ -1,0 +1,36 @@
+,0
+0,I
+1,guess
+2,you
+3,could
+4,do
+5,something
+6,"like:
+Where using:
+reversed - because bits are read from LSB to MSB so we need to iterate from right to left.
+enumerate - because we want to get the associated index to check in our mapping what is the feature name/attributes.
+"""".join(bits)"
+7,-
+8,because
+9,we
+10,want
+11,to
+12,be
+13,able
+14,to
+15,join
+16,all
+17,the
+18,items
+19,on
+20,the
+21,list
+22,to
+23,one
+24,iterable
+25,object
+26,we
+27,can
+28,go
+29,through
+30,.

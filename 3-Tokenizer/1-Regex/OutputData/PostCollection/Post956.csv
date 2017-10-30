@@ -1,0 +1,17 @@
+,0
+0,While
+1,browsing
+2,some
+3,code
+4,","
+5,I
+6,came
+7,across
+8,this
+9,"line:
+I understand that Shedskin is a kind of Python -> C++ compiler, but I can't understand that line.
+Shouldn't if False: never execute? What's going on here?
+For context:
+This is the whole block:
+More context is on Google Code (scroll down all the way)"
+10,.

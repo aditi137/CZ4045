@@ -1,0 +1,37 @@
+,0
+0,I
+1,fuzzy
+2,matched
+3,a
+4,list
+5,of
+6,movie
+7,titles
+8,and
+9,compiled
+10,them
+11,into
+12,another
+13,list
+14,of
+15,each
+16,comparison
+17,along
+18,with
+19,the
+20,match
+21,"values:  
+I want to add up the match values for each title so that I get output like this: 
+I have tried several implementations utilizing slices but it's ugly.
+(Not my exact code but this is the ugliness)"
+22,:
+23,what
+24,is
+25,a
+26,more
+27,efficient
+28,way
+29,to
+30,accomplish
+31,this
+32,?

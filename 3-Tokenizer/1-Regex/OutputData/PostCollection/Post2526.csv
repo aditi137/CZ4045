@@ -1,0 +1,45 @@
+,0
+0,views
+1,.py
+2,urls
+3,.py:
+4,The
+5,following
+6,error
+7,is
+8,raised
+9,during
+10,runserver
+11,(without
+12,basename
+13,kwarg
+14,):
+15,"AssertionError:base_nameargument not specified, and could not automatically determine the name from the viewset, as it does not have a.querysetattribute.
+However, when I add the wished basename, the error changes to:
+TypeError: as_view()"
+16,takes
+17,1
+18,positional
+19,argument
+20,but
+21,2
+22,were
+23,given
+24,I
+25,suspect
+26,that
+27,it
+28,might
+29,be
+30,related
+31,to
+32,combining
+33,a
+34,ViewSet
+35,and
+36,a
+37,ListAPIView
+38,in
+39,one
+40,router
+41,.

@@ -1,0 +1,21 @@
+,0
+0,If
+1,you
+2,only
+3,need
+4,to
+5,know
+6,if
+7,it
+8,'s
+9,in
+10,the
+11,string
+12,or
+13,"not:
+However, the above has the problem that both of these will return true:
+So if you care about words vs. simple presence, as long as your delimiters are consistent:
+If you need to know which word position:
+If you need to know the position in the string:
+If you want to know if each element from a is in the corresponding element of b (ignores extra entries on either list)"
+14,:

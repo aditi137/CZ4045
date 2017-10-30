@@ -1,0 +1,16 @@
+,0
+0,I
+1,will
+2,have
+3,a
+4,preference
+5,"for:
+This has the advantage to:
+avoid None as the function (will be eliminated in Python 3)"
+6,:
+7,http
+8,://bugs.python.org/issue2186
+9,use
+10,only
+11,iterators
+12,.

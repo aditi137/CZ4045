@@ -1,0 +1,68 @@
+,0
+0,Your
+1,loop
+2,should
+3,work
+4,if
+5,you
+6,don
+7,'t
+8,cast
+9,to
+10,a
+11,list
+12,","
+13,and
+14,if
+15,you
+16,do
+17,the
+18,assignment
+19,"like:
+In your first attempt, np.array is just doing its job.  It sees a nested collection of data that can be converted to a 3-D array, so it does so.
+To get a 2-D array of objects, you can change this:
+to this:
+Here's a concrete example:
+I don't have your Vector class, so I'll just use numpy arrays as the objects that I want in the array of objects.
+Here's the data that I want to put into an array of objects. It is a nested list of numpy arrays, each with two elements:
+You could change np.array([10*j + k, 10*j + k + 1])"
+20,to
+21,Vector
+22,(10*j
+23,+
+24,k
+25,","
+26,10
+27,*j
+28,+
+29,k
+30,+
+31,1
+32,)
+33,to
+34,try
+35,this
+36,with
+37,your
+38,Vector
+39,class
+40,.
+41,a
+42,is
+43,the
+44,array
+45,of
+46,objects
+47,that
+48,I
+49,'m
+50,creating
+51,:
+52,Assign
+53,the
+54,vectors
+55,to
+56,a
+57,like
+58,this
+59,:

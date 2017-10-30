@@ -1,0 +1,25 @@
+,0
+0,You
+1,can
+2,use
+3,empty
+4,or
+5,zeros
+6,.
+7,For
+8,example
+9,","
+10,to
+11,create
+12,a
+13,new
+14,array
+15,of
+16,2x3
+17,","
+18,filled
+19,with
+20,zeros
+21,","
+22,"use: numpy.zeros(shape=(2,3)"
+23,)

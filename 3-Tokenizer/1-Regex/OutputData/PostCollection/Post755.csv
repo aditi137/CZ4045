@@ -1,0 +1,35 @@
+,0
+0,Two
+1,different
+2,ideas
+3,for
+4,performance
+5,"constraints:
+The bottleneck is the workers fighting each other and the parent for access to the job queue.
+The bottleneck is connection rate-limits (syn-flood protection)"
+6,on
+7,the
+8,servers
+9,.
+10,Gathering
+11,more
+12,"information:
+Profile the amount of work done: tasks completed per second, use this as your core performance metric.
+Use packet capture to view the network activity for network-level delays.
+Have your workers document how long they wait for access to the job queue.
+Possible improvements:
+Have your workers use persistent connections if available/applicable (e.g. HTTP)"
+13,.
+14,Split
+15,the
+16,tasks
+17,into
+18,multiple
+19,job
+20,queues
+21,fed
+22,to
+23,pools
+24,of
+25,workers
+26,.

@@ -1,0 +1,37 @@
+,0
+0,I
+1,'m
+2,using
+3,a
+4,seaborn
+5,jointplot
+6,for
+7,scatterplotting
+8,purposes
+9,","
+10,but
+11,I
+12,can
+13,'t
+14,seem
+15,to
+16,get
+17,a
+18,simple
+19,diagonal
+20,line
+21,going
+22,across
+23,...
+24,I
+25,'m
+26,getting
+27,a
+28,"AttributeError: 'JointGrid' object has no attribute 'get_xlim'. Does anyone know a workaround using Seaborn?
+Here's my code (also the title doesn't show up! what gives)"
+29,:
+30,thanks
+31,in
+32,advance
+33,everyone
+34,.

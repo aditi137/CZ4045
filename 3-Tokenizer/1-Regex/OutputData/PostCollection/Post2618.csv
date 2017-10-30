@@ -1,0 +1,35 @@
+,0
+0,I
+1,seems
+2,found
+3,a
+4,bug
+5,when
+6,I
+7,'m
+8,using
+9,python
+10,2
+11,.7
+12,with
+13,numpy
+14,"module:
+Here I got the full 'x' array as follows:
+Then I try to indexing single row values in sheet [1]:
+Result:
+But something wrong while I was try to indexing single column in sheet [1]:
+Result still be the same as previous:
+Should it be array([20, 25, 30, 35])"
+15,??
+16,It
+17,seems
+18,something
+19,wrong
+20,while
+21,indexing
+22,the
+23,middle
+24,index
+25,with
+26,range
+27,?

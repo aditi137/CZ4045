@@ -1,0 +1,44 @@
+,0
+0,There
+1,can
+2,be
+3,several
+4,factors
+5,.
+6,Two
+7,I
+8,can
+9,think
+10,off
+11,of
+12,right
+13,"now:
+Initial byte compilation.
+Python caches the compiled bytecode in .pyc files, on a first run that file needs to be created, subsequent runs only need to verify the timestamp on the byte code cache.
+Disk caching
+The Python interpreter, the 3 libraries you refer to directly, anything those libraries use, all need to be loaded from disk, quite apart from the script and it's bytecode cache. The OS caches such files for faster access.
+If you ran other things on the same system, those files will be flushed from the cache and need to be loaded again.
+The same applies to directory listings; the checks for where to find the modules in the module search path and tests for bytecode caches all are sped up by cached directory information.
+If such startup times affect your application, consider creating a daemon that services these tasks as a service. RPC calls (using sockets or localhost network connections)"
+14,will
+15,almost
+16,always
+17,beat
+18,those
+19,startup
+20,costs
+21,.
+22,A
+23,message
+24,queue
+25,could
+26,provide
+27,you
+28,with
+29,the
+30,architecture
+31,for
+32,such
+33,a
+34,daemon
+35,.

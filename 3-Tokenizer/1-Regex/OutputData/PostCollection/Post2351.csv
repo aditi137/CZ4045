@@ -1,0 +1,41 @@
+,0
+0,If
+1,you
+2,want
+3,to
+4,run
+5,a
+6,Python
+7,code
+8,in
+9,a
+10,separate
+11,process
+12,","
+13,you
+14,could
+15,use
+16,multiprocessing
+17,"module:
+I wondered whether using a subprocess module and multiprocess module in the same function is prohibited?
+No. You can use both subprocess and multiprocessing in the same function (moreover, multiprocessing may use subprocess to start its worker processes internally)"
+18,.
+19,Reason
+20,I
+21,want
+22,this
+23,is
+24,that
+25,I
+26,have
+27,two
+28,things
+29,to
+30,"run: first an exe file, and second a function, each needs it own process.
+You don't need multprocessing to run an external command without blocking (obviously, in its own process)"
+31,;
+32,subprocess
+33,.Popen()
+34,is
+35,enough
+36,:
