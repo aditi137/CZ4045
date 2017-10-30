@@ -38,21 +38,38 @@ def main():
     #(?!term1|term2|term3)
 
     importDetector = 'import\s+[\w]+'
-    functionDetector = '[\w]+\(.*?\)'
+    functionDetector = '([\w]+\.)*[\w]+\(.*?\)'
     defDetector = 'def\s+' + functionDetector + ':'
     asignDetector = '[\w]+\s*[+\-]*=\s*[\w]+'
-    word = '[\w]+'
+    urlDetector = 'http[^\s()[\]]*'
+    etcDetector = 'etc\.*'
+    utcDetector = '(utc|UTC)\s*[+\-]\s*\d'
+    word = '[\w\@&]+'
+    wordApostropheDetector = word + "('" + word + ')+'
+    wordDotDetector = word + '(\.' + word + ')+'
+    wordSlashDetector = word + '(-' + word + ')+'
     arrayDetector = '\[((\s*[\w]+\s*)(,\s*[\w]+\s*)*)?\]'
-    anything = '[^\s]+'
+    anything = '[^\s]'
+    ellipsisDetector = '\.{3,}'
+    mrDetector = 'M(r|s|Mrs)\.'
+    arrowDetector = '(<+-+)|(-+>+)'
 
-    
     # THE ORDER IN THIS ARRAY IS IMPORTANT, THE FIRST MATCH IS THE SELECTED ONE
     regexExpressions = [
         importDetector,
         defDetector,
         functionDetector,
-        asignDetector,
-        arrayDetector,
+        ##asignDetector,
+        ##arrayDetector,
+        urlDetector,
+        utcDetector,
+        etcDetector,
+        ellipsisDetector,
+        mrDetector,
+        arrowDetector,
+        wordDotDetector,
+        wordApostropheDetector,
+        wordSlashDetector,
         word,
         anything
     ]
