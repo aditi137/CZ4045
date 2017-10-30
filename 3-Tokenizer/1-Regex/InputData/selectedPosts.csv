@@ -1,432 +1,302 @@
 ,post
-0,"When asked to create system XYZ and you ask to do it in Python over PHP or Ruby, what are the main features you can mention when they require you to explain it?
-"
-1,"I would consider that using python on a new project is completely dependent on what problem you are trying to solve with python.  If you want someone to agree with you that you should use python, then show them how python's features apply specifically to that problem.
-In the case of web development with python, talk about WSGI and other web libraries and frameworks you could use that would make your life easier.  One note for python is that most of the frameworks for python web development can be plugged right into any current project. With ruby on rails, you're practically working in a DSL that anyone who uses your project will have to learn.  If they know python, then they can figure out what you are doing with django, etc in a day.
-I'm only talking about web development because it appears that's what you are going to be working on seeing ruby, python and PHP in the same list.  The real message that's important is applying to whatever it is you like about python directly to some problem you are trying to solve.
-"
-2,"I agree with mreggen. Tell them by working in Python you can get things done faster. Getting things done faster possibly means money saved by the client. In the least it means that you are working with a language you a more comfortable in, meaning faster development, debugging, and refactoring time. There will be less time spent looking up documentation on what function to use to find the length of a string, etc. 
-"
-3,"It's one of the preferred languages over at Google - It's several years ahead of Ruby in terms of ""maturity"" (what ever that really means - but managers like that). Since it's prefered by Google you can also run it on the Google App Engine.
-Mircosoft is also embracing Python, and will have a v2.0 of IronPython coming out shortly. They are working on a Ruby implementation as well, but the Python version is way ahead, and is actually ""ready for primetime"". That give you the possibility for easy integration with .NET code, as well as being able to write client side RIAs in Python when Silverlight 2 ships.
-"
-4,"The best sell of Python I've ever seen was by a manager in our group who had a young daughter.  He used a quote attributed to Einstein:
-If you can't explain something to a six-year-old, you really don't understand it yourself.
-The next few slides of his presentation demonstrated how he was able to teach his young daughter some basic Python in less than 30 minutes, with examples of the code she wrote and an explanation of what it did.
-He ended the presentation with a picture of his daughter and her quote ""Programming is fun!""
-I would focus on Python's user friendliness and wealth of libraries and frameworks.  There are also a lot of little libraries that you might not get in other languages, and would have to write yourself (i.e. How a C++ developer writes Python).
-Good luck!
-"
-5,"Give them a snippet of code in each (no more than a page) that performs some cool function that they will like. (e.g show outliers in a data set).
-Show them each page. One in PHP, Ruby and Python.
-Ask them which they find easiest to understand/read.
-Tell them thats why you want to use Python. It's easier to read if you've not written it, more manageable, less buggy and quicker to build features because it is the most elegant (pythonic)
-"
-6,"Though All 3 languages are versatile and used worldwide by programmers, Python still have some advantages over the other two. Like From my personal experience :-
-Non-programmers love it (most of 'em choose Python as their first computer language,check this infographic php vs python vs ruby here)
-Multiple frameworks (You can automate your system tasks, can develop apps for web and windows/mac/android OSes)
-Making OpenCV apps easily than MATLAB 
-Testing done easy (you can work on Selenium for all kind of web testing)
-OOPS concepts are followed by most languages now , so how come Python can stay behind! Inheritance, Abstraction and Encapsulation are followed by Python as well.
-Python as of now is divided into two versions popularly that are not much different in terms of performance but features. Python2.x and Python 3.x both have same syntax ,except for some statements like :-
-print ""..."" in Python2.x and print() in Python3.x
-raw_input() in Python2.x and input() in Python3.x (for getting user input)
-In the end, client only cares about money and Python helps you save a lot as compared to PHP and Ruby , because instead of hiring experienced programmers , you can make a newbie learn and use Python expertly.
-"
-7,"This is one of those cases that really boil down to personal preference or situational details. If you're more comfortable and experienced with Python, then say so. Are they asking you to justify it because they're more comfortable with one of the other environments? After you're done, will the system be passed off to someone else for long-term maintenance?
-If they ask you to use a technology or language that you're not as familiar with, then make sure they know up-front that it's going to take you longer.
-"
-8,"Focus on the shorter time needed for development/prototype and possibly easier maintenance (none of this may apply against Ruby).
-"
-9,"The problem for me wasn't in Apache set up, but in understanding how mod_apache actually uses the .py files. Module-level statements (including those in a if __name__=='__main__' section) are not executed--I assumed that the stdout from running the script at the commandline would be what the server would output, but that's not how it works.
-Instead, I wrote a module-level function called index(), and had it return as a string the HTML of the page. It's also possible to have other module-level functions (e.g., otherFunction()) that can be accessed as further segments in the URI (e.g., testScript/otherFunction for the file testScript.py.)
-Obviously, this makes more sense than my original stdout conception. Better capability of actually using Python as a scripting language and not a humongous markup language.
-"
-10,"Are you running Python on UNIX or Windows?
-An alternative to mod_python and FastCGI is mod_wsgi. You can find out more at modwsgi
-I have built and installed this on Solaris without problems. I had previously tried mod_python but ran into problems with shared libraries as part of the build. There are good install docs available.
-"
-11,"I tried to follow a couple of googled up tutorials on setting up mod_python, but failed every time. Do you have a good, step-by step, rock-solid howto?
-My dev box is OS X, production - Centos.
-"
-12,"Yes, mod_python is pretty confusing to set up.  Here's how I did it.
-In httpd.conf:
-and in your application directory:
-Repeat the configuration for each python program you wish to have running under mod_python.
-"
-13,"There are two main ways of running Python on Apache. The simplest would be to use CGI and write normal Python scripts while the second is using a web framework like Django or Pylons.
-Using CGI is straightforward. Make sure your Apache config file has a cgi-bin set up. If not, follow their documentation (http://httpd.apache.org/docs/2.0/howto/cgi.html). At that point all you need to do is place your Python scripts in the cgi-bin directory and the standard output will become the HTTP response. Refer to Python's documentation for further info (https://docs.python.org/library/cgi.html).
-If you want to use a web framework you'll need to setup mod_python or FastCGI. These steps are dependent on which framework you want to use. Django provides clear instructions on how to setup mod_python and Django with Apache (http://www.djangoproject.com/documentation/modpython/)
-"
-14,"I'm downloading an entire directory from a web server. It works OK, but I can't figure how to get the file size before download to compare if it was updated on the server or not. Can this be done as if I was downloading the file from a FTP server?
-@Jon: thank for your quick answer. It works, but the filesize on the web server is slightly less than the filesize of the downloaded file. 
-Examples:
-It has anything to do with the CR/LF conversion?
-"
-15,"The size of the file is sent as the Content-Length header. Here is how to get it with urllib:
-"
-16,"Using the returned-urllib-object method info(), you can get various information on the retrived document. Example of grabbing the current Google logo:
-It's a dict, so to get the size of the file, you do urllibobject.info()['Content-Length']
-And to get the size of the local file (for comparison), you can use the os.stat() command:
-"
-17,"Also if the server you are connecting to supports it, look at Etags and the If-Modified-Since and If-None-Match headers.
-Using these will take advantage of the webserver's caching rules and will return a 304 Not Modified status code if the content hasn't changed.
-"
-18,"I have reproduced what you are seeing:
-Outputs this:
-What am I doing wrong here? Is os.stat().st_size not returning the correct size?
-Edit:
-OK, I figured out what the problem was:
-this outputs:
-Make sure you are opening both files for binary read/write.
-"
-19,"In Python3:
-"
-20,"A requests-based solution using HEAD instead of GET (also prints HTTP headers):
-Usage
-"
-21,"For a python3 (tested on 3.5) approach I'd recommend:
-"
-22,"Basically, I've written an API to www.thetvdb.com in Python. The current code can be found here.
-It grabs data from the API as requested, and has to store the data somehow, and make it available by doing:
-What is the ""best"" way to abstract this data within the Tvdb() class?
-I originally used a extended Dict() that automatically created sub-dicts (so you could do x[1][2][3][4] = ""something"" without having to do if x[1].has_key(2): x[1][2] = [] and so on)
-Then I just stored the data by doing self.data[show_id][season_number][episode_number][attribute_name] = ""something""
-This worked okay, but there was no easy way of checking if x[3][24] was supposed to exist or not (so I couldn't raise the season_not_found exception).
-Currently it's using four classes: ShowContainer, Show, Season and Episode. Each one is a very basic dict, which I can easily add extra functionality in (the search() function on Show() for example). Each has a __setitem__, __getitem_ and has_key.
-This works mostly fine, I can check in Shows if it has that season in it's self.data dict, if not, raise season_not_found. I can also check in Season() if it has that episode and so on.
-The problem now is it's presenting itself as a dict, but doesn't have all the functionality, and because I'm overriding the __getitem__ and __setitem__ functions, it's easy to accidentally recursively call __getitem__ (so I'm not sure if extending the Dict class will cause problems).
-The other slight problem is adding data into the dict is a lot more work than the old Dict method (which was self.data[seas_no][ep_no]['attribute'] = 'something'). See _setItem and _setData. It's not too bad, since it's currently only a read-only API interface (so the users of the API should only ever retrieve data, not add more), but it's hardly... Elegant.
-I think the series-of-classes system is probably the best way, but does anyone have a better idea for storing the data? And would extending the ShowContainer/etc classes with Dict cause problems?
-"
-23,"Bartosz/To clarify ""This worked okay, but there was no easy way of checking if x[3][24] was supposed to exist or not""
-x['some show'][3][24] would return season 3, episode 24 of ""some show"". If there was no season 3, I want the pseudo-dict to raise tvdb_seasonnotfound, if ""some show"" doesn't exist, then raise tvdb_shownotfound
-The current system of a series of classes, each with a __getitem__ - Show checks if self.seasons.has_key(requested_season_number), the Season class checks if self.episodes.has_key(requested_episode_number) and so on.
-It works, but it there seems to be a lot of repeated code (each class is basically the same, but raises a different error)
-"
-24,"I don't get this part here:
-This worked okay, but there was no easy way of checking if x[3][24] was supposed to exist or not (so I couldn't raise the season_not_found exception)
-There is a way to do it - called in:
-what seems to be the problem with that?
-"
-25,"I have done something similar in the past and used an in-memory XML document as a quick and dirty hierachical database for storage. You can store each show/season/episode as an element (nested appropriately) and attributes of these things as xml attributes on the elements. Then you can use XQuery to get info back out.
-NOTE: I'm not a Python guy so I don't know what your xml support is like.
-NOTE 2: You'll want to profile this because it'll be bigger and slower than the solution you've already got. Likely enough if you are doing some high-volume processing then XML is probably not going to be your friend.
-"
-26,"Why not use SQLite? There is good support in Python and you can write SQL queries to get the data out. Here is the Python docs for sqlite3
-If you don't want to use SQLite you could do an array of dicts.
-That way you add metadata to any record and search it very easily
-"
-27,"OK, what you need is classobj from new module. That would allow you to construct exception classes dynamically (classobj takes a string as an argument for the class name). 
-this gives you:
-remember that you can always get the class name through:
-So, after some string mangling and concatenation, you should be able to obtain appropriate exception class name and construct a class object using that name and then raise that exception.
-P.S. - you can also raise strings, but this is deprecated.
-"
-28,"Is there a way, when I parse an XML document using lxml, to validate that document against its DTD using an external catalog file?   I need to be able to work the fixed attributes defined in a documentâ€™s DTD.
-"
-29,"Can you give an example? According to the lxml validation docs, lxml can handle DTD validation (specified in the XML doc or externally in code) and system catalogs, which covers most cases I can think of.
-"
-30,"It seems that lxml does not expose this libxml2 feature, grepping the source only turns up some #defines for the error handling:
-From the catalog implementation in libxml2 page it seems possible that the 'transparent' handling through installation in /etc/xml/catalog may still work in lxml, but if you need more than that you can always abandon lxml and use the default python bindings, which do expose the catalog functions.
-"
-31,"You can add the catalog to the XML_CATALOG_FILES environment variable:
-See this thread. Note that entries in XML_CATALOG_FILES are space-separated URLs. You can use Python's pathname2url and urljoin (with file:) to generate the URL from a pathname.
-"
-32,"Is it possible to write a doctest unit test that will check that an exception is raised?
-For example, if I have a function foo(x) that is supposed to raise an exception if x<0, how would I write the doctest for that? 
-"
-33,"Yes. You can do it. The doctest module documentation and Wikipedia has an example of it.
-"
-34,"
-ellipsis flag # doctest: +ELLIPSIS is not required to use ... in Traceback doctest 
-"
-35,"Keep a look out for ASP.NET MVC
-The IronRuby guys have got some internal builds of MVC to work with IronRuby, and IronPython 2 and IronRuby have a lot of code in common with the DLR.
-I'm not sure if they'll support IronPython/IronRuby when MVC is released, but it's definitely worth keeping your eye on anyway - The old ASP.NET forms-based development model is old, busted, and the sooner it goes away the better.
-"
-36,"Check out the Dynamic Languages in ASP.NET page on Codeplex. This has the newest IronPython bits. It doesn't give you any Visual Studio integration, other than the sample website project, but that's coming.
-"
-37,"The current version of ASP.NET integration for IronPython is not very up-to-date and is more of a ""proof-of-concept."" I don't think I'd build a production website based on it.
-Edit:: I have a very high level of expectation for how things like this should work, and might setting the bar a little high.  Maybe you should take what's in ""ASP.NET Futures"", write a test application for it and see how it works for you.  If you're successful, I'd like to hear about it.  Otherwise, I think there should be a newer CTP of this in the next six months.
-(I'm a developer on IronPython and IronRuby.)
-Edit 2: Since I originally posted this, a newer version has been released.
-"
-38,"Has anyone built a website with IronPython and ASP.NET.  What were your experiences and is the combination ready for prime-time?
-"
-39,"I'd like to have a python program alert me when it has completed its task by making a beep noise.  Currently,  I use import os and then use a command line speech program to say ""Process complete.""  I much rather it be a simple ""bell.""
-I know that there's a function that can be used in Cocoa apps, NSBeep, but I don't think that has much anything to do with this.
-I've also tried print(\a) but that didn't work.
-I'm using a Mac, if you couldn't tell by my Cocoa comment, so that may help.
-Thanks!
-"
-40,"Have you tried :
-That works for me here on Mac OS 10.5
-Actually, I think your original attempt works also with a little modification:
-(You just need the single quotes around the character sequence).
-"
-41,"I had to turn off the ""Silence terminal bell"" option in my active Terminal Profile in iTerm for print('\a') to work. It seemed to work fine by default in Terminal.
-You can also use the Mac module Carbon.Snd to play the system beep:
-The Carbon modules don't have any documentation, so I had to use help(Carbon.Snd) to see what functions were available. It seems to be a direct interface onto Carbon, so the docs on Apple Developer Connection probably help.
-"
-42,"If you have PyObjC (the Python - Objective-C bridge) installed or are running on OS X 10.5's system python (which ships with PyObjC), you can do
-to play the system alert.
-"
-43,"I tried the mixer from the pygame module, and it works fine. First install the module:
-Then in the program, write this:
-With pygame you have a lot of customization options, which you may additionally experiment with.
-"
-44,"Building on Barry Wark's answer...
-NSBeep() from AppKit works fine, but also makes the terminal/app icon in the taskbar jump.
-A few extra lines with NSSound() avoids that and gives the opportunity to use another sound:
-Standard sound files can be found via commandline locate /System/Library/Sounds/*.aiff
-The file used by NSBeep() seems to be '/System/Library/Sounds/Funk.aiff'
-"
-45,"If I call os.stat() on a broken symlink, python throws an OSError exception. This makes it useful for finding them. However, there are a few other reasons that os.stat() might throw a similar exception. Is there a more precise way of detecting broken symlinks with Python under Linux?
-"
-46,"Can I mention testing for hardlinks without python? /bin/test has the FILE1 -ef FILE2 condition that is true when files share an inode.
-Therefore, something like find . -type f -exec test \{} -ef /path/to/file \; -print works for hard link testing to a specific file.
-Which brings me to reading man test and the mentions of -L and -h which both work on one file and return true if that file is a symbolic link, however that doesn't tell you if the target is missing.
-I did find that head -0 FILE1 would return an exit code of 0 if the file can be opened and a 1 if it cannot, which in the case of a symbolic link to a regular file works as a test for whether it's target can be read.
-"
-47,"I'm not a python guy but it looks like os.readlink()?  The logic I would use in perl is to use readlink() to find the target and the use stat() to test to see if the target exists.
-Edit: I banged out some perl that demos readlink.  I believe perl's stat and readlink and python's os.stat() and os.readlink()are both wrappers for the system calls, so this should translate reasonable well as proof of concept code:
-"
-48,"os.lstat() may be helpful. If lstat() succeeds and stat() fails, then it's probably a broken link.
-"
-49,"os.path
-You may try using realpath() to get what the symlink points to, then trying to determine if it's a valid file using is file.
-(I'm not able to try that out at the moment, so you'll have to play around with it and see what you get)
-"
-50,"A common Python saying is that it's easier to ask forgiveness than permission.  While I'm not a fan of this statement in real life, it does apply in a lot of cases.  Usually you want to avoid code that chains two system calls on the same file, because you never know what will happen to the file in between your two calls in your code.
-A typical mistake is to write something like:
-The second call (os.unlink) may fail if something else deleted it after your if test, raise an Exception, and stop the rest of your function from executing.  (You might think this doesn't happen in real life, but we just fished another bug like that out of our codebase last week - and it was the kind of bug that left a few programmers scratching their head and claiming 'Heisenbug' for the last few months)
-So, in your particular case, I would probably do:
-The annoyance here is that stat returns the same error code for a symlink that just isn't there and a broken symlink.
-So, I guess you have no choice than to break the atomicity, and do something like
-"
-51,"This is not atomic but it works.
-os.path.islink(filename) and not os.path.exists(filename)
-Indeed by RTFM
- (reading the fantastic manual) we see
-os.path.exists(path)
-Return True if path refers to an existing path. Returns False for  broken symbolic links.
-It also says:
-On some platforms, this function may return False if permission is not granted to execute os.stat() on the requested file, even if the path physically exists.
-So if you are worried about permissions, you should add other clauses.
-"
-52,"I had a similar problem: how to catch broken symlinks, even when they occur in some parent dir?  I also wanted to log all of them (in an application dealing with a fairly large number of files), but without too many repeats.
-Here is what I came up with, including unit tests.
-fileutil.py:
-Unit tests:
-"
-53,"I've got two models: Message and Attachment. Each attachment is attached to a specific message, using a ForeignKey on the Attachment model. Both models have an auto_now DateTimeField called updated. I'm trying to make it so that when any attachment is saved, it also sets the updated field on the associated message to now. Here's my code:
-Will this work, and if you can explain it to me, why? If not, how would I accomplish this?
-"
-54,"Proper version to work is: (attention to last line self.message.save())
-"
-55,"You would also need to then save the message.  Then it that should work.
-"
-56,"DateTime fields with auto_now are automatically updated upon calling save(), so you do not need to update them manually. Django will do this work for you.
-"
-57,"How do I go about specifying and using an ENUM in a Django model?
-"
-58,"There're currently two github projects based on adding these, though I've not looked into exactly how they're implemented:
-Django-EnumField:
-Provides an enumeration Django model field (using IntegerField) with reusable enums and transition validation. 
-Django-EnumFields:
-This package lets you use real Python (PEP435-style) enums with Django.
-I don't think either use DB enum types, but they are in the works for first one.
-"
-59,"A the top of your models.py file, add this line after you do your imports:
-"
-60,"From the Django documentation:
-And you define a charfield in your model :
-You can do the same with integer fields if you don't like to have letters
-in your db.
-In that case, rewrite your choices:
-"
-61,"http://www.b-list.org/weblog/2007/nov/02/handle-choices-right-way/
-This is another nice and easy way of implementing enums although it doesn't really save enums in the database.
-However it does allow you to reference the 'label' whenever querying or specifying defaults as opposed to the top-rated answer where you have to use the 'value' (which may be a number).
-"
-62,"Setting choices on the field will allow some validation on the Django end, but it won't define any form of an enumerated type on the database end.
-As others have mentioned, the solution is to specify db_type on a custom field.
-If you're using a SQL backend (e.g. MySQL), you can do this like so:
-Run syncdb, and inspect your table to see that the ENUM was created properly.
-"
-63,"Using the choices parameter won't use the ENUM db type; it will just create a VARCHAR or INTEGER, depending on whether you use choices with a CharField or IntegerField.  Generally, this is just fine.  If it's important to you that the ENUM type is used at the database level, you have three options:
-Use ""./manage.py sql appname"" to see the SQL Django generates, manually modify it to use the ENUM type, and run it yourself.  If you create the table manually first, ""./manage.py syncdb"" won't mess with it.
-If you don't want to do this manually every time you generate your DB, put some custom SQL in appname/sql/modelname.sql to perform the appropriate ALTER TABLE command.
-Create a custom field type and define the db_type method appropriately.
-With any of these options, it would be your responsibility to deal with the implications for cross-database portability.  In option 2, you could use database-backend-specific custom SQL to ensure your ALTER TABLE is only run on MySQL.  In option 3, your db_type method would need to check the database engine and set the db column type to a type that actually exists in that database.
-UPDATE: Since the migrations framework was added in Django 1.7, options 1 and 2 above are entirely obsolete. Option 3 was always the best option anyway. The new version of options 1/2 would involve a complex custom migration using SeparateDatabaseAndState -- but really you want option 3.
-"
-64,"If you really want to use your databases ENUM type:
-Use Django 1.x
-Recognize your application will only work on some databases.
-Puzzle through this documentation page:http://docs.djangoproject.com/en/dev/howto/custom-model-fields/#howto-custom-model-fields
-Good luck!
-"
-65,"One easy solution to the GIL is the multiprocessing module. It can be used as a drop in replacement to the threading module but uses multiple Interpreter processes instead of threads. Because of this there is a little more overhead than plain threading for simple things but it gives you the advantage of real parallelization if you need it.
-It also easily scales to multiple physical machines.
-If you need truly large scale parallelization than I would look further but if you just want to scale to all the cores of one computer or a few different ones without all the work that would go into implementing a more comprehensive framework, than this is for you.
-"
-66,"I've been trying to wrap my head around how threads work in Python, and it's hard to find good information on how they operate. I may just be missing a link or something, but it seems like the official documentation isn't very thorough on the subject, and I haven't been able to find a good write-up.
-From what I can tell, only one thread can be running at once, and the active thread switches every 10 instructions or so?
-Where is there a good explanation, or can you provide one? It would also be very nice to be aware of common problems that you run into while using threads with Python.
-"
-67,"Use threads in python if the individual workers are doing I/O bound operations. If you are trying to scale across multiple cores on a machine either find a good IPC framework for python or pick a different language.
-"
-68,"Python's a fairly easy language to thread in, but there are caveats.  The biggest thing you need to know about is the Global Interpreter Lock.  This allows only one thread to access the interpreter.  This means two things:  1)  you rarely ever find yourself using a lock statement in python and 2) if you want to take advantage of multi-processor systems, you have to use separate processes.  EDIT:  I should also point out that you can put some of the code in C/C++ if you want to get around the GIL as well.
-Thus, you need to re-consider why you want to use threads.  If you want to parallelize your app to take advantage of dual-core architecture, you need to consider breaking your app up into multiple processes.
-If you want to improve responsiveness, you should CONSIDER using threads.  There are other alternatives though, namely microthreading.  There are also some frameworks that you should look into:
-stackless python
-greenlets
-gevent
-monocle
-"
-69,"Below is a basic threading sample. It will spawn 20 threads; each thread will output its thread number. Run it and observe the order in which they print.
-As you have hinted at Python threads are implemented through time-slicing. This is how they get the ""parallel"" effect. 
-In my example my Foo class extends thread, I then implement the run method, which is where the code that you would like to run in a thread goes. To start the thread you call start() on the thread object, which will automatically invoke the run method...
-Of course, this is just the very basics. You will eventually want to learn about semaphores, mutexes, and locks for thread synchronization and message passing.
-"
-70,"Try to remember that the GIL is set to poll around every so often in order to do show the appearance of multiple tasks. This setting can be fine tuned, but I offer the suggestion that there should be work that the threads are doing or lots of context switches are going to cause problems.
-I would go so far as to suggest multiple parents on processors and try to keep like jobs on the same core(s).
-"
-71,"Yes, because of the Global Interpreter Lock (GIL) there can only run one thread at a time. Here are some links with some insights about this:
-http://www.artima.com/weblogs/viewpost.jsp?thread=214235
-http://smoothspan.wordpress.com/2007/09/14/guido-is-right-to-leave-the-gil-in-python-not-for-multicore-but-for-utility-computing/
-From the last link an interesting quote:
-Let me explain what all that means. 
-  Threads run inside the same virtual
-  machine, and hence run on the same
-  physical machine.  Processes can run
-  on the same physical machine or in
-  another physical machine.  If you
-  architect your application around
-  threads, you’ve done nothing to access
-  multiple machines.  So, you can scale
-  to as many cores are on the single
-  machine (which will be quite a few
-  over time), but to really reach web
-  scales, you’ll need to solve the
-  multiple machine problem anyway.
-If you want to use multi core, pyprocessing defines an process based API to do real parallelization. The PEP also includes some interesting benchmarks.
-"
-72,"I am developing a GPL-licensed application in Python and need to know if the GPL allows my program to use proprietary plug-ins. This is what the FSF has to say on the issue:
-If a program released under the GPL uses plug-ins, what are the requirements for the licenses of a plug-in?
-It depends on how the program invokes its plug-ins. If the program uses fork and exec to invoke plug-ins, then the plug-ins are separate programs, so the license for the main program makes no requirements for them.
-If the program dynamically links plug-ins, and they make function calls to each other and share data structures, we believe they form a single program, which must be treated as an extension of both the main program and the plug-ins. This means the plug-ins must be released under the GPL or a GPL-compatible free software license, and that the terms of the GPL must be followed when those plug-ins are distributed.
-If the program dynamically links plug-ins, but the communication between them is limited to invoking the ‘main’ function of the plug-in with some options and waiting for it to return, that is a borderline case. 
-The distinction between fork/exec and dynamic linking, besides being kind of artificial, doesn't carry over to interpreted languages: what about a Python/Perl/Ruby plugin, which gets loaded via import or execfile?
-(edit: I understand why the distinction between fork/exec and dynamic linking, but it seems like someone who wanted to comply with the GPL but go against the ""spirit"" --I don't-- could just use fork/exec and interprocess communication to do pretty much anything).
-The best solution would be to add an exception to my license to explicitly allow the use of proprietary plugins, but I am unable to do so since I'm using Qt/PyQt which is GPL.
-"
-73,"@Daniel The distinction between fork/exec and dynamic linking, besides being kind of artificial, doesn't carry over to interpreted languages: what about a Python/Perl/Ruby plugin, which gets loaded via import or execfile?
-I'm not sure that the distinction is artificial. After a dynamic load the plugin code shares an execution context with the GPLed code. After a fork/exec it does not.
-In anycase I would guess that importing causes the new code to run in the same execution context as the GPLed bit, and you should treat it like the dynamic link case. No?
-"
-74,"How much info are you sharing between the Plugins and the main program? If you are doing anything more than just executing them and waiting for the results (sharing no data between the program and the plugin in the process) then you could most likely get away with them being proprietary, otherwise they would probably need to be GPL'd.
-"
-75,"
-he distinction between fork/exec and dynamic linking, besides being kind of artificial,
-I don't think its artificial at all.  Basically they are just making the division based upon the level of integration.  If the program has ""plugins"" which are essentially fire and forget with no API level integration, then the resulting work is unlikely to be considered a derived work.  Generally speaking a plugin which is merely forked/exec'ed would fit this criteria, though there may be cases where it does not.  This case especially applies if the ""plugin"" code would work independently of your code as well.
-If, on the other hand, the code is deeply dependent upon the GPL'ed work, such as extensively calling APIs, or tight data structure integration, then things are more likely to be considered a derived work.  Ie, the ""plugin"" cannot exist on its own without the GPL product, and a product with this plugin installed is essentially a derived work of the GPLed product.
-So to make it a little more clear, the same principles could apply to your interpreted code.  If the interpreted code relies heavily upon your APIs (or vice-versa) then it would be considered a derived work.  If it is just a script that executes on its own with extremely little integration, then it may not.
-Does that make more sense?
-"
-76,"I believe this is a bug in the Oracle ODBC driver. Basically, the Oracle ODBC driver does not support the TIMESTAMP WITH (LOCAL) TIME ZONE data types, only the TIMESTAMP data type. As you have discovered, one workaround is in fact to use the TO_CHAR method.
-In your example you are not actually reading the time zone information. If you have control of the table you could convert it to a straight TIMESTAMP column. If you don't have control over the table, another solution may be to create a view that converts from TIMESTAMP WITH TIME ZONE to TIMESTAMP via a string - sorry, I don't know if there is a way to convert directly from TIMESTAMP WITH TIME ZONE to TIMESTAMP.
-"
-77,"Given an Oracle table created using the following:
-Using the Python ODBC module from its Win32 extensions (from the win32all package), I tried the following:
-When I run this, I get the following:
-The other data types I've tried (VARCHAR2, BLOB) do not cause this problem. Is there a way of retrieving timestamps?
-"
-78,"My solution to this, that I hope can be bettered, is to use Oracle to explicitly convert the TIMESTAMP into a string:
-This works, but isn't portable. I'd like to use the same Python script against a SQL Server database, so an Oracle-specific solution (such as TO_CHAR) won't work.
-"
-79,"Why not throw an exception if the operation wasn't successful?  Personally, I tend to be of the opinion that if you need to return more than one value from a function, you should reconsider if you're doing things the right way or use an object.
-But more directly to the point, if you throw an exception, you're forcing them to deal with the problem.  If you try to return a value that indicates failure, it's very well possible somebody could not check the value and end up with some potentially hard to debug errors.
-"
-80,"Throwing an exception for failure is one good way to proceed, and if you're returning a lot of different values, you can return a tuple.  For the specific case you're citing, I often take an intermediate approach: return the modified string on success, and return None on failure.  I'm enough of an unreconstructed C programmer to want to return a NULL pointer to char on failure.
-If I were writing a routine to be used as part of a larger library and consumed by other developers, I'd throw an exception on failure.  When I'm eating my own dogfood, I'll probably return different types and test on return.
-"
-81,"Returning a tuple is the usual way to do this in Python.
-"
-82,"I have a function where I need to do something to a string.  I need the function to return a boolean indicating whether or not the operation succeeded, and I also need to return the modified string.  
-In C#, I would use an out parameter for the string, but there is no equivalent in Python.  I'm still very new to Python and the only thing I can think of is to return a tuple with the boolean and modified string.
-Related question: Is it pythonic for a function to return multiple values?
-"
-83,"Return a tuple.
-"
-84,"My head code for 1.4 version(some new and some removed)
-"
-85,"How can I use the nifty JavaScript date and time widgets that the default admin uses with my custom view?
-I have looked through the Django forms documentation, and it briefly mentions django.contrib.admin.widgets, but I don't know how to use it?
-Here is my template that I want it applied on.
-Also, I think it should be noted that I haven't really written a view up myself for this form, I am using a generic view. Here is the entry from the url.py:
-And I am relevantly new to the whole Django/MVC/MTV thing, so please go easy...
-"
-86,"In Django 10.
-myproject/urls.py:
-at the beginning of urlpatterns
-In my template.html:
-"
-87,"What about just assigning a class to your widget and then binding that class to the JQuery datepicker?
-Django forms.py:
-And some JavaScript for the template:
-"
-88,"(I'm trying to comment on people suggesting to roll their own Calendar widget, but either I don't see the comment button, or I don't have enough rep.)
-What happened to DRY? I think it would be best to re-use the admin widget, but perhaps it should be separated from admin, and easier to use. Thanks for this information anyways.
-"
-89,"As the solution is hackish, I think using your own date/time widget with some JavaScript is more feasible.
-"
-90,"Yep, I ended up overriding the /admin/jsi18n/ url.
-Here's what I added in my urls.py.  Make sure it's above the /admin/ url
-And here is the i18n_javascript function I created.
-"
-91,"Complementing the answer by Carl Meyer, I would like to comment that you need to put that header in some valid block (inside the header) within your template.
-"
-92,"I find myself referencing this post a lot, and found that the documentation defines a slightly less hacky way to override default widgets. 
-(No need to override the ModelForm's __init__ method)
-However, you still need to wire your JS and CSS appropriately as Carl mentions.
-forms.py
-Reference Field Types to find the default form fields.
-"
-93,"Updated solution and workaround for SplitDateTime with required=False:
-forms.py
-form.html
-urls.py
-"
-94,"The growing complexity of this answer over time, and the many hacks required, probably ought to caution you against doing this at all. It's relying on undocumented internal implementation details of the admin, is likely to break again in future versions of Django, and is no easier to implement than just finding another JS calendar widget and using that.
-That said, here's what you have to do if you're determined to make this work:
-Define your own ModelForm subclass for your model (best to put it in forms.py in your app), and tell it to use the AdminDateWidget / AdminTimeWidget / AdminSplitDateTime (replace 'mydate' etc with the proper field names from your model):
-Change your URLconf to pass 'form_class': ProductForm instead of 'model': Product to the generic create_object view (that'll mean ""from my_app.forms import ProductForm"" instead of ""from my_app.models import Product"", of course).
-In the head of your template, include {{ form.media }} to output the links to the Javascript files.
-And the hacky part: the admin date/time widgets presume that the i18n JS stuff has been loaded, and also require core.js, but don't provide either one automatically.  So in your template above {{ form.media }} you'll need:
-You may also wish to use the following admin CSS (thanks Alex for mentioning this):
-This implies that Django's admin media (ADMIN_MEDIA_PREFIX) is at /media/admin/ - you can change that for your setup.  Ideally you'd use a context processor to pass this values to your template instead of hardcoding it, but that's beyond the scope of this question.
-This also requires that the URL /my_admin/jsi18n/ be manually wired up to the django.views.i18n.javascript_catalog view (or null_javascript_catalog if you aren't using I18N).  You have to do this yourself instead of going through the admin application so it's accessible regardless of whether you're logged into the admin (thanks Jeremy for pointing this out).  Sample code for your URLconf:
-Lastly, if you are using Django 1.2 or later, you need some additional code in your template to help the widgets find their media:
-Thanks lupefiasco for this addition.
-"
-95,"The below will also work as a last resort if the above failed
-Same as 
-put this in your forms.py from django.forms.extras.widgets import SelectDateWidget
-"
-96,"I finally managed to get this widget working on the dev server, only to have it break on deployment.  I finally decided it wasn't worth shoehorning into my site, and wrote my own widget.  It's not as flexible, but it will probably work well for many: http://www.copiesofcopies.org/webl/?p=81
-"
-97,"Starting in Django 1.2 RC1, if you're using the Django admin date picker widge trick, the following has to be added to your template, or you'll see the calendar icon url being referenced through ""/missing-admin-media-prefix/"".
-"
-98,"You can use toolz.merge([x, y]) for this.
-"
-99,"** creates an intermediary dict, which means that the total number of copies
-is actually higher doing the dict(one, **two) form, but all that happens in C
-so it's still generally faster than going to itertools, unless there are a huge number of copies (or, probably, if the copies are very expensive). As always if you actually care about speed you should time your use case.
-Timing on Python 2.7.3 with an empty dict:
-With 10,000 (tiny) items:
-With 100,000 items:
-With 1,000,000 items:
-"
+0,"Python uses the reference count method to handle object life time. So an object that has no more use will be immediately destroyed.
+But, in Java, the GC(garbage collector) destroys objects which are no longer used at a specific time.
+Why does Java choose this strategy and what is the benefit from this?
+Is this better than the Python approach?"
+1,"There are drawbacks of using reference counting. One of the most mentioned is circular references: Suppose A references B, B references C and C references B. If A were to drop its reference to B, both B and C will still have a reference count of 1 and won't be deleted with traditional reference counting. CPython (reference counting is not part of python itself, but part of the C implementation thereof) catches circular references with a separate garbage collection routine that it runs periodically...
+Another drawback: Reference counting can make execution slower. Each time an object is referenced and dereferenced, the interpreter/VM must check to see if the count has gone down to 0 (and then deallocate if it did). Garbage Collection does not need to do this.
+Also, Garbage Collection can be done in a separate thread (though it can be a bit tricky). On machines with lots of RAM and for processes that use memory only slowly, you might not want to be doing GC at all! Reference counting would be a bit of a drawback there in terms of performance..."
+2,"I think the article ""Java theory and practice: A brief history of garbage collection"" from IBM should help explain some of the questions you have."
+3,"The latest Sun Java VM actually have multiple GC algorithms which you can tweak.  The Java VM specifications intentionally omitted specifying actual GC behaviour to allow different (and multiple) GC algorithms for different VMs.
+For example, for all the people who dislike the ""stop-the-world"" approach of the default Sun Java VM GC behaviour, there are VM such as IBM's WebSphere Real Time which allows real-time application to run on Java.
+Since the Java VM spec is publicly available, there is (theoretically) nothing stopping anyone from implementing a Java VM that uses CPython's GC algorithm."
+4,"Reference counting is particularly difficult to do efficiently in a multi-threaded environment. I don't know how you'd even start to do it without getting into hardware assisted transactions or similar (currently) unusual atomic instructions.
+Reference counting is easy to implement. JVMs have had a lot of money sunk into competing implementations, so it shouldn't be surprising that they implement very good solutions to very difficult problems. However, it's becoming increasingly easy to target your favourite language at the JVM."
+5,"One big disadvantage of Java's tracing GC is that from time to time it will  ""stop the world"" and freeze the application for a relatively long time to do a full GC. If the heap is big and the the object tree complex, it will freeze for a few seconds. Also each full GC visits the whole object tree over and over again, something that is probably quite inefficient. Another drawback of the way Java does GC is that you have to tell the jvm what heap size you want (if the default is not good enough); the JVM derives from that value several thresholds that will trigger the GC process when there is too much garbage stacking up in the heap.
+I presume that this is actually the main cause of the jerky feeling of Android (based on Java), even on the most expensive cellphones, in comparison with the smoothness of iOS (based on ObjectiveC, and using RC). 
+I'd love to see a jvm option to enable RC memory management, and maybe keeping GC only to run as a last resort when there is no more memory left."
+6,"Late in the game, but I think one significant rationale for RC in python is its simplicity. See this email by Alex Martelli, for example.
+(I could not find a link outside google cache, the email date from 13th october 2005 on python list)."
+7,"Actually reference counting and the strategies used by the Sun JVM are all different types of garbage collection algorithms.
+There are two broad approaches for tracking down dead objects: tracing and reference counting. In tracing the GC starts from the ""roots"" - things like stack references, and traces all reachable (live) objects. Anything that can't be reached is considered dead. In reference counting each time a reference is modified the object's involved have their count updated. Any object whose reference count gets set to zero is considered dead.
+With basically all GC implementations there are trade offs but tracing is usually good for high through put (i.e. fast) operation but has longer pause times (larger gaps where the UI or program may freeze up). Reference counting can operate in smaller chunks but will be slower overall. It may mean less freezes but poorer performance overall.
+Additionally a reference counting GC requires a cycle detector to clean up any objects in a cycle that won't be caught by their reference count alone. Perl 5 didn't have a cycle detector in its GC implementation and could leak memory that was cyclic.
+Research has also been done to get the best of both worlds (low pause times, high throughput):
+http://cs.anu.edu.au/~Steve.Blackburn/pubs/papers/urc-oopsla-2003.pdf"
+8,"Garbage collection is faster (more time efficient) than reference counting, if you have enough memory. For example, a copying gc traverses the ""live"" objects and copies them to a new space, and can reclaim all the ""dead"" objects in one step by marking a whole memory region. This is very efficient, if you have enough memory. Generational collections use the knowledge that ""most objects die young""; often only a few percent of objects have to be copied.
+[This is also the reason why gc can be faster than malloc/free]
+Reference counting is much more space efficient than garbage collection, since it reclaims memory the very moment it gets unreachable. This is nice when you want to attach finalizers to objects (e.g. to close a file once the File object gets unreachable). A reference counting system can work even when only a few percent of the memory is free. But the management cost of having to increment and decrement counters upon each pointer assignment cost a lot of time, and some kind of garbage collection is still needed to reclaim cycles.
+So the trade-off is clear: if you have to work in a memory-constrained environment, or if you need precise finalizers, use reference counting. If you have enough memory and need the speed, use garbage collection."
+9,"Darren Thomas gives a good answer.  However, one big difference between the Java and Python approaches is that with reference counting in the common case (no circular references) objects are cleaned up immediately rather than at some indeterminate later date.
+For example, I can write sloppy, non-portable code in CPython such as
+and the file descriptor for that file I opened will be cleaned up immediately because as soon as the reference to the open file goes away, the file is garbage collected and the file descriptor is freed.  Of course, if I run Jython or IronPython or possibly PyPy, then the garbage collector won't necessarily run until much later; possibly I'll run out of file descriptors first and my program will crash.
+So you SHOULD be writing code that looks like
+but sometimes people like to rely on reference counting to always free up their resources because it can sometimes make your code a little shorter.
+I'd say that the best garbage collector is the one with the best performance, which currently seems to be the Java-style generational garbage collectors that can run in a separate thread and has all these crazy optimizations, etc.  The differences to how you write your code should be negligible and ideally non-existent."
+10,"Phil's answer really solved it, but I'll elaborate a little more. Since the epoch is in UTC, if I want to compare other times to the epoch, I need to interpret them as UTC as well.
+By converting the time tuple to a timestamp treating is as UTC time, I get a number which is evenly divisible by the number of seconds in a day.
+I can use this to convert a date to a days-from-the-epoch representation which is what I'm ultimately after."
+11,"Short answer: Because of timezones.
+The Epoch is in UTC.
+For example, I'm on IST (Irish Standard Time) or UTC+1. time.mktime() is relative to my timezone, so on my system this refers to
+Because you got the result 1233378000, that would suggest that you're 5 hours behind me
+Have a look at the time.gmtime() function which works off UTC."
+12,"Interesting. I don't know, but I did try this:
+which is what you expected. My guess? Maybe some time correction was done since the epoch. This could be only a few seconds, something like a leap year. I think I heard something like this before, but can't remember exactly how and when it is done..."
+13,"local time... fancy that.
+The time tuple:
+Incidentally, we seem to be 6 hours apart:"
+14,"time.mktime should return the number of seconds since the epoch. Since I'm giving it a time at midnight and the epoch is at midnight, shouldn't the result be evenly divisible by the number of seconds in a day?"
+15,"Michal Finkelstein from OpenCalais here.
+First, thanks for your interest. I'll reply here but I also encourage you to read more on OpenCalais forums; there's a lot of information there including - but not limited to:
+http://opencalais.com/tagging-information
+http://opencalais.com/how-does-calais-learn
+Also feel free to follow us on Twitter (@OpenCalais) or to email us at team@opencalais.com
+Now to the answer:
+OpenCalais is based on a decade of research and development in the fields of Natural Language Processing and Text Analytics.
+We support the full ""NLP Stack"" (as we like to call it):
+From text tokenization, morphological analysis and POS tagging, to shallow parsing and identifying nominal and verbal phrases.
+Semantics come into play when we look for Entities (a.k.a. Entity Extraction, Named Entity Recognition). For that purpose we have a sophisticated rule-based system that combines discovery rules as well as lexicons/dictionaries. This combination allows us to identify names of companies/persons/films, etc., even if they don't exist in any available list.
+For the most prominent entities (such as people, companies) we also perform anaphora resolution, cross-reference and name canonization/normalization at the article level, so we'll know that 'John Smith' and 'Mr. Smith', for example, are likely referring to the same person.
+So the short answer to your question is - no, it's not just about matching against large databases.
+Events/Facts are really interesting because they take our discovery rules one level deeper; we find relations between entities and label them with the appropriate type, for example M&As (relations between two or more companies), Employment Changes (relations between companies and people), and so on. Needless to say, Event/Fact extraction is not possible for systems that are based solely on lexicons.
+For the most part, our system is tuned to be precision-oriented, but we always try to keep a reasonable balance between accuracy and entirety.
+By the way there are some cool new metadata capabilities coming out later this month so stay tuned.
+Regards,
+Michal"
+16,"Open Calais probably use language parsing technology and language statics to guess which words or phrases are Names, Places, Companies, etc. Then, it is just another step to do some kind of search for those entities and return meta data.
+Zementa probably does something similar, but matches the phrases against meta-data attached to images in order to acquire related results.
+It certainly isn't easy."
+17,"I was wondering how as semantic service like Open Calais figures out the names of companies, or people, tech concepts, keywords, etc. from a piece of text. Is it because they have a large database that they match the text against? 
+How would a service like Zemanta know what images to suggest to a piece of text for instance?"
+18,"I'm not familiar with the specific services listed, but the field of natural language processing has developed a number of techniques that enable this sort of information extraction from general text.  As Sean stated, once you have candidate terms, it's not to difficult to search for those terms with some of the other entities in context and then use the results of that search to determine how confident you are that the term extracted is an actual entity of interest.
+OpenNLP is a great project if you'd like to play around with natural language processing.  The capabilities you've named would probably be best accomplished with Named Entity Recognizers (NER) (algorithms that locate proper nouns, generally, and sometimes dates as well) and/or Word Sense Disambiguation (WSD) (eg: the word 'bank' has different meanings depending on it's context, and that can be very important when extracting information from text.  Given the sentences: ""the plane banked left"", ""the snow bank was high"", and ""they robbed the bank"" you can see how dissambiguation can play an important part in language understanding)
+Techniques generally build on each other, and NER is one of the more complex tasks, so to do NER successfully, you will generally need accurate tokenizers (natural language tokenizers, mind you -- statistical approaches tend to fare the best), string stemmers (algorithms that conflate similar words to common roots: so words like informant and informer are treated equally), sentence detection ('Mr. Jones was tall.' is only one sentence, so you can't just check for punctuation), part-of-speech taggers (POS taggers), and WSD.
+There is a python port of (parts of) OpenNLP called NLTK (http://nltk.sourceforge.net) but I don't have much experience with it yet.  Most of my work has been with the Java and C# ports, which work well.  
+All of these algorithms are language-specific, of course, and they can take significant time to run (although, it is generally faster than reading the material you are processing).  Since the state-of-the-art is largely based on statistical techniques, there is also a considerable error rate to take into account.  Furthermore, because the error rate impacts all the stages, and something like NER requires numerous stages of processing, (tokenize -> sentence detect -> POS tag -> WSD -> NER) the error rates compound."
+19,"Meanwhile, I did a refined research to verify what the internal representation in Python is, and also what its limits are. ""The Truth About Unicode In Python"" is a very good article which cites directly from the Python developers. Apparently, internal representation is either UCS-2 or UCS-4 depending on a compile-time switch. So Jon, it's not UTF-16, but your answer put me on the right track anyway, thanks."
+20,"so what is a ""Unicode string"" in
+  Python?
+Python 'knows' that your string is Unicode. Hence if you do regex on it, it will know which is character and which is not etc, which is really helpful. If you did a strlen it will also give the correct result. As an example if you did string count on Hello, you will get 5 (even if it's Unicode). But if you did a string count of a foreign word and that string was not a Unicode string than you will have much larger result. Pythong uses the information form the Unicode Character Database to identify each character in the Unicode String. Hope that helps."
+21,"what is a ""Unicode string"" in Python? Does that mean UCS-2?
+Unicode strings in Python are stored internally either as UCS-2 (fixed-length 16-bit representation, almost the same as UTF-16) or UCS-4/UTF-32 (fixed-length 32-bit representation). It's a compile-time option; on Windows it's always UTF-16 whilst many Linux distributions set UTF-32 (‘wide mode’) for their versions of Python.
+You are generally not supposed to care: you will see Unicode code-points as single elements in your strings and you won't know whether they're stored as two or four bytes. If you're in a UTF-16 build and you need to handle characters outside the Basic Multilingual Plane you'll be Doing It Wrong, but that's still very rare, and users who really need the extra characters should be compiling wide builds.
+plain wrong, or is it?
+Yes, it's quite wrong. To be fair I think that tutorial is rather old; it probably pre-dates wide Unicode strings, if not Unicode 3.1 (the version that introduced characters outside the Basic Multilingual Plane).
+There is an additional source of confusion stemming from Windows's habit of using the term “Unicode” to mean, specifically, the UTF-16LE encoding that NT uses internally. People from Microsoftland may often copy this somewhat misleading habit."
+22,Python stores Unicode as UTF-16. str() will return the UTF-8 representation of the UTF-16 string.
+23,"From Wikipedia on UTF-8: 
+UTF-8 (8-bit UCS/Unicode Transformation Format) is a variable-length character encoding for Unicode. It is able to represent any character in the Unicode standard, yet the initial encoding of byte codes and character assignments for UTF-8 is backwards compatible with ASCII. For these reasons, it is steadily becoming the preferred encoding for e-mail, web pages[1], and other places where characters are stored or streamed.
+So, it's anywhere between one and four bytes depending on which character you wish to represent within the realm of Unicode.
+From Wikipedia on Unicode:
+In computing, Unicode is an industry standard allowing computers to consistently represent and manipulate text expressed in most of the world's writing systems. 
+So it's able to represent most (but not all) of the world's writing systems. 
+I hope this helps :)"
+24,"I stumbled over this passage in the Django tutorial:
+Django models have a default str() method that calls unicode() and converts the result to a UTF-8 bytestring. This means that unicode(p) will return a Unicode string, and str(p) will return a normal string, with characters encoded as UTF-8.
+Now, I'm confused because afaik Unicode is not any particular representation, so what is a ""Unicode string"" in Python? Does that mean UCS-2? Googling turned up this ""Python Unicode Tutorial"" which boldly states
+Unicode is a two-byte encoding which covers all of the world's common writing systems.
+which is plain wrong, or is it? I have been confused many times by character set and encoding issues, but here I'm quite sure that the documentation I'm reading is confused. Does anybody know what's going on in Python when it gives me a ""Unicode string""?"
+25,"In Python 2.6+, it is possible to use the format() function, so in your case you can use:
+There are multiple ways of using this function, so for further information you can check the documentation."
+26,"You can use C style string formatting:
+See here, especially: https://web.archive.org/web/20120415173443/http://diveintopython3.ep.io/strings.html"
+27,"Formatting in Python is done via the string formatting (%) operator:
+/Edit: There's also strftime."
+28,"str() in python on an integer will not print any decimal places.
+If you have a float that you want to ignore the decimal part, then you can use str(int(floatValue)).
+Perhaps the following code will demonstrate:"
+29,"I need to find out how to format numbers as strings. My code is here:
+Hours and minutes are integers, and seconds is a float.  the str() function will convert all of these numbers to the tenths (0.1) place.  So instead of my string outputting ""5:30:59.07 pm"", it would display something like ""5.0:30.0:59.1 pm"".
+Bottom line, what library / function do I need to do this for me?"
+30,"If you have a value that includes a decimal, but the decimal value is negligible (ie: 100.0) and try to int that, you will get an error.  It seems silly, but calling float first fixes this.
+str(int(float([variable])))"
+31,You can use following to achieve desired functionality
+32,"Starting in Python 2.6, there is an alternative: the str.format() method. Here are some examples using the existing string format operator (%):
+Here are the equivalent snippets but using str.format():
+Like Python 2.6+, all Python 3 releases (so far) understand how to do both. I shamelessly ripped this stuff straight out of my hardcore Python intro book and the slides for the Intro+Intermediate Python courses I offer from time-to-time. :-)"
+33,You can get the progress feedback with urlretrieve as well:
+34,Source code can be:
+35,"This may be a little late, But I saw pabloG's code and couldn't help adding a os.system('cls') to make it look AWESOME! Check it out : 
+If running in an environment other than Windows, you will have to use something other then 'cls'. In MAC OS X and Linux it should be 'clear'."
+36,use wget module:
+37,Wrote wget library in pure Python just for this purpose. It is pumped up urlretrieve with these features as of version 2.0.
+38,"Following are the most commonly used calls for downloading files in python:
+urllib.urlretrieve ('url_to_file', file_name)
+urllib2.urlopen('url_to_file')
+requests.get(url)
+wget.download('url', file_name)
+Note: urlopen and urlretrieve are found to perform relatively bad with downloading large files (size > 500 MB). requests.get stores the file in-memory until download is complete."
+39,"Here's how to do it in Python 3 using the standard library:
+urllib.request.urlopen
+urllib.request.urlretrieve"
+40,"If you have wget installed, you can use parallel_sync.
+pip install parallel_sync
+Doc:
+https://pythonhosted.org/parallel_sync/pages/examples.html
+This is pretty powerful. It can download files in parallel, retry upon failure , and it can even download files on a remote machine."
+41,"In 2012, use the python requests library
+You can run pip install requests to get it.
+Requests has many advantages over the alternatives because the API is much simpler. This is especially true if you have to do authentication. urllib and urllib2 are pretty unintuitive and painful in this case.
+2015-12-30
+People have expressed admiration for the progress bar. It's cool, sure. There are several off-the-shelf solutions now, including tqdm:
+This is essentially the implementation @kvance described 30 months ago."
+42,"I have a small utility that I use to download a MP3 from a website on a schedule and then builds/updates a podcast XML file which I've obviously added to iTunes.
+The text processing that creates/updates the XML file is written in Python. I use wget inside a Windows .bat file to download the actual MP3 however. I would prefer to have the entire utility written in Python though.
+I struggled though to find a way to actually down load the file in Python, thus why I resorted to wget.
+So, how do I download the file using Python?"
+43,"urlretrieve and requests.get is simple, however the reality not.
+I have fetched data for couple sites, including text and images, the above two probably solve most of the tasks. but for a more universal solution I suggest the use of urlopen. As it is included in Python 3 standard library, your code could run on any machine that run Python 3 without pre-installing site-par
+This answer provides a solution to HTTP 403 Forbidden when downloading file over http using Python. I have tried only requests and urllib modules, the other module may provide something better, but this is the one I used to solve most of the problems."
+44,"The wb in open('test.mp3','wb') opens a file (and erases any existing file) in binary mode so you can save data with it instead of just text."
+45,"I wrote the following, which works in vanilla Python 2 or Python 3.
+Notes:
+Supports a ""progress bar"" callback.
+Download is a 4 MB test .zip from my website."
+46,Simple yet Python 2 & Python 3 compatible way:
+47,"I agree with Corey, urllib2 is more complete than urllib and should likely be the module used if you want to do more complex things, but to make the answers more complete, urllib is a simpler module if you want just the basics:
+Will work fine. Or, if you don't want to deal with the ""response"" object you can call read() directly:"
+48,"One more, using urlretrieve:
+(for Python 3+ use 'import urllib.request' and urllib.request.urlretrieve)
+Yet another one, with a ""progressbar"""
+49,An improved version of the PabloG code for Python 2/3:
+50,"In Python 2, use urllib2 which comes with the standard library.
+This is the most basic way to use the library, minus any error handling.  You can also do more complex stuff such as changing headers.  The documentation can be found here."
+51,"The Threading example from Eli will run the thread, but not do any of the work after that line.  
+I'm going to look into the processing module and the subprocess module.  I think the com method I'm running needs to be in another process, not just in another thread."
+52,"Have a look at the process management functions in the os module. There are function for starting new processes in many different ways, both synchronously and asynchronously.
+I should note also that Windows doesn't provide functionality that is exactly like fork() on other systems. To do multiprocessing on Windows, you will need to use the threading module."
+53,"In addition to the process management code in the os module that Greg pointed out, you should also take a look at the threading module: https://docs.python.org/library/threading.html"
+54,"Use the python multiprocessing module which will work everywhere.
+Here is a IBM developerWords article that shows how to convert from os.fork() to the multiprocessing module."
+55,"How do I implement some logic that will allow me to reproduce on Windows the functionality that I have on Linux with the fork() system call, using Python?
+I'm specifically trying to execute a method on the SAPI Com component, while continuing the other logic in the main thread without blocking or waiting."
+56,You might also like using the processing module (http://pypi.python.org/pypi/processing). It has lot's of functionality for writing parallel systems with the same API as the threading module...
+57,"fork() has in fact been duplicated in Windows, under Cygwin, but it's pretty hairy.
+The fork call in Cygwin is particularly interesting because it does not map well on top of the Win32 API. This makes it very difficult to implement correctly.
+See the The Cygwin User's Guide for a description of this hack."
+58,Possibly a version of spawn() for python? http://en.wikipedia.org/wiki/Spawn_(operating_system)
+59,http://github.com/ITikhonov/git-loc worked right out of the box for me.
+60,"You might also consider gitstats, which generates this graph as an html file."
+61,"You may get both added and removed lines with git log, like:
+From this, you can write a similar script to the one you did using this info. In python:"
+62,"The first thing that jumps to mind is the possibility of your git history having a nonlinear history. You might have difficulty determining a sensible sequence of commits.
+Having said that, it seems like you could keep a log of commit ids and the corresponding lines of code in that commit. In a post-commit hook, starting from the HEAD revision, work backwards (branching to multiple parents if necessary) until all paths reach a commit that you've already seen before. That should give you the total lines of code for each commit id.
+Does that help any? I have a feeling that I've misunderstood something about your question."
+63,"Basically I want to get the number of lines-of-code in the repository after each commit.
+The only (really crappy) ways I have found is to use git filter-branch to run wc -l *, and a script that runs git reset --hard on each commit, then runs wc -l
+To make it a bit clearer, when the tool is run, it would output the lines of code of the very first commit, then the second and so on. This is what I want the tool to output (as an example):
+I've played around with the ruby 'git' library, but the closest I found was using the .lines() method on a diff, which seems like it should give the added lines (but does not: it returns 0 when you delete lines for example)"
+64,"I've been having a hard time trying to understand PyPy's translation.  It looks like something absolutely revolutionary from simply reading the description, however I'm hard-pressed to find good documentation on actually translating a real world piece of code to something such as LLVM.  Does such a thing exist?  The official PyPy documentation on it just skims over the functionality, rather than providing anything I can try out myself."
+65,"If you want some hand-on examples, PyPy's Getting Started document has a section titled ""Trying out the translator""."
+66,"PyPy translator is in general, not intended for more public use. We use it for translating
+our own python interpreter (including JIT and GCs, both written in RPython, this restricted
+subset of Python). The idea is that with good JIT and GC, you'll be able to speedups even
+without knowing or using PyPy's translation toolchain (and more importantly, without
+restricting yourself to RPython).
+Cheers,
+fijal"
+67,"Are you looking for Python specific translation, or just the general ""how do you compile some code to bytecode""? If the latter is your case, check the LLVM tutorial. I especially find chapter two, which teaches you to write a compiler for your own language, interesting."
+68,"This document seems to go into quite a bit of detail (and I think a complete description is out of scope for a stackoverflow answer):
+http://codespeak.net/pypy/dist/pypy/doc/translation.html
+The general idea of translating from one language to another isn't particularly revolutionary, but it has only recently been gaining popularity / applicability in ""real-world"" applications.  GWT does this with Java (generating Javascript) and there is a library for translating Haskell into various other languages as well (called YHC)"
+69,"It looks like something absolutely revolutionary from simply reading the description,
+As far as I know, PyPy is novel in the sense that it is the first system expressly designed for implementing languages.  Other tools exist to help with much of the very front end, such as parser generators, or for the very back end, such as code generation, but not much existed for connecting the two."
+70,"for loops in MATLAB used to be slow, but this is not true anymore.
+So vectorizing is not always the miracle solution. Just use the profiler, and tic and toc functions to help you identify possible bottlenecks."
+71,"If x and y are column vectors, you can do:
+(with row vectors, just use x and y).
+Here is an example run:"
+72,"I would recommend to join the two arrays for the computation:
+This will work great if your functions can work with vectors. Then again, many functions can even work with matrices, so you wouldn't even need the loop."
+73,"Tested only in octave... (no matlab license). Variations of arrayfun() exist, check the documentation.
+Yields..."
+74,"Using the zip function, Python allows for loops to traverse multiple sequences in parallel.  
+for (x,y) in zip(List1, List2):
+Does MATLAB have an equivalent syntax? If not, what is the best way to iterate over two parallel arrays at the same time using MATLAB?"
+75,"If I'm not mistaken the zip function you use in python creates a pair of the items found in list1 and list2. Basically it still is a for loop with the addition that it will retrieve the data from the two seperate lists for you, instead that you have to do it yourself.
+So maybe your best option is to use a standard for loop like this:
+or whatever you have to do with the data.
+If you really are talking about parallel computing then you should take a look at the Parallel Computing Toolbox for matlab, and more specifically at parfor"
+76,"A plugin for GSview for viewing encrypted PDFs is here.
+If this works for you, you may be able to look at the source."
+77,"If I remember correctly, there is a fixed padding string of 32 (?) bytes to apply to any password. All passwords need to be 32 bytes at the start of computing the encryption key, either by truncating or adding some of those padding bytes.
+If no user password was set you simply have to pad with all 32 bytes of the string, i.e. use the 32 padding bytes as the starting point for computing the encryption key.
+I have to admit it's been a while since I've done this, I do remember that the encryption part of the PDF is an absolute mess as it got changed significantly in nearly every revision, requiring you to cope with a lot of cases to handle all PDF's.
+Good luck."
+78,"Although the PDF specification is available from Adobe, it's not exactly the simplest document to read through.  PDF allows documents to be encrypted so that either a user password and/or an owner password is required to do various things with the document (display, print, etc).  A common use is to lock a PDF so that end users can read it without entering any password, but a password is required to do anything else.
+I'm trying to parse PDFs that are locked in this way (to get the same privileges as you would get opening them in any reader).  Using an empty string as the user password doesn't work, but it seems (section 3.5.2 of the spec) that there has to be a user password to create the hash for the admin password.
+What I would like is either an explanation of how to do this, or any code that I can read (ideally Python, C, or C++, but anything readable will do) that does this so that I can understand what I'm meant to be doing.  Standalone code, rather than reading through (e.g.) the gsview source, would be best."
+79,xpdf is probably a good reference implementation for this sort of problem.  I have successfully used them to open encrypted pdfs before.
+80,"List comprehensions.  I often find myself filtering/mapping lists, and being able to say [line.replace(""spam"",""eggs"") for line in open(""somefile.txt"") if line.startswith(""nee"")] is really nice.
+Functions are first class objects.  They can be passed as parameters to other functions, defined inside other function, and have lexical scope.  This makes it really easy to say things like people.sort(key=lambda p: p.age) and thus sort a bunch of people on their age without having to define a custom comparator class or something equally verbose.
+Everything is an object.  Java has basic types which aren't objects, which is why many classes in the standard library define 9 different versions of functions (for boolean, byte, char, double, float, int, long, Object, short).  Array.sort is a good example.  Autoboxing helps, although it makes things awkward when something turns out to be null.
+Properties.  Python lets you create classes with read-only fields, lazily-generated fields, as well as fields which are checked upon assignment to make sure they're never 0 or null or whatever you want to guard against, etc.'
+Default and keyword arguments.  In Java if you want a constructor that can take up to 5 optional arguments, you must define 6 different versions of that constructor.  And there's no way at all to say Student(name=""Eli"", age=25)
+Functions can only return 1 thing.  In Python you have tuple assignment, so you can say spam, eggs = nee() but in Java you'd need to either resort to mutable out parameters or have a custom class with 2 fields and then have two additional lines of code to extract those fields.
+Built-in syntax for lists and dictionaries.
+Operator Overloading.
+Generally better designed libraries.  For example, to parse an XML document in Java, you say
+Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(""test.xml"");
+and in Python you say
+doc = parse(""test.xml"")
+Anyway, I could go on and on with further examples, but Python is just overall a much more flexible and expressive language.  It's also dynamically typed, which I really like, but which comes with some disadvantages.
+Java has much better performance than Python and has way better tool support.  Sometimes those things matter a lot and Java is the better language than Python for a task; I continue to use Java for some new projects despite liking Python a lot more.  But as a language I think Python is superior for most things I find myself needing to accomplish."
+81,"I think this pair of articles by Philip J. Eby does a great job discussing the differences between the two languages (mostly about philosophy/mentality rather than specific language features). 
+Python is Not Java
+Java is Not Python, either"
+82,"With Jython you can have both. It's only at Python 2.2, but still very useful if you need an embedded interpreter that has access to the Java runtime."
+83,"One key difference in Python is significant whitespace.  This puts a lot of people off - me too for a long time - but once you get going it seems natural and makes much more sense  than ;s everywhere.
+From a personal perspective, Python has the following benefits over Java:
+No Checked Exceptions
+Optional Arguments
+Much less boilerplate and less verbose generally
+Other than those, this page on the Python Wiki is a good place to look with lots of links to interesting articles."
+84,"Besides the dynamic nature of Python (and the syntax), what are some of the major features of the Python language that Java doesn't have, and vice versa?"
+85,"Apart from what Eli Courtwright said:
+I find iterators in Python more concise. You can use for i in something, and it works with pretty much everything. Yeah, Java has gotten better since 1.5, but for example you can iterate through a string in python with this same construct.
+Introspection: In python you can get at runtime information about an object or a module about its symbols, methods, or even its docstrings. You can also instantiate them dynamically. Java has some of this, but usually in Java it takes half a page of code to get an instance of a class, whereas in Python it is about 3 lines. And as far as I know the docstrings thing is not available in Java"
+86,"The open source Python package,SciPy, has quite a large set of optimization routines including some for multivariable problems with constraints (which is what fmincon does I believe).  Once you have SciPy installed type the following at the Python command prompt
+help(scipy.optimize)
+The resulting document is extensive and includes the following which I believe might be of use to you."
+87,"Is your problem convex?  Linear? Non-linear?  I agree that SciPy.optimize will probably do the job, but fmincon is a sort of bazooka for solving optimization problems, and you'll be better off if you can confine it to one of the categories below (in increasing level of difficulty to solve efficiently)
+Linear Program (LP)
+Quadratic Program (QP)
+Convex Quadratically-Constrained Quadratic Program (QCQP)
+Second Order Cone Program (SOCP)
+Semidefinite Program (SDP)
+Non-Linear Convex Problem 
+Non-Convex Problem
+There are also combinatoric problems such as Mixed-Integer Linear Programs (MILP), but you didn't mention any sort of integrality constraints, suffice to say that they fall into a different class of problems.
+The CVXOpt package will be of great use to you if your problem is convex.  
+If your problem is not convex, you need to choose between finding a local solution or the global solution.  Many convex solvers 'sort of' work in a non-convex domain.  Finding a good approximation to the global solution would require some form Simulated Annealing or Genetic Algorithm.  Finding the global solution will require an enumeration of all local solutions or a combinatorial strategy such as Branch and Bound."
+88,GNU Octave is another MATLAB clone that might have what you need.
+89,"Is there an open-source alternative to MATLAB's fmincon function for constrained linear optimization? I'm rewriting a MATLAB program to use Python / NumPy / SciPy and this is the only function I haven't found an equivalent to. A NumPy-based solution would be ideal, but any language will do."
+90,"Python optimization software:
+OpenOpt http://openopt.org (this one is numpy-based as you wish, with automatic differentiation by FuncDesigner)
+Pyomo https://software.sandia.gov/trac/coopr/wiki/Package/pyomo
+CVXOPT http://abel.ee.ucla.edu/cvxopt/
+NLPy http://nlpy.sourceforge.net/"
+91,"Have a look at http://www.aemdesign.com/downloadfsqp.htm.
+There you will find C code which provides the same functionality as fmincon. (However, using a different algorithm. You can read the manual if you are interested in the details.)
+It's open source but not under GPL."
+92,"I don't know if it's in there, but there's a python distribution called Enthought that might have what you're looking for.  It was designed specifically for data analysis has over 60 additional libraries."
+93,"For numerical optimization in Python you may take a look at OpenOpt solvers:
+http://openopt.org/NLP
+http://openopt.org/Problems"
+94,"There is a program called SciLab that is a MATLAB clone.
+I haven't used it at all, but it is open source and might have the function you are looking for."
+95,"Here is the whois client re-implemented in Python:
+http://code.activestate.com/recipes/577364-whois-client/"
+96,"I'm trying to get a webservice up and running that actually requires to check whois databases. What I'm doing right now is ugly and I'd like to avoid it as much as I can: I call gwhois command and parse its output. Ugly.
+I did some search to try to find a pythonic way to do this task. Generally I got quite much nothing - this old discussion list link has a way to check if domain exist. Quite not what I was looking for... But still, it was best anwser Google gave me - everything else is just a bunch of unanwsered questions.
+Any of you have succeeded to get some method up and running? I'd very much appreciate some tips, or should I just do it the opensource-way, sit down and code something by myself? :)"
+97,"here is a ready-to-use solution that works for me; written for Python 3.1 (when backporting to Py2.x, take special care of the bytes / Unicode text distinctions). your single point of access is the method DRWHO.whois(), which expects a domain name to be passed in; it will then try to resolve the name using the provider configured as DRWHO.whois_providers[ '*' ] (a more complete solution could differentiate providers according to the top level domain). DRWHO.whois() will return a dictionary with a single entry text, which contains the response text sent back by the WHOIS server. Again, a more complete solution would then try and parse the text (which must be done separately for each provider, as there is no standard format) and return a more structured format (e.g., set a flag available which specifies whether or not the domain looks available). have fun!"
+98,"There's nothing wrong with using a command line utility to do what you want. If you put a nice wrapper around the service, you can implement the internals however you want! For example:
+Now, whether or not you roll your own using urllib, wrap around a command line utility (like you're doing), or import a third party library and use that (like you're saying), this interface stays the same.
+This approach is generally not considered ugly at all -- sometimes command utilities do what you want and you should be able to leverage them. If speed ends up being a bottleneck, your abstraction makes the process of switching to a native Python implementation transparent to your client code.
+Practicality beats purity -- that's what's Pythonic. :)"
+99,"I don't know if gwhois does something special with the server output; however, you can plainly connect to the whois server on port whois (43), send your query, read all the data in the reply and parse them. To make life a little easier, you could use the telnetlib.Telnet class (even if the whois protocol is much simpler than the telnet protocol) instead of plain sockets.
+The tricky parts:
+which whois server will you ask? RIPE, ARIN, APNIC, LACNIC, AFRINIC, JPNIC, VERIO etc LACNIC could be a useful fallback, since they tend to reply with useful data to requests outside of their domain.
+what are the exact options and arguments for each whois server? some offer help, others don't. In general, plain domain names work without any special options."
