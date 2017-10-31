@@ -1,8 +1,10 @@
 import pandas as pd
 import os
 import math
+import string
 import nltk
 from nltk.corpus import words
+from nltk.stem import PorterStemmer
 
 def getSortedWordCounts(tokenized_result):
     print("Getting sorted word counts... (incl regular tokens)")
@@ -17,18 +19,47 @@ def getSortedWordCounts(tokenized_result):
     return sorted_word_counts
 
 def getIrregularTokenCounts(word_counts):
-    print("Removing regular tokens...")
-    en_dict = words.words()
+    en_dict = set(words.words())
+    punctuation = set(string.punctuation)
+    ps = PorterStemmer()
+        
     irregular_word_counts = []
-           
+    stemmed_en_dict = []
+
+    print("Preparing dictionary...(this will take a while)")
+    for word in en_dict:
+        stemmed_en_dict.append(ps.stem(word))
+
+    print("Removing regular tokens...")
     for word,count in word_counts:
         if(len(irregular_word_counts) == 20):
             break
-        elif(word.lower() in en_dict):
+        if not isinstance(word,unicode):
+            continue
+
+        try:
+            word = word.encode("ascii", "strict")
+        except UnicodeEncodeError as e:
+            continue
+        
+        word = word.strip()
+        if(ps.stem(word.lower()) in stemmed_en_dict):
+            print "Removed english word: " + word
+            continue
+        elif(word in punctuation):
+            print "Removed punctuation: " + word
+            continue
+        elif(any(char in punctuation and char is not '(' and char is not ')' for char in word)):
+            print "Removed punctuation in word: " + word
+            continue
+        elif(word.isdigit()):
+            print "Removed digit word: " + word
             continue
         else:
             irregular_word_counts.append((word,count))
 
+    # remove punctuation
+    print irregular_word_counts
     return irregular_word_counts
 
 '''
