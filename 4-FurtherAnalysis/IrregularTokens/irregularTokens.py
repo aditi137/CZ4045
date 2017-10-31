@@ -10,6 +10,9 @@ def getSortedWordCounts(tokenized_result):
     print("Getting sorted word counts... (incl regular tokens)")
     word_counts = dict()
     for word in tokenized_result:
+        if(isinstance(word,float)):     # getting rid of NaN values
+            continue
+        word = word.lower()
         if(word in word_counts):
             word_counts[word] += 1
         else:
@@ -43,7 +46,7 @@ def getIrregularTokenCounts(word_counts):
             continue
         
         word = word.strip()
-        if(ps.stem(word.lower()) in stemmed_en_dict):
+        if(ps.stem(word) in stemmed_en_dict):
             print "Removed english word: " + word
             continue
         elif(word in punctuation):
