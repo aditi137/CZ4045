@@ -1,0 +1,27 @@
+I
+have
+a
+string
+of
+some
+data
+.
+string
+[0]
+prints
+"[31, 37, 3]"
+:
+[
+0.12704417954091404
+]
+.
+I
+want
+to
+get
+the
+first
+array
+which
+is
+"[31, 37, 3]"

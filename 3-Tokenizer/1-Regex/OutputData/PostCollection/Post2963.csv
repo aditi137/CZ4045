@@ -1,1 +1,0 @@
-I,think,doing,something,like,this,will,work,(,untested,),:,As,an,optimization,",",unless,you,need,the,keys,dictionary,for,other,processing,",",you,could,change,the,first,part,so,it,just,creates,the,valid_files,set,variable,used,in,the,second,for,loop,:

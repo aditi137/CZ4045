@@ -12,11 +12,7 @@ def cleanRead(filename):
     df.reset_index(drop=True, inplace=True)
     return df
 
-def createmanuallyAnnotatedPostsForDiff(tokenizer):
-    manuallyAnnotatedPostsSubdir = outputSubdir + '/ManuallyAnnotatedPosts'
-    if not os.path.exists(manuallyAnnotatedPostsSubdir):
-        os.makedirs(manuallyAnnotatedPostsSubdir)
-        
+def createmanuallyAnnotatedPostsForDiff(tokenizer, subdir):
     posts = pandas.DataFrame()
     posts = posts.append(cleanRead('annotatedPosts1.csv'), ignore_index=True)
     posts = posts.append(cleanRead('annotatedPosts2.csv'), ignore_index=True)
@@ -27,10 +23,10 @@ def createmanuallyAnnotatedPostsForDiff(tokenizer):
         
     for i, post in posts.iterrows():    
         filename = 'Post' + str(i + 1) + '.csv'
-        cleanRow = post.to_frame().transpose().dropna(axis=1)
-        cleanRow.to_csv(os.path.join(manuallyAnnotatedPostsSubdir, filename), encoding='utf-8', index=False, header=None)
+        cleanRow = post.dropna()
+        cleanRow.to_csv(os.path.join(subdir, filename), encoding='utf-8', index=False, header=None)
 
-def tokenize(posts, postsSubdir, tokenizer):
+def tokenize(posts, subdir, tokenizer):
     allPostsWords = []
     
     for i, post in enumerate(posts):
@@ -48,8 +44,8 @@ def tokenize(posts, postsSubdir, tokenizer):
     
         filename = 'Post' + str(i + 1) + '.csv'
         df = pandas.DataFrame(selectedWords)
-        cleanDf = df.transpose().dropna(axis=1)
-        cleanDf.to_csv(os.path.join(postsSubdir, filename), encoding='utf-8', index=False, header=None)
+        cleanDf = df.dropna()
+        cleanDf.to_csv(os.path.join(subdir, filename), encoding='utf-8', index=False, header=None)
 
     return allPostsWords
 
@@ -110,7 +106,7 @@ def main():
     tokenizer = RegexpTokenizer(regex)
 
     print("Creating tokenized posts for all posts...")
-    postsSubdir = outputSubdir + '/PostCollection'
+    postsSubdir = os.path.join(outputSubdir, 'AllDatasetAutomaticallyTokenized')
     if not os.path.exists(postsSubdir):
         os.makedirs(postsSubdir)
 
@@ -123,7 +119,7 @@ def main():
     combinedDF.to_csv(os.path.join(outputSubdir, "allTokenizedPosts.csv"), encoding='utf-8', index=False)
 
     print("Creating tokenized posts for the posts selected to create the ground truth...")
-    selectedPostsSubdir = outputSubdir + '/SelectedPostsCollection'
+    selectedPostsSubdir = os.path.join(outputSubdir, 'SelectedPostsAutomaticallyTokenized')
     if not os.path.exists(selectedPostsSubdir):
         os.makedirs(selectedPostsSubdir)
 
@@ -131,7 +127,16 @@ def main():
     tokenize(selectedPosts, selectedPostsSubdir, tokenizer)
 
     print("Creating manually annotated posts...")
-    createmanuallyAnnotatedPostsForDiff(tokenizer)
+    manuallyAnnotatedPostsSubdir = os.path.join(outputSubdir, 'SelectedPostsManuallyTokenized')
+    if not os.path.exists(manuallyAnnotatedPostsSubdir):
+        os.makedirs(manuallyAnnotatedPostsSubdir)
+
+    createmanuallyAnnotatedPostsForDiff(tokenizer, manuallyAnnotatedPostsSubdir)
+
+    print("Creating the diff between the manually annotated posts and the tokenized ones...")
+    patchName = 'differences.patch'
+    os.system('diff -ruN ' + manuallyAnnotatedPostsSubdir + '/ ' + selectedPostsSubdir + '/ > ' + patchName)
+    os.system('mv ' + patchName + ' ' + os.path.join(outputSubdir, patchName))
 
     print "Finished"
 

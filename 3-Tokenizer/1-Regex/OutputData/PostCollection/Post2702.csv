@@ -1,1 +1,0 @@
-Your,command,contains,a,process,substitution,",",but,Popen,runs,its,command,using,/,bin,/,sh,.,When,run,as,/,bin,/,sh,",",though,",",bash,does,not,allow,process,substitutions,.,You,can,explicitly,request,that,the,command,be,run,with,bash,using,the,executable,option,.

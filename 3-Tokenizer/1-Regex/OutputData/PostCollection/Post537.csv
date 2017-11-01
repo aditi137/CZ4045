@@ -1,1 +1,0 @@
-The,Perl,implementation,uses,the,mmap,system,call,.,This,.,It,avoids,buffer,copying,and,provides,async,I,/,O,.

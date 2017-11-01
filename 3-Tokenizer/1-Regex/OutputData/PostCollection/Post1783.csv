@@ -1,1 +1,0 @@
-I've,just,updated,Stripe,API,library,to,the,latest,version,and,it,stopped,working,on,Google,AppEngine,due,to,fact,that,GAE,is,blocking,imports,of,some,packages,such,as,sockets,and,SSL,.,Are,there,any,chances,to,make,it,working,on,Google,AppEngine,?

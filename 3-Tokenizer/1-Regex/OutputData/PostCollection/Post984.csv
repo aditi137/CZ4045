@@ -1,1 +1,0 @@
-If,the,3rd,party,project,is,using,setuptools,or,distribute,",",you,can,do,python,setup.py,develop,instead,of,install,.,This,will,create,the,appropriate,sym-links,in,the,site-packages,dir,for,you,.

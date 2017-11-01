@@ -1,1 +1,0 @@
-This,will,work,if,you,do,not,care,that,the,ordering,in,the,resulting,tuples,does,not,map,to,the,input,lists,(,you,do,not,care,whether,(,1,",",2,),or,(,2,",",1,),),.,Here,you'll,get,the,combination,with,the,smaller,element,first,:,gives,With,strings,you,get,The,apparent,difference,in,the,ordering,comes,from,the,different,hashes,for,the,strings,and,the,numbers,.

@@ -1,1 +1,0 @@
-Have,a,look,at,the,process,management,functions,in,the,os,module,.,There,are,function,for,starting,new,processes,in,many,different,ways,",",both,synchronously,and,asynchronously,.,I,should,note,also,that,Windows,doesn't,provide,functionality,that,is,exactly,like,fork(),on,other,systems,.,To,do,multiprocessing,on,Windows,",",you,will,need,to,use,the,threading,module,.

@@ -1,1 +1,0 @@
-Using,the,zip,function,",",Python,allows,for,loops,to,traverse,multiple,sequences,in,parallel,.,for,(,x,",",y,),in,"zip(List1, List2)",:,Does,MATLAB,have,an,equivalent,syntax,?,If,not,",",what,is,the,best,way,to,iterate,over,two,parallel,arrays,at,the,same,time,using,MATLAB,?

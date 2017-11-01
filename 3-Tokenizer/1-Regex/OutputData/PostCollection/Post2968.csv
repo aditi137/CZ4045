@@ -1,1 +1,0 @@
-What,you,can,do,is,add,a,third,parameter,that,will,keep,track,of,the,original,size,",",and,have,your,arguments,in,your,overlay_frac(),function,be,based,off,of,that,variable,",",so,that,the,values,don't,alter,in,recursion,.,Here's,how,I've,done,it,:

@@ -1,1 +1,0 @@
-Suppose,that,I,have,the,following,variables,:,I'd,like,to,write,a,function,that,",",given,a,specific,card,",",generates,the,possible,combinations,of,pairs,.,For,instance,",",generatePairs('a'),should,return,something,like,:,[,',ahac,',",",',ahad,',",",',ahas,',",",',acad,',",",',acas,',",",',adas,',],but,I'm,not,sure,how,to,approach,writing,that,function,.

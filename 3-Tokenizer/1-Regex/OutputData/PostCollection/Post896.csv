@@ -1,1 +1,0 @@
-I,would,like,to,write,this,to,a,file,"f.write(""add unit at-wc 0 0 0 %s"" % x ,y, z, ""0.000 0.000 0.000 "")",but,when,I,do,that,I,get,an,error,saying,function,takes,exactly,1,argument,(,4,given,),.

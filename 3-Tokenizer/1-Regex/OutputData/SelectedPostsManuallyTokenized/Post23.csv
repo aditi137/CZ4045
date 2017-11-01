@@ -1,0 +1,17 @@
+Python
+stores
+Unicode
+as
+UTF-16
+.
+str()
+will
+return
+the
+UTF-8
+representation
+of
+the
+UTF-16
+string
+.

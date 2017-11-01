@@ -1,1 +1,0 @@
-Looking,for,some,help,understanding,how,to,optimize,some,array,processing,",",targeting,some,postgis,compatible,data,types,.,The,input,data,looks,like,this,:,Here,is,what,I've,tried,:,This,is,the,output,:,Why,are,the,operations,using,the,numpy,arrays,so,much,slower,than,the,normal,python,array,?

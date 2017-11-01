@@ -1,1 +1,0 @@
-To,answer,the,question,directly,",",yes,:,Notice,the,rewrite,of,create_dict,",",in,particular,assigning,it,as,a,classmethod,after,calling,it,during,class,creation,.,If,this,is,a,one-shot,use,method,",",I,would,be,inclined,to,go,with,this,:,This,creates,all,the,names,",",and,creates,a,reverse,lookup,dictionary,",",in,one,nice,tidy,package,.

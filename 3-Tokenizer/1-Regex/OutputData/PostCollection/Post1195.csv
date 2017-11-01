@@ -1,1 +1,0 @@
-Both,actions,will,occur,.,When,you,click,on,a,radiobutton,",",first,the,variable,will,change,its,value,",",and,after,that,the,event,handler,passed,as,command,option,is,called,if,present,.,Also,your,example,would,not,work,",",since,add_radiobutton,doesn't,allow,the,onvalue,and,offvalue,options,-,only,value,.

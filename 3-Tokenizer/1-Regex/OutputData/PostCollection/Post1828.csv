@@ -1,1 +1,0 @@
-It,sounds,like,you,didn't,have,the,SQLite,development,libraries,installed,at,the,time,you,built,CPython,from,source,.,The,build,process,conditionally,includes,some,features,based,the,availability,of,underlying,development,libraries,.,On,Debian,GNU,/,Linux,and,derivatives,",",install,libsqlite3-dev,.,Then,re-run,.,/,configure,",",make,and,make,install,.

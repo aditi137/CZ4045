@@ -1,1 +1,0 @@
-I,think,"morphology.remove_small_objects(image, min_px_size)",does,what,you're,looking,for,.,Here's,an,example,that,uses,that,function,:,http://scikit-image.org/docs/dev/auto_examples/applications/plot_coins_segmentation.html#edge-based-segmentation

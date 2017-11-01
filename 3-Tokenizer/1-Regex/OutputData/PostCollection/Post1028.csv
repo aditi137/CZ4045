@@ -1,1 +1,0 @@
-Use,itertools.groupby,with,key,as,operator.itemgetter('user'),to,group,the,elements,and,then,iterate,through,the,groupby,object,and,determine,the,count,based,on,length,of,the,group

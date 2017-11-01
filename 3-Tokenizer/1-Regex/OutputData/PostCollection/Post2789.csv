@@ -1,1 +1,0 @@
-The,above,code,is,giving,an,Index,error,saying,that,index,14328,is,out,of,bounds,for,axis,0,and,size,2,.,The,error,is,coming,at,this,line,ypredc,=,model.classes_,[,"np.argmax(ypred, axis = 0)",],Can,anyone,help,me,on,this,?

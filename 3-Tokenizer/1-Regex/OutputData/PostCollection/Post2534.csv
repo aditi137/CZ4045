@@ -1,1 +1,0 @@
-I'm,trying,to,figure,out,how,to,return,a,function,in,Python,.,However,",",I,don't,know,if,the,issue,is,with,reduce,or,with,my,code,.,What,I,currently,have,is,this,:,Code,:,However,",",I,get,the,error,message,:,TypeError,:,',int,',object,is,not,subscriptable,What's,causing,this,?

@@ -1,1 +1,0 @@
-So,",",I,had,to,add,http.php,after,api,/,(,/,api,/,http.php/tickets.json,),and,now,I,can,create,tickets,.,Check,http://tmib.net/using-osticket-1812-api.,The,sample,used,has,this,info,in,the,comments,.,The,two,really,important,parts,are,on,lines,18,and,19,.

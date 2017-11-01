@@ -1,1 +1,0 @@
-From,SQLAlchemy,0.8,you,can,use,the,DeferredReflection,class,when,creating,your,declarative,base,to,delay,the,autoload,until,an,engine,is,attached,to,your,metadata,:,See,here,:,http://docs.sqlalchemy.org/en/rel_0_8/orm/extensions/declarative.html#using-reflection-with-declarative

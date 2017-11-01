@@ -1,1 +1,0 @@
-You,could,call,pack_forget(),to,hide,widgets,",",and,(,later,),pack,to,show,them,again,:,Tkinter,is,singled-threaded,",",and,mainloop,runs,the,main,event,loop,.,Therefore,you,shouldn't,call,mainloop,twice,.

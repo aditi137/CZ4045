@@ -1,1 +1,0 @@
-Your,first,parameter,to,"sortedByScore(*args, **kwargs)",is,a,Q,object,:,You,will,need,to,redefine,your,method,to,pass,in,different,parameters,and,/,or,perform,the,reduce,inside,the,method,.

@@ -1,1 +1,0 @@
-To,correct,way,to,get,a,list,of,tuples,using,list,comprehensions,would,be,:,You,can,of,course,replace,to_tuple(),with,a,lambda,function,",",I,just,wanted,to,make,the,example,clear,.,Moreover,",",you,could,use,map(),to,have,a,tuple,with,floats,instead,of,string,:,return,"tuple(map(float,coords_str.split(',')",),),.

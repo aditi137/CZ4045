@@ -1,1 +1,0 @@
-You,want,to,loop,over,the,/,movies,/,a_movie,tags,instead,",",but,only,those,that,have,a,studio,child,:,If,you,wanted,to,just,print,out,the,child,elements,of,the,a_movie,element,as,XML,",",I'd,just,loop,over,the,element,(,looping,over,the,child,elements,),and,use,ElementTree.tostring(),on,each,:

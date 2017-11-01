@@ -1,1 +1,0 @@
-They,are,using,pylab's,arange,",",not,simple,python,range,.,And,this,is,the,problem,when,importing,*,:,you,don't,know,which,method,comes,from,where,.,Import,just,pylab,and,reference,to,all,its,methods,/,constants,with,pylab,.,.,You,will,really,love,this,way,of,programming,when,you've,got,several,imports,.,will,work,.

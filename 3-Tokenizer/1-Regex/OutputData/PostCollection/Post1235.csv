@@ -1,1 +1,0 @@
-Build,lists,of,matched,lines,-,several,flavors,:,Build,generator,of,matched,lines,(,memory,efficient,),:,Print,all,matching,lines,(,find,all,matches,first,",",then,print,them,),:,Print,all,matching,lines,(,print,them,lazily,",",as,we,find,them,),Generators,(,produced,by,yield,),are,your,friends,",",especially,with,large,files,that,don't,fit,into,memory,.

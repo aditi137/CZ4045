@@ -1,1 +1,0 @@
-Steps,:,Create,a,file,.,pythonrc,in,home,directory,by,this,command,:,vi,.,pythonrc,Enter,this,content,:,Close,the,file,Now,run,echo,"""",export,PYTHONSTARTUP,=,~,/,.,pythonrc,"""",>,>,~,/,.,bashrc,Restart,the,terminal

@@ -1,1 +1,0 @@
-You,should,use,the,render,shortcut,.,views.py,This,has,the,added,advantage,of,adding,the,request,instance,into,the,context,which,forces,the,use,of,RequestContext,.,Read,about,it,here,:,https://docs.djangoproject.com/en/dev/topics/http/shortcuts/#render

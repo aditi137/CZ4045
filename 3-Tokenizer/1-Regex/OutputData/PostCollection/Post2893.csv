@@ -1,1 +1,0 @@
-pandas.DataFrame.drop,takes,level,as,an,optional,argument,"df.drop('1995-96', level='start')",As,of,v0.18.1,",",its,docstring,says,:

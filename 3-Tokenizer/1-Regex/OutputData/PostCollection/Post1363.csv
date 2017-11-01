@@ -1,1 +1,0 @@
-This,entirely,depends,on,the,authentication,policy,that,you,use,.,The,default,AuthTktAuthenticationPolicy,sets,a,cookie,in,the,browser,which,(,by,default,),does,not,expire,.,Again,though,",",this,depends,on,how,you,are,tracking,authenticated,users,.

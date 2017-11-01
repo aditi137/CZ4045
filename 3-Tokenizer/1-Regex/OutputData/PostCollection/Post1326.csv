@@ -1,1 +1,0 @@
-Python,applies,line,buffering,when,connected,to,a,TTY,",",otherwise,a,larger,buffer,is,needed,.,Redirecting,your,Python,program,to,a,pipe,means,there,is,no,TTY,connected,to,the,stream,",",and,you'll,have,to,use,.,flush(),even,when,sending,newlines,.,You,can,run,Python,with,-,u,to,turn,off,buffering,of,stdout,.

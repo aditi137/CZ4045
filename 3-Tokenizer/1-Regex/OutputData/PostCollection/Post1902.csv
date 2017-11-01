@@ -1,1 +1,0 @@
-The,error,was,a,useful,hint,:,a,JointPlot,is,a,congeries,of,subplots,",",you,have,to,find,the,specific,ax,to,plot,onto,.,Modifying,the,Seaborn,example,:,I,figured,this,out,in,an,interpreter,:,dir(g),",",then,g.plot,?,",",g.plot_joint,?,-,-,those,are,plotting,functions,specific,to,the,jointplot,-,-,what,else,was,there,?,-,-,dir(g.ax_joint),;,aha,",",there's,set_ylim,",",etc.

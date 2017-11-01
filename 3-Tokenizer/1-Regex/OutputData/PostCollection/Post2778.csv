@@ -1,1 +1,0 @@
-If,you,are,using,the,python,API,",",you,have,to,use,the,',batch,',submodule,.,The,default,behaviour,is,to,save,to,your,google,drive,.,You,can,specify,your,bounding,box,as,a,list,of,coordinates,as,well,:,This,should,generate,a,file,called,',exportExample.tif,',in,your,GoogleDrive,top,folder,.,Also,note,that,the,semicolons,at,the,end,of,each,line,are,not,necessary,in,python,.

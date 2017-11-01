@@ -1,1 +1,0 @@
-What,I,ended,up,doing,was,as,follows,:,go,into,the,plone,/,app,/,registry,/,exportimport,/,configure.zcml,file,where,the,name,was,registered,as,:,Turns,out,the,name,of,the,import step,was,registered,as,',plone.app.registry,',So,basically,I,had,to,dig,into,the,code,to,find,out,where,the,importStep,was,registered,.

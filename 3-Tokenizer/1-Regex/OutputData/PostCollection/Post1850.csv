@@ -1,1 +1,0 @@
-As,per,documentation,boto3,"""",The,number,of,items,in,the,specified,table,.,DynamoDB,updates,this,value,approximately,every,six,hours,.,Recent,changes,might,not,be,reflected,in,this,value,.,"""",or,you,can,use,DescribeTable,:

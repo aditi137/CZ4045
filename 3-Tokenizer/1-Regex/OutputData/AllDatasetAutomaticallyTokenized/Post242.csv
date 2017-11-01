@@ -1,0 +1,16 @@
+Maybe
+you're
+looking
+for
+__len__
+.
+If
+that
+method
+exists
+","
+then
+len(a)
+calls
+it
+:

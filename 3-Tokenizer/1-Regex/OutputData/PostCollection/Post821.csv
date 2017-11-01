@@ -1,1 +1,0 @@
-These,are,the,original,(,x,",",y,),data,points,:,Here,we,(,linearly,),interpolate,to,find,additional,points,.,You,can,increase,the,argument,to,path.interpolated,to,find,more,interpolated,points,between,the,original,points,.

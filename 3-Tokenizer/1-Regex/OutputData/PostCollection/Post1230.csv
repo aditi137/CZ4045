@@ -1,1 +1,0 @@
-In,PySide,",",I,want,to,emit,a,signal,with,the,class,that,defines,the,signal,as,a,parameter,.,E.g,.,:,However,",",the,second,line,gives,a,NameError,because,MyWidget,doesn't,exist,yet,at,that,point,.,For,now,I,work,around,the,issue,by,emitting,a,QWidget,like,this,but,I,would,prefer,a,solution,with,MyWidget,as,type,.,Any,ideas,?

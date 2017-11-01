@@ -1,1 +1,0 @@
-Based,on,the,answer,provided,here,",",I,wanted,to,save,the,error,as,a,string,:,However,",",it,seems,that,redirecting,stderr,is,not,working,:,What,is,the,correct,way,to,capture,the,error,as,a,string,?

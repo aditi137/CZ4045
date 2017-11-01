@@ -1,1 +1,0 @@
-Here's,a,really,useful,pair,of,patterns,for,this,kind,of,stuff,:,If,you,use,both,of,these,tricks,consistently,",",you,can,transparently,handle,cases,where,your,maya,queries,have,returned,None,instead,of,a,list,As,an,aside,",",you,can,mimic,the,default,maya,behaviour,(,where,passing,no,arguments,uses,the,current,selection,),like,this,:

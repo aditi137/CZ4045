@@ -1,0 +1,10 @@
+You
+could
+always
+use
+shutil.copyfileobj
+","
+in
+your
+example
+:

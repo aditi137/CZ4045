@@ -1,1 +1,0 @@
-Put,the,asterisks,before,the,kwargs,variable,.,This,makes,Python,pass,the,variable,(,which,is,assumed,to,be,a,dictionary,),as,keyword,arguments,.

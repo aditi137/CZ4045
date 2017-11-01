@@ -1,1 +1,0 @@
-I,am,trying,to,get,data,data,from,backend,through,ajax,in,django,.,But,i,am,getting,error,over,there,.,It,directly,going,to,the,error,function,of,ajax,.,But,in,view,data,is,getting,printed,.,views.py,ajax,call,is,please,help,me,out,when,i,print,print,response,i,am,getting,the,data,in,view,.,Data,is,not,getting,passed,to,the,ajax,success,function,.

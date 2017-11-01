@@ -1,1 +1,0 @@
-There,is,no,need,for,any,parsing,at,the,framework,level,.,The,body,of,the,post,request,is,always,available,in,request.body,",",so,you,can,access,it,directly,:

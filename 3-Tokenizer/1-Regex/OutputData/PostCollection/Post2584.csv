@@ -1,1 +1,0 @@
-I'm,trying,to,run,a,Flask,app,with,Gunicorn,.,When,I,run,gunicorn,app:index,",",I,get,the,error,TypeError,:,index(),takes,0,positional,arguments,but,2,were,given,.,None,of,the,examples,I've,seen,show,index,needing,two,parameters,.,What,does,this,error,mean,?,How,do,I,run,Flask,with,Gunicorn,?,I,changed,index,to,take,two,arguments,",",but,got,a,different,error,.

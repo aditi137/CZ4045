@@ -1,1 +1,0 @@
-Note,that,you,must,pass,a,directory,name,for,GetDiskFreeSpaceEx(),to,work,(,statvfs(),works,on,both,files,and,directories,),.,You,can,get,a,directory,name,from,a,file,with,os.path.dirname(),.,Also,see,the,documentation,for,os.statvfs(),and,GetDiskFreeSpaceEx,.

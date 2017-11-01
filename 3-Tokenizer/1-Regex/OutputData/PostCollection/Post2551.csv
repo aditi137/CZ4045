@@ -1,1 +1,0 @@
-I,am,new,to,Django,",",I,am,tring,to,make,a,Blog,here,is,my,models,but,when,i,run,the,command,:,python,manage.py,migrate,i,get,the,ValueError,:,invalid,literal,for,int(),with,base,10,:,',None,',I,tried,to,delete,the,old,migration,file,and,migrate,again,but,I,got,the,same,error,",",what,should,I,do,?

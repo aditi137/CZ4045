@@ -1,1 +1,0 @@
-I'm,using,boto.dynamodb2,",",and,it,seems,I,can,use,Table.query_count(),.,However,it,had,raised,an,exception,when,no,query,filter,is,applied,.,What,can,I,do,to,fix,this,?,BTW,",",where,is,the,document,of,filters,that,boto.dynamodb2.table.Table.Query,can,use,?,I,tried,searching,for,it,but,found,nothing,.

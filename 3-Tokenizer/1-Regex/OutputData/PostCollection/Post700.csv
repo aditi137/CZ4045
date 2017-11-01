@@ -1,1 +1,0 @@
-I'm,using,scrapy,to,extract,data,from,certain,websites.The,problem,is,that,my,spider,can,only,crawl,the,webpage,of,initial,start_urls,",",it,can't,crawl,the,urls,in,the,webpage,.,I,copied,the,same,spider,exactly,:,I,use,the,log.txt,to,test,if,the,parsetext,is,called.However,",",after,I,runned,my,spider,",",there,is,nothing,in,the,log.txt,.

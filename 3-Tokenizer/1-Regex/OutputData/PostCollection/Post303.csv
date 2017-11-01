@@ -1,1 +1,0 @@
-as,python,was,not,meant,to,deal,with,OS-specific,issues,(,it's,supposed,to,be,interpreted,and,cross,platform,),",",i,would,execute,an,external,command,to,do,so,:,in,unix,the,command,is,ifconfig,if,you,execute,it,as,a,pipe,you,get,the,desired,result,:

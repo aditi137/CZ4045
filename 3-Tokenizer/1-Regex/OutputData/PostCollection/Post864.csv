@@ -1,1 +1,0 @@
-You,can,in,theory,",",but,Python,doesn't,have,anywhere,near,as,much,regex,magic,that,Perl,does,",",so,the,resulting,command,will,be,much,more,unwieldy,",",especially,as,you,can't,use,regular,expressions,without,importing,re,(,and,you'll,probably,need,sys,for,sys.stdin,too,),.,The,Python,equivalent,of,your,colleague's,Perl,one-liner,is,approximately,:

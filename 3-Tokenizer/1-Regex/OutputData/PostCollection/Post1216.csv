@@ -1,1 +1,0 @@
-I,am,new,to,python,.,I,am,trying,out,Hbase,thrift,client,using,thrift,.,I,got,some,code,on,net,",",which,I,just,modify,to,work,with,latest,version,of,thrift,but,when,I,run,the,code,",",it,just,exit,",",no,threads,are,started,.,Here,is,the,code,.,I,just,get,a,message,10,thread,created,",",each,thread,will,write,6000,records

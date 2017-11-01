@@ -1,0 +1,12 @@
+You
+can
+do
+something
+like
+np.empty(shape = [1] * (dimensions - 1)
++
+[0]
+)
+.
+Example
+:

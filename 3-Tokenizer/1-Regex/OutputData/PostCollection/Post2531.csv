@@ -1,1 +1,0 @@
-Well,",",yes,",",you,spun,off,1000,asynchronous,requests,to,Google,and,timed,that,.,You,did,not,",",however,",",time,the,overhead,of,actually,making,the,HTTP,call,.,That,would,require,a,callback-type,of,handler,.

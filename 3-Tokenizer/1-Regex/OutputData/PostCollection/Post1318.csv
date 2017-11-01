@@ -1,1 +1,0 @@
-Using,the,following,code,:,"printformatted(""1,Some summary"")",gives,me,the,error,ValueError,:,need,more,than,1,value,to,unpack,",",whereas,"printformatted([""1,Some summary""])",does,not,.,Why,?

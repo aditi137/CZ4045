@@ -1,1 +1,0 @@
-I,see,you've,solved,the,indentation,issue,",",here's,another,version,of,your,example,:,You,need,to,adjust,the,paths,of,the,images,(,"""",background.jpg,"""",",","""",player.jpg,"""",),",",with,this,version,you're,not,loading,over,and,over,your,sprite,in,the,game,event,loop,and,the,Player,movement,will,be,smooth,.

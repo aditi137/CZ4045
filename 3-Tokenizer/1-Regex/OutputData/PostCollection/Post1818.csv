@@ -1,1 +1,0 @@
-To,split,the,string,by,blanks,you,need,to,use,For,the,input,"""",set,title,"""",you,will,get,a,parse,array,looking,like,this,where,parse,[0],=,=,',set,',and,parse,[1],=,=,',title,',If,you,want,to,test,whether,your,string,starts,with,"""",set,title,"""",",",either,check,the,command,string,itself,or,check,the,first,two,indexes,of,parse,.

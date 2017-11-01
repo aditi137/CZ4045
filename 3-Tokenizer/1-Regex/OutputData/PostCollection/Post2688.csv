@@ -1,1 +1,0 @@
-Given,a,class,with,a,helper,method,for,initialization,:,Is,it,possible,to,annotate,the,return,type,of,the,from_int,method,?,I'v,tried,both,cls,and,TrivialClass,but,PyCharm,flags,them,as,unresolved,references,which,sounds,reasonable,at,that,point,in,time,.

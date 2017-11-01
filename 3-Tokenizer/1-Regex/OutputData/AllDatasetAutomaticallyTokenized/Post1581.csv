@@ -1,0 +1,23 @@
+This
+seems
+to
+be
+working
+Which
+calls
+a
+method
+after
+the
+timeout
+:
+from
+threading
+import Timer
+import time
+def timeout():
+def main():
+try
+:
+except
+:

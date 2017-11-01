@@ -1,0 +1,15 @@
+Here's
+how
+to
+do
+it
+in
+Python
+3
+using
+the
+standard
+library
+:
+urllib.request.urlopen
+urllib.request.urlretrieve

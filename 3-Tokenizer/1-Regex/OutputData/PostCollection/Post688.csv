@@ -1,1 +1,0 @@
-You,can,use,a,StringIO,file,object,instead,of,a,regular,file,as,well,with,both,PIL,Image.open,and,Image.save,There's,also,a,frombuffer,function

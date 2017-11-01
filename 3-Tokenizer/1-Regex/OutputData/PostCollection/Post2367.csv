@@ -1,1 +1,0 @@
-First,",",there's,a,duplication,in,your,code,(,reading,target,file,twice,),.,And,you,can,use,shutil.copyfileobj,and,hashlib.update,for,memory-efficient,routine,.,(,Note,:,I,didn't,test,this,code,.,If,you,have,problem,please,notice,me,)

@@ -1,1 +1,0 @@
-I,have,a,list,of,64,bits,.,Here,each,and,every,bit,represents,a,feature,.,If,a,bit,is,1,then,that,particular,feature,is,supported,else,not,.,Is,there,any,way,were,i,can,check,the,bit,and,just,return,its,associated,feature,if,it,is,1,.,Input,:,1111111,Output,:,If,all,bits,are,one,then,I,need,to,print,all,eight,features,masked,in,it,.

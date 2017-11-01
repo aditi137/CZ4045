@@ -1,1 +1,0 @@
-Don't,import them,.,More,generally,",",don't,execute,untrusted,code,inside,your,module,.,eval(),looks,spiffy,but,it's,almost,certainly,not,your,friend,.,If,you're,intent,on,sandboxing,external,code,",",look,at,the,SandboxedPython,article,on,the,Python,wiki,.,Until,you've,read,(,and,understood,),everything,there,",",please,don't,try,it,.

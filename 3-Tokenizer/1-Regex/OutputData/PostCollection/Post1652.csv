@@ -1,1 +1,0 @@
-What,you're,trying,to,do,is,import an,external,module,",",which,is,not,supported,by,GAE,.,What,you,can,do,though,",",is,copy,web.py,into,your,app,directory,",",and,then,use,it,.,See,"""",How,to,include,third,party,Python,libraries,in,Google,App,Engine,"""",.,You,can,get,the,source,code,from,here

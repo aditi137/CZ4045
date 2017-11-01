@@ -1,1 +1,0 @@
-According,to,the,source,code,",",if,there,is,a,CloseSpider,exception,being,raised,",",engine.close_spider(),method,would,be,executed,:,engine.close_spider(),itself,would,close,the,spider,and,clear,all,outstanding,requests,:,It,would,also,schedule,close_spider(),calls,for,different,components,of,Scrapy's,architecture,:,downloader,",",scraper,",",scheduler,etc.

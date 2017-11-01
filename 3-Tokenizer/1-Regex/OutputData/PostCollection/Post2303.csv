@@ -1,1 +1,0 @@
-You,can,try,this,If,there,are,more,then,3,tables,just,add,tables,after,FROM,T1,",",T2,",",T3,",",T4,",",.,.,TN,And,Add,Comparision,for,not,equality,by,adding,this,in,where,clause,T1.val,<,>,T4.val,AND,T2.val,<,>,T4.val,AND,T3.val,<,>,T4.val,for,every,table,/,/,this,is,added,for,T4

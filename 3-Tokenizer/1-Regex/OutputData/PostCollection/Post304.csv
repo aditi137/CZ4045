@@ -1,1 +1,0 @@
-You,need,ARP,.,Python's,standard,library,doesn't,include,any,code,for,that,",",so,you,either,need,to,call,an,external,program,(,your,OS,may,have,an,',arp,',utility,),or,you,need,to,build,the,packets,yourself,(,possibly,with,a,tool,like,Scapy,.

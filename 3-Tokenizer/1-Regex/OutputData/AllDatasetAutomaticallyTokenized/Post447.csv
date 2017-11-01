@@ -1,0 +1,15 @@
+Valid
+for
+Python
+3.5
+:
+example
+:
+the
+output
+will
+be
+http://www.example.com/foo%20goo/bar.html
+Font
+:
+https://docs.python.org/3.5/library/urllib.parse.html?highlight=quote#urllib.parse.quote

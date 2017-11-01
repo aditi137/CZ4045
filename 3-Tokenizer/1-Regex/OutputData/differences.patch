@@ -1,0 +1,511 @@
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post1.csv OutputData/SelectedPostsAutomaticallyTokenized/Post1.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post1.csv	2017-11-01 12:57:02.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post1.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -29,11 +29,7 @@
+ Java
+ ","
+ the
+-GC
+-(
+-garbage
+-collector
+-)
++GC(garbage collector)
+ destroys
+ objects
+ which
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post24.csv OutputData/SelectedPostsAutomaticallyTokenized/Post24.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post24.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post24.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -152,4 +152,5 @@
+ hope
+ this
+ helps
+-:)
++:
++)
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post26.csv OutputData/SelectedPostsAutomaticallyTokenized/Post26.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post26.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post26.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -1,6 +1,7 @@
+ In
+ Python
+-2.6+
++2.6
+++
+ ","
+ it
+ is
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post29.csv OutputData/SelectedPostsAutomaticallyTokenized/Post29.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post29.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post29.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -29,7 +29,8 @@
+ you
+ can
+ use
+-str(int(floatValue))
++str(int(floatValue)
++)
+ .
+ Perhaps
+ the
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post30.csv OutputData/SelectedPostsAutomaticallyTokenized/Post30.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post30.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post30.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -61,11 +61,7 @@
+ something
+ like
+ """"
+-5.0
+-:
+-30.0
+-:
+-59.1
++5.0:30.0:59.1
+ pm
+ """"
+ .
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post31.csv OutputData/SelectedPostsAutomaticallyTokenized/Post31.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post31.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post31.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -42,4 +42,6 @@
+ fixes
+ this
+ .
+-str(int(float([variable])))
++str(int(float([variable])
++)
++)
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post33.csv OutputData/SelectedPostsAutomaticallyTokenized/Post33.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post33.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post33.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -37,7 +37,8 @@
+ :
+ Like
+ Python
+-2.6+
++2.6
+++
+ ","
+ all
+ Python
+@@ -79,4 +80,6 @@
+ from
+ time-to-time
+ .
+-:-)
++:
++-
++)
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post39.csv OutputData/SelectedPostsAutomaticallyTokenized/Post39.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post39.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post39.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -11,10 +11,17 @@
+ in
+ python
+ :
+-"urllib.urlretrieve('url_to_file',file_name)"
++urllib.urlretrieve
++(
++'
++url_to_file
++'
++","
++file_name
++)
+ urllib2.urlopen('url_to_file')
+ requests.get(url)
+-"wget.download('url',file_name)"
++"wget.download('url', file_name)"
+ Note
+ :
+ urlopen
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post42.csv OutputData/SelectedPostsAutomaticallyTokenized/Post42.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post42.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post42.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -53,8 +53,7 @@
+ this
+ case
+ .
+-2015-12-
+-30
++2015-12-30
+ People
+ have
+ expressed
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post49.csv OutputData/SelectedPostsAutomaticallyTokenized/Post49.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post49.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post49.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -11,7 +11,9 @@
+ +
+ use
+ '
+-import urllib.request
++import urllib
++.
++request
+ '
+ and
+ urllib.request.urlretrieve
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post50.csv OutputData/SelectedPostsAutomaticallyTokenized/Post50.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post50.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post50.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -7,5 +7,7 @@
+ code
+ for
+ Python
+-2/3
++2
++/
++3
+ :
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post51.csv OutputData/SelectedPostsAutomaticallyTokenized/Post51.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post51.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post51.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -3,8 +3,7 @@
+ 2
+ ","
+ use
+-urllib
+-2
++urllib2
+ which
+ comes
+ with
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post57.csv OutputData/SelectedPostsAutomaticallyTokenized/Post57.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post57.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post57.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -6,7 +6,9 @@
+ the
+ processing
+ module
+-(http://pypi.python.org/pypi/processing)
++(
++http://pypi.python.org/pypi/processing
++)
+ .
+ It
+ has
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post59.csv OutputData/SelectedPostsAutomaticallyTokenized/Post59.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post59.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post59.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -6,4 +6,7 @@
+ for
+ python
+ ?
+-http://en.wikipedia.org/wiki/Spawn_(operating_system)
++http://en.wikipedia.org/wiki/Spawn_
++(
++operating_system
++)
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post64.csv OutputData/SelectedPostsAutomaticallyTokenized/Post64.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post64.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post64.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -31,21 +31,30 @@
+ filter-branch
+ to
+ run
+-wc -l *
++wc
++-
++l
++*
+ ","
+ and
+ a
+ script
+ that
+ runs
+-git reset --hard
++git
++reset
++-
++-
++hard
+ on
+ each
+ commit
+ ","
+ then
+ runs
+-wc -l
++wc
++-
++l
+ To
+ make
+ it
+@@ -92,7 +101,8 @@
+ as
+ an
+ example
+-):
++)
++:
+ I've
+ played
+ around
+@@ -135,7 +145,7 @@
+ :
+ it
+ returns
+-0.0
++0
+ when
+ you
+ delete
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post69.csv OutputData/SelectedPostsAutomaticallyTokenized/Post69.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post69.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post69.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -24,7 +24,8 @@
+ a
+ stackoverflow
+ answer
+-):
++)
++:
+ http://codespeak.net/pypy/dist/pypy/doc/translation.html
+ The
+ general
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post72.csv OutputData/SelectedPostsAutomaticallyTokenized/Post72.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post72.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post72.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -8,7 +8,8 @@
+ ","
+ you
+ can
+-do:
++do
++:
+ (
+ with
+ row
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post75.csv OutputData/SelectedPostsAutomaticallyTokenized/Post75.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post75.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post75.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -15,9 +15,14 @@
+ parallel
+ .
+ for
+-"(x,y)"
++(
++x
++","
++y
++)
+ in
+-"zip(List1,List2):"
++"zip(List1, List2)"
++:
+ Does
+ MATLAB
+ have
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post79.csv OutputData/SelectedPostsAutomaticallyTokenized/Post79.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post79.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post79.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -176,7 +176,9 @@
+ C
+ ","
+ or
+-C++
++C
+++
+++
+ ","
+ but
+ anything
+@@ -207,9 +209,7 @@
+ reading
+ through
+ (
+-e
+-.
+-g
++e.g
+ .
+ )
+ the
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post8.csv OutputData/SelectedPostsAutomaticallyTokenized/Post8.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post8.csv	2017-11-01 12:57:02.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post8.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -227,5 +227,6 @@
+ ","
+ high
+ throughput
+-):
++)
++:
+ http://cs.anu.edu.au/~Steve.Blackburn/pubs/papers/urc-oopsla-2003.pdf
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post81.csv OutputData/SelectedPostsAutomaticallyTokenized/Post81.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post81.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post81.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -20,9 +20,9 @@
+ for
+ line
+ in
+-"open(""""somefile.txt"""")"
++"open(""somefile.txt"")"
+ if
+-"line.startswith(""""nee"""")"
++"line.startswith(""nee"")"
+ ]
+ is
+ really
+@@ -197,8 +197,7 @@
+ guard
+ against
+ ","
+-etc
+-.
++etc.
+ '
+ Default
+ and
+@@ -224,7 +223,7 @@
+ you
+ must
+ define
+-6.0
++6
+ different
+ versions
+ of
+@@ -244,7 +243,7 @@
+ can
+ only
+ return
+-1.0
++1
+ thing
+ .
+ In
+@@ -281,7 +280,7 @@
+ custom
+ class
+ with
+-2.0
++2
+ fields
+ and
+ then
+@@ -327,7 +326,11 @@
+ Document
+ doc
+ =
+-"DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(""""test.xml"""")"
++DocumentBuilderFactory.newInstance()
++.
++newDocumentBuilder()
++.
++"parse(""test.xml"")"
+ ;
+ and
+ in
+@@ -336,7 +339,7 @@
+ say
+ doc
+ =
+-"parse(""""test.xml"""")"
++"parse(""test.xml"")"
+ Anyway
+ ","
+ I
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post87.csv OutputData/SelectedPostsAutomaticallyTokenized/Post87.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post87.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post87.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -44,10 +44,7 @@
+ Python
+ command
+ prompt
+-help
+-(
+-scipy.optimize
+-)
++help(scipy.optimize)
+ The
+ resulting
+ document
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post9.csv OutputData/SelectedPostsAutomaticallyTokenized/Post9.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post9.csv	2017-11-01 12:57:02.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post9.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -142,7 +142,8 @@
+ to
+ objects
+ (
+-e.g.
++e.g
++.
+ to
+ close
+ a
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post92.csv OutputData/SelectedPostsAutomaticallyTokenized/Post92.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post92.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post92.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -2,8 +2,7 @@
+ a
+ look
+ at
+-http://www.aemdesign.com/downloadfsqp.htm
+-.
++http://www.aemdesign.com/downloadfsqp.htm.
+ There
+ you
+ will
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post97.csv OutputData/SelectedPostsAutomaticallyTokenized/Post97.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post97.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post97.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -148,4 +148,5 @@
+ by
+ myself
+ ?
+-:)
++:
++)
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post98.csv OutputData/SelectedPostsAutomaticallyTokenized/Post98.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post98.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post98.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -63,7 +63,12 @@
+ provider
+ configured
+ as
+-DRWHO.whois_providers['*']
++DRWHO.whois_providers
++[
++'
++*
++'
++]
+ (
+ a
+ more
+@@ -140,9 +145,7 @@
+ structured
+ format
+ (
+-e
+-.
+-g
++e.g
+ .
+ ","
+ set
+diff -ruN OutputData/SelectedPostsManuallyTokenized/Post99.csv OutputData/SelectedPostsAutomaticallyTokenized/Post99.csv
+--- OutputData/SelectedPostsManuallyTokenized/Post99.csv	2017-11-01 12:57:03.000000000 +0800
++++ OutputData/SelectedPostsAutomaticallyTokenized/Post99.csv	2017-11-01 12:57:02.000000000 +0800
+@@ -60,8 +60,7 @@
+ )
+ ","
+ or
+-import
+-a
++import a
+ third
+ party
+ library
+@@ -142,4 +141,5 @@
+ what's
+ Pythonic
+ .
+-:)
++:
++)

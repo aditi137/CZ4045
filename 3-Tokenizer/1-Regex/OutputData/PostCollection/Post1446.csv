@@ -1,1 +1,0 @@
-For,linux,user,only,:,First,you,install,Sqlite3,from,here,.,After,installation,you,need,to,create,a,file,called,flaskr.db,",",location,of,this,file,is,to,be,/,myproject,/,venv,/,bin,/,flaskr,/,tmp,.,Next,step,is,run,command,I,took,file,address,from,home,.,Next,step,is,start,python,shell,",",run,this,code,Thats,it,.

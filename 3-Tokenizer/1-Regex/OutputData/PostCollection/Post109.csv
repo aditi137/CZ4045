@@ -1,1 +1,0 @@
-I,think,this,is,cleaner,:,and,gets,the,same,information,as,:,Where,[0],is,the,current,frame,in,the,stack,(,top,of,stack,),and,[1],is,for,the,file,name,",",increase,to,go,backwards,in,the,stack,i.e.,would,be,the,file,name,of,the,script,that,called,the,current,frame,.,Also,",",using,[,-,1,],will,get,you,to,the,bottom,of,the,stack,",",the,original,calling,script,.

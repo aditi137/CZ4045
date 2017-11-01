@@ -1,1 +1,0 @@
-I,think,the,issue,you're,having,is,that,you,aren't,giving,your,msgBox,a,parent,.,This,makes,Qt,treat,it,as,a,top-level,window,.,Try,changing,your,instantiation,of,your,message,box,to,look,like,this,:

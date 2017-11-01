@@ -1,1 +1,0 @@
-A,PKCS7,has,a,collection,of,SignerInfos,.,Each,SignerInfo,may,have,a,different,Message,Digest,Algorithm,.,See,https://github.com/erny/pyx509.,This,needs,pyasn1,and,pyasn1-modules,.,This,extracts,the,digest,algorithm,for,each,Signer,Info,.

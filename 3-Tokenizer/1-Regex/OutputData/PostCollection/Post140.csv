@@ -1,1 +1,0 @@
-Environment.TickCount,seems,to,work,well,if,you,need,something,quick,.,int,start,=,Environment.TickCount,...,DoSomething(),int,elapsedtime,=,Environment.TickCount,-,start,Jon

@@ -1,1 +1,0 @@
-ElementTree,1.3,(,unfortunately,not,1.2,which,is,the,one,included,with,Python,),supports,XPath,like,this,:,Then,you,can,do,lxml.etree,(,which,also,provides,the,ElementTree,interface,),will,also,work,in,the,same,way,.

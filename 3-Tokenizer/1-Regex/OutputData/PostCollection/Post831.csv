@@ -1,1 +1,0 @@
-It's,a,little,easier,/,faster,to,convert,the,lists,to,a,set,and,not,worry,about,sorting,.,Also,",",instead,of,saving,the,list,to,a,file,as,raw,text,",",you,could,use,the,shelve,module,to,make,a,persistent,store,that,is,conveniently,accessible,like,a,regular,Python,dict,.,Otherwise,",",your,code,has,the,virtues,of,being,simple,and,straight-forward,.,Here's,a,worked,out,example,:

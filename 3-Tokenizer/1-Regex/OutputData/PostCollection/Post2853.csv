@@ -1,1 +1,0 @@
-We,can,use,break,statement,inside,if,statement,for,termination,.,Instead,of,break,we,can,write,os.exit,or,sys.exit,os._exit,calls,the,C,function,_exit(),which,does,an,immediate,program,termination,.,Note,the,statement,"""",can,never,return,"""",.,sys.exit(),is,identical,to,raise,SystemExit(),.,It,raises,a,Python,exception,which,may,be,caught,by,the,caller,.

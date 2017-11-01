@@ -1,1 +1,0 @@
-Considering,I,have,millions,of,objects,with,3,__slots__,Is,it,more,memory,efficient,to,have,short,slot,names,like,x,vs,.,long,like,would_you_like_fries_with_that_cheeseburger,?,Or,are,the,names,allocated,only,once,per,class,(,opposed,to,once,per,instance,?,)

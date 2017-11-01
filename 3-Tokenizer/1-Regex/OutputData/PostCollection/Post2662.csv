@@ -1,1 +1,0 @@
-Consider,two,lists,A,and,B,.,I,know,that,list(set(A),-,set(B),),will,give,the,difference,between,A,and,B,.,What,about,the,situation,whereby,elements,in,both,A,and,B,are,lists,.,i.e.,A,and,B,are,list,of,list,?,For,e.g,.,I,wish,to,return,the,difference,A,-,B,as,a,list,of,list,i.e.,[,"[1,2]",",","[5,6]",]

@@ -1,1 +1,0 @@
-It,seems,that,there,is,not,a,native,way,of,doing,this,with,Python,.,Your,best,bet,would,be,to,parse,the,output,of,"""",ipconfig,/,all,"""",on,Windows,",",or,"""",ifconfig,"""",on,Linux,.,Consider,using,os.popen(),with,some,regexps,.
