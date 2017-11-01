@@ -1,0 +1,1 @@
+for,loops,in,MATLAB,used,to,be,slow,",",but,this,is,not,true,anymore,.,So,vectorizing,is,not,always,the,miracle,solution,.,Just,use,the,profiler,",",and,tic,and,toc,functions,to,help,you,identify,possible,bottlenecks,.
