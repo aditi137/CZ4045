@@ -1,1 +1,0 @@
-I,recently,wrote,this,simple,waf,build,script,:,but,the,problem,is,that,the,outputed,solution,file,is,at,the,root,of,the,project,(,where,wscript,is,),;,Would,there,be,a,way,to,generate,the,ide,specific,files,into,another,directory,(,for,instance,",",ide,/,msvs,),?

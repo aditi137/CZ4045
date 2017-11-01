@@ -1,1 +1,0 @@
-numpy.random.shuffle,is,designed,to,work,in-place,meaning,that,it,should,return,None,and,instead,modify,your,array,.

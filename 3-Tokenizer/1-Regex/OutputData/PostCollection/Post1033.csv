@@ -1,1 +1,0 @@
-You,might,want,to,check,INSTALLED_APPS,section,in,you,settings.py,file,.,If,',blog,',",",is,not,added,you,should,consider,adding,.,After,this,you,should,proceed,to,python,manage.py,syncdb,.,Last,step,check,your,urls.py,and,see,if,all,necessary,URL,mapping,exists,.

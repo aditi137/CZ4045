@@ -1,1 +1,0 @@
-Firstly,",",note,that,a,datetime.time,is,a,time,of,day,",",independent,of,a,given,day,",",and,so,the,different,between,any,two,datetime.time,values,is,going,to,be,less,than,24,hours,.,One,approach,is,to,convert,both,datetime.time,values,into,comparable,values,(,such,as,milliseconds,),",",and,find,the,difference,.,It's,a,little,lame,",",but,it,works,.

@@ -1,1 +1,0 @@
-You,are,correct,in,assuming,that,this,will,never,evaluate,to,true,.,This,is,sometimes,done,when,the,programmer,has,a,lot,of,debugging,code,but,does,not,want,to,remove,the,debugging,code,in,a,release,",",so,they,just,put,if,False,:,above,it,all,.

@@ -1,1 +1,0 @@
-Cairo,cannot,render,SVG,out,of,the,box,.,It,seems,we,have,to,use,librsvg,.,Just,found,those,two,pages,:,Rendering,SVG,with,libRSVG,",",Python,and,c-types,How,to,use,librsvg,from,Python,Something,like,this,should,probably,work,(,render,test.svg,to,test.png,),:

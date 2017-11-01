@@ -1,1 +1,0 @@
-reduce,reduces,an,iterable,down,to,a,single,object,",",so,after,this,line,args,is,not,an,iterable,.,This,reduces,args,down,to,a,single,Q,object,that,ORs,all,of,the,items,in,query_word_list,together,.,If,you,want,to,pass,it,using,the,*,syntax,",",you'll,need,to,wrap,it,in,an,iterable,",",i.e.,args,=,(,args,",",),.

@@ -1,1 +1,0 @@
-I've,pointed,setup.py,towards,/,lib,where,my,libz.so,is,.,When,I,then,run,setup.py,install,",",I,get,the,ZLIB,support,confirmed,:,But,then,",",after,install,",",I,still,get,the,error,:

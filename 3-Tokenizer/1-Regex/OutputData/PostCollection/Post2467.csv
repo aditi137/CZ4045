@@ -1,1 +1,0 @@
-I,have,a,class,called,Job,which,has,a,logger,and,jobs,go,off,do,something,and,logs,via,job.logger.info(),but,when,i,have,multiple,jobs,i.e.,thousands,",",it's,throwing,error,I,thought,every,time,I,logged,something,",",it,would,open,then,close,the,file,as,I,have,overwritten,emit(),Is,there,a,pattern,/,ways,to,have,thousands,of,loggers,?

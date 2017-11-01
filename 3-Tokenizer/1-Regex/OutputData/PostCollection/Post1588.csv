@@ -1,1 +1,0 @@
-Say,I,have,a,class,and,I,want,to,make,a,lot,of,similar,"""",property-style,"""",attributes,.,For,example,:,Obviously,there,is,a,lot,of,repetition,here,and,it'd,be,nice,to,factor,that,out,.,One,way,would,be,to,make,a,function,that,returns,a,property,:,Alternatively,I,could,write,a,descriptor,class,:,Which,is,best,/,fastest,/,most,Pythonic,?

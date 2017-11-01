@@ -1,1 +1,0 @@
-I,convert,a,string,to,date,using,pandas,.,When,I,write,the,DF,to,CSV,",",the,date,comes,like,',2016-08-15,instead,of,plain,2016-08-15,.,Unable,to,read,it,as,date,in,ETL,tool.Same,is,the,case,for,all,date,fields,.,Any,suggestion,to,get,the,date,format,correctly,?,df.to_csv('/Users/tcssig/Documents/Sarang.csv')

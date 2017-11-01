@@ -1,1 +1,0 @@
-You,can,use,a,dict,to,store,the,results,you,want,",",and,then,at,the,end,if,you,want,a,list,of,tuples,",",you,can,use,dict.items(),(,Python,3.x,),to,get,that,.,Example,-,You,do,not,need,list(...),at,the,end,if,you,are,using,Python,2.x,.

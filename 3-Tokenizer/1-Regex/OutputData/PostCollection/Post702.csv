@@ -1,1 +1,0 @@
-I,get,two,tables,",",data_table,and,old_data_table,for,example,",",they,contains,exactly,the,same,structure,.,data_table,contains,only,1,month,data,.,say,from,',2011-10-01,',to,now,.,old_data_table,contains,the,rest,data,.,Now,if,I,have,to,query,data,between,day,',2011-09-01,',to,day,',2011-10-07,',",",is,there,a,way,to,query,it,from,both,table,and,combine,results,in,django,?

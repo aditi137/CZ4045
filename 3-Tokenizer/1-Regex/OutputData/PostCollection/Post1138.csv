@@ -1,1 +1,0 @@
-Your,problem,is,that,the,CSV,file,you,are,reading,uses,CR,(,\,r,),newlines,exclusively,;,it,has,nothing,to,do,with,the,vertical,tabs,.,Python,2.x,opens,stdin,without,universal,line,support,(,so,that,binary,files,work,correctly,),.,As,a,workaround,",",you,can,try,this,",",assuming,your,input,is,relatively,small,:

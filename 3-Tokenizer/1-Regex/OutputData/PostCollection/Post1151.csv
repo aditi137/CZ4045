@@ -1,1 +1,0 @@
-When,you,call,pyglet.app.run(),",",you,enter,the,pyglet,loop,and,it,doesn't,come,back,until,the,pyglet,window,is,closed,",",so,your,m.menu(),is,called,only,when,the,pyglet,loop,ends,.,If,you,remove,the,pyglet.app.run,line,from,Main,and,call,it,like,this,:,It,works,.

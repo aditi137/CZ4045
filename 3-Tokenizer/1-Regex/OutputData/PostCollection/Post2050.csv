@@ -1,1 +1,0 @@
-Its,better,to,use,os.getenv('JOB_ID'),instead,of,os.environ,[,',JOB_ID,',],.,Tell,me,how,are,you,setting,the,environment,variable,from,the,command-line,?,For,ex,.,:,you,could,do,this,:

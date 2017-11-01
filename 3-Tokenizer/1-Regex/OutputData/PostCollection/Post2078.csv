@@ -1,1 +1,0 @@
-i,have,a,file,"""",text.txt,"""",that,is,1.1MB,right,now,.,I,want,to,split,it,up,into,50kb,text,files,.,I,would,use,a,loop,if,I,could,readlines(),the,file,",",but,since,it's,one,long,string,",",I'm,not,sure,i,could,do,that,.

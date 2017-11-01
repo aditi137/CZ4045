@@ -1,1 +1,0 @@
-It,looks,like,NumPy,underwent,some,reorganisation,in,recent,years,.,http://www.scipy.org/Numpy_Example_List_With_Doc#fft,FFT,is,now,numpy.fft,",",and,real_fft(),seems,to,be,renamed,into,rfft()

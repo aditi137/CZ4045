@@ -1,1 +1,0 @@
-I'm,confused,as,when,to,exactly,use,assertion,testing,in,my,python,functions,.,If,I,specify,assumptions,regarding,the,input,arguments,to,a,function,",",should,I,assume,that,correct,input,is,being,fed,to,the,function,or,should,I,use,assertions,to,check,the,conditions,on,the,input,args,enumerated,in,the,specification,?

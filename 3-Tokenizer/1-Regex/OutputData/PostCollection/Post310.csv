@@ -1,1 +1,0 @@
-If,you,want,a,pure,Python,solution,",",you,can,take,a,look,at,Scapy,to,craft,packets,(,you,need,to,send,ARP,request,",",and,inspect,replies,),.,Or,if,you,don't,mind,invoking,external,program,",",you,can,use,arping,(,on,Un*x,systems,",",I,don't,know,of,a,Windows,equivalent,),.

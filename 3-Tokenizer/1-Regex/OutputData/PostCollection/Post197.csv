@@ -1,1 +1,0 @@
-I,Don't,know,of,any,cross-platform,way,to,achieve,this,",",but,maybe,a,good,workaround,for,you,would,be,to,write,a,wrapper,class,that,checks,the,operating,system,and,uses,the,best,method,for,each,.,For,Windows,",",there's,the,GetDiskFreeSpaceEx,method,in,the,win32,extensions,.

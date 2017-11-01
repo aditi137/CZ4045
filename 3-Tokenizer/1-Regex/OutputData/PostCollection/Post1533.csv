@@ -1,1 +1,0 @@
-Problem,is,Recursively,calling,the,directory,and,sub,directory,and,pass,it,as,a,string,.,In,line,input_file_list,=,sys.argv,[,1,:,],I,can,pass,the,argument,as,a,single,directory,but,what,I,want,to,pass,all,the,directory,and,sub,directory,Any,suggestion,will,be,greatly,appreciate,.,Thanks,.

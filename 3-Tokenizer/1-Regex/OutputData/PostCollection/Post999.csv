@@ -1,1 +1,0 @@
-There,is,nothing,wrong,with,your,current,approach,.,time_diff,is,written,to,once,only,and,then,all,future,accesses,are,reads,.,It,effect,it,is,a,module,wide,constant,.,You,run,into,problems,with,shared,global,state,when,you,have,multiple,threads,accessing,an,object,and,at,least,one,of,the,threads,is,writing,.,That's,not,happening,here,and,you,have,nothing,to,be,concerned,about,.

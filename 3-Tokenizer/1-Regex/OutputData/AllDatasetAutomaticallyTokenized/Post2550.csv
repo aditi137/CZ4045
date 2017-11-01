@@ -1,0 +1,14 @@
+Instead
+of
+"default=""None"
+""""
+","
+specify
+null=True
+to
+allow
+null
+for
+foreign
+key
+:

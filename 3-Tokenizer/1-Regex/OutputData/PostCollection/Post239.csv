@@ -1,1 +1,0 @@
-Well,",",there,actually,is,a,length,method,",",it,is,just,hidden,:,The,len(),built-in,function,appears,to,be,simply,a,wrapper,for,a,call,to,the,hidden,len(),method,of,the,object,.,Not,sure,why,they,made,the,decision,to,implement,things,this,way,though,.

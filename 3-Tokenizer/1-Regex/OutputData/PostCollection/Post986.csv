@@ -1,1 +1,0 @@
-Your,original,regex,is,too,greedy,:,r,',.,*,\,],',won't,stop,at,the,first,',],',and,the,second,',.,*,',won't,stop,at,',"""",',.,To,stop,at,c,you,could,use,[,^,c,],or,',.,*,?,',:,Example

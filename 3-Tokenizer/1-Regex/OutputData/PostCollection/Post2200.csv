@@ -1,1 +1,0 @@
-Have,you,consider,using,Unix,Epoch,Time,instead,of,a,date,formatted,in,a,lesser,manner,?,There,is,a,well,documented,answer,for,converting,to,Unix,Time,",",and,dealing,with,the,sort,of,offset,in,the,question,seems,like,it,would,be,a,lot,easier,as,sliding,ranges,are,simpler,to,implement,with,a,more,or,less,continuous,sequence,of,real,numeric,values,.

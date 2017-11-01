@@ -1,1 +1,0 @@
-A,simple,solution,:,scan,lines,from,top,down,",",bottom,up,",",left-right,and,right-left,.,Terminate,when,the,number,of,dark,pixels,in,the,line,exceeds,50,%,of,the,total,amount,of,pixels,in,the,line,.,This,will,give,you,the,xmin,",",xmax,",",ymin,",",ymax,coordinates,to,bound,your,cropping,rectangle,.

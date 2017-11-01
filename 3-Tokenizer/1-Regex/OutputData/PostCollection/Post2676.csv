@@ -1,1 +1,0 @@
-In,python,I,have,2,three,dimensional,arrays,:,T,with,size,(,n,",",n,",",n,),U,with,size,(,k,",",n,",",n,),T,and,U,can,be,seen,as,many,2-D,arrays,one,next,to,the,other,.,I,need,to,multiply,all,those,matrices,",",ie,I,have,to,perform,the,following,operation,:,As,n,might,be,very,big,I,am,wondering,if,this,operation,could,be,in,some,way,speed,up,with,numpy,.

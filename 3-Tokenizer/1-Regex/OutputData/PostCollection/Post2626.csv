@@ -1,1 +1,0 @@
-You,need,to,remove,the,strip,=,True,parameter,to,get_text,.,That,strips,the,string,resulting,in,the,joined,output,you,see,.,By,removing,it,:,It,prints,fine,.

@@ -1,1 +1,0 @@
-I,have,a,class,which,returns,json,I,want,to,create,Tastypie,Model,Resource,based,on,the,returned,Json,I,tried,the,Below,Url,this,worked,but,i,dont,want,to,declare,fields,it,should,be,dynamic,http://thehungrycoder.com/python/using-non-orm-data-sources-with-tastypie-in-django.html

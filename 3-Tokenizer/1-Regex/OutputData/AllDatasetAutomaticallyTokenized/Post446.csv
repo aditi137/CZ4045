@@ -1,0 +1,14 @@
+This
+quotes
+only
+the
+path
+component
+.
+Otherwise
+","
+you
+could
+do
+:
+"urllib.quote(url, safe="":/"")"

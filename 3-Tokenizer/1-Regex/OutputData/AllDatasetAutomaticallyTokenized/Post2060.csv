@@ -1,0 +1,17 @@
+You
+could
+achieve
+it
+by
+using
+keyword
+arguments
+in
+python
+(
+*
+*
+kwargs
+)
+.
+https://docs.python.org/2/tutorial/controlflow.html#keyword-arguments

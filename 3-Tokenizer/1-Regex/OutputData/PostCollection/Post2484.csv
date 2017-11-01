@@ -1,1 +1,0 @@
-In,the,context,of,Django,",",record,level,operations,are,those,that,on,a,single,records,.,An,example,is,when,you,define,custom,methods,in,a,model,:,Table,level,operations,are,those,that,act,on,a,set,of,records,and,an,example,of,these,are,when,you,define,a,ModelManager,for,a,class,:,PS,:,I,took,these,examples,from,django,documentation,.

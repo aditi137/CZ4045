@@ -1,1 +1,0 @@
-You,store,a,new,string,based,on,the,money,variable,in,the,budget,Label,;,the,label,doesn't,keep,a,reference,to,the,money,variable,for,you,.,Simply,set,the,label,value,each,time,you,call,your,addMoney,function,:

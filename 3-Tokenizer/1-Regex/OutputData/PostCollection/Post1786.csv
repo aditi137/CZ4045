@@ -1,1 +1,0 @@
-Do,you,have,the,tools,available,to,do,an,"""",explain,"""",on,your,query,:,to,see,what,(,if,any,),indexes,your,sql,query,is,using,.,if,your,sql,query,is,resulting,in,a,full,table,scan,over,670K,rows,",",then,it,could,be,slowish,.,if,you,are,using,ubuntu,or,a,similiar,based,linux,distribution,",",Sqliteman,will,do,this,for,you,.

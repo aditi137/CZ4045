@@ -1,1 +1,0 @@
-Here's,a,simplified,version,of,@Vinko,Vrsalovic's,answer,:,NOTE,:,soup.title,finds,the,first,title,element,anywhere,in,the,html,document,title.string,assumes,it,has,only,one,child,node,",",and,that,child,node,is,a,string,For,beautifulsoup,4.x,",",use,different,import,:

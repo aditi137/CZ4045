@@ -1,1 +1,0 @@
-I'm,running,Django,1.0,and,I'm,close,to,deploying,my,app,.,As,such,",",I'll,be,changing,the,DEBUG,setting,to,False,.,With,that,being,said,",",I'd,still,like,to,include,the,stacktrace,on,my,500.html,page,when,errors,occur,.,By,doing,so,",",users,can,copy-and-paste,the,errors,and,easily,email,them,to,the,developers,.,Any,thoughts,on,how,best,to,approach,this,issue,?

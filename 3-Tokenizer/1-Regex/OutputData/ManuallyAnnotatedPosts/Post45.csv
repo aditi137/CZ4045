@@ -1,1 +1,0 @@
-The,wb,in,"open('test.mp3','wb')",opens,a,file,(,and,erases,any,existing,file,),in,binary,mode,so,you,can,save,data,with,it,instead,of,just,text,.

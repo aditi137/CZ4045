@@ -1,0 +1,12 @@
+Use
+shutil.copytree
+to
+copy
+the
+entire
+directory
+to
+a
+new
+location
+.

@@ -1,1 +1,0 @@
-Either,use,pickle,as,suggested,or,coerce,the,object,to,a,str,",",which,is,what,write,is,expecting,.,Note,",",if,you,decide,to,coerce,to,a,str,and,want,to,recover,the,object,",",you'll,need,to,overwrite,__str__,in,the,object,you,are,serializing,to,output,enough,data,to,reconstruct,the,object,.

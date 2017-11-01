@@ -1,1 +1,0 @@
-The,blog,post,linked,by,@VPfB,in,the,comments,has,a,more,generic,and,thorough,solution,to,proxying,dunder,methods,for,builtin,types,",",but,here's,a,simplified,and,rather,brutish,example,for,the,same,.,I,hope,it,helps,in,understanding,how,to,create,such,forwarding,methods,.

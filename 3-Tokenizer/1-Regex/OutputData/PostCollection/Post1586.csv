@@ -1,1 +1,0 @@
-I,am,not,happy,with,the,static,way,TestCase.tearDown(),works,.,Sometimes,I,create,stuff,during,an,unittest,which,I,want,to,be,cleaned,up,later,",",and,I,don't,know,in,advance,what,needs,to,be,cleaned,up,later,.,Is,it,possible,to,add,closures,to,a,tear_down_list,which,get,executed,in,tearDown(),?

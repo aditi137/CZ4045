@@ -1,1 +1,0 @@
-I'm,doing,some,experimenting,with,Python,args,and,kwargs,and,ran,into,an,unexpected,issue,.,My,code,is,:,The,output,is,:,If,the,args,and,kwargs,loops,are,separate,",",I,would,expect,to,see,:,Why,is,python,behaving,this,way,?,It,looks,like,it's,running,one,iteration,at,a,time,from,each,loop,",",instead,of,all,iterations,from,each,loop,before,moving,to,the,next,.

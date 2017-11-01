@@ -1,1 +1,0 @@
-I'm,wondering,whether,there,is,a,Pythonic,way,to,compute,the,means,and,variances,of,Counters,?,For,example,",",I,have,four,Counters,sharing,the,same,keys,:,My,way,to,do,that,is,:,I,could,use,the,following,code,to,find,the,mean,/,variance,for,each,key,:,Is,there,an,easier,way,to,compute,the,mean,/,variance,for,each,key,compared,to,my,way,?

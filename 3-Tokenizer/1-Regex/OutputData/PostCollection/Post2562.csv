@@ -1,1 +1,0 @@
-Since,you,skipped,the,code,of,your,function,it's,hard,to,say,what's,wrong,.,But,I,suspect,that,you,just,don't,catch,GET,parameters,correctly,.,To,do,this,you,can,either,use,variable,rules,with,dynamic,name,component,in,your,route,;,or,access,parameters,submitted,in,the,URL,with,request.args.get,.,Here's,a,minimal,example,showing,boths,methods,:

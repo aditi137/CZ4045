@@ -1,1 +1,0 @@
-You're,reading,in,2048,byte,at,once,",",which,put,the,reading,cursor,in,the,middle,of,a,line,.,In,the,next,read,",",the,rest,of,that,line,is,discard,because,it,doesn't,start,with,a,tag,.,Instead,of,rolling,your,own,parser,",",consider,using,iterparse,.,An,even,faster,version,of,iterparse,is,included,with,lxml,Here's,an,example

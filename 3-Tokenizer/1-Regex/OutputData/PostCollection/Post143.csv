@@ -1,1 +1,0 @@
-For,small,files,you,may,need,to,had,this,lines,in,order,to,avoid,crazy,percentages,:,"sys.stdout.write(""\r%2d%%"" % percent)",sys.stdout.flush(),Cheers

@@ -1,1 +1,0 @@
-First,",",I,think,you,want,lst.append(word),to,only,append,a,word,if,not,in,the,list,already,.,You,have,lst.append(words),.,That,is,wrong,.,Second,",",to,sort,just,use,lst.sort()

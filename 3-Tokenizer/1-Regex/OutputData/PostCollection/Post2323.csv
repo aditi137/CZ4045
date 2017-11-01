@@ -1,1 +1,0 @@
-You,need,to,check,the,return,from,wxFileDialog::ShowModal,.,It,will,be,wxID_OK,if,the,user,pressed,OK,",",and,wxID_CANCEL,otherwise,.,http://docs.wxwidgets.org/trunk/classwx_file_dialog.html#a04943e4abb27a197a110898d40ddb4f0

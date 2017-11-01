@@ -1,1 +1,0 @@
-I,disagree,with,@rvinas,answer,",",you,don't,need,to,create,a,Variable,to,hold,the,value,of,a,tensor,you,want,to,retrieve,.,You,can,just,use,graph.get_tensor_by_name,with,the,correct,name,to,retrieve,your,tensor,:,Now,you,want,to,recreate,the,same,scope,and,get,back,a,and,b,.,For,b,",",you,don't,even,need,to,be,in,the,scope,",",you,just,need,the,exact,name,of,b,.

@@ -1,1 +1,0 @@
-I've,always,had,good,results,with,lxml,.,It's,a,pain,to,install,",",as,it's,mostly,a,wrapper,around,libxml2,",",but,lxml.etree,tree,objects,have,a,.,write(),method,that,takes,a,file-like,object,to,stream,to,.

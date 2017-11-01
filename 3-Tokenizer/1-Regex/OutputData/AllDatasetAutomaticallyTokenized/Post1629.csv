@@ -1,0 +1,19 @@
+may
+be
+u
+can
+try
+using
+"re.split('your patter, string)"
+","
+which
+should
+give
+you
+proper
+list
+based
+on
+your
+regex
+.

@@ -1,1 +1,0 @@
-If,the,issue,is,that,your,class,methods,are,not,able,to,be,pickled,",",then,you,might,try,dill,.,It,typically,can,pickle,class,instances,",",class,methods,",",and,instance,methods,.

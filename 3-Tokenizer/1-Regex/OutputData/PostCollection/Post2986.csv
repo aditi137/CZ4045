@@ -1,1 +1,0 @@
-I,have,loaded,the,below,CSV,file,containing,code,and,coefficient,data,into,the,below,dataframe,df,:,giving,From,the,above,dataframe,",",I,need,to,create,a,final,dataframe,as,below,which,has,a,matrix,structure,with,the,product,of,the,coefficients,:,I,am,using,np.multiply,but,I,am,not,successful,in,producing,the,result,.

@@ -1,0 +1,21 @@
+You
+must
+tell
+numpy
+to
+return
+the
+values
+as
+integers
+To
+print
+out
+zerosThenOnes
+like
+this
+"[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1]"
+Use
+:
+Numpy
+Zeros

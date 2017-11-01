@@ -1,1 +1,0 @@
-Given,a,list,l,and,all,combinations,of,the,list,elements,is,it,possible,to,remove,any,combination,containing,x,while,iterating,over,all,combinations,",",so,that,you,never,consider,a,combination,containing,x,during,the,iteration,after,it,is,removed,?,My,list,l,is,pretty,big,so,I,don't,want,to,keep,the,combinations,in,memory,.

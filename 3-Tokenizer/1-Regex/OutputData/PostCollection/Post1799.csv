@@ -1,1 +1,0 @@
-I,need,to,get,a,negotiated,cipher,for,DTLS,protocol,in,pyOpenSSL,.,I,was,successful,in,doing,that,for,TCP,sockets,",",but,when,it,comes,to,datagrams,",",it's,not,that,obvious,.,Please,provide,an,example,either,in,C,or,Python,.,This,is,what,I've,tried,so,far,:,The,printed,result,is,(,None,)

@@ -1,0 +1,16 @@
+You
+can
+use
+the
+subprocess
+PIPE
+to
+capture
+the
+stdout
+and
+stderr
+","
+like
+so
+:

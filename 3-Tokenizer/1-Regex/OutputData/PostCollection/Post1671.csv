@@ -1,1 +1,0 @@
-You,need,to,create,an,instance,of,the,model,class,(,Publisher,in,this,case,),",",instantiate,it,with,the,appropriate,values,(,name,and,address,),and,then,call,save(),",",which,composes,the,appropriates,SQL,INSERT,statement,under,the,hood,.,I,recommend,you,read,the,model,docs,.

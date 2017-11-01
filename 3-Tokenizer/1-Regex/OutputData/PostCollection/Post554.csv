@@ -1,1 +1,0 @@
-python's,time,module,seems,a,little,haphazard,.,For,example,",",here,is,a,list,of,methods,in,there,",",from,the,docstring,:,Looking,at,localtime(),and,its,inverse,mktime(),",",why,is,there,no,inverse,for,gmtime(),?,Bonus,questions,:,what,would,you,name,the,method,?,How,would,you,implement,it,?

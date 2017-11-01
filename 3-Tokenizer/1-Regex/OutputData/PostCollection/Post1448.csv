@@ -1,1 +1,0 @@
-Did,you,activate,virtualenv,and,installed,flask,?,flask,should,have,sqlite3,by,default,.,I,got,following,error,though,:,To,fix,that,I,had,to,do,the,following,(,in,Windows,),:,Change,DATABASE,=,',/,tmp,/,flaskr.db,',to,DATABASE,=,',.,\,\,tmp\\flaskr.db,',Create,tmp,folder,in,current,folder,(,flaskr,),Create,an,empty,flaskr.db,file,in,tmp,After,that,it's,working,for,me,.

@@ -1,1 +1,0 @@
-Try,using,an,tuple,(,var1,",",var2,),or,(,var,",",),instead,of,a,list,"[var1, var2]",",",or,convert,the,lists,to,tuples,before,sending,printing,tuple([var]),.

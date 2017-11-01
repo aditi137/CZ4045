@@ -1,1 +1,0 @@
-Seemingly,the,most,compact,(,6,symbols,),though,very,slow,way,to,get,a,set,element,(,made,possible,by,PEP,3132,),:,With,Python,3.5,+,you,can,also,use,this,7-symbol,expression,(,thanks,to,PEP,448,),:,Both,options,are,roughly,1000,times,slower,on,my,machine,than,for-loop,method,.

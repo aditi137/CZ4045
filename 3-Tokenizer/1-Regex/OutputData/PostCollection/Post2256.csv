@@ -1,1 +1,0 @@
-Your,render,is,not,considered,if,you,do,not,return,a,value,for,renderer,but,return,a,response,or,exception,-,so,do,not,expect,json,on,the,output,unless,your,error,handler,supports,that,.,You,can,do,something,like,this,instead,:,And,then,you,can,retrieve,the,JSON,in,your,error,handler,and,use,angular.fromJson(),to,read,it,.

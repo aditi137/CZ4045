@@ -1,1 +1,0 @@
-Found,the,issue,myself,!,The,error,is,in,the,os.rename,syntax,.,by,doing,:,The,output,of,"os.path.join(imageFolder, currentLanguage)",is,IMAGES\REF_IMAGES\-FR,and,not,IMAGES\REF_IMAGES-FR,as,I,expected,The,syntax,I,use,now,is,:,Thanks,to,Mayk,who,lead,me,on,it,actually,.

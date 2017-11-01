@@ -1,1 +1,0 @@
-I,have,a,textCTRL,(,Wxpython,),with,event,binding,to,it,:,I,want,to,manually,trigger,this,event,as,I,wish,.,I,read,this,topic,:,wxPython,:,Calling,an,event,manually,but,nothing,works,.,I,tried,:,But,it,gives,:,TypeError,:,in,method,',PostEvent,',",",expected,argument,2,of,type,',wxEvent,&,',I,also,tried,:,Which,doesn't,work,as,well,.

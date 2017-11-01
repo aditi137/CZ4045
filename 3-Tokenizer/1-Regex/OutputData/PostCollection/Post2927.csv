@@ -1,1 +1,0 @@
-I,am,trying,to,list,all,the,functions,in,every,encountered,module,to,enforce,the,writing,of,test,cases,.,However,",",I,am,having,issues,doing,this,with,just,the,fullpath,to,the,file,as,a,string,and,not,importing,it,.,When,I,use,"inspect.getmembers(fullpath, inspect.isfunction)",it,returns,an,empty,array,.,Is,there,any,way,to,accomplish,this,?,Here,is,my,code,so,far,:

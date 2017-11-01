@@ -1,1 +1,0 @@
-It's,not,that,I,think,the,following,is,more,readable,than,what,you,have,",",but,it,only,uses,list,comprehensions,.,Say,you,have,Then,a,dictionary,of,the,mean,can,be,found,with,For,the,variance,",",note,that,",",by,the,definition,of,variance,V,[X],=,E,[x2],-,(,E,[X],),2,",",so,",",if,you,define,:,then,the,variance,dictionary,is

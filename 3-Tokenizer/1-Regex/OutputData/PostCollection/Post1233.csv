@@ -1,1 +1,0 @@
-This,happens,because,you,put,a,slash,at,the,end,of,the,filename,.,The,trailing,slash,causes,the,OS,to,follow,the,link,",",so,that,the,result,is,the,target,directory,which,is,not,a,link,.,If,you,remove,the,slash,",",islink,will,return,True,.,The,same,thing,happens,in,Bash,as,well,:

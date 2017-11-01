@@ -1,1 +1,0 @@
-A,side-note,:,The,proposed,solution,(,distutils.sysconfig.get_python_lib(),),does,not,work,when,there,is,more,than,one,site-packages,directory,(,as,recommended,by,this,article,),.,It,will,only,return,the,main,site-packages,directory,.,Alas,",",I,have,no,better,solution,either,.,Python,doesn't,seem,to,keep,track,of,site-packages,directories,",",just,the,packages,within,them,.

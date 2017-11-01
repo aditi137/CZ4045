@@ -1,1 +1,0 @@
-What,you,need,is,to,use,when,and,otherwise,.,By,the,way,you,don't,have,to,create,that,UDF,.,If,you,really,need,to,call,that,function,",",you,can,simply,replace,"col(""id"")",+,1,by,"yourUDF(col(""id"")",)

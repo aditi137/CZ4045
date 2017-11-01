@@ -1,1 +1,0 @@
-You,use,range(4),.,So,it,will,always,look,for,4,numbers,.,So,when,there,are,only,three,numbers,it,will,still,look,for,a,fourth,one,.,The,fourth,one,doesn't,exist,so,it,throws,an,error,.,Instead,you,need,to,see,what,the,lenght,of,the,list,is,and,then,iterate,over,that,lenght,.,Like,this,:,Or,even,simpler,you,can,iterate,over,a,list,like,this,:

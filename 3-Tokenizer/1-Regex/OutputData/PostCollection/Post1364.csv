@@ -1,1 +1,0 @@
-I,am,making,a,pyramid,webapp,running,in,apache,webserver,using,mod_wsgi,.,Is,there,anyway,I,could,make,user,session,never,timed,out,?,(,The,idea,is,so,that,once,user,logged,in,",",the,system,will,never,kicked,them,out,unless,they,logged,out,themselves,),.,I,cant,find,any,information,regarding,this,in,apache,",",mod_wsgi,or,pyramid,documentation,.,Thanks,!

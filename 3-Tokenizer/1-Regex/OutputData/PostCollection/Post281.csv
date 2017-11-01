@@ -1,1 +1,0 @@
-I,use,CherryPy,as,my,web,server,(,which,comes,bundled,with,Turbogears,),",",and,I,simply,run,multiple,instances,of,the,CherryPy,web,server,on,different,ports,bound,to,localhost,.,Then,I,configure,Apache,with,mod_proxy,and,mod_rewrite,to,transparently,forward,requests,to,the,proper,port,based,on,the,HTTP,request,.

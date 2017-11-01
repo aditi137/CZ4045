@@ -1,1 +1,0 @@
-To,enter,text,into,an,input,box,with,Selenium,(,e.g,",",your,user,name,into,the,username,field,),",",use,the,send_keys,method,of,the,element,:,You,can,also,try,Selenium's,action_chains,module,",",as,in,the,following,code,(,untested,),",",to,get,past,the,roadblock,from,@dm295's,answer,:

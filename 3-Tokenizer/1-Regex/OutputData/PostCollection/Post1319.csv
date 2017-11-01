@@ -1,1 +1,0 @@
-In,the,first,case,",",you're,passing,a,string,",",so,for,status,in,statuses,iterates,over,the,string,",",character,by,character,",",which,is,not,what,you,want,.,In,the,second,case,",",you're,passing,a,list,",",so,for,status,in,statuses,iterates,over,its,elements,",",first,element,being,"""",1,",",Some,summary,"""",.

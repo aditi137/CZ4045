@@ -1,1 +1,0 @@
-Looking,at,the,console,",",your,.,py,file,is,also,called,tensorflow,",",so,when,you,do,import tensorflow,as,tf,",",you,end,up,trying,to,import things,from,the,same,file,.,Rename,your,own,file,to,something,else,",",such,as,tensorflow_test_1.py,or,whatnot,.,:,)

@@ -1,1 +1,0 @@
-Open,the,file,",",set,up,a,byte,range,to,iterate,through,",",then,seek(),to,that,location,",",read(),in,the,content,",",and,",",if,there,was,content,",",write,it,to,a,new,file,.,If,there's,no,content,",",break,out,of,the,loop,.

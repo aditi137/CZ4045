@@ -1,1 +1,0 @@
-What,others,have,said,about,not,doing,circular,imports,is,the,best,solution,",",but,if,you,end,up,absolutely,needing,them,",",it's,usually,within,just,one,method,or,function,of,one,of,the,modules,.,Thus,you,can,safely,do,this,:,There's,a,slight,overhead,to,doing,the,import each,time,the,function,is,called,",",but,it,is,rather,low,unless,it's,called,all,the,time,.

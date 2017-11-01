@@ -1,1 +1,0 @@
-You,don't,need,the,db.Blob,for,ndb,-,just,use,self.profile_photo,=,image,.,Here's,a,very,quick,example,:

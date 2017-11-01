@@ -1,1 +1,0 @@
-By,default,",",Python,won't,import modules,from,the,current,working,directory,.,There's,2,(,maybe,more,),solutions,for,this,:,which,tells,python,to,look,for,modules,to,import in,.,",",or,:,which,modifies,the,import path,on,runtime,",",adding,the,directory,of,the,',current,',file,.

@@ -1,1 +1,0 @@
-I'm,using,gevent,to,build,a,server,which,do,some,redis,stuff,and,return,the,result,to,client,.,But,the,performance,is,bad,.,After,some,research,I,found,that,there,is,only,one,connection,to,redis,.,It,looks,like,there,is,only,one,greenlet,spawned,.,Here,is,my,program,:,Is,there,something,wrong,with,my,program,?,Why,there,is,only,one,connection,to,redis,?

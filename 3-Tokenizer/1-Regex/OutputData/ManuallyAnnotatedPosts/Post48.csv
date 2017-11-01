@@ -1,1 +1,0 @@
-I,agree,with,Corey,",",urllib,2,is,more,complete,than,urllib,and,should,likely,be,the,module,used,if,you,want,to,do,more,complex,things,",",but,to,make,the,answers,more,complete,",",urllib,is,a,simpler,module,if,you,want,just,the,basics,:,Will,work,fine,.,Or,",",if,you,don't,want,to,deal,with,the,"""",response,"""",object,you,can,call,read(),directly,:

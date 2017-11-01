@@ -1,1 +1,0 @@
-You,initialize,Your,arg,variable,in,case,when,request.method,is,different,than,',POST,',.,To,avoid,this,error,initialize,arg,variable,at,the,top,of,method,.,Generally,@daniel-roseman,explain,it,very,well,.

@@ -1,1 +1,0 @@
-Is,manual,construction,acceptable,?,If,you,subtract,the,two,datetimes,you'll,get,a,timedelta,object,.,Then,just,grab,the,values,from,that,:
