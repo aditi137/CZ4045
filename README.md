@@ -32,25 +32,25 @@ Copy the query from terminal to query for answer posts. Download result csv, ren
 
 In details, the following files should be run:
 
-* Task 1: Collect and process data: 1-DataCollection/process_data.py
+* Task 1: Collect and process data: `1-DataCollection/process_data.py`
+* Task 2.1: Copy and overwrite the output csv file from Task 1, `posts.csv` in `1-DataCollection/OutputData` to:
 
-* Task 2.1: Copy and overwrite the output csv file from Task 1, "posts.csv" in 1-DataCollection/OutputData to:
+```
 2-DataAnalysisAndAnnotation/1-Stemming/InputData
 2-DataAnalysisAndAnnotation/2-POSTagging/InputData 
 2-DataAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/
-* Task 2.2: Stemming: 2-DataAnalysisAndAnnotation/1-Stemming/stemming.py
-* Task 2.3: POSTagging: 2-DataAnalysisAndAnnotation/2-POSTagging/pos-tagging.py
-* Task 2.4.: Annotate posts: first run 2-DataAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/postSelector.py to generate a csv file contain 100 posts to be annotated, then run annotation.py (same folder) to create the first version of annotation. 
-* Task 2.5: Perform manual annotation on the output file "annotatedPosts.csv" in 2-DataAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/OutputData
+```
 
-* Task 3.1: Copy and overwrite the output csv file "posts.csv" in 1-DataCollection/OutputData to 3-Tokenizer/1-Regex/InputData
-* Task 3.2: Tokenize: run 3-Tokenizer/1-Regex/tokenizer.py
-
-* Task 4.1: Copy and overwrite the output csv file "allTokenizedPosts.csv" in 3-Tokenizer/1-Regex/OutputData to 4-FurtherAnalysis/1-IrregularTokens/InputData
-* Task 4.2: Irregular Tokens: run 4-FurtherAnalysis/1-IrregularTokens/irregularTokens.py
-* Task 4.3: Customized POSTagging: run 4-FurtherAnalysis/1-IrregularTokens/pos_tagging.py
-
-* Task 5: Negation Detection: run 5-NegationExpressionDetection/negationDetection.py
+* Task 2.2: Stemming: `2-DataAnalysisAndAnnotation/1-Stemming/stemming.py`
+* Task 2.3: POSTagging: `2-DataAnalysisAndAnnotation/2-POSTagging/pos-tagging.py`
+* Task 2.4.: Annotate posts: first run `2-DataAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/postSelector.py` to generate a csv file contain 100 posts to be annotated, then run `annotation.py` (same folder) to create the first version of annotation. 
+* Task 2.5: Perform manual annotation on the output file `annotatedPosts.csv` in `2-DataAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/OutputData`
+* Task 3.1: Copy and overwrite the output csv file `posts.csv` in `1-DataCollection/OutputData` to `3-Tokenizer/1-Regex/InputData`
+* Task 3.2: Tokenize: run `3-Tokenizer/1-Regex/tokenizer.py`
+* Task 4.1: Copy and overwrite the output csv file `allTokenizedPosts.csv` in `3-Tokenizer/1-Regex/OutputData` to `4-FurtherAnalysis/1-IrregularTokens/InputData`
+* Task 4.2: Irregular Tokens: run `4-FurtherAnalysis/1-IrregularTokens/irregularTokens.py`
+* Task 4.3: Customized POSTagging: run `4-FurtherAnalysis/1-IrregularTokens/pos_tagging.py`
+* Task 5: Negation Detection: run `5-NegationExpressionDetection/negationDetection.py`
 
 2- Explanations of sample output obtained from your system: 
 Explanations are included in the report.
