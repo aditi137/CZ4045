@@ -1,4 +1,4 @@
-##LIST OF THIRD-PARTY LIBRARIES USED
+## LIST OF THIRD-PARTY LIBRARIES USED
 For installation of below libraries use command from terminal:
 
 `$ pip install <pkg_name>`
@@ -14,12 +14,12 @@ You can also make use of the requirements.txt file in the root of the source cod
 
 `$ pip install -U -r requirements.txt`
 
-##DATASETS 
+## DATASETS 
 * Link to download posts for analysis: https://github.com/aditi137/CZ4045/blob/master/1-DataCollection/OutputData/posts.csv
 * Link to download selected posts for annotation: https://github.com/aditi137/CZ4045/blob/master/2-DatasetAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/OutputData/selectedPosts.csv
 * Link to download selected posts manually annotated: https://github.com/aditi137/CZ4045/tree/master/2-DatasetAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/OutputData/ManuallyAnnotatedPosts
 
-##APPLICATION GUIDE 
+## APPLICATION GUIDE 
 1- Project Setup:
 
 * This application runs with the Python 2.7.x interpreter. Add the path of your local python.exe installation to your system PATH variable. Please ensure you have the correct Python version and all dependent libraries (listed above) installed. For every task, the needed data for the scripts are stored in corresponding InputData folder and output results are stored in OutputData folder.
