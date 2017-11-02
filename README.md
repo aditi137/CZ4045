@@ -35,9 +35,9 @@ In details, the following files should be run:
 * Task 1: Collect and process data: 1-DataCollection/process_data.py
 
 * Task 2.1: Copy and overwrite the output csv file from Task 1, "posts.csv" in 1-DataCollection/OutputData to:
-* 2-DataAnalysisAndAnnotation/1-Stemming/InputData
-* 2-DataAnalysisAndAnnotation/2-POSTagging/InputData 
-* 2-DataAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/
+2-DataAnalysisAndAnnotation/1-Stemming/InputData
+2-DataAnalysisAndAnnotation/2-POSTagging/InputData 
+2-DataAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/
 * Task 2.2: Stemming: 2-DataAnalysisAndAnnotation/1-Stemming/stemming.py
 * Task 2.3: POSTagging: 2-DataAnalysisAndAnnotation/2-POSTagging/pos-tagging.py
 * Task 2.4.: Annotate posts: first run 2-DataAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/postSelector.py to generate a csv file contain 100 posts to be annotated, then run annotation.py (same folder) to create the first version of annotation. 
