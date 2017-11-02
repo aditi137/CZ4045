@@ -1,71 +1,47 @@
-# CZ4045
-## Natural Language Processing - To Do List
+##LIST OF THIRD-PARTY LIBRARIES USED
+For installation of below libraries use command from terminal:
 
-### <b>Dataset Collection (10 marks)</b> 
-- Dataset needs to contain 500 threads of discussion
-- All threads need to pertain to one particular Programming Language
-- Each selected thread should have at least two posts. A post can be either a question or an answer.
+`$ pip install <pkg_name>`
 
-<b>For the report:</b>
-- Document how the dataset was collected and justify it satisﬁes the three conditions 
-- Show the statistics of the dataset:
-- Number of questions
-- Number of answers
-- Distribution of the answers (e.g percentage of questions having one, two, or more answers) 
-- Length of the posts in number of words (using an off-the-shelf tokenizer).
-          
+* nltk: http://www.nltk.org 
+* numpy: http://www.numpy.org/ 
+* pandas: http://pandas.pydata.org  
+* beautifulsoup4: https://www.crummy.com/software/BeautifulSoup 
+* matplotlib: https://matplotlib.org 
+* lxml: http://lxml.de 
 
-### <b> Dataset Analysis and Annotation (30 marks) </b>
-- Stemming of the dataset using an off-the-shelf toolkit
-- Identify the top-20 most frequent words(excluding stop words) before and after performing stemming.
-- List the original words of the top-20 most frequent stems
+You can also make use of the requirements.txt file in the root of the source code:
 
-- POS Tagging of 10 randomly selected from the dataset 
-- Deﬁne tokens in the context of Stack Overﬂow discussion. 
+`$ pip install -U -r requirements.txt`
 
-- Randomly select at least 100 posts, and then annotate the sentences based on your token deﬁnition. 
-The annotated dataset will be used as ground truth in the next section. You may use http://brat.nlplab.org/ for your annotation task.
+##DATASETS 
+* Link to download posts for analysis: https://github.com/aditi137/CZ4045/blob/master/1-DataCollection/OutputData/posts.csv
+* Link to download selected posts for annotation: https://github.com/aditi137/CZ4045/blob/master/2-DatasetAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/OutputData/selectedPosts.csv
+* Link to download selected posts manually annotated: https://github.com/aditi137/CZ4045/tree/master/2-DatasetAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/OutputData/ManuallyAnnotatedPosts
 
-<b>For the report:</b>
-- Show and discuss results
+##APPLICATION GUIDE 
+1- Project Setup:
 
+* This application runs with the Python 2.7.x interpreter. Add the path of your local python.exe installation to your system PATH variable. Please ensure you have the correct Python version and all dependent libraries (listed above) installed. For every task, the needed data for the scripts are stored in corresponding InputData folder and output results are stored in OutputData folder.
+* Please download all of the above datasets before proceeding to the execution step. Detailed download instruction:
+Go to https://data.stackexchange.com/stackoverflow/query/new
+Use query 1 in Queries file under 1-DataCollection folder to find the data for question posts only. Download result csv file, rename to questions.csv and put under 1-DataCollection/InputData
+Run 1-DataCollection/create_queries.py to create a query for answer posts
+Copy the query from terminal to query for answer posts. Download result csv, rename to answers.csv and put under 1-DataCollection/InputData 
+* Execute below command from terminal to run individual .py files: `$ python <dir_name/file_name>`
 
-### <b>Tokenizer (30 marks)</b> 
-- Tokenize all sentences in your dataset
-- Either use regular expression or CRF(do not create your own, use a library)
-- If regular expressions are not used, use a cross validation to evaluate the effectiveness of the tokenzier used (K-fold cross validation is mentioned in the assignment document)
-- If you use regular expressions, you can evaluate the results based on the 100 annotated posts. 
+In details, the following files should be run:
 
-<b>For the report:</b>
-- If CRF is used, report the Precision, Recall, and F1 of your model
-- Analysis of the errors (e.g., case studies on false positives and false negatives).
+* Task 1: Collect and process data: 1-DataCollection/process_data.py
+* Task 2.1: Stemming: 2-DataAnalysisAndAnnotation/1-Stemming/stemming.py
+* Task 2.2: POSTagging: 2-DataAnalysisAndAnnotation/2-POSTagging/pos-tagging.py
+* Task 2.3.: Annotate posts: first run 2-DataAnalysisAndAnnotation/3-TokenDefinitionAndAnnotation/postSelector.py to generate a csv file contain 100 posts to be annotated, then run annotation.py (same folder) to create the first version of annotation. Then manual work is done to create final annotation
+* Task 3: Tokenize: run 3-Tokenizer/tokenizer.py
+* Task 4.1: Irregular token: run 4-FurtherAnalysis/1-IrregularTokens/irregularTokens.py
+* Task 4.2: Customized POSTagging: run 4-FurtherAnalysis/1-IrregularTokens/pos_tagging.py
+* Task 5: Negation Detection: run 5-NegationExpressionDetection/negationDetection.py
 
+2- Explanations of sample output obtained from your system: 
+Explanations are included in the report.
 
-### <b>Further Analysis (20 marks)</b>
-Irregular Tokens:
-- Tokenize the dataset using your own tokenizer. 
-- Identify the top-20 most frequent tokens which are NOT standard English words (including their morphological forms). 
-POS Tagging: 
-- Randomly select 10 sentences from the dataset where each sentence contains at least one irregular token. 
-- Apply POS tagging on the sentences based on your own tokenization results. 
-
-<b>For the report:</b>
-- Show and discuss the tagging results.
-
-
-### <b>Application (10 marks)</b>
-- Deﬁne and develop a simple NLP application based on the dataset. 
-- E.g detecting sentences containing Negation Expression using regular expressions. 
-(Negation is often expressed through negative words such as no, not, never, none, nobody) 
-- You may deﬁne your own application with similar (estimated) difﬁculty level.
-
-
-## Requirements:
-- Python 2.7
-- nltk 3.0
-- pandas
-- matplotlib
-- beautifulsoup4
-- lxml
-
-
+The complete repository with the dataset used and the output data can be found under https://github.com/aditi137/CZ4045

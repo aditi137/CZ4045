@@ -6,3 +6,4 @@ beautifulsoup4
 nltk
 matplotlib
 lxml
+numpy
